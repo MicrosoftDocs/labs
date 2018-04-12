@@ -1,1 +1,1 @@
-# Welcome to labs!
+# Welcome to lab-pr!
