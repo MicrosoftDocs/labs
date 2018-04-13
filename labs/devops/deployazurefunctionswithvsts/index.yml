@@ -15,8 +15,6 @@ items:
 durationInMinutes: 1
   content: |
     [!include[](includes/readme.md)]
-- content: |
-    You've completed this lab.
 - durationInMinutes: 2
   content: |
     In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services
