@@ -15,7 +15,7 @@ items:
 - durationInMinutes: 2
   content: |
     In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services.
-- title: Read me
+- title: Deploying Azure Functions using VSTS
   durationInMinutes: 1
   content: |
     [!include[](includes/readme.md)]
