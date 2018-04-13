@@ -12,12 +12,13 @@ metadata:
   ms.prod: .net
   ms.technology: devlang-csharp
 items:
-durationInMinutes: 1
-  content: |
-    [!include[](includes/readme.md)]
 - durationInMinutes: 2
   content: |
-    In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services
+    In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services.
+- title: Read me
+  durationInMinutes: 1
+  content: |
+    [!include[](includes/readme.md)]
 - title: Setting up the environment
   durationInMinutes: 3
   content: |
