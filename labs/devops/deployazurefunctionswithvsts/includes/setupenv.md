@@ -13,7 +13,7 @@ Let us verify the resources created in the Azure Portal.
 
 1. Navigate to the **Resource Groups** and select **@lab.CloudResourceGroup(268).Name** to view the resources. You should see 3 resources as shown below.
 
-   ![azure_resources](images/azure_resources.png)
+   ![azure_resources](../images/azure_resources.png)
 
 ### Part B: Create Visual Studio Team Services account
 
@@ -35,7 +35,7 @@ Next, you will provision a Team services account.
 
    > VSTS Demo Generator helps you create team projects on your VSTS account with sample content that include source code, work items,iterations, service endpoints, build and release definitions based on the template you choose during the configuration.
 
-   ![vsts demo generator](images/vstsdemogeneratornew.png)
+   ![vsts demo generator](../images/vstsdemogeneratornew.png)
 
 1. Click the **Sign In** button to get started. If you are asked for credentials, sign in with the same credentials used above to log in to Azure
      > Username: ++@lab.CloudPortalCredential(1).Username++      
@@ -43,19 +43,19 @@ Next, you will provision a Team services account.
 
 1. Accept the request for permissions by clicking on the **Accept** button. 
 
-   ![accept terms](images/acceptterms.png)
+   ![accept terms](../images/acceptterms.png)
      
 1. Select the previously created Team Services account from the drop down, provide the project name as **PartsUnlimited** and click Create Project.
 
-    ![create project](images/createproject.png)
+    ![create project](../images/createproject.png)
 
 1. Once the project is created, click on the generated URL to be directed to the project portal in a new tab.
 
-    ![create project](images/createdproject.png)
+    ![create project](../images/createdproject.png)
 
 1. Navigate to the **Code** hub within the project portal, select **Clone** and then select **Clone in Visual Studio**. 
 
-   ![cloneinvisualstudio](images/cloneinvisualstudio.png)
+   ![cloneinvisualstudio](../images/cloneinvisualstudio.png)
 
    Note that VSTS supports a wide variety of IDEs including Eclipse, IntelliJ, XCode, Android Developer Studio, Visual Studio Code, etc.
 
@@ -65,8 +65,8 @@ Next, you will provision a Team services account.
      > Username: ++@lab.CloudPortalCredential(1).Username++      
      > Password: ++@lab.CloudPortalCredential(1).Password++
 
-     ![clonepath](images/clonepath.png)
+     ![clonepath](../images/clonepath.png)
 
 
 1. Once it is cloned, you should see **PartsUnlimited.sln** under **Solutions** in the Team Explorer.
-     ![openproject](images/openproject.png)
+     ![openproject](../images/openproject.png)
