@@ -16,7 +16,7 @@ items:
   content: |
     [!include[](includes/overview.md)]
 - title: Overview
- durationInMinutes: 10
+  durationInMinutes: 10
   content: |
     [!include[](includes/setupenv.md)]
 - title: Setting up the environment
