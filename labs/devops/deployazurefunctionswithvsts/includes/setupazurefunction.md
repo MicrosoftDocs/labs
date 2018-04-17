@@ -4,8 +4,7 @@ The [Azure Functions](https://azure.microsoft.com/en-in/services/functions/) cre
 Although you have used a simple condition here, this could also use more complex rules which could potentially be hidden behind another web api call.
 
 1. Go back to the **Azure Portal**. Select the **+Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute > Function App**.
-          ![selectazurefunctionapp](images/selectazurefunctionapp.png)
-
+          ![selectazurefunctionapp](../images/selectazurefunctionapp.png)
 
 1. Use the function app settings as specified in below image. Select **Create** to provision and deploy the function app. 
 
