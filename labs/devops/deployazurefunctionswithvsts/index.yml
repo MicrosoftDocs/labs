@@ -15,26 +15,21 @@ items:
 - durationInMinutes: 5
   content: |
     [!include[](includes/overview.md)]
-- title: Overview
+- title: Setting up the environment
   durationInMinutes: 10
   content: |
     [!include[](includes/setupenv.md)]
-- title: Setting up the environment
+- title: Create Azure Function in Azure Portal and Visual Studio
   durationInMinutes: 20
   content: |
     [!include[](includes/setupazurefunction.md)]
-- title: Create Azure Function in Azure Portal and Visual Studio
+- title: Setup continuous integration in Team Services
   durationInMinutes: 10
   content: |
     [!include[](includes/setupCI.md)]
-- title: Setup continuous integration
+- title: Creating a CD pipeline in Team Services
   durationInMinutes: 10
   content: |
     [!include[](includes/SetupCD.md)]
-- title: Setup continuous deployment
-  durationInMinutes: 5
-  content: |
-    [!include[](includes/verifywebsite.md)]
-
 - content: |
     You've completed this lab.
