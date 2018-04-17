@@ -7,18 +7,18 @@
 ## What is covered in this lab?
 
  In this lab, you will
-* Create a Visual Studio Team Services account and clone the PartsUnlimited project from GitHub
+* Create a Visual Studio Team Services account and generate the PartsUnlimited project data with *VSTS Demo Generator* tool
 * Setup Azure Functions in Azure portal and add code via Visual Studio
-* Setup a build definition in Visual Studio Team Services to build and test the code
-* Configure a CD pipeline in Visual Studio Team Services for Website, API and Azure Functions
+* Configure the build definition in Visual Studio Team Services to build and test the code
+* Configure the CD pipeline in Visual Studio Team Services for Website, API and Azure Functions
 
 ## Setting up the environment
 
-### Part A: Provision the required Azure resources
+### Part A: Verify the created Azure resources
 
  In this lab, you will be using a fictional eCommerce website - PartsUnlimited. The PartsUnlimited team wants to  roll out a new discount for its employees and customers and wants to build Azure Functions that will retrieve the right discount depending on whether the logged in user is an employee or a customer. 
 
-Let's create the Parts Unlimited website. 
+Let us verify the resources created in the Azure Portal. 
 
 1. Open your browser and navigate to [https://portal.azure.com](https://portal.azure.com)
 
@@ -27,14 +27,8 @@ Let's create the Parts Unlimited website.
    > Password: ++@lab.CloudPortalCredential(1).Password++
 
 
-1. Enter **https://goo.gl/octfDu** to deploy a custom ARM template that contains the PartsUnlimited App.
+1. Navigate to the **Resource Groups** and select **@lab.CloudResourceGroup(268).Name** to view the resources. You should see 3 resources as shown below.
 
-1. For the **Resource Group** field, select **Use existing** and pick 
-@lab.CloudResourceGroup(268).Name from the dropdown.
-
-1. Agree to the terms and conditions and click **Purchase**. 
-
-    It should take approximately 1-2 minutes to provision the resources. Once the deployment is successful, you will see the resources as shown.
    ![azure_resources](images/azure_resources.png)
 
 ### Part B: Create Visual Studio Team Services account
@@ -49,19 +43,33 @@ Next, you will provision a Team services account.
 
 1. Provide a name for your Visual Studio Team Services account and click **Continue** to start the creation process.
 
-1. In 1-2 minutes, your account should be ready with a default project **MyFirstProject** created.
+1. In a few minutes, your account should be ready with a default project **MyFirstProject** created.
 
-### Part C: Import and clone the project repository
+### Part C: Generate project data with VSTS Demo Generator
 
-1. Navigate to the **Code** hub. Since there is no code yet, you wil see an empty repository. You can clone the remote repository to your local machine and start adding code or you can import code from an another code repository.
+1. Use the [VSTS Demo Generator](https://demogentesting.azurewebsites.net/?TemplateId=77376&Name=AzureFunctions_BuildWorkshop) to provision the project on your VSTS account.
 
-1. For the purpose of this lab, you will import it from **GitHub**. Select **import** and enter https://github.com/sriramdasbalaji/AzureFunctionsBuild.git in the **Clone URL** field and select **Import**
+   > VSTS Demo Generator helps you create team projects on your VSTS account with sample content that include source code, work items,iterations, service endpoints, build and release definitions based on the template you choose during the configuration.
 
-     ![importrepository](images/importrepository.png)
+   ![vsts demo generator](images/vstsdemogeneratornew.png)
 
-      ![clonerepo](images/clonerepo.png)
+1. Click the **Sign In** button to get started. If you are asked for credentials, sign in with the same credentials used above to log in to Azure
+     > Username: ++@lab.CloudPortalCredential(1).Username++      
+     > Password: ++@lab.CloudPortalCredential(1).Password++  
 
-1. When the import is complete, select **Clone** and then select **Clone in Visual Studio**. 
+1. Accept the request for permissions by clicking on the **Accept** button. 
+
+   ![accept terms](images/acceptterms.png)
+     
+1. Select the previously created Team Services account from the drop down, provide the project name as **PartsUnlimited** and click Create Project.
+
+    ![create project](images/createproject.png)
+
+1. Once the project is created, click on the generated URL to be directed to the project portal in a new tab.
+
+    ![create project](images/createdproject.png)
+
+1. Navigate to the **Code** hub within the project portal, select **Clone** and then select **Clone in Visual Studio**. 
 
    ![cloneinvisualstudio](images/cloneinvisualstudio.png)
 
@@ -176,71 +184,52 @@ Although you have used a simple condition here, this could also use more complex
       
 ## Exercise 2: Setup continuous integration
 
-Next, in this exercise, we will setup a CI and CD pipeline to deploy the Azure Functions app. Let's start with build first. 
+Next, in this exercise, you will look at the build definition to get an insight of how the code is built as part of the the CI pipeline. 
 
-1. On the **Files** tab of the **Code** hub, select **Set up build**.
-   
-   ![setupbuild](images/setupbuild.png)
+1. Click the **Build and Release** hub in VSTS portal, select the build definition **AzureFunctions_CI** and click the ellipsis ***...*** button and click **Edit** option in the menu to view the tasks within the build definition.
 
-1. This will take you to the **Build and Release** hub in VSTS. It's super easy to setup the build pipeline with the new **ASP.NET Core** template. Select *the template and click **Apply**.
-   ![selecttemplate](images/selecttemplate.png)
+      ![buildtasks](images/editbuilddef.png)
 
-   
-1. This should add a bunch of tasks to the the build definition. We can leave most of the the tasks untouched - the default values are fine.
-      ![buildtasks](images/buildtasks.png)
-
-1. You will only need to change the **Publish** task. Select the task and uncheck the **Publish Web Projects** field and enter **\**\**\/\*.csproj** in **Path to Projects** field. This will change -?
-
-   ![buildpublishtask](images/buildpublishtask.png)
-   
-   
 1. Before we run the build. you will make this a CI build. Click the **Triggers** tab in the build definition. Enable the **Continuous Integration** trigger. This will ensure that the build process is automatically triggered every time you commit a change to your repository
 
-    ![CI Trigger](images/citrigger.png)
+    ![CI Trigger](images/citrigger.png) 
 
-1. Select **Save & queue** to save and start your first build.
+1. Select **Save & queue** to save and start your first build. A new build is started. You will see a link to the new build on the top of the page. Click the link to watch the live logs of the build as it happens. Wait for the build to complete and succeed before proceeding to the next section.
 
-A new build is started. You will see a link to the new build on the top of the page. Click the link to watch the live logs of the build as it happens. Wait for the build to complete and succeed before proceeding to the next section.
-
-![buildqueued2](images/buildqueued2.png)
+    ![buildqueued2](images/buildqueued2.png)
 
 ## Exercise 3: Setup continuous deployment
 
-1. Once the build succeeds, click the **Release** action on the build summary page.
-  ![Select Release](images/selectrelease.png)
+1. Once the build succeeds, click the **Release** option from the **Build & Release** hub.
 
-1. In the **Select a Template** panel, click the **Empty Process**.
-     ![releaseemptyprocess](images/releaseemptyprocess.png)
+    ![Release Hub](images/releasehub.png)
+
+1. In the **Release** page, select the definition **AzureFunctions_CD** and click **Edit**.
+
+     ![edit release def](images/editreleasedef.png)
 
 1. Select the artifact trigger and make sure the **Continuous deployment trigger** is enabled.
 
      ![cdtrigger](images/cdtrigger.png)
 
-1. Click **Tasks**, and then select **Add task to the Phase** to add the deployment tasks.
+1. To deploy **PartsUnlimited Website**, click **Tasks**, select the first **Deploy PartsUnlimited Website** task and configure the inputs as shown below.
 
-    ![releasetasks](images/releasetasks.png)
+    ![websitedeploytask](images/websitedeploytask.png)
 
-1. In **Add tasks** panel under **Deploy** section select **Azure App Service Deployment** task. Add this task three times.
+   > To authorize the **Azure Subscription**, first select the **Azure subscription** from the drop down and then the drop down within the **Authorize** button. Click the drop down, choose **Advanced Options** and authorize Team Services to connect to the Azure subscription.
 
-   ![addazureappservicetask](images/addazureappservicetask.png)
+    ![websitedeploytask](images/authorizeazure.png)
 
-   >To configure the inputs for the **Deploy Azure App Service** tasks in the release definitio, first select the **Azure subscription** and if there is an **Authorize** button next to the input, click on it to authorize Team Services to connect to the Azure subscription
+    ![websitedeploytask](images/azureauth.png)
 
-1. Select the first **Azure App Service Deployment** task and configure the inputs as shown below.
-     ![websitedeploytask](images/websitedeploytask.png)
-
-   This task is to deploy **PartsUnlimited Website**.
-
-1. Select the second task and configure the inputs as shown below.
+1. For the **PartsUnlimited APIs**, select the second task and configure the inputs as shown below.
 
    ![apideploytask](images/apideploytask.png)
 
- This task is to deploy **PartsUnlimited APIs**.
-1. Select the third task and configure the inputs  as shown below.
+1. Select the third task to deploy **PartsUnlimited Azure Function** and configure the inputs  as shown below.
 
    ![functionappdeploy](images/functionappdeploy.png)
-  This task is to deploy **PartsUnlimited Azure Function**.
-
+  
 1. Click **Save**. In the Save dialog box, click **OK**. To test the release definition, click **Release** and then **Create Release**.
   
    ![createrelease](images/createrelease.png)
@@ -251,10 +240,11 @@ A new build is started. You will see a link to the new build on the top of the p
 
    ![releasetriggered](images/releasetriggered.png)
    
-You can watch the live logs for the deployment as it happens. Wait for the release to be deployed to the Azure web app.
-    ![releaselogs](images/releaselogs.png)
+   You can watch the live logs for the deployment as it happens. Wait for the release to be deployed to the Azure web app.
 
- Wait for the release to complete and succeed before proceeding to the next section.
+      ![releaselogs](images/releaselogs.png)
+
+   Wait for the release to complete and succeed before proceeding to the next section.
 
 
 
