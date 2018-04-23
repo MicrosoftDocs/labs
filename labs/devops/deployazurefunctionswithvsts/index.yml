@@ -1,5 +1,6 @@
 ### YamlMime:Tutorial
 title: Deploying Azure Functions using Visual Studio Team Services
+labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1 
 metadata:
   title: Deploying Azure Functions using VSTS
   description: In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services
