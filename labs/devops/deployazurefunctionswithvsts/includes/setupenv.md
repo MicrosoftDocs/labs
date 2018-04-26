@@ -9,7 +9,7 @@
 
  In this lab, you will be using a fictional eCommerce website - PartsUnlimited. The PartsUnlimited team wants to  roll out a new discount for its employees and customers and wants to build Azure Functions that will retrieve the right discount depending on whether the logged in user is an employee or a customer. 
 
-Let us verify the resources created in the Azure Portal. 
+Let us create the required resources the Azure Portal. 
 
 1. Open your browser and navigate to [https://portal.azure.com](https://portal.azure.com)
 
@@ -32,8 +32,7 @@ Next, you will provision a Team services account.
 1. Navigate to https://www.visualstudio.com/team-services/ in a separate tab. Select **Get Started for Free**.
 
 1. You can use the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++
+    
 
 1. Provide a name for your Visual Studio Team Services account and click **Continue** to start the creation process.
 
@@ -48,8 +47,7 @@ Next, you will provision a Team services account.
    ![vsts demo generator](../images/vstsdemogeneratornew.png)
 
 1. Click the **Sign In** button to get started. If you are asked for credentials, sign in with the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++  
+   
 
 1. Accept the request for permissions by clicking on the **Accept** button. 
 
