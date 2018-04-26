@@ -1,6 +1,6 @@
 1. Install the SonarCloud VSTS extension to your VSTS account
 
-    - Navigate to the  [SonarCloud extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud){:target="_blank"} in the Visual Studio Marketplace and click **Get it free** to install it.
+    - Navigate to the  [SonarCloud extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud) in the Visual Studio Marketplace and click **Get it free** to install it.
 
     ![sc_marketplace](../images/ex1/sc_marketplace.png)
 
@@ -16,6 +16,6 @@
 
     ![sc_marketplace](../images/ex1/setup_import.png)
 
-    See [here](https://docs.microsoft.com/en-us/vsts/git/import-git-repository?view=vsts){:target="_blank"} for detailed instructions on importing a repository.
+    See [here](https://docs.microsoft.com/en-us/vsts/git/import-git-repository?view=vsts)for detailed instructions on importing a repository.
 
     The scanning examples repository contains sample projects for a number of build systems and languages including C# with MSBuild, and Maven and Gradle with Java.

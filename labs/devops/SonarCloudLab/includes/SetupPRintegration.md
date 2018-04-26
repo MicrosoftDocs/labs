@@ -4,7 +4,7 @@
 
 1. Create a **Personal Access Token** in VSTS.
 
-   - Follow the instructions in this [article](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate){:target="_blank"} to create a token with **Code (read and write)** scope.
+   - Follow the instructions in this [article](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate) to create a token with **Code (read and write)** scope.
 
     > SonarCloud will post comments to the pull request as if it is user who owns the personal access token. The recommended practice is to create a separate "bot" VSTS user for this so that it is clear which comments are from real developers and which are from SonarCloud.
    
