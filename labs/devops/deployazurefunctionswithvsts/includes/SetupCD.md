@@ -48,7 +48,7 @@
 
 ## Verify the deployment
 
-1. Once deployment has completed, go to the **Azure portal**. In **@lab.CloudResourceGroup(268).Name** resource group select **PartsUnlimited-Web-xxxxx** and click **Browse**
+1. Once deployment has completed, go to the **Azure portal**. In your resource group select **PartsUnlimited-Web-xxxxx** and click **Browse**
 
 1. You will see the website as shown below. Navigate to **Oil** category, notice that products are showing discount as **10%**.
 

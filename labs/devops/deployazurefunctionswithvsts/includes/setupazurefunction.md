@@ -76,7 +76,7 @@ Although you have used a simple condition here, this could also use more complex
    }
    ```
 
-1. Navigate to the resource group  **@lab.CloudResourceGroup(268).Name** in the Azure Portal. Click **PartsUnlimited-API-XXXXXXX.azurewebsites.net** and click the **Copy** icon under the **URL** section to copy the whole URL. Copy and replace **YourAPIAppServiceUrl** in url variable with API app service name. 
+1. Navigate to the resource group where you have created resources in the Azure Portal. Click **PartsUnlimited-API-XXXXXXX.azurewebsites.net** and click the **Copy** icon under the **URL** section to copy the whole URL. Copy and replace **YourAPIAppServiceUrl** in url variable with API app service name. 
 
 1. Open **StoreController.cs** from the path **PartsUnlimitedWebsite > Controllers > StoreController.cs**
 

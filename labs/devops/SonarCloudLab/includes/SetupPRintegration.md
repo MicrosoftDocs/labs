@@ -1,16 +1,16 @@
- Configurating SonarCloud analysis to run when a pull request is created has two parts:
+ Configuring SonarCloud analysis to run when a pull request is created has two parts:
    - the SonarCloud project needs to be provided with an access token so it can add PR comments to VSTS, and
    - a Branch Policy needs to be configured in VSTS to trigger the PR build
 
 1. Create a **Personal Access Token** in VSTS.
 
-   - Follow the instructions in this [article](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate){:target="_blank"} to create a token with **Code (read and write)** scope.
+   - Follow the instructions in this [article](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate) to create a token with **Code (read and write)** scope.
 
     > SonarCloud will post comments to the pull request as if it is user who owns the personal access token. The recommended practice is to create a separate "bot" VSTS user for this so that it is clear which comments are from real developers and which are from SonarCloud.
    
    ![vsts_pat_permissions](../images/ex3/vsts_pat_permissions.png)
 
-    {% include note.html content= "You should treat Personal Access Tokens like passwords. It is recommended that you save them somewhere safe so that you can re-use them for future requests." %}
+    >You should treat Personal Access Tokens like passwords. It is recommended that you save them somewhere safe so that you can re-use them for future requests.
 
 1. Configure SonarCloud to analyze pull requests
 

@@ -30,7 +30,7 @@ We will set up a new build definition that integrates with SonarCloud to analyze
    |**Organization**|{your SonarCloud org id}|The unique key of your organization in SonarCloud|
    |**Project Key**|{your VSTS account name}.visualstudio.com.sonarexamples.netfx |The unique key of the project in SonarCloud|
 
-   {% include important.html content= "Currently the project key must be globally unique across all projects in SonarCloud. In the future, the project key will only need to be unique within your SonarCloud organization." %}
+   >Currently the project key must be globally unique across all projects in SonarCloud. In the future, the project key will only need to be unique within your SonarCloud organization.
 
    We will now create the endpoint and an account on SonarCloud.
 
@@ -79,7 +79,7 @@ We will set up a new build definition that integrates with SonarCloud to analyze
     ![sc_generatetoken2](../images/ex1/sc_generatetoken2.png)
 
 
-    {% include note.html content= "You should treat Personal Access Tokens like passwords. It is recommended that you save them somewhere safe so that you can re-use them for future requests." %}
+   >You should treat Personal Access Tokens like passwords. It is recommended that you save them somewhere safe so that you can re-use them for future requests.
 
    We have now created an organization on SonarCloud, and have the token needed configure the VSTS endpoint.
 

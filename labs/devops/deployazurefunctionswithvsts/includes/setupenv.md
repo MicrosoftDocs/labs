@@ -1,17 +1,27 @@
-### Part A: Verify the created Azure resources
+## Prerequisites for the lab
+
+**Microsoft Azure Account**: You will need a valid and active Azure account for the Azure labs. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/en-us/free/)
+
+   * If you are a Visual Studio Active Subscriber, you are entitled for a $50-$150 credit per month. You can refer to this [link](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/) to find out more including how to activate and start using your monthly Azure credit.
+
+   * If you are not a Visual Studio Subscriber, you can sign up for the FREE [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)program to create **Azure free account** (includes 1 year of free services, $200 for 1st month).
+### Part A: Create required Azure resources
 
  In this lab, you will be using a fictional eCommerce website - PartsUnlimited. The PartsUnlimited team wants to  roll out a new discount for its employees and customers and wants to build Azure Functions that will retrieve the right discount depending on whether the logged in user is an employee or a customer. 
 
-Let us verify the resources created in the Azure Portal. 
+Let us create the required resources the Azure Portal. 
 
 1. Open your browser and navigate to [https://portal.azure.com](https://portal.azure.com)
 
-1. Login with the following username and password:
-   > Username: ++@lab.CloudPortalCredential(1).Username++    
-   > Password: ++@lab.CloudPortalCredential(1).Password++
+1. Login with you username and password
+
+1. Click **Deploy To Azure** to provision required azure resources for this lab.
+
+   [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Falmvm%2Farmtemplates%2Flabs%2Fvstsextend%2Farmtemplates%2Fazurefunctions%2Fazuredeploy.json)
+  
 
 
-1. Navigate to the **Resource Groups** and select **@lab.CloudResourceGroup(268).Name** to view the resources. You should see 3 resources as shown below.
+1. Navigate to the **Resource Group** which you have created to view the resources. You should see 3 resources as shown below.
 
    ![azure_resources](../images/azure_resources.png)
 
@@ -22,8 +32,7 @@ Next, you will provision a Team services account.
 1. Navigate to https://www.visualstudio.com/team-services/ in a separate tab. Select **Get Started for Free**.
 
 1. You can use the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++
+    
 
 1. Provide a name for your Visual Studio Team Services account and click **Continue** to start the creation process.
 
@@ -38,8 +47,7 @@ Next, you will provision a Team services account.
    ![vsts demo generator](../images/vstsdemogeneratornew.png)
 
 1. Click the **Sign In** button to get started. If you are asked for credentials, sign in with the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++  
+   
 
 1. Accept the request for permissions by clicking on the **Accept** button. 
 
@@ -62,11 +70,11 @@ Next, you will provision a Team services account.
 1. When the code opens in Visual Studio, if you are prompted to sign into Visual Studio Team Services, use the same credentials(that you used above to create the VSTS account) and select **Clone**
 
 1. You can use the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++
+    
 
      ![clonepath](../images/clonepath.png)
 
 
 1. Once it is cloned, you should see **PartsUnlimited.sln** under **Solutions** in the Team Explorer.
+
      ![openproject](../images/openproject.png)
