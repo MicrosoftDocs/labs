@@ -4,7 +4,7 @@
 
     ![sc_marketplace](../images/ex1/sc_marketplace.png)
 
-   {% include important.html content= "If you do not have the appropriate permissions to install an extension from the marketplace, a request will be sent to the account administrator to ask them to approve the installation." %}
+   >If you do not have the appropriate permissions to install an extension from the marketplace, a request will be sent to the account administrator to ask them to approve the installation.
 
    The SonarCloud extension contains build tasks, build templates and a custom dashboard widget.
 

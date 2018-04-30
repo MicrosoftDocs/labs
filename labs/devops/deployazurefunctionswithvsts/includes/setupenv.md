@@ -70,11 +70,11 @@ Next, you will provision a Team services account.
 1. When the code opens in Visual Studio, if you are prompted to sign into Visual Studio Team Services, use the same credentials(that you used above to create the VSTS account) and select **Clone**
 
 1. You can use the same credentials used above to log in to Azure
-     > Username: ++@lab.CloudPortalCredential(1).Username++      
-     > Password: ++@lab.CloudPortalCredential(1).Password++
+    
 
      ![clonepath](../images/clonepath.png)
 
 
 1. Once it is cloned, you should see **PartsUnlimited.sln** under **Solutions** in the Team Explorer.
+
      ![openproject](../images/openproject.png)
