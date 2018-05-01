@@ -29,13 +29,13 @@ The photo gallery web application will make an HTTP request to a serverless func
 
 1. After the Function app is created, search for its name, ++**fnapp@lab.GlobalLabInstanceId**++, in the Azure Portal using the Search box and click to open it.
 
-    !IMAGE[tv5q0wxk.png](tv5q0wxk.png)
+    ![tv5q0wxk.png](../images/tv5q0wxk.png)
 
 1. In the function app window's left hand navigation, hover over **Functions** and click **+** to start creating a new serverless function.
 
 1. Click **Custom function** to see a list of function templates.
 
-    !IMAGE[k3wwhsrm.jpg](k3wwhsrm.jpg)
+    ![k3wwhsrm.jpg](../images/k3wwhsrm.jpg)
 
 1. Find the **HttpTrigger** template and click the language to use (C# or JavaScript).
 
@@ -47,7 +47,7 @@ The photo gallery web application will make an HTTP request to a serverless func
     | **Name your function** | ++GetUploadUrl++ | Type this name exactly as shown so the application can discover the function. |
     | **Authorization level** | Anonymous | Allow the function to be accessed anonymously. |
 
-    !IMAGE[lr1jm6by.png](lr1jm6by.png)
+    ![lr1jm6by.png](../images/lr1jm6by.png)
 
 1. Click **Create** to create the function.
 
@@ -61,13 +61,13 @@ The photo gallery web application will make an HTTP request to a serverless func
 
     1. Click **Console** to reveal a console window.
 
-        !IMAGE[v8tc5qqg.jpg](v8tc5qqg.jpg)
+        ![v8tc5qqg.jpg](../images/v8tc5qqg.jpg)
 
     1. Run the command `npm install azure-storage` in the console. It may take a minute or two to complete the operation.
 
     1. Click on the function name (**GetUploadUrl**) in the left navigation to reveal the function, replace all of **index.js** with the content of [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js).
 
-    !IMAGE[6g3a912l.jpg](6g3a912l.jpg)
+    ![6g3a912l.jpg](../images/6g3a912l.jpg)
     
 1. Click **Logs** below the code window to expand the logs panel.
 
@@ -118,7 +118,7 @@ In addition to creating and editing functions, the Azure portal also provides a 
 
 1. The function returns an upload URL in the output. The function execution appears in the logs panel.
 
-    !IMAGE[ki1726kz.png](ki1726kz.png)
+    ![ki1726kz.png](../images/ki1726kz.png)
 
 ### Configure CORS in the function app
 
@@ -128,13 +128,13 @@ Because the app's frontend is hosted in Blob storage, it has a different domain 
 
 1. Click on **Platform features** to view a list of advanced features.
 
-    !IMAGE[dhkid74v.jpg](dhkid74v.jpg)
+    ![dhkid74v.jpg](../images/dhkid74v.jpg)
 
 1. Under **API**, click **CORS**.
 
 1. Add an allow origin for the blob endpoint URL, omitting the trailing **/** (++**https://webstorage@lab.LabInstanceId.blob.core.windows.net**++)).
 
-    !IMAGE[lhkdgrha.jpg](lhkdgrha.jpg)
+    ![lhkdgrha.jpg](../images/lhkdgrha.jpg)
 
 1. Click **Save** to commit the change.
 

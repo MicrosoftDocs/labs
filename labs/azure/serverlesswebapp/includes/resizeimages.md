@@ -36,7 +36,7 @@ The function we will create is triggered by a new object Blob storage. It also h
     | **Path** | ++images/{name}++ | Execute the function when a file appears in the **images** container. |
     | **Storage account information** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable name previously created with the connection string. |
 
-    !IMAGE[ab31n6dr.jpg](ab31n6dr.jpg)
+    ![ab31n6dr.jpg](../images/ab31n6dr.jpg)
 
 1. Click **Create** to create the function.
 
@@ -44,11 +44,11 @@ The function we will create is triggered by a new object Blob storage. It also h
 
 1. Click **New Output** to create a new output trigger.
 
-    !IMAGE[ugjssuwv.jpg](ugjssuwv.jpg)
+    ![ugjssuwv.jpg](../images/ugjssuwv.jpg)
 
 1. Select **Azure Blob Storage** and click **Select**. Note that you may have to scroll down to review the Select button.
 
-    !IMAGE[jluh30es.jpg](jluh30es.jpg)
+    ![jluh30es.jpg](../images/jluh30es.jpg)
 
 1. Enter the following values.
 
@@ -59,7 +59,7 @@ The function we will create is triggered by a new object Blob storage. It also h
     | **Path** | ++thumbnails/{name}++ | The thumbnails will be output to a container named **thumbnails**. |
     | **Storage account information** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable name previously created with the connection string. |
 
-    !IMAGE[wyo5wbjt.jpg](wyo5wbjt.jpg)
+    ![wyo5wbjt.jpg](../images/wyo5wbjt.jpg)
 
     **JavaScript only**
 
@@ -90,7 +90,7 @@ The function we will create is triggered by a new object Blob storage. It also h
     
     1. Copy the contents of [**/csharp/ResizeImage/project.json**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/project.json) into the newly created file. Save the file. Packages are automatically restored when the file is updated.
     
-        !IMAGE[6vljvklv.png](6vljvklv.png)
+        ![6vljvklv.png](../images/6vljvklv.png)
     
     1. Click on **run.csx** under **View Files** and replace its content with the content in [**/csharp/ResizeImage/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/run.csx).
 

@@ -12,15 +12,15 @@ You will perform all the steps in this lab in your web browser using the Azure P
 
 1. Open a Cloud Shell instance by clicking on its icon located in the upper right of the portal.
 
-    !IMAGE[1-cloudshell.png](1-cloudshell.png)
+    ![1-cloudshell.png](../images/1-cloudshell.png)
 
 1. Select **Bash (Linux)**.
 
-    !IMAGE[fospslxm.jpg](fospslxm.jpg)
+    ![fospslxm.jpg](../images/fospslxm.jpg)
 
 1. Before Cloud Shell can be used for the first time, you need to configure it with a Storage account to persist files you created. Click on **Show advanced Settings**.
 
-    !IMAGE[ppghz1x2.jpg](ppghz1x2.jpg)
+    ![ppghz1x2.jpg](../images/ppghz1x2.jpg)
 
 1. Enter the following values (note that your values may differ than the screenshot).
 
@@ -31,6 +31,6 @@ You will perform all the steps in this lab in your web browser using the Azure P
     |Storage account | **Use existing** (choose the existing account)|
     |File share | **Create name** (name it ++**fileshare**++)|
 
-    !IMAGE[1-mount-storage.png](1-mount-storage.png)
+    ![1-mount-storage.png](../images/1-mount-storage.png)
 
 1.  Click **Create storage** to create the file share used by Cloud Shell.

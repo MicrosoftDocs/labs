@@ -76,7 +76,7 @@ A Storage account is an Azure resource that allows you to store tables, queues, 
 
     Open the URL in a web browser to view the application.
 
-    !IMAGE[1-app-screenshot-new.png](1-app-screenshot-new.png)
+    ![1-app-screenshot-new.png](../images/1-app-screenshot-new.png)
 
 ### Summary
 

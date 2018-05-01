@@ -3,7 +3,7 @@ In this walkthrough tutorial, you will deploy a simple web application that enab
 
 The application uses Blob Storage (both for web static content and images/thumbnails), Azure Functions, Logic Apps, Cosmos DB, Computer Vision, and Azure Active Directory as pictured below:
 
-!IMAGE[architecture.jpg](architecture.jpg)
+![architecture.jpg](../images/architecture.jpg)
 
 
 ## What is covered in this lab?

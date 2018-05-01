@@ -91,7 +91,7 @@ For this exercise, you will configure your application to log in with Azure Acti
 
 1. Under **Platform features**, click on **Authentication/Authorization**.
 
-    !IMAGE[ylzyu9po.jpg](ylzyu9po.jpg)
+    ![ylzyu9po.jpg](../images/ylzyu9po.jpg)
 
 1. Select the following values:
     
@@ -116,7 +116,7 @@ For this exercise, you will configure your application to log in with Azure Acti
     
     1. Click **OK** to save the Azure Active Directory settings.
 
-    !IMAGE[3km25aia.jpg](3km25aia.jpg)
+    ![3km25aia.jpg](../images/3km25aia.jpg)
 
 1. Click **Save** to finish setting up App Service Authentication.
 

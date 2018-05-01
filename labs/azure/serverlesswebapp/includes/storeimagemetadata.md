@@ -35,7 +35,7 @@ The Cosmos DB output binding makes it easy to create documents in a Cosmos DB co
 
 1. Find the **Azure Cosmos DB** item and click it. Then click **Select**.
 
-    !IMAGE[fr31x7lp.jpg](fr31x7lp.jpg)
+    ![fr31x7lp.jpg](../images/fr31x7lp.jpg)
 
 1. Fill out the remaining inputs with the following values.
 
@@ -47,7 +47,7 @@ The Cosmos DB output binding makes it easy to create documents in a Cosmos DB co
 
 1. Next to **Azure Cosmos DB account connection**, click **new**. Select the Cosmos DB account you previously created.
 
-    !IMAGE[qwh0c5dt.jpg](qwh0c5dt.jpg)
+    ![qwh0c5dt.jpg](../images/qwh0c5dt.jpg)
 
 1. Click **Save** to create the Cosmos DB output binding.
 
@@ -120,7 +120,7 @@ The web application requires an API to retrieve image metadata from Cosmos DB. Y
     | **SQL query** | ++select * from c order by c._ts desc++ | Get documents, latest documents first. |
     | **Azure Cosmos DB account connection** | Select the existing connection string |  |
 
-    !IMAGE[zafwx91w.jpg](zafwx91w.jpg)
+    ![zafwx91w.jpg](../images/zafwx91w.jpg)
 
 1. Click **Save** to create the input binding.
 
@@ -157,7 +157,7 @@ The web application requires an API to retrieve image metadata from Cosmos DB. Y
 
 1. Confirm that a document was created for the uploaded image.
 
-    !IMAGE[jt2fyd6r.jpg](jt2fyd6r.jpg)
+    ![jt2fyd6r.jpg](../images/jt2fyd6r.jpg)
 
 ### Summary
 
