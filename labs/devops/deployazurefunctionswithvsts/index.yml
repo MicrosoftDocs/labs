@@ -6,12 +6,6 @@ metadata:
   description: In this quickstart, you'll use learn how to continuosly deploy Azure Functions code with Visual Studio Team Services
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
-  nextTutorialHref: numbers-in-csharp
-  nextTutorialTitle: 
-  ms.custom: mvc
-  ms.prod: .net
-  ms.technology: devlang-csharp
 items:
 - durationInMinutes: 5
   content: |

@@ -5,12 +5,6 @@ metadata:
   description: In this quickstart,  you will learn how to integrate Visual Studio Team Services with SonarCloud.
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
-  nextTutorialHref: numbers-in-csharp
-  nextTutorialTitle: 
-  ms.custom: mvc
-  ms.prod: .net
-  ms.technology: devlang-csharp
 items:
 - durationInMinutes: 5
   content: |
