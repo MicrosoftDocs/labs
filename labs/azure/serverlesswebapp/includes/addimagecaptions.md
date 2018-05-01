@@ -1,4 +1,4 @@
-## Exercise 5: Add image captions with Cognitive Services Computer Vision API (10 minutes)
+
 
 In this exercise, you will create and use the Computer Vision API to generate captions for uploaded images.
 

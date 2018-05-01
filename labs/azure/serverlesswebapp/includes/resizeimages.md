@@ -1,4 +1,3 @@
-## Exercise 3: Resize Images with Azure Functions (10 minutes)
 
 In this exercise, you will create another storage container to store thumbnail images. Then you will create a serverless function to resize uploaded images and store them into the thumbnails container.
 

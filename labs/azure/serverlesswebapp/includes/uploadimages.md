@@ -1,4 +1,3 @@
-## Exercise 2: Upload images to blob storage with Azure Functions (10 Minutes) 
 
 In this exercise, you will create a container for storing and serving images. You will create a serverless function that provides a secure upload URL that the web application will use to upload images to the container.
 

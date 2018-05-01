@@ -1,4 +1,3 @@
-## Exercise 4: Store image metadata with Azure Cosmos DB (10 minutes)
 
 In this exercise, you will create an Azure Cosmos DB to store metadata about the uploaded images. Azure Cosmos DB is Microsoft's globally distributed, multi-model database.
 

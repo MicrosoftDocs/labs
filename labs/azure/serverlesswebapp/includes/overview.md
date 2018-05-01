@@ -1,8 +1,3 @@
-# Building a serverless web app
-
-> **Important** 
->
-> Log in to Azure using credentials in the steps below. Do not use your own account or create a new one.
 
 In this walkthrough tutorial, you will deploy a simple web application that enables users to upload their images and automatically get captions describing them. The application will present an HTML-based user interface displaying the list of images already uploaded (after signing in), all managed with a serverless backend.
 

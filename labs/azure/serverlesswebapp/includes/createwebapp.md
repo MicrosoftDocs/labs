@@ -1,4 +1,4 @@
-## Exercise 1: Create a web app in Blob Storage (5 minutes)
+
 
 In this exercise, you will create a blob storage account and a container to host files for a static website. You will uploaded the static files and access the single page application (SPA) directly from blob storage.
 
