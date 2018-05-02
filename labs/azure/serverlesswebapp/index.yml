@@ -1,0 +1,38 @@
+### YamlMime:Tutorial
+title: Building a serverless web app
+labUrl: https://labondemand.com/AuthenticatedLaunch/40355?providerId=1 
+metadata:
+  title: Building a serverless web app
+  description: In this walkthrough tutorial, you will deploy a simple web application that enables users to upload their images and automatically get captions describing them.
+  audience: Developer
+  level: Beginner
+items:
+- durationInMinutes: 5
+  content: |
+    [!include[](includes/overview.md)]
+- title: Setting up the environment
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/envconfig.md)]
+- title: Create a web app in Blob Storage
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/createwebapp.md)]
+- title: Upload images to blob storage with Azure Functions 
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/uploadimages.md)]
+- title: Resize Images with Azure Functions 
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/resizeimages.md)]
+- title: Store image metadata with Azure Cosmos DB 
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/storeimagemetadata.md)]
+    - title: Add image captions with Cognitive Services Computer Vision API
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/addimagecaptions.md)]
+- content: |
+    Congratulations on building a serverless web app on Azure using: Azure Storage, Functions, Cosmos DB, and Cognitive Services
