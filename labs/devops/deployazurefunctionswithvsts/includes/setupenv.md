@@ -1,10 +1,13 @@
 ## Prerequisites for the lab
 
-**Microsoft Azure Account**: You will need a valid and active Azure account for the Azure labs. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/en-us/free/)
+1. **Microsoft Azure Account**: You will need a valid and active Azure account for the Azure labs. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/en-us/free/)
 
    * If you are a Visual Studio Active Subscriber, you are entitled for a $50-$150 credit per month. You can refer to this [link](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/) to find out more including how to activate and start using your monthly Azure credit.
 
    * If you are not a Visual Studio Subscriber, you can sign up for the FREE [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)program to create **Azure free account** (includes 1 year of free services, $200 for 1st month).
+1. You will need a Visual Studio Team Services Account. If you do not have one, you can sign up for free [here](https://www.visualstudio.com/products/visual-studio-team-services-vs)
+
+1. Visual Studio 2017 version 15.4 or later with [.Net Core SDK](https://www.microsoft.com/net/learn/get-started/windows#windows), Git and [Azure Development Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs) for Visual Studio are installed.
 ### Part A: Create required Azure resources
 
  In this lab, you will be using a fictional eCommerce website - PartsUnlimited. The PartsUnlimited team wants to  roll out a new discount for its employees and customers and wants to build Azure Functions that will retrieve the right discount depending on whether the logged in user is an employee or a customer. 
@@ -25,22 +28,10 @@ Let us create the required resources the Azure Portal.
 
    ![azure_resources](../images/azure_resources.png)
 
-### Part B: Create Visual Studio Team Services account
 
-Next, you will provision a Team services account.
+### Part B: Generate project data with VSTS Demo Generator
 
-1. Navigate to https://www.visualstudio.com/team-services/ in a separate tab. Select **Get Started for Free**.
-
-1. You can use the same credentials used above to log in to Azure
-    
-
-1. Provide a name for your Visual Studio Team Services account and click **Continue** to start the creation process.
-
-1. In a few minutes, your account should be ready with a default project **MyFirstProject** created.
-
-### Part C: Generate project data with VSTS Demo Generator
-
-1. Use the [VSTS Demo Generator](https://demogentesting.azurewebsites.net/?TemplateId=77376&Name=AzureFunctions_BuildWorkshop) to provision the project on your VSTS account.
+1. Use the [VSTS Demo Generator](https://vstsdemogenerator.azurewebsites.net/?TemplateId=77376&Name=AzureFunctions_BuildWorkshop) to provision the project on your VSTS account.
 
    > VSTS Demo Generator helps you create team projects on your VSTS account with sample content that include source code, work items,iterations, service endpoints, build and release definitions based on the template you choose during the configuration.
 

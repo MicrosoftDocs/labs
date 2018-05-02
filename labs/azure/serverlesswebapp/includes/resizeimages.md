@@ -8,7 +8,7 @@ The full size images are stored in a container named **images**. You need anothe
 1. Ensure you are still logged into the Cloud Shell (bash). Create a new container named **thumbnails** in your storage account with public access to all blobs.
 
     ```
-    az storage container create -n thumbnails --account-name webstorage@lab.LabInstanceId --public-access blob
+    az storage container create -n thumbnails --account-name <webstorage-name> --public-access blob
     ```
 
 ### Create a blob triggered serverless function
@@ -32,8 +32,8 @@ The function we will create is triggered by a new object Blob storage. It also h
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
     | **Language** | C# or JavaScript | Choose your preferred language. |
-    | **Name your function** | ++ResizeImage++ | Type this name exactly as shown so the application can discover the function. |
-    | **Path** | ++images/{name}++ | Execute the function when a file appears in the **images** container. |
+    | **Name your function** | ResizeImage | Type this name exactly as shown so the application can discover the function. |
+    | **Path** | images/{name} | Execute the function when a file appears in the **images** container. |
     | **Storage account information** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable name previously created with the connection string. |
 
     ![ab31n6dr.jpg](../images/ab31n6dr.jpg)
@@ -54,9 +54,9 @@ The function we will create is triggered by a new object Blob storage. It also h
 
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
-    | **Blob parameter name** | ++thumbnail++ | The function will output the thumbnail to the parameter with this name. |
+    | **Blob parameter name** | thumbnail | The function will output the thumbnail to the parameter with this name. |
     | **Use function return value** | No |  |
-    | **Path** | ++thumbnails/{name}++ | The thumbnails will be output to a container named **thumbnails**. |
+    | **Path** | thumbnails/{name} | The thumbnails will be output to a container named **thumbnails**. |
     | **Storage account information** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable name previously created with the connection string. |
 
     ![wyo5wbjt.jpg](../images/wyo5wbjt.jpg)
@@ -86,7 +86,7 @@ The function we will create is triggered by a new object Blob storage. It also h
 
     1. The function requires a NuGet package called **ImageResizer** to generate the thumbnails. NuGet packages are added to C# functions using a **project.json** file. To create the file, click **View Files** on the right to reveal the files that make up the function.
     
-    1. Click **Add** to add a new file named ++**project.json**++.
+    1. Click **Add** to add a new file named **project.json**.
     
     1. Copy the contents of [**/csharp/ResizeImage/project.json**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/project.json) into the newly created file. Save the file. Packages are automatically restored when the file is updated.
     
@@ -113,7 +113,7 @@ The function we will create is triggered by a new object Blob storage. It also h
 1. Obtain the URL of your application.
 
     ```
-    az storage blob url --account-name webstorage@lab.LabInstanceId -c \$root -n index.html --output tsv | sed 's/\$root\///'
+    az storage blob url --account-name <webstorage-name> -c \$root -n index.html --output tsv | sed 's/\$root\///'
     ```
 
 1. Open a new browser window and browse to the URL. Select an image file and upload it. The upload completes, but because we have not added the ability to display images yet, the app does not show the uploaded photo.
@@ -121,22 +121,22 @@ The function we will create is triggered by a new object Blob storage. It also h
 1. In the Cloud Shell, confirm the image was uploaded to the **images** container.
 
     ```
-    az storage blob list --account-name webstorage@lab.LabInstanceId -c images -o table
+    az storage blob list --account-name <webstorage-name> -c images -o table
     ```
 
 1. Confirm the thumbnail was created in a container named **thumbnails**.
 
     ```
-    az storage blob list --account-name webstorage@lab.LabInstanceId -c thumbnails -o table
+    az storage blob list --account-name <webstorage-name> -c thumbnails -o table
     ```
 
 1. Before moving on to the next tutorial, delete all files in the **images** and **thumbnails** containers.
 
     ```
-    az storage blob delete-batch --account-name webstorage@lab.LabInstanceId -s images
+    az storage blob delete-batch --account-name <webstorage-name> -s images
     ```
     ```
-    az storage blob delete-batch --account-name webstorage@lab.LabInstanceId -s thumbnails
+    az storage blob delete-batch --account-name <webstorage-name> -s thumbnails
     ```
 
 ### Summary

@@ -9,7 +9,7 @@ Microsoft Cognitive Services are a collection of services available to developer
 1. Ensure you are still logged into the Cloud Shell. Create a new Cognitive Services account of kind **ComputerVision** with a unique name in your resource group. For the free tier, use **S1** as the SKU.
 
     ```
-    az cognitiveservices account create -g @lab.CloudResourceGroup(265).Name -n compvision@lab.GlobalLabInstanceId --kind ComputerVision --sku S1 -l eastus
+    az cognitiveservices account create -g first-serverless-app -n compvision --kind ComputerVision --sku S1 -l eastus
     ```
 
 ### Create Function App settings for Computer Vision URL and key
@@ -19,16 +19,16 @@ To call the Computer Vision API, a URL and key are required.
 1. Obtain the Computer Vision API key and URL and save them in bash variables.
 
     ```
-    export COMP_VISION_KEY=$(az cognitiveservices account keys list -g @lab.CloudResourceGroup(265).Name -n compvision@lab.GlobalLabInstanceId --query key1 --output tsv)
+    export COMP_VISION_KEY=$(az cognitiveservices account keys list -g first-serverless-app -n compvision --query key1 --output tsv)
     ```
     ```
-    export COMP_VISION_URL=$(az cognitiveservices account show -g @lab.CloudResourceGroup(265).Name -n compvision@lab.GlobalLabInstanceId --query endpoint --output tsv)
+    export COMP_VISION_URL=$(az cognitiveservices account show -g first-serverless-app -n compvision --query endpoint --output tsv)
     ```
 
 1. Create app settings named **COMP_VISION_KEY** and **COMP_VISION_URL**, respectively, in the function app.
 
     ```
-    az functionapp config appsettings set -n fnapp@lab.GlobalLabInstanceId -g @lab.CloudResourceGroup(265).Name --settings COMP_VISION_KEY=$COMP_VISION_KEY COMP_VISION_URL=$COMP_VISION_URL -o table
+    az functionapp config appsettings set -n fnapp -g first-serverless-app --settings COMP_VISION_KEY=$COMP_VISION_KEY COMP_VISION_URL=$COMP_VISION_URL -o table
     ```
 
     Ensure the output contains the appropriate values.
@@ -64,7 +64,7 @@ You will modify the **ResizeImage** function to call the Computer Vision API to 
 1. Obtain the URL of your application.
 
     ```
-    az storage blob url --account-name webstorage@lab.LabInstanceId -c \$root -n index.html --output tsv | sed 's/\$root\///'
+    az storage blob url --account-name <webstorage-name> -c \$root -n index.html --output tsv | sed 's/\$root\///'
     ```
 
 1. Open a new browser window and browse to the URL. Select an image file and upload it.
@@ -101,7 +101,7 @@ For this exercise, you will configure your application to log in with Azure Acti
     | **Action when request is not authenticated** | Log in with Azure Active Directory | Select a configured authentication method (below). |
     | **Authentication Providers** | See below | See below |
     | **Token store** | On | Allow App Service to store and manage tokens. |
-    | **Allowed external redirect URLs** | ++https://webstorage@lab.LabInstanceId.blob.core.windows.net/index.html++ | Add an entry for the URL of your application. |
+    | **Allowed external redirect URLs** | https://webstorage@lab.LabInstanceId.blob.core.windows.net/index.html | Add an entry for the URL of your application. |
     
     **Instructions for AAD (need tabs here for other social logins: Twitter, FB, Google, Microsoft)**
 
@@ -112,7 +112,7 @@ For this exercise, you will configure your application to log in with Azure Acti
         | Setting      |  Suggested value   | Description                                        |
         | --- | --- | ---|
         | **Management mode** | Express, Create new AD app | Automatically set up a service principal and Azure Active Directory authentication. |
-        | **Create app** | ++fnapp@lab.GlobalLabInstanceId++ | Enter a unique application name. |
+        | **Create app** | fnapp@lab.GlobalLabInstanceId | Enter a unique application name. |
     
     1. Click **OK** to save the Azure Active Directory settings.
 
@@ -147,7 +147,7 @@ For this exercise, you will configure your application to log in with Azure Acti
 1. Upload the file to Blob storage.
 
     ```
-    az storage blob upload -c \$root --account-name webstorage@lab.LabInstanceId -f settings.js -n settings.js
+    az storage blob upload -c \$root --account-name <webstorage-name> -f settings.js -n settings.js
     ```
 
 ### Test the application
@@ -155,7 +155,7 @@ For this exercise, you will configure your application to log in with Azure Acti
 1. Obtain the URL of your application.
 
     ```
-    az storage blob url --account-name webstorage@lab.LabInstanceId -c \$root -n index.html --output tsv | sed 's/\$root\///'
+    az storage blob url --account-name <webstorage-name> -c \$root -n index.html --output tsv | sed 's/\$root\///'
     ```
 
 1. Open a new browser window and browse to the URL. Click **Log in** and log in.

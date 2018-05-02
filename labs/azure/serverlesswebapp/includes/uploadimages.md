@@ -8,7 +8,7 @@ The application requires a separate storage container to upload and host images.
 1. Ensure you are still logged into the Cloud Shell (bash). Create a new container named **images** in your storage account with public access to all blobs.
 
     ```
-    az storage container create -n images --account-name webstorage@lab.LabInstanceId --public-access blob
+    az storage container create -n images --account-name <webstorage-name> --public-access blob
     ```
 
 ### Create an Azure Function app
@@ -17,17 +17,17 @@ Azure Functions is a service for running serverless functions. A serverless func
 
 An Azure Function app is a container for one or more serverless functions.
 
-1. Create a new Azure Function app named **fnapp@lab.GlobalLabInstanceId** in the resource group named **@lab.CloudResourceGroup(265).Name**. Function apps require a Storage account; in this tutorial, you will use the existing storage account.
+1. Create a new Azure Function app named **fnapp** in the resource group named **first-serverless-app**. Function apps require a Storage account; in this tutorial, you will use the existing storage account.
 
     ```
-    az functionapp create -n fnapp@lab.GlobalLabInstanceId -g @lab.CloudResourceGroup(265).Name -s webstorage@lab.LabInstanceId -c eastus
+    az functionapp create -n fnapp -g first-serverless-app -s <webstorage-name> -c eastus
     ```
-
+   > For any step in this lab replace **fnapp** with your function app name.
 ### Create an HTTP triggered serverless function
 
 The photo gallery web application will make an HTTP request to a serverless function to generate a time-limited URL to securely upload an image to Blob storage. The function is triggered by an HTTP request and uses the Azure Storage SDK to generate and return the secure URL.
 
-1. After the Function app is created, search for its name, ++**fnapp@lab.GlobalLabInstanceId**++, in the Azure Portal using the Search box and click to open it.
+1. After the Function app is created, search for its name, **fnapp**, in the Azure Portal using the Search box and click to open it.
 
     ![tv5q0wxk.png](../images/tv5q0wxk.png)
 
@@ -44,7 +44,7 @@ The photo gallery web application will make an HTTP request to a serverless func
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
     | **Language** | C# or JavaScript | Select the language you want to use. |
-    | **Name your function** | ++GetUploadUrl++ | Type this name exactly as shown so the application can discover the function. |
+    | **Name your function** | GetUploadUrl | Type this name exactly as shown so the application can discover the function. |
     | **Authorization level** | Anonymous | Allow the function to be accessed anonymously. |
 
     ![lr1jm6by.png](../images/lr1jm6by.png)
@@ -82,7 +82,7 @@ The function you just created requires a connection string for the Storage accou
 1. In the Cloud Shell, query the Storage account connection string and save it to a bash variable named **STORAGE_CONNECTION_STRING**.
 
     ```
-    export STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -n webstorage@lab.LabInstanceId -g @lab.CloudResourceGroup(265).Name --query "connectionString" --output tsv)
+    export STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -n <webstorage-name> -g first-serverless-app --query "connectionString" --output tsv)
     ```
 
     Confirm the variable is set successfully.
@@ -94,7 +94,7 @@ The function you just created requires a connection string for the Storage accou
 1. Create a new application setting named **AZURE_STORAGE_CONNECTION_STRING** using the value saved from the previous step.
 
     ```
-    az functionapp config appsettings set -n fnapp@lab.GlobalLabInstanceId -g @lab.CloudResourceGroup(265).Name --settings AZURE_STORAGE_CONNECTION_STRING=$STORAGE_CONNECTION_STRING -o table
+    az functionapp config appsettings set -n fnapp -g first-serverless-app --settings AZURE_STORAGE_CONNECTION_STRING=$STORAGE_CONNECTION_STRING -o table
     ```
 
     Confirm that the command's output contains the new application setting with the correct value.
@@ -112,7 +112,7 @@ In addition to creating and editing functions, the Azure portal also provides a 
 
     | name      |  value   | 
     | --- | --- |
-    | ++filename++ | ++image1.jpg++ |
+    | filename | image1.jpg |
 
 1. Click **Run** in the test panel to send an HTTP request to the function.
 
@@ -132,7 +132,7 @@ Because the app's frontend is hosted in Blob storage, it has a different domain 
 
 1. Under **API**, click **CORS**.
 
-1. Add an allow origin for the blob endpoint URL, omitting the trailing **/** (++**https://webstorage@lab.LabInstanceId.blob.core.windows.net**++)).
+1. Add an allow origin for the blob endpoint URL, omitting the trailing **/** (**https://webstorage@lab.LabInstanceId.blob.core.windows.net**)
 
     ![lhkdgrha.jpg](../images/lhkdgrha.jpg)
 
@@ -151,7 +151,7 @@ The web app retrieves settings from a file named **settings.js**. You will modif
 1. Query the function app's URL and store it in a bash variable named **FUNCTION_APP_URL**.
 
     ```
-    export FUNCTION_APP_URL="https://"$(az functionapp show -n fnapp@lab.GlobalLabInstanceId -g @lab.CloudResourceGroup(265).Name --query "defaultHostName" --output tsv)
+    export FUNCTION_APP_URL="https://"$(az functionapp show -n fnapp -g first-serverless-app --query "defaultHostName" --output tsv)
     ```
 
     Confirm the variable is correctly set.
@@ -162,7 +162,7 @@ The web app retrieves settings from a file named **settings.js**. You will modif
 
 1. To set the base URL of API calls to your function app, you will write the following line of code to **settings.js**.
 
-    `window.apiBaseUrl = 'https://fnapp@lab.GlobalLabInstanceId.azurewebsites.net'`
+    `window.apiBaseUrl = 'https://fnapp.azurewebsites.net'`
 
     You can make the change by running the following command or by using a command-line editor like VIM.
 
@@ -179,7 +179,7 @@ The web app retrieves settings from a file named **settings.js**. You will modif
 1. Upload the file to Blob storage.
 
     ```
-    az storage blob upload -c \$root --account-name webstorage@lab.LabInstanceId -f settings.js -n settings.js
+    az storage blob upload -c \$root --account-name <webstorage-name> -f settings.js -n settings.js
     ```
 
 ### Test the web application
@@ -189,7 +189,7 @@ At this point, the gallery application is able to upload an image to Blob storag
 1. Obtain the URL of your application.
 
     ```
-    az storage blob url --account-name webstorage@lab.LabInstanceId -c \$root -n index.html --output tsv  | sed 's/\$root\///'
+    az storage blob url --account-name <webstorage-name> -c \$root -n index.html --output tsv  | sed 's/\$root\///'
     ```
 
 1. Open a new browser window and browse to the URL. Select an image file and upload it. The upload completes, but because we have not added the ability to display images yet, the app does not show the uploaded photo.
@@ -197,13 +197,13 @@ At this point, the gallery application is able to upload an image to Blob storag
 1. In the Cloud Shell, confirm the image was uploaded to the **images** container.
 
     ```
-    az storage blob list --account-name webstorage@lab.LabInstanceId -c images -o table
+    az storage blob list --account-name <webstorage-name> -c images -o table
     ```
 
 1. Before moving on to the next tutorial, delete all files in the **images** container.
 
     ```
-    az storage blob delete-batch --account-name webstorage@lab.LabInstanceId -s images
+    az storage blob delete-batch --account-name <webstorage-name> -s images
     ```
 
 ### Summary

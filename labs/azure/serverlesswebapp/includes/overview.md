@@ -15,3 +15,4 @@ The application uses Blob Storage (both for web static content and images/thumbn
 * Use Cognitive Services Vision API to auto-generate image captions
 * Add authentication 
 
+In order to complete this lab you will need  an Azure subscription. Please see the prerequisite section for more details. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) before you begin, or you can click the `Hands-on Lab` button below to launch the lab on Hands-on Lab site for integrated instruction, we will provide you the necessary resources, including a temporary Azure subscription for the purpose of this lab.

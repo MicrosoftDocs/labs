@@ -5,22 +5,22 @@ In this exercise, you will create an Azure Cosmos DB to store metadata about the
 
 A Cosmos DB account is an Azure resource that contains Cosmos DB databases.
 
-1. Ensure you are still logged into the Cloud Shell. Create a Cosmos DB account with a unique name of **labcosmosdb@lab.GlobalLabInstanceId** in the same resource group as the other resources in this tutorial.
+1. Ensure you are still logged into the Cloud Shell. Create a Cosmos DB account with a unique name of **labcosmosdb** in the same resource group as the other resources in this tutorial.
 
     ```
-    az cosmosdb create -g @lab.CloudResourceGroup(265).Name -n labcosmosdb@lab.GlobalLabInstanceId
+    az cosmosdb create -g first-serverless-app -n labcosmosdb
     ```
 
 1. After the Cosmos DB account is created, create a new database named **imagesdb** in the account.
 
     ```
-    az cosmosdb database create -g @lab.CloudResourceGroup(265).Name -n labcosmosdb@lab.GlobalLabInstanceId --db-name imagesdb
+    az cosmosdb database create -g first-serverless-app -n labcosmosdb --db-name imagesdb
     ```
 
 1. A database can contain one or more collections. After the database is created, create a new collection named **images** in the database with a throughput of 400 request units (RUs).
 
     ```
-    az cosmosdb collection create -g @lab.CloudResourceGroup(265).Name -n labcosmosdb@lab.GlobalLabInstanceId --db-name imagesdb --collection-name images --throughput 400
+    az cosmosdb collection create -g first-serverless-app -n labcosmosdb --db-name imagesdb --collection-name images --throughput 400
     ```
 
 ### Save a document to Cosmos DB when a thumbnail is created
@@ -42,8 +42,8 @@ The Cosmos DB output binding makes it easy to create documents in a Cosmos DB co
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
     | **Document parameter name** | Check **Use function return value** | The value of the textbox is automatically set to **$return**. |
-    | **Database name** | ++imagesdb++ | Use the name of the database that you created. |
-    | **Collection name** | ++images++ | Use the name of the collection that you created. |
+    | **Database name** | imagesdb | Use the name of the database that you created. |
+    | **Collection name** | images | Use the name of the collection that you created. |
 
 1. Next to **Azure Cosmos DB account connection**, click **new**. Select the Cosmos DB account you previously created.
 
@@ -103,7 +103,7 @@ The web application requires an API to retrieve image metadata from Cosmos DB. Y
 
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
-    | **Name your function** | ++GetImages++ | Type this name exactly as shown so the application can discover the function. |
+    | **Name your function** | GetImages | Type this name exactly as shown so the application can discover the function. |
     | **Authorization level** | Anonymous | Allow the function to be accessed anonymously. |
 
 1. Click **Create** to create the function.
@@ -114,10 +114,10 @@ The web application requires an API to retrieve image metadata from Cosmos DB. Y
 
     | Setting      |  Suggested value   | Description                                        |
     | --- | --- | ---|
-    | **Document parameter name** | ++documents++ | Matches parameter name in the function. |
-    | **Database name** | ++imagesdb++ |  |
-    | **Collection name** | ++images++ |  |
-    | **SQL query** | ++select * from c order by c._ts desc++ | Get documents, latest documents first. |
+    | **Document parameter name** | documents | Matches parameter name in the function. |
+    | **Database name** | imagesdb |  |
+    | **Collection name** | images |  |
+    | **SQL query** | select * from c order by c._ts desc | Get documents, latest documents first. |
     | **Azure Cosmos DB account connection** | Select the existing connection string |  |
 
     ![zafwx91w.jpg](../images/zafwx91w.jpg)
@@ -142,14 +142,14 @@ The web application requires an API to retrieve image metadata from Cosmos DB. Y
 1. Obtain the URL of your application.
 
     ```
-    az storage blob url --account-name webstorage@lab.LabInstanceId -c \$root -n index.html --output tsv | sed 's/\$root\///'
+    az storage blob url --account-name <webstorage-name> -c \$root -n index.html --output tsv | sed 's/\$root\///'
     ```
 
 1. Open a new browser window and browse to the URL. Select an image file and upload it.
 
 1. After a few seconds, the thumbnail of the new image should appear on the page.
 
-1. Use the Search box to search your Cosmos DB account by name (++**labcosmosdb@lab.GlobalLabInstanceId**++). Click it to open it.
+1. Use the Search box to search your Cosmos DB account by name (**labcosmosdb**). Click it to open it.
 
 1. Click **Data Explorer** on the left to browse collections and documents.
 
