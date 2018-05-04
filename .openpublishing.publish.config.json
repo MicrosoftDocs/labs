@@ -9,12 +9,12 @@
       "moniker_ranges": [],
       "open_to_public_contributors": false,
       "type_mapping": {
-      "Conceptual": "Content",
-      "ManagedReference": "Content",
-      "RestApi": "Content",
-      "LandingData": "Content",
-      "ContextObject": "Toc",
-      "Tutorial": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content",
+        "LandingData": "Content",
+        "ContextObject": "Toc",
+        "Tutorial": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
@@ -22,6 +22,8 @@
   ],
   "notification_subscribers": [],
   "branches_to_filter": [],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/labs",
+  "git_repository_branch_open_to_public_contributors": "master",
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
@@ -34,5 +36,6 @@
     }
   ],
   "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false
+  "need_generate_pdf_url_template": false,
+  "targets": {}
 }
