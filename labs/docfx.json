@@ -40,7 +40,12 @@
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/labs"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "feedback_product_url": 
+      {
+        "labs/build2018/serverlesswebapp/**.yml": "mailto://sraj@microsoft.com"
+      },
+    },
     "template": [],
     "dest": "labs",
     "markdownEngineName": "markdig"
