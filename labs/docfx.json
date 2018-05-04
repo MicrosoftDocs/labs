@@ -38,7 +38,8 @@
       "breadcrumb_path": "/labs/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/labs"
+      "feedback_github_repo": "MicrosoftDocs/labs",
+      "feedback_product_url": "mailto://sraj@microsoft.com"
     },
     "fileMetadata": {
       "feedback_product_url": 
