@@ -36,9 +36,17 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/labs/breadcrumb/toc.json",
-      "extendBreadcrumb": true
+      "extendBreadcrumb": true,
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/labs"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "feedback_product_url": 
+      {
+        "**/build2018/**": "mailto://sraj@microsoft.com",
+        "**/devops/**": "mailto://sraj@microsoft.com"
+      }
+    },
     "template": [],
     "dest": "labs",
     "markdownEngineName": "markdig"
