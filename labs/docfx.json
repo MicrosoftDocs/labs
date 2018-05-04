@@ -43,7 +43,9 @@
     "fileMetadata": {
       "feedback_product_url": 
       {
-        "labs/build2018/serverlesswebapp/**": "mailto://sraj@microsoft.com"
+        "labs/build2018/serverlesswebapp/**": "mailto://sraj@microsoft.com",
+        "labs/devops/**": "mailto://sraj@microsoft.com",
+        "labs/devops/**": "mailto://sraj@microsoft.com"
       }
     },
     "template": [],
