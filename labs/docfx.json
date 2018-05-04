@@ -44,7 +44,7 @@
       "feedback_product_url": 
       {
         "labs/build2018/serverlesswebapp/**.yml": "mailto://sraj@microsoft.com"
-      },
+      }
     },
     "template": [],
     "dest": "labs",
