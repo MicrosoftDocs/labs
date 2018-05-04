@@ -41,11 +41,6 @@
       "feedback_github_repo": "MicrosoftDocs/labs"
     },
     "fileMetadata": {
-      "feedback_product_url": 
-      {
-        "**/build2018/**": "mailto://sraj@microsoft.com",
-        "**/devops/**": "mailto://sraj@microsoft.com"
-      }
     },
     "template": [],
     "dest": "labs",
