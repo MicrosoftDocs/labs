@@ -38,13 +38,12 @@
       "breadcrumb_path": "/labs/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/labs",
-      "feedback_product_url": "mailto://sraj@microsoft.com"
+      "feedback_github_repo": "MicrosoftDocs/labs"
     },
     "fileMetadata": {
       "feedback_product_url": 
       {
-        "labs/build2018/serverlesswebapp/**.yml": "mailto://sraj@microsoft.com"
+        "labs/build2018/serverlesswebapp/**": "mailto://sraj@microsoft.com"
       }
     },
     "template": [],
