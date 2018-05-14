@@ -1,6 +1,5 @@
 ### YamlMime:Tutorial
 title: Building a serverless web app
-labUrl: https://labondemand.com/AuthenticatedLaunch/40355?providerId=1 
 metadata:
   title: Building a serverless web app
   description: In this walkthrough tutorial, you will deploy a simple web application that enables users to upload their images and automatically get captions describing them.
