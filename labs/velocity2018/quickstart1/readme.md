@@ -7,34 +7,29 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 
 1. Sign into the [Microsoft Azure portal](https://portal.azure.com).
 
-2. Choose the **+ Create a resource** icon in the left navigation bar, then search for **DevOps project**. Then choose **DevOps Project** in the list and click on **Create**
+1. Choose the **+ Create a resource** icon in the left navigation bar, then search for **DevOps project**. Then choose **DevOps Project** in the list and click on **Create**
 
     ![searchdevopsproject](images/searchdevopsproject.png)
 
     ![createdevopsproject](images/createdevopsproject.png)
 
-3. Select the **Java** sample application and click on **Next**. The Java samples include a choice of several application frameworks.
+1. Select the **Java** sample application and click on **Next**. The Java samples include a choice of several application frameworks.
 
    ![selectjava](images/selectjava.png)
 
-4. The default sample framework is **Spring**. Select a framework or leave the default setting. When you're done, choose **Next**.
+1. The default sample framework is **Spring**. Select a framework or leave the default setting. When you're done, choose **Next**.
 
-   ![selectspring](images/selectspring.png)
+1. Select **Web App For Containers**, the default deployment target and choose **Next**.
 
-5. **Web App For Containers** is the default deployment target. The application framework, which you chose on the previous steps, dictates the type of Azure service deployment target available here. In this lab let us select **WebApp** as **target service**. When you're done, choose **Next**.
 
-    ![targetservice](images/targetservice.png)
-
-6. You can create a free **new VSTS** account or use an **existing account**. In this lab let us create **new VSTS account**. Choose a name for your VSTS **account** and **project**. Select your **Azure subscription**, **location**, and choose a **name** for your application. When you're done, choose **Done**.
+6. Finally, you will need to provide a Team Services account. Since you do not have one, you will create a new VSTS account. Provide a name for your VSTS **account** and **project**. When you're done, choose **Done**.
 
     ![vstsproject](images/vstsproject.png)
 
 7. In a few minutes, the **project dashboard** loads in the Azure portal. A sample java application is set up in a repository in your VSTS account, a build executes, and your application deploys to Azure. This dashboard provides visibility into your **code repository**, **VSTS CI/CD pipeline**, and your **application in Azure**. 
-
    ![dashboard](images/dashboard.png)
 
 8.  On the right side of the dashboard, select **Browse** to view your running application.
-    ![browsewebapp](images/browsewebapp.png)
 
     The web app look like as shown in below figure
     
@@ -85,28 +80,23 @@ The Azure DevOps project created a Git repository in your VSTS account. Follow t
 
      ![codetab](images/codetab.png)
 
-2. To view the repository clone URL, select **Clone** from the top right of the browser. You can clone your Git repository in your favorite IDE. In this lab, you can use the web browser to make and commit code changes directly to the master branch.
+1. To view the repository clone URL, select **Clone** from the top right of the browser. You can clone your Git repository in your favorite IDE. In this lab, you can use the web browser to make and commit code changes directly to the master branch.
 
      ![cloneurl](images/cloneurl.png)
 
-3. On the left-hand side of the browser, navigate to the **src/main/resources/static/index.html** file. Select **Edit**, and make a change. For example, add a new description line as shown in below figure.
+1. On the left-hand side of the browser, navigate to the **src/main/resources/static/index.html** file. Select **Edit**, and make a change. For example, change line number #21 to 
          
-    ![addcode](images/addcode.png)
-
     ```csharp
-         <div class="description line-3"> Get started right away with the Azure DevOps Project </div>
+         <div class="success-text">Welcome to Velocity 2018!!! </div>
     ```
-4. Choose **Commit**, to save and checkin your changes.
+1. Choose **Commit**, to save and check-in your changes.
 
       ![commit](images/commit.png)
 
-5. In your browser, navigate to the **Builds**. You should now see a build is in progress. The changes you just made are automatically built and deployed via a VSTS CI/CD pipeline.
+1. In your browser, navigate to the **Builds**. You should now see a build is in progress. The changes you just made are automatically built and deployed via a VSTS CI/CD pipeline.
 
     ![buildqueue](images/buildqueue.png)
 
-6. In your browser, navigate to the **Azure DevOps project dashboard**. On the right side of the dashboard, select **Browse** to view your updated running application. You will the updated decription line in the web app.
-
-    ![browsewebapp](images/browsewebapp.png)
-
+1. In your browser, navigate to the **Azure DevOps project dashboard**. On the right side of the dashboard, select **Browse** to view your updated running application. You will the updated decription line in the web app.
 
    ![updatedsite](images/updatedsite.png)
