@@ -2,11 +2,11 @@
 
 Graph Explorer is a tool that allows us to explore and test Microsoft Graph API.
 
-We are going to make an overview to this tool.
+We are going to take a tour of this tool.
 
-## Sign in Graph Explorer
+## Sign in to Graph Explorer
 
-Go to **[Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)** and click in Sign in Wiht Microsoft button. 
+Go to **[Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)** and click on the Sign in With Microsoft button. 
 
  ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/LoginGraphApi.png) 
 
@@ -15,56 +15,63 @@ Go to **[Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explo
 After the login you can see that on the left side we have several options:
 
 
-- We can modify our permissions
+- We can modify our permissions.
+- We can log out.
+- We can see the APIS with some services by default but we can add APIS from show more samples button.
 
+On the right side we have the view with everything we need to launch the calls against the APIs and see the requests and the response.
 
-- We can log out
+Now we will see how to test the Graph API in Microsoft Graph Explorer by getting all files in One Drive and how we can manage our permissions.
 
-
-- We can see the APIS, by default we show some services by default but we can add them all by adding APIS from show more samples.
-
-On the right side we have the view with everything we need to launch the calls against the APIS and see the requests and the results that are sent
-
-Now we will see how test Graph API in Microsoft Graph Explorer to get all files in One Drive and how we can manage our pemrisions.
-
-## Modify user premissions
+## Modify user permissions
 
 In order to use and access the different services, we can modify the permissions of our user to give him the necessary privileges to be able to use the desired operations.
 
-- Choose Modify Permissions
+- Choose Modify Permissions.
 
  ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GEModifyPermissions.png) 
 
 
-- Now we can see the list of permissions and you can add or remove it.
+- Now we can see the list of permissions and you can activate or deactivate individual permissions.
 
 ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GESelectPermissions.png) 
 
 
-## Acitvate OneDrive in Sample Categories
+## Activate OneDrive in Sample Categories
 
-Now we are going to add the OneDrive APIS to Graph Explorer to be able to call this services
+Now we are going to add the OneDrive APIs to Graph Explorer to be able to call these services
 
 
 - Choose show more samples.
 
 ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GEShowMoreExamples.png) 
 
-- Find OneDrive and activate. 
+- Find OneDrive and activate it. 
 
 ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GESelectOneDrive.png) 
 
 
-- Now OneDrive APIS are included in Graph Explorer.
+- Now OneDrive APIs are included in Graph Explorer.
 
 ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GEShowOneDriveSamples.png) 
 
 
-# Get all item in my drive
+# Get all items in my drive
 
 We are ready to get all items from OneDrive
 
-- Select in left menu **all the items in my drive** under **OneDrive** section
-- Automatically Graph Explorer send call to OneDrive API and show the results.
+- Select in the left menu **all the items in my drive** under **OneDrive** section
+- Automatically Graph Explorer sends a call to OneDrive API and shows the results.
 
 ![alt text](/labs-pr/Drive-user-engagement-across-all-your-devices-with-Microsoft-Graph/media/GEGetAllODItems.png) 
+
+
+Now let's get a single file.  
+From the left panel select my recent files and copy the id field in the remoteItem object.
+To get the single file, put it in the url:
+
+	https://graph.microsoft.com/v1.0/me/drive/items/{your_file_id}
+
+If you want the thumbnails, use this url:
+
+	https://graph.microsoft.com/v1.0/me/drive/items/{your_file_id}/thumbnails
