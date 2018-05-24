@@ -32,13 +32,13 @@ This task has a dependency on [step 1 Generate Manifest](Lab-part-3.md) and [ste
 
     >Remember, if you change the path of your "images" folder, you need to update the json in your manifest file to reflect your changes.
 
-    The easiest way to add new content to a project is to drag and drop the contents from the file explorer into the solutions explorer of your project.
+    Using our Knowzy [ASP.NET](https://www.asp.net/) project the easiest way to add new content to a project is to drag and drop the contents from the file explorer into the solutions explorer of your project.
 ![Provide a URL](/Media/Picture29.jpg)
 
-4. Reference the manifest in your **Index.cshtml** page with a link tag:
+4. 4. Reference the manifest in your **/Views/Shared/_Layout.cshtml** page with a link tag:
 
     ````html
-    <link rel="manifest" href="manifest.json"></link>
+    <link rel="manifest" href="manifest.json">
     ````
 
 ![Provide a URL](/Media/Picture30.jpg)
@@ -86,7 +86,8 @@ To test that your service worker is successfully installed launch the app in loc
 ![](//Media/Picture7.jpg)
 
 ![](//Media/Picture34.jpg)
-### Re-Publish Changes
+
+### Re-Publish Changes (optional)
 
 Now that you have these powerful new features running locally, you can publish them to your website to be consumed as a PWA.
 

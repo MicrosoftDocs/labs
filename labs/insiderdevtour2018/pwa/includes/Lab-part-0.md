@@ -12,7 +12,7 @@ In this lab you will find the prerequisites and steps to help you set up your co
 
 In this lab you will learn the foundations of PWAs.
 
-#### [Lab 2 - Build your application](Lab-part-2.md) ####
+#### [Lab 2 - Build your application (optional)](Lab-part-2.md) ####
 
 In this lab you will build a simple web application and publish it to azure web site.
 

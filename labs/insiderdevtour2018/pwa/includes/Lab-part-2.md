@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-This part is **optional** if you want to use the [ASP.NET](https://www.asp.net/) example project .
+This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.asp.net/) example project continue with this part.
 
 1. To start, clone or download the repository code and open the folder: `PWA/source code/`
 ![](/Media/Picture5.jpg)
@@ -87,10 +87,10 @@ Congratulations! Your app is now ready to be viewed on devices with different sc
     ![local application](/Media/Picture12.jpg)
 
 
-### Deploy your [ASP.net](https://www.asp.net/) App Changes
+### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
 
 
-Now you can publish them to your website on Azure.
+Now if you want to publish the application on Azure follow this steps or continue locally using IIS and go to the [next lab](Lab-part-3.md).
 
 **Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/en-us/free/).
 For more information you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/en-us/articles/create-microsoft-azure-account/)
