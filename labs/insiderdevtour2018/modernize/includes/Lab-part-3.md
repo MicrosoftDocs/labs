@@ -16,7 +16,7 @@ Explorer and click Add, New Project... Choose Windows Application Packaging
 project will generate packages for us which can be both uploaded to the Store or
 side-loaded.
 
-![](../media/Picture6.png)
+![](/Media/Picture6.png)
 
 At such project, in the Solution Explorer, make right-click at Applications, Add
 Reference... Check Microsoft.Knowzy.WPF and click OK. Now our package will
@@ -37,7 +37,7 @@ guide you through the process:
     things, but will leave them by default; Create --versions will auto-increase
     when creating new packages, so we don’t have to take care of this
 
-![](../media/Picture7.png)
+![](/Media/Picture7.png)
 
 Once the process ends, a new dialog will link us to the path where the package
 was left, accompanied by the chance to pass the Windows App Certification Kit,
@@ -78,7 +78,7 @@ If you double-click at index.html you’ll appreciate a similar experience to th
 one Windows Store serves. Clicking on Get the app will launch the set-up as
 before, but now the app will look for updates on each start.
 
-![](../media/Picture8.png)
+![](/Media/Picture8.png)
 
 If you make any change to your apps, generate its package and copy such back to
 the shared folder, the installed one will know a new update’s available when it
