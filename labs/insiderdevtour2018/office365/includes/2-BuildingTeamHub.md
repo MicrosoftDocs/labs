@@ -55,7 +55,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 #### Prerequisites ####
 1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-tenant)
-2. Azure subscription
+2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/en-us/free/) or [purchase an Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/).
 3. [Node LTS and npm](https://nodejs.org/en/)
 4. [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -67,7 +67,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 4. The app must include an initial configuration page to display during tab setup.
 
 ## Create Azure App Service ##
-1. Login to Azure portal
+1. Login to your Azure subscription from the [Azure portal](https://portal.azure.com)
 
 ![Azure Portal](../media/azure-portal-1.png)
 
