@@ -18,12 +18,12 @@ items:
   content: |
     [!include[](includes/lab-part-1.md)]
 - title: Adaptive Cards
-    durationInMinutes: 20
-    content: |
-      [!include[](includes/lab-part-2.md)]
+  durationInMinutes: 20
+  content: |
+    [!include[](includes/lab-part-2.md)]
 - title: Distribution and versioning
-    durationInMinutes: 20
-    content: |
-      [!include[](includes/lab-part-3.md)]
+  durationInMinutes: 20
+  content: |
+    [!include[](includes/lab-part-3.md)]
 - content: |
     You've completed this lab.
