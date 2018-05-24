@@ -1,7 +1,7 @@
 # Run in VS
 
 Prerequisites:
-- Visual studio 2017 Professional, Enterprise, or Preview editions
+- Visual studio 2017 Professional, Enterprise, Community or Preview editions.
 - From the Visual Studio Installer, choose the workload `Universal Windows Platform development`
 
 
