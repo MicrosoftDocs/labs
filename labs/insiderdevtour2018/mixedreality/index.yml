@@ -1,0 +1,52 @@
+### YamlMime:Tutorial
+
+labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
+title: Build Mixed Reality Apps
+
+metadata:
+  title: Build Mixed Reality Apps
+  description: In this hands-on-lab, you'll use Unity and Visual Studio to learn about developing mixed reality apps for Windows.
+  audience: Developer
+  level: Beginner
+  ms.topic: productive-apps-mixedreality
+  nextTutorialHref: tbd
+  nextTutorialTitle: TBD
+  ms.custom: tbd
+  ms.prod: tbd
+  ms.technology: web
+
+items:
+
+- durationInMinutes: 60
+
+  content: |
+
+    This hands-on-lab teaches you about developing Windows mixed reality apps with Unity.  You'll explore the basic Unity concepts, interaction with controllers, spatial sound, and more. 
+
+- title: Foundations of Office 365
+
+  durationInMinutes: 15
+
+  content: |
+
+    [!include[](includes/1-FoundationsOffice365.md)]
+
+- title: Build tailored team hubs in Microsoft Teams
+
+  durationInMinutes: 40
+
+  content: |
+
+    [!include[](includes/2-BuildingTeamHub.md)]
+
+- title: Additional reading topics
+
+  durationInMinutes: 5
+
+  content: |
+
+    [!include[](includes/3-AdditionalReading.md)]
+
+- content: |
+
+    You've completed this lab.

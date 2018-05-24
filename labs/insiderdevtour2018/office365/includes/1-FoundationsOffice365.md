@@ -1,4 +1,12 @@
 # Foundations of Office 365 #
+## Prerequisites (for Windows, MacOS and Linux) ##
+1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-tenant)
+2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/en-us/free/) or [purchase an Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/).
+3. [Node LTS and npm](https://nodejs.org/en/)
+4. [Visual Studio Code](https://code.visualstudio.com/)
+5. Chrome, Firefox, Edge, or IE11 browser.  Teams does not support Safari at this time but the desktop client is available for MacOS.
+
+
 ## Microsoft Teams and more ##
 
 ### What is Teams? ###
@@ -79,19 +87,21 @@ In addition to the built-in components, Teams has several ways to incorporate ex
 
 ![Teams intro 5](../media/teams-intro-5.png)
 
-8. In the Cafeteria channel, click on Files and Upload a file.
+8. Download this [PDF menu](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/cafe_menu.pdf) to your **Downloads** folder. 
+
+9. In the Cafeteria channel, click on Files and upload the PDF menu file from the **Downloads** folder.
 
 ![Teams intro 6](../media/teams-intro-6.png)
 
-9. Click on the ellipsis menu (…) to the right of the file name and choose “Make this a tab”.
+10. Click on the ellipsis menu (…) to the right of the file name and choose “Make this a tab”.
 
 ![Teams intro 7](../media/teams-intro-7.png)
 
-10. Click on the + button in the tab section to add another tab.
+11. Click on the + button in the tab section to add another tab.
 
 ![Teams intro 8](../media/teams-intro-8.png)
 
-11. Now that you have seen Teams from a user's perspective, read on to see what a developer can do!
+12. Now that you have seen Teams from a user's perspective, read on to see what a developer can do with Microsoft Graph API!
 
 # Graph APIs #
 ## Microsoft Graph API use and purpose ##
