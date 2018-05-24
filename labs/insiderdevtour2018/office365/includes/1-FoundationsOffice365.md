@@ -93,7 +93,7 @@ In addition to the built-in components, Teams has several ways to incorporate ex
 
 ![Teams intro 8](../media/teams-intro-8.png)
 
-12. Now that you have seen Teams from a user's perspective, read on to see what a developer can do!
+12. Now that you have seen Teams from a user's perspective, read on to see what a developer can do with Microsoft Graph API!
 
 # Graph APIs #
 ## Microsoft Graph API use and purpose ##
