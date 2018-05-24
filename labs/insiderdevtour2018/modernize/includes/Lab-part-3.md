@@ -51,6 +51,11 @@ as if it was done through the Store --you even can uninstall it in the same way.
 Enabling automatic updates
 --------------------------
 
+Before proceeding, we’ll need to target the latest Windows 10 SDK to enable the
+following scenario. Make right-click at the packaging project, Properties and
+Package tab. Within Targeting area, change Target and Min versions to “Windows
+10, version 1803 (10.0; Build 17134)”.
+
 As you remember, we unchecked this option above within the packaging wizard, so
 reopen again such and check it now. As a difference with previous one, this time
 a new step’s shown asking where the updates will live, letting us choose between
