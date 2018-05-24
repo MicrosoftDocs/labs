@@ -6,7 +6,7 @@ metadata:
   description: Learn how to modernize your existing desktop apps for Windows 10 with the latest packaging improvements, user experience and APIs.
   audience: Developer
   level: Beginner
-  ms.topic: Getting Started
+  ms.topic: get-started-article
   nextTutorialHref: ..\..\machinelearning\index.yml
   nextTutorialTitle: Machine Learning lab
   ms.custom: Insider Dev Tour 2018
