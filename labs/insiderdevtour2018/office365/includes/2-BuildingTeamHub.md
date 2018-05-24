@@ -519,7 +519,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 ![Teams app studio 10](../media/teams-appstudio-10.png)
 
-9. Click on the **Test and Distribute** selector from the left panel under **Distribute** and then the **Export** button to download and save the **LunchMenu.zip** manifest file to your desktop.
+9. Click on the **Test and Distribute** selector from the left panel under **Distribute** and then the **Export** button to download and save the **LunchMenu.zip** manifest file to your **Downloads** folder.
 
 ![Teams app studio 10](../media/teams-appstudio-10.png)
 
@@ -534,7 +534,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 ![Teams tab 2](../media/teams-tab-2.png)
 
-3. Locate and select the **Lunchmenu.zip** file previously downloaded and when uploaded the app will appear in the Team app list.
+3. Locate and select the **Lunchmenu.zip** file previously downloaded to the **Downloads** folder and when uploaded the app will appear in the Team app list.
 
 ![Teams tab 3](../media/teams-tab-3.png)
 
