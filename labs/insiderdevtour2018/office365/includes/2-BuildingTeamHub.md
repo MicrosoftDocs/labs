@@ -23,7 +23,7 @@ Users can interact in two manners: direct 1:1 chats or mention a bot with a hash
 
 
 ### Cards ### 
-Cards are a condensed graphic representation of objects throughout Office 365, including Teams.  Each card can have properties, attachments and action buttons.  In Teams, card can be shown in chats with bots, messaging extensions and connectors.
+Cards are a condensed graphic representation of objects throughout Office 365, including Teams.  Each card can have properties, attachments and action buttons.  In Teams, cards can be shown in chats with bots, messaging extensions and connectors.
 There are several types of cards to employ depending on the object type and user interaction required.
   
 ![Cards 1](../media/cards-example-1.png)
@@ -55,7 +55,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 #### Prerequisites ####
 1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-tenant)
-2. Azure subscription
+2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/en-us/free/) or [purchase an Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/).
 3. [Node LTS and npm](https://nodejs.org/en/)
 4. [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -67,7 +67,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 4. The app must include an initial configuration page to display during tab setup.
 
 ## Create Azure App Service ##
-1. Login to Azure portal
+1. Login to your Azure subscription from the [Azure portal](https://portal.azure.com)
 
 ![Azure Portal](../media/azure-portal-1.png)
 
@@ -108,7 +108,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 ![Visual Studio Code 2](../media/vscode-folder-1.png)
 
-6. Download this [assets.zip](../media/assets.zip) file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
+6. Download this [assets.zip](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/assets.zip) file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
 7. Create these new files in Visual Studio Code:
 - **src\MenuContainer.js** - A React parent container component
 - **src\MenuItem.js** - A React component for rendering each item on the lunch menu
@@ -501,10 +501,25 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 6. Complete the manifest form with your app details.  Here are the two icons for the manifest: ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) and ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png)
 
+| Field        | Example           | Description           |
+| ------------------------ | ------------- | ------------- |
+| Developer name	      | Contoso | Your company name or your first and last name |
+| Developer website	      | https://www.contoso.com | The HTTPS URL of your company website |
+| Short name	      | Lunch menu | The short name of your app that will be displayed in Teams and the Store (maximum 30 characters) |
+| Long name	      | Today's lunch menu | The long name of your app that will be displayed in Teams and the Store (maximum 100 characters) |
+| App ID	      | 51c3fba8-1a8a-4992-9a5f-8d9c53edfc14 | The unique GUID that identifies your app.  Click the **Generate** button to create a new one.  This GUID should never change between versions of the same app. |
+| Package name	      | com.contoso.teams.devapp | The package name in hierarchical format, usually beginning with the reversed company Internet domain. |
+| Version    | 1.3.49 | The app version number in format  MajorVersion.MinorVersion.Revision |
+| Short description	      | Lunch menu displays the food on offer today | The short description of your app that will be displayed in Teams and the Store (maximum 80 characters) |
+| Long description	      | Lunch menu displays the food on offer today in the company cafeteria. It is updated daily and the food is always delicious. | The long description of your app that will be displayed in Teams and the Store (maximum 4000 characters) |
+| Privacy statement	      | https://www.contoso.com/apps/lunchmenu/privacy | The HTTPS URL of your app's privacy statement |
+| Terms of use	      | https://www.contoso.com/apps/lunchmenu/termsofuse | The HTTPS URL of your app's terms of use |
+| Full color 96x96	      | ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) | The large app icon in PNG format (96 pixels by 96 pixels) |
+| Transparent outline 20x20	      | ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png) | The black app icon outline wih a transparent background in PNG format (20 pixels by 20 pixels) |
+| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the [Teams color swatches](https://docs.microsoft.com/en-us/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf) and Microsoft maintains a list of [curated colors](https://www.microsoft.com/en-us/design/color) for Microsoft products. |
+
 ![Teams app studio 5](../media/teams-appstudio-5.png)
-![Teams app studio 6](../media/teams-appstudio-6.png)
-![Teams app studio 7](../media/teams-appstudio-7.png)
-![Teams app studio 8](../media/teams-appstudio-8.png)
+
 
 7. Click on the **Valid domains** selector from the left panel and add these Valid domains:
 - secure.aadcdn.microsoftonline-p.com
@@ -519,7 +534,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 ![Teams app studio 10](../media/teams-appstudio-10.png)
 
-9. Click on the **Test and Distribute** selector from the left panel under **Distribute** and then the **Export** button to download and save the **LunchMenu.zip** manifest file to your desktop.
+9. Click on the **Test and Distribute** selector from the left panel under **Distribute** and then the **Export** button to download and save the **LunchMenu.zip** manifest file to your **Downloads** folder.
 
 ![Teams app studio 10](../media/teams-appstudio-10.png)
 
@@ -534,7 +549,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 ![Teams tab 2](../media/teams-tab-2.png)
 
-3. Locate and select the **Lunchmenu.zip** file previously downloaded and when uploaded the app will appear in the Team app list.
+3. Locate and select the **Lunchmenu.zip** file previously downloaded to the **Downloads** folder and when uploaded the app will appear in the Team app list.
 
 ![Teams tab 3](../media/teams-tab-3.png)
 
