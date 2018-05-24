@@ -1,0 +1,25 @@
+# 1 - Microsoft Graph
+
+ - [Intro to Graph](1_Microsoft_Graph/Introtograph.md)
+	 - Brief explanation of what is Graph
+	 - Timeline
+	 - Why is it useful?
+	 - Interesting links
+	 - Objectives of the lab
+ - [Getting Started with Quick Start](1_Microsoft_Graph/GettingStartedWithQuickStart.md)
+	 - Setting up app id
+		 - Register the app in the App Registration portal
+	 - Choosing the project template
+		 - Download UWP project from GitHub
+		 - Build and Debug
+ - [Graph Explorer](1_Microsoft_Graph/GraphExplorer.md)
+	 - Sign in to Graph Explorer
+	 - Modify user permissions
+	 - Activate OneDrive in Sample Categories
+	 - Get all item in my drive
+ - [Sample API calls](1_Microsoft_Graph/SampleApiCalls.md)
+	 - Create a console app
+	 - Authenticate the user
+	 - Get call to fetch all items in OneDrive
+ - [Adding API calls to your project](1_Microsoft_Graph/AddingAPI.md)
+	 - Add user authentication with Graph

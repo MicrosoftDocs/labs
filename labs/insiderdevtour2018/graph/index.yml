@@ -1,0 +1,32 @@
+### YamlMime:Tutorial
+labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
+title: Drive user engagement across all your devices with Microsoft Graph
+metadata:
+  title: Drive user engagement across all your devices with Microsoft Graph
+  description: In this lab your learn what is graph, how use it and the possibilities that offers us. You write C# code and see tthe results in UWP App.
+  audience: Developer
+  level: Beginner
+  ms.topic: Hands-On Labs
+  nextTutorialHref: numbers-in-csharp
+  nextTutorialTitle: Microsft Graph
+  ms.custom: mvc
+  ms.prod: .net
+  ms.technology: devlang-csharp
+items:
+- durationInMinutes: 2
+  content: |
+    In this lab your learn what is graph, how use it and the possibilities that offers us. You learn about Microsoft Graph Explorer, write C# Code in a Console App to call Graph API and implement a UWP App that call Graph API for set settings in OneDrive, download files from OneDirve, schedule events in Outlook Calendars, get Outlook Contacts, set the App in Timeline and configre Deep links to Pick up where you left off.
+- title: Microsfot Graph
+  durationInMinutes: 20
+  content: |
+    [!include[](Includes/1_Microsoft_Graph.md)]
+- title: Managing Files With MS Graph
+  durationInMinutes: 18
+  content: |
+    [!include[](Includes/2_Managing_Files_With_MS_Graph.md)]
+- title: Integrating MS Graph into you app
+  durationInMinutes: 20
+  content: |
+    [!include[](Includes/3_Integrating_MS_Graph_into_you_app.md)]    
+- content: |
+    You've completed this lab.
