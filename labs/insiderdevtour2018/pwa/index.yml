@@ -1,0 +1,48 @@
+### YamlMime:Tutorial
+labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
+title: PWA
+metadata:
+  title: Intelligence on the Edge Hands-On Lab
+  description: Lorem ipsum
+  audience: Lorem ipsum
+  level: Lorem ipsum
+  ms.topic: gLorem ipsum
+  nextTutorialHref: Lorem ipsum
+  nextTutorialTitle: Lorem ipsum
+  ms.custom: Lorem ipsum
+  ms.prod: Lorem ipsum
+  ms.technology: Lorem ipsum
+items:
+- durationInMinutes: 60
+  content: |
+    In these labs you will be introduced how to build a Progressive web application using a simple web application using ASP.NET Core, using a PWA tool that will generate the necessary files to do your web application a Progressive Web Aplication.
+- title: Requisites
+  durationInMinutes: XX
+  content: |
+    [!include[](includes/lab-part-0.md)]
+- title: PWA foundations
+  durationInMinutes: XX
+  content: |
+    [!include[](includes/lab-part-1.md)]
+- title:  Build your application
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-2.md)]
+- title: Build your PWA
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-3.md)]
+- title: Publish your PWA application
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-5.md)]
+- title: Test your PWA
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-6.md)]
+- title: PWA on windows
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-7.md)]
+- content: |
+    You've completed this lab.

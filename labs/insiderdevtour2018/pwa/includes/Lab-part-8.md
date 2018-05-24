@@ -1,0 +1,26 @@
+# Run in VS
+
+Prerequisites:
+- Visual studio 2017 Professional, Enterprise, or Preview editions
+- From the Visual Studio Installer, choose the workload `Universal Windows Platform development`
+
+
+1. Create a new PWA project in visual studio using a predefined template
+
+<img src="/Media/Picture66.PNG"><br>
+
+2.  Open the appxmanifest file and set the url of our web app as a start page: `https://msftknowzy.azurewebsites.net/`
+
+<img src="/Media/Picture67.PNG"><br>
+
+3. Select the visual assets tab, select a source image and click the generate button to create the set of images for our pwa app.
+
+<img src="/Media/Picture68.PNG"><br>
+
+4. Allow to navigate to our url web app.
+
+<img src="/Media/Picture69.PNG"><br>
+
+5. Hit F5 to debug the pwa app in Visual Studio.
+
+<img src="/Media/Picture70.PNG"><br>

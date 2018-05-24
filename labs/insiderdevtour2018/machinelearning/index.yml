@@ -1,0 +1,36 @@
+### YamlMime:Tutorial
+labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
+title: Intelligence on the Edge Hands-On Lab
+metadata:
+  title: Intelligence on the Edge Hands-On Lab
+  description: Lorem ipsum
+  audience: Lorem ipsum
+  level: Lorem ipsum
+  ms.topic: gLorem ipsum
+  nextTutorialHref: Lorem ipsum
+  nextTutorialTitle: Lorem ipsum
+  ms.custom: Lorem ipsum
+  ms.prod: Lorem ipsum
+  ms.technology: Lorem ipsum
+items:
+- durationInMinutes: 60
+  content: |
+    Lorem ipsum
+- title: Step0
+  durationInMinutes: XX
+  content: |
+    [!include[](includes/lab-part-0.md)]
+- title: Step1
+  durationInMinutes: XX
+  content: |
+    [!include[](includes/lab-part-1.md)]
+- title: Step2
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-2.md)]
+- title: Step3
+    durationInMinutes: XX
+    content: |
+      [!include[](includes/lab-part-3.md)]
+- content: |
+    You've completed this lab.
