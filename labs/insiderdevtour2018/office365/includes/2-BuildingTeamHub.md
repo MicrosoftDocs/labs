@@ -108,7 +108,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 ![Visual Studio Code 2](../media/vscode-folder-1.png)
 
-6. Download this [assets.zip](../media/assets.zip) file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
+6. Download this [assets.zip](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/assets.zip) file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
 7. Create these new files in Visual Studio Code:
 - **src\MenuContainer.js** - A React parent container component
 - **src\MenuItem.js** - A React component for rendering each item on the lunch menu
