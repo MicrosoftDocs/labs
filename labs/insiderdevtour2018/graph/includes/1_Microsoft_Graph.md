@@ -120,6 +120,15 @@ After login we follow these steps:
 
 Now we will download the UWP application. We will use it and configure it with the Application Id and the Redirect Uri that we saved before.
 
+#### Prerequisites
+
+To run the application you must have the following configuration:
+
+1. Install or update [Visual Studio Community 2017](https://www.visualstudio.com/vs/) or [Visual Studio Enterprise 2017](https://www.visualstudio.com/vs/), version 15.7+
+2. Verify Windows 10 [development mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) is enabled.
+3. Make sure that you've installed the tools for[ Windows 10 development(Build 17134 or higher)](https://developer.microsoft.com/windows/downloads)
+4. You have installed Windows 10 April 2018 update.
+
 #### Download UWP project from Github 
 
 Download project form [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph) 
@@ -136,11 +145,6 @@ Open the App.xaml file and add this code:
 
 > Change **ENTERYOURCLIENTID** for your Application Id and **ENTERYOURREDIRECTURI** for the Redirect Uri we saved before
 
-To run the application you must have the following configuration:
-
-1. Install [Visual Studio Community 2017](https://www.visualstudio.com/vs/) or [Visual Studio Enterprise 2017](https://www.visualstudio.com/vs/).
-2. Verify Windows 10 [development mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) is enabled.
-3. Make sure that you've installed the tools for[ Windows 10 development](https://developer.microsoft.com/windows/downloads).
  
 To Build and run the applications follow this steps.
 
