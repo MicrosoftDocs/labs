@@ -501,10 +501,25 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 6. Complete the manifest form with your app details.  Here are the two icons for the manifest: ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) and ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png)
 
+| Field        | Example           | Description           |
+| ------------------------ | ------------- | ------------- |
+| Developer name	      | Contoso | Your company name or your first and last name |
+| Developer website	      | https://www.contoso.com | The HTTPS URL of your company website |
+| Short name	      | Lunch menu | The short name of your app that will be displayed in Teams and the Store (maximum 30 characters) |
+| Long name	      | Today's lunch menu | The long name of your app that will be displayed in Teams and the Store (maximum 100 characters) |
+| App ID	      | 51c3fba8-1a8a-4992-9a5f-8d9c53edfc14 | The unique GUID that identifies your app.  Click the **Generate** button to create a new one.  This GUID should never change between versions of the same app. |
+| Package name	      | com.contoso.teams.devapp | The package name in hierarchical format, usually beginning with the reversed company Internet domain. |
+| Version    | 1.3.49 | The app version number in format  MajorVersion.MinorVersion.Revision |
+| Short description	      | Lunch menu displays the food on offer today | The short description of your app that will be displayed in Teams and the Store (maximum 80 characters) |
+| Long description	      | Lunch menu displays the food on offer today in the company cafeteria. It is updated daily and the food is always delicious. | The long description of your app that will be displayed in Teams and the Store (maximum 4000 characters) |
+| Privacy statement	      | https://www.contoso.com/apps/lunchmenu/privacy | The HTTPS URL of your app's privacy statement |
+| Terms of use	      | https://www.contoso.com/apps/lunchmenu/termsofuse | The HTTPS URL of your app's terms of use |
+| Full color 96x96	      | ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) | The large app icon in PNG format (96 pixels by 96 pixels) |
+| Transparent outline 20x20	      | ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png) | The black app icon outline wih a transparent background in PNG format (20 pixels by 20 pixels) |
+| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the [Teams color swatches](https://docs.microsoft.com/en-us/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf) and Microsoft maintains a list of [curated colors](https://www.microsoft.com/en-us/design/color) for Microsoft products. |
+
 ![Teams app studio 5](../media/teams-appstudio-5.png)
-![Teams app studio 6](../media/teams-appstudio-6.png)
-![Teams app studio 7](../media/teams-appstudio-7.png)
-![Teams app studio 8](../media/teams-appstudio-8.png)
+
 
 7. Click on the **Valid domains** selector from the left panel and add these Valid domains:
 - secure.aadcdn.microsoftonline-p.com
