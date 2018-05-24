@@ -79,19 +79,21 @@ In addition to the built-in components, Teams has several ways to incorporate ex
 
 ![Teams intro 5](../media/teams-intro-5.png)
 
-8. In the Cafeteria channel, click on Files and Upload a file.
+8. Download this [PDF menu](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/cafe_menu.pdf) to your **Downloads** folder. 
+
+9. In the Cafeteria channel, click on Files and upload the PDF menu file from the **Downloads** folder.
 
 ![Teams intro 6](../media/teams-intro-6.png)
 
-9. Click on the ellipsis menu (…) to the right of the file name and choose “Make this a tab”.
+10. Click on the ellipsis menu (…) to the right of the file name and choose “Make this a tab”.
 
 ![Teams intro 7](../media/teams-intro-7.png)
 
-10. Click on the + button in the tab section to add another tab.
+11. Click on the + button in the tab section to add another tab.
 
 ![Teams intro 8](../media/teams-intro-8.png)
 
-11. Now that you have seen Teams from a user's perspective, read on to see what a developer can do!
+12. Now that you have seen Teams from a user's perspective, read on to see what a developer can do!
 
 # Graph APIs #
 ## Microsoft Graph API use and purpose ##
