@@ -11,6 +11,8 @@ metadata:
   ms.custom: Insider Dev Tour 2018
 items:
 - durationInMinutes: 60
+  content: |
+  This hands-on-lab teaches you about modernizing your existing WPF and WinForms desktop apps.
 - title: What will this lab cover
   durationInMinutes: 5
   content: |
