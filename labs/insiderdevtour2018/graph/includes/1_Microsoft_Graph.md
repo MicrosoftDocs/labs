@@ -86,33 +86,33 @@ After login we follow these steps:
 
  1. Choose Add an app
   
-    ![alt text](.../media/AddApplication.png) 
+    ![alt text](../media/AddApplication.png) 
 	
 
 	> **Note**: If you signed in with a work or school account, select the **Add an app** button for **Converged applications**.
 
  2. Enter an app name and click **Create**
 	
-	![alt text](.../media/RegisterApp.png) 
+	![alt text](../media/RegisterApp.png) 
 
 	> **Note**: After creation, the page display a list of properties.	
 
 
  3. Copy the Application Id and save it to a document as we will need it later 
 	
-	![alt text](.../media/ApplicationID.png) 
+	![alt text](../media/ApplicationID.png) 
 
 	> **Note**: We will need the **Application Id** to configure our app.	
 
  4. Now, we click on Add Platform and select Native Application 	
 	
-	![alt text](.../media/NativeApplication.png) 
+	![alt text](../media/NativeApplication.png) 
 
 	> **Note**: In our case we select **Native Application** because we will use an **UWP app**
 
  5. The Built-in redirect URI value has been created automatically. Save this value to the same document as the Application Id for future reference. 
 	
-	![alt text](.../media/RedirectUri.png) 
+	![alt text](../media/RedirectUri.png) 
  
  6. Finally, we click on Save. 
 
@@ -151,7 +151,7 @@ To Build and run the applications follow this steps.
 
 If everything is properly configured you will see:
 
-![alt text](.../media/applicationrun.png) 
+![alt text](../media/applicationrun.png) 
 
 # Graph Explorer
 
@@ -163,7 +163,7 @@ We are going to take a tour of this tool.
 
 Go to **[Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)** and click on the Sign in With Microsoft button. 
 
- ![alt text](.../media/LoginGraphApi.png) 
+ ![alt text](../media/LoginGraphApi.png) 
 
 > Note: You will need login with a [school or work](https://developer.microsoft.com/en-us/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&mkt=EN-US&lc=1033&lic=1)
 
@@ -184,12 +184,12 @@ In order to use and access the different services, we can modify the permissions
 
 - Choose Modify Permissions.
 
- ![alt text](.../media/GEModifyPermissions.png) 
+ ![alt text](../media/GEModifyPermissions.png) 
 
 
 - Now we can see the list of permissions and you can activate or deactivate individual permissions.
 
-![alt text](.../media/GESelectPermissions.png) 
+![alt text](../media/GESelectPermissions.png) 
 
 
 ## Activate OneDrive in Sample Categories
@@ -199,16 +199,16 @@ Now we are going to add the OneDrive APIs to Graph Explorer to be able to call t
 
 - Choose show more samples.
 
-![alt text](.../media/GEShowMoreExamples.png) 
+![alt text](../media/GEShowMoreExamples.png) 
 
 - Find OneDrive and activate it. 
 
-![alt text](.../media/GESelectOneDrive.png) 
+![alt text](../media/GESelectOneDrive.png) 
 
 
 - Now OneDrive APIs are included in Graph Explorer.
 
-![alt text](.../media/GEShowOneDriveSamples.png) 
+![alt text](../media/GEShowOneDriveSamples.png) 
 
 
 # Get all items in my drive
@@ -218,7 +218,7 @@ We are ready to get all items from OneDrive
 - Select in the left menu **all the items in my drive** under **OneDrive** section
 - Automatically Graph Explorer sends a call to OneDrive API and shows the results.
 
-![alt text](.../media/GEGetAllODItems.png) 
+![alt text](../media/GEGetAllODItems.png) 
 
 
 Now let's get a single file.  
@@ -290,7 +290,7 @@ The method **GetTokenForUserAsync** obtain the access token after the user are a
 Now you can build and run the process and the application will ask for user credentials via Graph.
 When you are authenticated, please answer **N** to the answer **Would you like to see your OneDrive items?[Y] Yes or [N] No**
 
-![alt text](.../media/AuthConsola.png)
+![alt text](../media/AuthConsola.png)
 
 ## Get call to Get all items in OneDrive
 Now we are ready to make calls to the API, we will call OneDrive API to show the name of the documents we have.
@@ -331,7 +331,7 @@ There are few interesting points in the code before:
 - In our case we access the root of OneDrive.
 - And then we search for the files by going through all the folders with the recursive GetNameFiles method.
 
-![alt text](.../media/OneDriveConsole.png)
+![alt text](../media/OneDriveConsole.png)
 
 # Adding API calls to your project
 

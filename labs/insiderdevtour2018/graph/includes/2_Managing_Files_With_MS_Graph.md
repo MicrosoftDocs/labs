@@ -41,7 +41,7 @@ After getting graphClient we can access to OneDrive via graphClient.Me.Drive and
 - After the authentication appears a **Recent File OneDrive** button. Click on this button.
 - The application displays the first ten documents that have been modified recently
 
-![alt text](.../media/RecentFiles.png) 
+![alt text](../media/RecentFiles.png) 
 
 # Writing data to OneDrive
 Until now, we have seen how to obtain data through Microsoft Graph, specifically OneDrive.
@@ -105,7 +105,7 @@ In UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and follow
 
 > **Note:** If you want to upload large files, visit this [link](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_createuploadsession).
 
-![alt text](.../media/UploadFileOD.png) 
+![alt text](../media/UploadFileOD.png) 
 
 # Accessing file contents
 
@@ -142,7 +142,7 @@ In UWP project go to **Helpers/OneDriverHelper.cs** DownloadFile method and foll
 
 - Go to the **Pictures Folder** and see that the file is there and open it.
 
-![alt text](.../media/DownloadFile.png) 
+![alt text](../media/DownloadFile.png) 
 
 ## Convert content from OneDrive file
 
@@ -190,4 +190,4 @@ In UWP project go to **Helpers/OneDriverHelper.cs** ConvertContetPDF method and 
 
 - Go to Pictures Folder and see that the file is there and open it.
 
-![alt text](.../media/ConvertFile.png) 
+![alt text](../media/ConvertFile.png) 

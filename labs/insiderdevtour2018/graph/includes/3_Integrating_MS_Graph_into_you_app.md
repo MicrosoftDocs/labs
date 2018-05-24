@@ -53,7 +53,7 @@ In UWP project go to **Helpers/DataSyncHelper.cs** SaveSettingsInOneDrive method
 
 - Click the Save Setting button
 
-![alt text](.../media/SaveAppData.png)
+![alt text](../media/SaveAppData.png)
 
 - Now go to your OneDrive and you can see the file settings.txt was created in HOL/Graph/Settings. This file contains the app settings.
 
@@ -155,7 +155,7 @@ In the UWP project go to **Helpers/UserExtensionHelper.cs** SetExtension method 
 - Click on Add Extension.
 
 
-![alt text](.../media/CustomData.png) 
+![alt text](../media/CustomData.png) 
 
 After saving the extension, the app calls to Graph to obtain the extension and its value and set it again.
 You can see the following code in **UserExtension.xaml.cs** 
@@ -247,7 +247,7 @@ In the UWP project go to **Helpers/OutlookHelper.cs** GetContacts method and fol
 
 - You can see the name and email from your Outlook contacts
 
-![alt text](.../media/OutlookContacts.png) 
+![alt text](../media/OutlookContacts.png) 
 
 ## Create an event in the Outlook calendar 
 
@@ -296,7 +296,7 @@ In the UWP project go to **Helpers/OutlookHelper.cs** SetAppintment method and f
 
 - Click on Schedule Event.
 
-![alt text](.../media/EventCalendar.png) 
+![alt text](../media/EventCalendar.png) 
 
 - If you go to the Outlook calendar, you can see the event.
 
@@ -356,16 +356,16 @@ In the code before uncomment the line
 
 - Click on Create Activity.
 
-![alt text](.../media/CreateActivity.png) 
+![alt text](../media/CreateActivity.png) 
 
 Now we go to the task view in windows.
 
-![alt text](.../media/TaskView.png) 
+![alt text](../media/TaskView.png) 
 
 
 And we can see the applications in Timeline. If we close the app and click on the Timeline app card, the application will be reopened.
 
-![alt text](.../media/Timeline.png) 
+![alt text](../media/Timeline.png) 
 
 > **Note:** For Timeline we use **Adaptive Cards** to show the app in Timeline. You can learn more about **Adaptive Cards** [here](http://adaptivecards.io/).
 
@@ -379,7 +379,7 @@ Timeline helps the user to pick up where they left off working. When you create 
 Close the application and open **Cortana** to see:
 
 
-![alt text](.../media/Cortana.png) 
+![alt text](../media/Cortana.png) 
 
 If we click the application it opens to the previous state
 
