@@ -23,7 +23,7 @@ Users can interact in two manners: direct 1:1 chats or mention a bot with a hash
 
 
 ### Cards ### 
-Cards are a condensed graphic representation of objects throughout Office 365, including Teams.  Each card can have properties, attachments and action buttons.  In Teams, card can be shown in chats with bots, messaging extensions and connectors.
+Cards are a condensed graphic representation of objects throughout Office 365, including Teams.  Each card can have properties, attachments and action buttons.  In Teams, cards can be shown in chats with bots, messaging extensions and connectors.
 There are several types of cards to employ depending on the object type and user interaction required.
   
 ![Cards 1](../media/cards-example-1.png)
