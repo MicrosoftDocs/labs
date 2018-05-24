@@ -1,35 +1,30 @@
-### YamlMime:Tutorial
-labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
+labUrl: 
 title: 	Modernize Your Existing Apps for Windows 10
 metadata:
   title: Modernize Your Existing Apps for Windows 10
-  description: Lorem ipsum
-  audience: Lorem ipsum
-  level: Lorem ipsum
-  ms.topic: gLorem ipsum
-  nextTutorialHref: Lorem ipsum
-  nextTutorialTitle: Lorem ipsum
-  ms.custom: Lorem ipsum
-  ms.prod: Lorem ipsum
-  ms.technology: Lorem ipsum
+  description: Learn how to modernize your existing desktop apps for Windows 10 with the latest packaging improvements, user experience and APIs.
+  audience: Developer
+  level: Beginner
+  ms.topic: Getting Started
+  nextTutorialHref: ..\..\machinelearning\index.yml
+  nextTutorialTitle: Machine Learning lab
+  ms.custom: Insider Dev Tour 2018
 items:
 - durationInMinutes: 60
-  content: |
-    Lorem ipsum
-- title: Step0
-  durationInMinutes: XX
+- title: What will this lab cover
+  durationInMinutes: 5
   content: |
     [!include[](includes/lab-part-0.md)]
-- title: Step1
-  durationInMinutes: XX
+- title: UI modernization
+  durationInMinutes: 15
   content: |
     [!include[](includes/lab-part-1.md)]
-- title: Step2
-    durationInMinutes: XX
+- title: Adaptive Cards
+    durationInMinutes: 20
     content: |
       [!include[](includes/lab-part-2.md)]
-- title: Step3
-    durationInMinutes: XX
+- title: Distribution and versioning
+    durationInMinutes: 20
     content: |
       [!include[](includes/lab-part-3.md)]
 - content: |
