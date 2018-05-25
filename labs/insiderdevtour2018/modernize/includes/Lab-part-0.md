@@ -44,5 +44,4 @@ to complete the entire lab without issues.
     [here](https://www.visualstudio.com/downloads/), along with the latest
     Windows 10 SDK (v. 1803; Build 17134).
 
--   Source Code: You can find the initial source code here (TODO link with final
-    URL).
+-   Source Code: You can find the initial source code here: [Source Code - Initial Solution]() https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/modernize/SourceCodeInitial/SourceCodeInitial.zip).
