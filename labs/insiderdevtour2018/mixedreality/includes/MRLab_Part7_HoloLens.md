@@ -4,16 +4,16 @@ Although this only works properly on a HMDU there is little we need to change in
 
 First we'll add a Tag to the RoomPrefab so we can access it inside our script. 
 
-    1: Select the RoomPrefab in the hierachy.
-    2: Click on the Tag dropdown in the inspector window and select Add Tag...
+1. Select the RoomPrefab in the hierachy.
+2. Click on the Tag dropdown in the inspector window and select Add Tag...
 
-![Add tag helper image](img/16.png)
+	![alt text](../media/16.png)
 
-    3: Press the '+' icon to create a new Tag and call it HMDUOnly.
+3. Press the '+' icon to create a new Tag and call it HMDUOnly.
 
-![Add tag helper image 2](img/17.png)
+	![alt text](../media/17.png)
 
-    4: Now click on the RoomPrefab in the Hierarchy again and select HMDUOnly from the dropdown.
+4. Now click on the RoomPrefab in the Hierarchy again and select HMDUOnly from the dropdown.
 
 There are a number of ways to select [gameobjects inside a script](https://docs.unity3d.com/Manual/ControllingGameObjectsComponents.html). With this method we can easily add the tag to any object we want to hide if we have more than one. Then iterate through and hide them all. However for this lab we just need to hide the room.
 
