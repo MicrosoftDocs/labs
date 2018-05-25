@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-This task has a dependency on [Build a Responsive Web App](pwa_02_buildWebApp.md) task and the prerequisites found there.
+This task has a dependency on **Build a Responsive Web App** task and the prerequisites found there.
 
 ## Manifest
 
