@@ -1,52 +1,45 @@
 ### YamlMime:Tutorial
-
-labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
 title: Build Mixed Reality Apps
-
 metadata:
   title: Build Mixed Reality Apps
   description: In this hands-on-lab, you'll use Unity and Visual Studio to learn about developing mixed reality apps for Windows.
   audience: Developer
   level: Beginner
-  ms.topic: productive-apps-mixedreality
-  nextTutorialHref: tbd
-  nextTutorialTitle: TBD
-  ms.custom: tbd
-  ms.prod: tbd
-  ms.technology: web
-
+  ms.topic: get-started-article
+  nextTutorialHref: ..\modernize\index.yml
+  nextTutorialTitle: Modernize lab
+  ms.custom: Insider Dev Tour 2018
 items:
-
 - durationInMinutes: 60
-
   content: |
-
-    This hands-on-lab teaches you about developing Windows mixed reality apps with Unity.  You'll explore the basic Unity concepts, interaction with controllers, spatial sound, and more. 
-
-- title: Foundations of Office 365
-
-  durationInMinutes: 15
-
+    [!include[](includes/MRLab_Part1_Setup.md)]
+- title: Exporting a WinMR UWP app from Unity
+  durationInMinutes: 10
   content: |
-
-    [!include[](includes/1-FoundationsOffice365.md)]
-
-- title: Build tailored team hubs in Microsoft Teams
-
-  durationInMinutes: 40
-
-  content: |
-
-    [!include[](includes/2-BuildingTeamHub.md)]
-
-- title: Additional reading topics
-
+    [!include[](includes/MRLab_Part2_Exporting.md)]
+- title: Speaker Placement App
   durationInMinutes: 5
-
   content: |
-
-    [!include[](includes/3-AdditionalReading.md)]
-
+    [!include[](includes/MRLab_Part3_SpeakerPlacement.md)]
+- title: Environment Setup (VR)
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part4_Environment.md)]
+- title: Controls
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part5_Controls.md)]
+- title: Spatial Sound
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part6_SpatialSound.md)]
+- title: HoloLens (optional)
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/MRLab_Part7_HoloLens.md)]
+- title: Graphics (optional)
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part8_Graphics.md)]
 - content: |
-
     You've completed this lab.

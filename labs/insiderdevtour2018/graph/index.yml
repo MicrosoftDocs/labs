@@ -6,7 +6,7 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: get-started-article
-  nextTutorialHref: ..\..\mixedreality\index.yml
+  nextTutorialHref: ..\mixedreality\index.yml
   nextTutorialTitle: Mixed Reality lab
   ms.custom: Insider Dev Tour 2018
 items:

@@ -6,7 +6,7 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: get-started-article
-  nextTutorialHref: ..\..\pwa\index.yml
+  nextTutorialHref: ..\pwa\index.yml
   nextTutorialTitle: Progressive Web Apps lab
   ms.custom: Insider Dev Tour 2018
 items:

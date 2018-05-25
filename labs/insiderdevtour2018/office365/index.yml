@@ -6,7 +6,7 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: get-started-article
-  nextTutorialHref: ..\..\graph\index.yml
+  nextTutorialHref: ..\graph\index.yml
   nextTutorialTitle: Microsoft Graph lab
   ms.custom: Insider Dev Tour 2018
 items:

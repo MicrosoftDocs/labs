@@ -7,7 +7,7 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: get-started-article
-  nextTutorialHref: ..\..\office365\index.yml
+  nextTutorialHref: ..\office365\index.yml
   nextTutorialTitle: Office 365 lab
   ms.custom: Insider Dev Tour 2018
 items:
