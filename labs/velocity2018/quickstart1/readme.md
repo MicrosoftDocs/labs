@@ -1,6 +1,6 @@
 # Quick Start 1: Azure DevOps Project
 
-The Azure DevOps Project simplifies the initial configuration of a continuous integration (CI) and continuous delivery (CD) pipeline for your Java app in Visual Studio Team Services (VSTS).
+The Azure DevOps Project simplifies the initial configuration of a continuous integration (CI) and continuous delivery (CD) pipeline to deploy your app on Azure in a few quick step. It sets you up with everything you need for developing, deploying, and monitoring your app.
 
 
 ## Exercise 1: Setting up Sample Java project using Azure DevOps Project
@@ -11,18 +11,15 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 
     ![searchdevopsproject](images/searchdevopsproject.png)
 
-    ![createdevopsproject](images/createdevopsproject.png)
-
 1. Select the **Java** sample application and click on **Next**. The Java samples include a choice of several application frameworks.
 
    ![selectjava](images/selectjava.png)
 
-1. The default sample framework is **Spring**. Select a framework or leave the default setting. When you're done, choose **Next**.
+1.  Select the default sample framework is **Spring**. choose **Next**.
 
-1. Select **Web App For Containers**, the default deployment target and choose **Next**.
+1. Select **Web App For Containers** and choose **Next**.
 
-
-6. Finally, you will need to provide a Team Services account. Since you do not have one, you will create a new VSTS account. Provide a name for your VSTS **account** and **project**. When you're done, choose **Done**.
+1. Finally, you will need to provide a Team Services account. Since you do not have one, you will create a new VSTS account. Provide a name for your VSTS **account** and **project** and choose **Done**.
 
     ![vstsproject](images/vstsproject.png)
 
@@ -36,7 +33,6 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
     ![webapp](images/webapp.png)
 
    The **Azure DevOps project** automatically configures a CI build and release trigger. You're now ready to collaborate with a team on a Java app with a CI/CD process that automatically deploys your latest work to your web site.
-
 
 ## Exercise 2: Examine the VSTS CI/CD pipelines configured by Azure DevOps Project
 
@@ -74,13 +70,13 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 
 ## Exercise 3: Commit the code changes and execute CI/CD
 
-The Azure DevOps project created a Git repository in your VSTS account. Follow the steps below to view the repository and make code changes to your application.
+The Azure DevOps project created a **Git** repository in your VSTS account. Follow the steps below to view the repository and make code changes to your application.
 
 1. Click on **Code** tab to view the created Git repository by Azure DevOps project.
 
      ![codetab](images/codetab.png)
 
-1. To view the repository clone URL, select **Clone** from the top right of the browser. You can clone your Git repository in your favorite IDE. In this lab, you can use the web browser to make and commit code changes directly to the master branch.
+1. You can clone your Git repository in your favorite IDE. In this lab, you can use the web browser to make and commit code changes directly to the master branch.
 
      ![cloneurl](images/cloneurl.png)
 
