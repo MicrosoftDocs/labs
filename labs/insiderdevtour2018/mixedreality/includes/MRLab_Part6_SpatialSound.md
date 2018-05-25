@@ -6,7 +6,7 @@
 - Click on the target to the side of the Audio Clip property and select 'Chill Blue Lagoon'.
 - Uncheck Play On Awake, as we will be controlling the playback using buttons. We'll change the settings to accommodate spatial sound later.
 
-![Speaker audio source config](../media/10.png)
+	![Speaker audio source config](../media/10.png)
 
 
 To add the play button to the speaker:
@@ -23,13 +23,13 @@ To add the play button to the speaker:
 7. Drag the Speaker from the Hierarchy into the event drop box or click the target beside the drop box and find the Speaker in the scene tab.
 8. For this event, click the 'No Function' Dropdown and click AudioSource -> Play().
 
-![Event trigger helper image](../media/12.png)
+	![Event trigger helper image](../media/12.png)
 
 To add the pause button to the speaker:
 - Duplicate the PlayButton (using ctrl + D or right-clicking the asset in the hierarchy and selecting Duplicate) and rename it to PauseButton.
 - Change the Event Trigger function for the PauseButton to AudioSource -> Pause().
 
-![Speaker hierarchy 2](../media/13.png)
+	![Speaker hierarchy 2](../media/13.png)
 
 These buttons should work now, but they will be hard to use when positioned within one another. The other issue is that they will not be facing the user unless the speaker is as well. To resolve this:
 
@@ -39,7 +39,7 @@ These buttons should work now, but they will be hard to use when positioned with
 4. Drag both buttons into the ButtonBillboard as children objects.
 5. With the ButtonBillboard selected in the Inspector window, click Add Component -> Billboard. This is a MRToolkit script that makes the object always turn to face the camera, and is particularly useful for UI elements.
 6. Save the scene.
-![Billboard hierarchy and transform config](../media/14.png)
+	![Billboard hierarchy and transform config](../media/14.png)
 
 To make it easier to differentiate between play and pause, it would be nice to have some icons other than the default ones. There are a few ways to do this, but we'll go with a simple one given the size of our project.
 
@@ -47,7 +47,7 @@ To make it easier to differentiate between play and pause, it would be nice to h
 2. Check Override Icon.
 3. Drag the Start sprite from the Assets -> Textures folder into the Icon Override property.
 4. Do the same steps for the PauseButton with the Pause sprite.
-![Icon config example](../media/iconConfig.png)
+	![Icon config example](../media/iconConfig.png)
 
 Now we have a speaker that we can move around the virtual living room and turn on and off. However, there is no spatial sound which breaks the presence of the experience. 
 
@@ -66,6 +66,6 @@ Now we need to configure the audio clip itself:
 7. Now drag the Speaker into the Assets -> Prefabs folder to turn it into a prefab.
 8. Save the scene.
 
-![Spatial sound audio emitter config](../media/15.png)
+	![Spatial sound audio emitter config](../media/15.png)
 
 We can now use this prefab to make as many speaker instances in our scene (or a completely different scene) as we want. You can move them in the editor or use the MRToolkit controls during run time to experience the spatial sound!
