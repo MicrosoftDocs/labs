@@ -35,12 +35,12 @@ The first step is to build the Manifest for your application using the **pwabuil
 
     > **Note** Your website URL will likely default to the http version in the browser but all azure websites also have a valid https certificate so https can be used on any azure website.
 
-![Provide a URL](/Media/Picture18.jpg)
+![Provide a URL](../Media/Picture18.jpg)
 
 ### Generate manifest
 The builder will search in the home page of your site looking for an existing manifest. If not, it will gather information about the app in specific meta tags or propose default values for the manifest properties. It will also show any warnings or suggestions to address potential issues in the collected metadata. Be sure you address any warnings before you move on.
 
-![Provide a URL](/Media/Picture19.jpg)
+![Provide a URL](../Media/Picture19.jpg)
 
 ### Add Images
 
@@ -51,18 +51,18 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 2. Save the below Knowzy logo to your PC by right clicking and "save image as".
 
-    ![logo to upload](/Media/Picture20.png)
+    ![logo to upload](../Media/Picture20.png)
 
 3. Browse to the location of the image you downloaded and if you want to generate the missing sizes, make sure the **Generate missing images from this image** checkbox is marked.
 
     > **Note:** The **Upload image** option will generate the required image sizes for Windows 10, and suggested images for other platforms.
 
-    ![Upload an Image](/Media/Picture21.jpg)
+    ![Upload an Image](../Media/Picture21.jpg)
     
 
 4. Click **Submit**. In our example, the missing image sizes are automatically generated and added to the manifest.
 
-    ![Images Preview](/Media/Picture22.jpg)
+    ![Images Preview](../Media/Picture22.jpg)
 
   > **Note:** The next options are required to show the download banner in other devices:
   >+ The `short_name ` (used in home page)
@@ -73,14 +73,14 @@ The builder site also checks whether the manifest has defined the expected icon 
   Is difficult to see the download banner, the result might be like the next image but for now we continue to the next step.
 
 <p align="center">
-  <img src="/Media/Picture22.jpeg">
+  <img src="../Media/Picture22.jpeg">
 </p>
 
 5.  Change the display mode to `Standalone` as we want the web application to look and feel like a standalone native application.
 
-![Display Mode](/Media/Picture23.PNG)
+![Display Mode](../Media/Picture23.PNG)
 
-![](/Media/Picture24.jpg)
+![](../Media/Picture24.jpg)
 
 ### References
 

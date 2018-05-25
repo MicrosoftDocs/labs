@@ -23,7 +23,7 @@ Create a new project with the following settings:
 
 Make sure you pick "General (compact)" and not "General", so you can later export the model.
 
-<img src="/Media/Picture3.png" width="700">
+<img src="../Media/Picture3.png" width="700">
 
 ## 3. Train your model
 In this section you will use some images of each product to train the model. The ContosoIT application you have downloaded already contains a set of images for this purpose.
@@ -36,7 +36,7 @@ Add a "surface-pro" tag and upload the files.
 
 Repeat the process with the images in \resources\training\surface-studio folder, but this time set the tag as "surface-studio"
 
-<img src="/Media/Picture4.png" width="700">
+<img src="../Media/Picture4.png" width="700">
 
 Click Train at the top of the page. The Performance tab will open and show Iteration 1 is in process. Wait until it finishes and your model is ready to test.
 
@@ -56,7 +56,7 @@ Click export on the Performance tab main menu. Several export options will appea
 
 Choose ONNX, click Export and then Download.
 
-<img src="/Media/Picture5.png" width="700">
+<img src="../Media/Picture5.png" width="700">
 
 ## 6. Integrate your model in the ContosoIT application
 In this section, you will add your model to your application, and get some code to create an instance of the model and run predictions using C#.

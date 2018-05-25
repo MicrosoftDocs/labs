@@ -233,11 +233,11 @@ Open a browser window and go to https://azure.microsoft.com/services/cognitive-s
 
 Click on "Try Cognitive Services for free" and look for Face API in the next page.
 
-<img src="/Media/Picture1.png" width="600">
+<img src="../Media/Picture1.png" width="600">
 
 Click on "Get API Key". Accept the service conditions and log in with your preferred account.
 
-<img src="/Media/Picture2.png" width="600">
+<img src="../Media/Picture2.png" width="600">
 
 Copy any of the displayed keys to your clipboard and paste it in the DetectEmotion method.
 

@@ -25,7 +25,7 @@ Make right-click into Microsoft.Knowzy.WPF project and choose Manage NuGet
 Packages..., type “AdaptiveCards.Rendering.Wpf”. Select the mentioned package
 and click Install.
 
-![](/Media/Picture3.png)
+![](../Media/Picture3.png)
 
 Creating our card
 -----------------
@@ -62,7 +62,7 @@ one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Sample
 among others. Such rely in JSON to specify the layout; however, we’ll write it
 in C\# to easily reuse it when adding multiple items.
 
-![](/Media/Picture4.png)
+![](../Media/Picture4.png)
 
 Open MainView.xaml.cs and add these namespaces:
 
@@ -407,7 +407,7 @@ private void UpdateAdaptiveCard(ItemViewModel item)
 Build and run the project, and add a new item through top menu. As soon as you
 save it, the Adaptive Card will pop up as expected:
 
-![](/Media/Picture5.png)
+![](../Media/Picture5.png)
 
 Interacting with our card
 -------------------------
