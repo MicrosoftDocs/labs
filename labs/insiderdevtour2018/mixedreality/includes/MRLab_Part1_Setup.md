@@ -2,7 +2,9 @@
 
 ## 1: Windows Mixed Reality Pre-Reqs and Setup
 
-[Spatial sound](https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-sound) breathes life into holograms and gives them presence in our world. Holograms are composed of both light and sound, and if you happen to lose sight of your holograms, spatial sound can help you find them. Spatial sound is not like the typical sound that you would hear on the radio - it is sound that is positioned in 3D space. With spatial sound, you can make holograms sound like they're behind you, next to you, or even on your head! In this lab, you will:
+[Spatial sound](https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-sound) breathes life into holograms and gives them presence in our world. Holograms are composed of both light and sound, and if you happen to lose sight of your holograms, spatial sound can help you find them. 
+
+Spatial sound is not like the typical sound that you would hear on the radio - it is sound that is positioned in 3D space. With spatial sound, you can make holograms sound like they're behind you, next to you, or even on your head! In this lab, you will:
 
 -  Configure your development environment to use Microsoft Spatial Sound.
 -  Go through the build process for exporting Windows MR Apps on the UWP platform.

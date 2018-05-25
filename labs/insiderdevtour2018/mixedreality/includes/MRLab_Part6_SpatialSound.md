@@ -39,6 +39,7 @@ These buttons should work now, but they will be hard to use when positioned with
 4. Drag both buttons into the ButtonBillboard as children objects.
 5. With the ButtonBillboard selected in the Inspector window, click Add Component -> Billboard. This is a MRToolkit script that makes the object always turn to face the camera, and is particularly useful for UI elements.
 6. Save the scene.
+
 	![Billboard hierarchy and transform config](../media/14.png)
 
 To make it easier to differentiate between play and pause, it would be nice to have some icons other than the default ones. There are a few ways to do this, but we'll go with a simple one given the size of our project.
@@ -47,11 +48,14 @@ To make it easier to differentiate between play and pause, it would be nice to h
 2. Check Override Icon.
 3. Drag the Start sprite from the Assets -> Textures folder into the Icon Override property.
 4. Do the same steps for the PauseButton with the Pause sprite.
+
 	![Icon config example](../media/iconConfig.png)
 
 Now we have a speaker that we can move around the virtual living room and turn on and off. However, there is no spatial sound which breaks the presence of the experience. 
 
-Spatial Sound, in Unity, is enabled using an audio spatializer plugin. The plugin files are bundled directly into Unity so enabling spatial sound is as easy as going to Edit -> Project Settings -> Audio and changing the Spatializer Plugin in the Inspector to the MS HRTF Spatializer. Since the Microsoft spatializer currently only supports 48000Hz, you should also set your System Sample Rate to 48000 (if it is not already) to prevent an HRTF failure:
+Spatial Sound, in Unity, is enabled using an audio spatializer plugin. The plugin files are bundled directly into Unity so enabling spatial sound is as easy as going to Edit -> Project Settings -> Audio and changing the Spatializer Plugin in the Inspector to the MS HRTF Spatializer. 
+
+Since the Microsoft spatializer currently only supports 48000Hz, you should also set your System Sample Rate to 48000 (if it is not already) to prevent an HRTF failure:
 
 ![Spatial sound config](../media/audio-250px.png)
 

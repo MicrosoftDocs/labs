@@ -1,6 +1,10 @@
 ## 7. HoloLens (optional)
 
-Although this only works properly on a HMDU, there is little we need to change in order to make this a full MR experience. Because we used the MRToolkit for the camera, interactions and buttons, all we need to do is turn off the environment so it doesn't obstruct the HoloLens user's view of their real environment. We need to write a script that detects whether the app is being run with a HMDU or a HoloLens, and then hide the virtual living room if required.
+Although this only works properly on a HMDU, there is little we need to change in order to make this a full MR experience. 
+
+Because we used the MRToolkit for the camera, interactions and buttons, all we need to do is turn off the environment so it doesn't obstruct the HoloLens user's view of their real environment. 
+
+We need to write a script that detects whether the app is being run with a HMDU or a HoloLens, and then hide the virtual living room if required.
 
 First, we'll add a Tag to the RoomPrefab so we can access it inside our script. 
 
@@ -23,6 +27,7 @@ There are a number of ways to select [gameobjects inside of a script](https://do
 - We only need to run this test once when the app starts. We will do this inside the Start() function. So we can delete the Update() function.
 - Replace the code in the GameManager script with this:
 
+			```C#
 			using System.Collections;
 			using System.Collections.Generic;
 			using UnityEngine;
@@ -44,8 +49,11 @@ There are a number of ways to select [gameobjects inside of a script](https://do
 		        	}
 		    	}
 			}
+			```
 
-Lastly, to ensure that the experience runs fine on the HoloLens, we need to check that the camera background is set to black. In the Hierarchy window, open up the MixedRealityCameraParent -> MixedRealityCamera object. Check that the Mixed Reality Camera Manager -> Transparent Display Settings -> Background Color is set to black.
+Lastly, to ensure that the experience runs fine on the HoloLens, we need to check that the camera background is set to black. 
+
+In the Hierarchy window, open up the MixedRealityCameraParent -> MixedRealityCamera object. Check that the Mixed Reality Camera Manager -> Transparent Display Settings -> Background Color is set to black.
 
 ![Background color config](../media/18.png)
 
@@ -76,6 +84,7 @@ Lastly, we will need to use a different method for moving the speaker and switch
 - Add a script to the Speaker called SpeakerMovement by click Add Component -> New Script and calling it SpeakerMovement.
 - Replace the code in the script with this:
 
+			```C#
 			using System.Collections;
 			using System.Collections.Generic;
 			using UnityEngine;
@@ -94,8 +103,10 @@ Lastly, we will need to use a different method for moving the speaker and switch
 					}
 				}
 			}
+			```
 
+After including the namespace for the scripts involved, we use the same test as we did with the GameManager. 
 
-After including the namespace for the scripts involved, we use the same test as we did with the GameManager. Next, simply enable and disable the scripts. Because we changed the Speaker prefab, all of the speakers in the scene should be updated with the change. If you happened to change one of the Speaker instances, then, in the top right of the Inspector window, click Apply to update the prefab.
+Next, simply enable and disable the scripts. Because we changed the Speaker prefab, all of the speakers in the scene should be updated with the change. If you happened to change one of the Speaker instances, then, in the top right of the Inspector window, click Apply to update the prefab.
 
 That's it! You can now run and build the app on either a HMDU or a HoloLens and place, rotate, and control speakers around the room.
