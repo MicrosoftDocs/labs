@@ -27,7 +27,7 @@ There are a number of ways to select [gameobjects inside of a script](https://do
 - We only need to run this test once when the app starts. We will do this inside the Start() function. So we can delete the Update() function.
 - Replace the code in the GameManager script with this:
 
-			```C#
+			```csharp
 			using System.Collections;
 			using System.Collections.Generic;
 			using UnityEngine;
@@ -84,7 +84,7 @@ Lastly, we will need to use a different method for moving the speaker and switch
 - Add a script to the Speaker called SpeakerMovement by click Add Component -> New Script and calling it SpeakerMovement.
 - Replace the code in the script with this:
 
-			```C#
+			```csharp
 			using System.Collections;
 			using System.Collections.Generic;
 			using UnityEngine;
