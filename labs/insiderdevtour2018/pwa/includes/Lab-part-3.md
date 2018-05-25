@@ -80,7 +80,6 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 ![Display Mode](/Media/Picture23.PNG)
 
-Continue to next PWABuilder step to [build the service worker](lab-part-04.md).
 ![](/Media/Picture24.jpg)
 
 ### References

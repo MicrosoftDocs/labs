@@ -5,8 +5,7 @@ This section is intended to test the PWA app we have created in the previous sec
 
 ## Prerequisites:
 
-- This task has a dependency on task [Build a PWA with PWA Builder](lab-part-3.md) and the prerequisites found there.
-
+- This task has a dependency on task **Build a PWA with PWA Builder** and the prerequisites found there.
 
 ##	How to test on Windows 10
 
@@ -47,9 +46,6 @@ The Microsoft Edge DevTools provide web developers with tools for attaching to o
 4. Now under de Cache section, verify that the app is caching content.
 
 <img src="/Media/Picture41.PNG"><br>
-
-### Run PWA [on Visual Studio >> ](lab-part-8.md)
-
 
 ###	How to test on Chrome
 
@@ -92,5 +88,3 @@ The Microsoft Edge DevTools provide web developers with tools for attaching to o
 5. Launch the app and verify that works properly.
 
 <img src="/Media/Picture58.PNG"><br>
-
-### PWA on windows [next task >> ](lab-part-7.md)

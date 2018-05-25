@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-This task has a dependency on [step 1 Generate Manifest](lab-part-3.md) and [step 2 Build Service Worker](lab-part-4.md) to download the necessary code to transform your web application into PWA.
+This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Service Worker** to download the necessary code to transform your web application into PWA.
 
 ## Publish PWA
  Once you have done the previous step 1 and step 2 of PWABuilder tool, go to the next step 3 to download the generated code for your web app.
@@ -110,7 +110,3 @@ Now that you have these powerful new features running locally, you can publish t
    In case of having problems you can do it manually by chrome settings, `add to home screen`:
 
   ![publish screen from vs](/Media/Picture35.jpg)
-
-
-
-### Continue to [test your pwa >> ](lab-part-6.md)

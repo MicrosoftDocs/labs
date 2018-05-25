@@ -36,11 +36,8 @@ After complete this lab, your PWA will looks like this:
 
 ![Trivago: website on left and application on right](//Media/Picture3.jpg)
 
-
 + DayTrip [website](https://www.godaytrip.com/) and [store app](https://www.microsoft.com/en-us/store/p/daytrip/9nfdsvs69k6m).
 
 ![DayTrip: website on left and application on right](//Media/Picture4.jpg)
 
-Looking this examples, can you tell the difference?
-
-### Continue with [Build a Responsive Web App >> ](lab-part-2.md)
+Looking at these examples, can you tell the difference?

@@ -2,42 +2,9 @@
 
 In these labs you will be introduced how to build a Progressive web application using a simple web application using ASP.NET Core, using a PWA tool that will generate the necessary files to do your web application a Progressive Web Aplication.
 
-This hands-on lab includes the folowwing labs:
-
-#### [Lab 0 - Requisites ](lab-part-0.md) ####
-
-In this lab you will find the prerequisites and steps to help you set up your computer. After completing the lab you will have a working environment ready for the other labs.
-
-#### [Lab 1 - PWA foundations](lab-part-1.md) ####
-
-In this lab you will learn the foundations of PWAs.
-
-#### [Lab 2 - Build your application (optional)](lab-part-2.md) ####
-
-In this lab you will build a simple web application and publish it to azure web site.
-
-#### [Lab 3 - Build your PWA](lab-part-3.md) ####
-
-In this lab you will build your PWA using the [PWA Builder](https://www.pwabuilder.com) tool and download the generated code to add into your website.
-
-#### [Lab 4 - Publish your PWA ](lab-part-5.md) ####
-
-This lab will show you how to publish the PWA source code into your web application.
-
-#### [Lab 5 - Test your PWA](lab-part-6.md) ####
-
-In this lab you will test your application in different devices and will show different ways to test the generated progressive web application with tools.
-
-#### [Lab 6 - PWA on windows](lab-part-7.md) ####
-
-This lab will show you how to add a library for Windows APIs and how to add some features like darkmode and timeline to your PWA.
-
-
 ## Prerequisites
 
 In this lab you will find the prerequisites and steps to help you set up your computer. After completing the lab you will have a working environment, ready for the other labs.
-
-
 
 - [Visual Studio 2017](https://developer.microsoft.com/windows/downloads) installed on your computer to continue doing other labs.
 

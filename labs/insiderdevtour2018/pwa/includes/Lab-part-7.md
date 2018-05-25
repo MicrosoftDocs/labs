@@ -3,7 +3,7 @@
 
 Prerequisites:
 
-- This task has a dependency on task [Sideload a PWA](lab-part-6.md).
+- This task has a dependency on task **Sideload a PWA**.
 
 ###	Add some WinRT APIs (pwa builder)
 
@@ -78,4 +78,3 @@ You can find the timeline icon on the taskbar or call out Win+Tab keyword shortc
 
 <img src="/Media/Picture65.PNG"><br>
 
-### Continue to [App quality review >>](lab-part-9.md)

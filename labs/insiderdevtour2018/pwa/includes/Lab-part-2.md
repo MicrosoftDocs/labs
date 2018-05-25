@@ -90,7 +90,7 @@ Congratulations! Your app is now ready to be viewed on devices with different sc
 ### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
 
 
-Now if you want to publish the application on Azure follow this steps or continue locally using IIS and go to the [next lab](lab-part-3.md).
+Now if you want to publish the application on Azure follow these steps or continue locally using IIS and skip to the next step.
 
 **Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/en-us/free/).
 For more information you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/en-us/articles/create-microsoft-azure-account/)
@@ -139,6 +139,3 @@ Using azure services:
         ![publish screen from vs](/Media/Picture17.jpg)
 
     5. Once your web app has finished restarting, re-deploying your web app should be successful.
-
-
-### Continue to [Build your PWA >> ](lab-part-3.md)
