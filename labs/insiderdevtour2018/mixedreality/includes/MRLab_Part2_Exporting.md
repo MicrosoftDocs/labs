@@ -20,9 +20,11 @@ To start building Mixed Reality applications, there are some settings we need to
 
 ![apply mixed reality project settings](../media/1.png)
 
-If we were only building for immersive headsets, we would check Target Occluded Devices. As we may port this to HoloLens we can use the default settings. 
+Check the box labeled "Use Toolkit-specific InputManager Axes" (if it has not been checked already) and hit "**Apply**".
 
 ![mixed reality project settings](../media/2.png)
+
+If we were only building for immersive headsets, we would check Target Occluded Devices. As we may port this to HoloLens we can use the above settings. 
 
 Next, we need to include a few scene objects that will handle camera movement and controller input. Select the "Apply Mixed Reality Scene Settings" option in the Unity Editor:
 
