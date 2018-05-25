@@ -1,36 +1,29 @@
 ### YamlMime:Tutorial
-labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
-title: Intelligence on the Edge Hands-On Lab
+title: Intelligence at the edge - getting started with Machine Learning
 metadata:
-  title: Intelligence on the Edge Hands-On Lab
-  description: Lorem ipsum
-  audience: Lorem ipsum
-  level: Lorem ipsum
-  ms.topic: gLorem ipsum
-  nextTutorialHref: Lorem ipsum
-  nextTutorialTitle: Lorem ipsum
-  ms.custom: Lorem ipsum
-  ms.prod: Lorem ipsum
-  ms.technology: Lorem ipsum
+  title: Intelligence at the edge - getting started with Machine Learning
+  description: When used in conjunction, the intelligent cloud and edge can enable differentiated experiences for your apps. Learn how to get started in this lab. 
+  audience: Developer
+  level: Beginner
+  ms.topic: get-started-article
+  nextTutorialHref: ..\..\pwa\index.yml
+  nextTutorialTitle: Progressive Web Apps lab
+  ms.custom: Insider Dev Tour 2018
 items:
 - durationInMinutes: 60
   content: |
-    Lorem ipsum
-- title: Step0
-  durationInMinutes: XX
-  content: |
     [!include[](includes/lab-part-0.md)]
-- title: Step1
-  durationInMinutes: XX
+- title: Intelligence at the edge
+  durationInMinutes: 10
   content: |
     [!include[](includes/lab-part-1.md)]
-- title: Step2
-    durationInMinutes: XX
-    content: |
-      [!include[](includes/lab-part-2.md)]
-- title: Step3
-    durationInMinutes: XX
-    content: |
-      [!include[](includes/lab-part-3.md)]
+- title: Emotion detection with Face API
+  durationInMinutes: 25
+  content: |
+    [!include[](includes/lab-part-2.md)]
+- title: Product detection with Custom Vision
+  durationInMinutes: 20
+  content: |
+    [!include[](includes/lab-part-3.md)]
 - content: |
     You've completed this lab.
