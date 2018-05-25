@@ -1,32 +1,32 @@
 ## 2. Exporting a Win MR UWP app from Unity
 
-Lets start by creating a new unity project. Open the Unity Editor and click 'New'. Call the project whatever you want, make sure the template is set to 3d and click 'Create project'. For this lab there are some necessary assets we need to import. These should be included in the lab files.
+Let's start by creating a new Unity project. Open the Unity Editor and click 'New'. Name the project whatever you want, make sure the template is set to 3D, and click 'Create project'. For this lab, there are some necessary assets we need to import. These should be included in the lab files.
 
 * Holotoolkit.Unitypackage
 
-    This is the [Microsoft Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/). A collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
+    This is the [Microsoft Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/), a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
     
 * SpatialSoundLab.Unitypackage
     
     The second contains the assets (models, materials and audio clips) we will be using to create this spatial sound experience.
 
-To import these, click in the menu bar click Assets -> Import Package -> Custom Package... and navigate to the files above. It may take Unity a few minutes to import everything.
+To import these, click on Assets -> Import Package -> Custom Package and navigate to the files above. It may take Unity a few minutes to import everything.
 
 ![import packages](../media/0.png)
 
-To start building Mixed Reality applications there are some settings we need to change in Unity. The Mixed Reality Toolkit makes this super simple. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
+To start building Mixed Reality applications, there are some settings we need to change in Unity. The Mixed Reality Toolkit makes this super simple. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
 
-    Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings
+`Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings`
 
 ![apply mixed reality project settings](../media/1.png)
 
-If we were only building for immersive headsets we would check Target Occluded Devices. As we may port this to HoloLens we can use the default settings. 
+If we were only building for immersive headsets, we would check Target Occluded Devices. As we may port this to HoloLens we can use the default settings. 
 
 ![mixed reality project settings](../media/2.png)
 
 Next, we need to include a few scene objects that will handle camera movement and controller input. Select the "Apply Mixed Reality Scene Settings" option in the Unity Editor:
 
-    Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Scene Settings
+`Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Scene Settings`
 
 ![apply mixed reality scene settings](../media/3.png)
 
@@ -34,19 +34,19 @@ Next, we need to include a few scene objects that will handle camera movement an
 
 Use the default setting.
 
-We still need to make a few more changes to ensure that we can build this project out to VS as a UWP app. Select the "Apply UWP Capability Settings" option in the Unity Editor.
+We still need to make a few more changes to ensure that we can build this project out to Visual Studios as a UWP app. Select the "Apply UWP Capability Settings" option in the Unity Editor.
 
-    Mixed Reality Toolkit -> Configure -> Apply UWP Capability Settings
+`Mixed Reality Toolkit -> Configure -> Apply UWP Capability Settings`
 
 ![apply UWP Capability Settings](../media/5.png)
 
 Make sure to check Spatial Perception if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on. 
 
-That's it! The project and scene is now configured and primed for making a UWP MR application. For a more detailed overview of these setting changes see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. When or if you choose to build the project use the following guides to get it running.
+That's it! The project and scene is now configured and primed for making a UWP MR application. For a more detailed overview of these setting changes, see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. When or if you choose to build the project, use the following guides to get it running.
 
 ### To deploy the project to an immersive headset.
 1. Navigate to the Build Window: Mixed Reality Toolkit -> Build Window.
-2. Press Open in Visual Studio.
+2. Click on Open in Visual Studio.
 3. Navigate to Build -> Configuration Manager in Visual Studios or use the drop-down at the top of the page and select x64 in your platform options.
 4. In the debug toolbar, select "Local Machine" as the target (or remote device if you are pushing to another machine).
 5. Run the app by hitting play.
