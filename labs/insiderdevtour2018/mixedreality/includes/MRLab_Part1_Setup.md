@@ -8,14 +8,14 @@ Spatial sound is not like the typical sound that you would hear on the radio - i
 
 -  Configure your development environment to use Microsoft Spatial Sound.
 -  Go through the build process for exporting Windows MR Apps on the UWP platform.
--  Create an environment and configure controls for a HMDU MR experience.
+-  Create an environment and configure controls for an MR experience.
 -  Add spatial sound and place-able speakers.
 -  (optional) See how easy it is to adapt the experience to HoloLens.
 
 ## Hardware Requirements
 
 * An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
-* (optional) HMD-Controllers
+* (optional) Motion Controllers
 * (optional) A HoloLens
 >**Note:** If you do not have access to an MR or HoloLens headset, you can view your app using the HoloLens emulator or the Mixed Reality simulator linked below
 
