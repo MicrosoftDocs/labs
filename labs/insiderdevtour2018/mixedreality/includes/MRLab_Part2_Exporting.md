@@ -1,4 +1,4 @@
-## 2. Exporting a Win MR UWP app from Unity
+## 2. Exporting a Windows Mixed Reality UWP App from Unity
 
 Let's start by creating a new Unity project. Open the Unity Editor and click 'New'. Name the project whatever you want, make sure the template is set to 3D, and click 'Create project'. For this lab, there are some necessary assets we need to import. These should be included in the lab files.
 
@@ -14,7 +14,7 @@ To import these, click on Assets -> Import Package -> Custom Package and navigat
 
 ![import packages](../media/0.png)
 
-To start building Mixed Reality applications, there are some settings we need to change in Unity. The Mixed Reality Toolkit makes this super simple. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
+To start building Mixed Reality applications, there are some settings we need to change in Unity. The Mixed Reality Toolkit will be helpful for this task. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
 
 `Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings`
 
