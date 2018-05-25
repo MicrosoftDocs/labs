@@ -10,7 +10,7 @@ metadata:
   nextTutorialTitle: Mixed Reality lab
   ms.custom: Insider Dev Tour 2018
 items:
-- durationInMinutes: 40
+- durationInMinutes: 5
   content: |
     [!include[](Includes/1_Microsoft_Graph.md)]
 - title: Managing Files With MS Graph

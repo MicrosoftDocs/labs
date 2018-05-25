@@ -10,7 +10,7 @@ metadata:
   nextTutorialTitle: Machine Learning lab
   ms.custom: Insider Dev Tour 2018
 items:
-- durationInMinutes: 60
+- durationInMinutes: 5
   content: |
     [!include[](includes/lab-part-0.md)]
 - title: UI modernization

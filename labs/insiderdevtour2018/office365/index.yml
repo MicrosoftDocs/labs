@@ -10,7 +10,7 @@ metadata:
   nextTutorialTitle: Microsoft Graph lab
   ms.custom: Insider Dev Tour 2018
 items:
-- durationInMinutes: 60
+- durationInMinutes: 5
   content: |
     [!include[](includes/1-FoundationsOffice365.md)]
 - title: Build tailored team hubs in Microsoft Teams
