@@ -5,7 +5,7 @@ metadata:
   description: When used in conjunction, the intelligent cloud and edge can enable differentiated experiences for your apps. Learn how to get started in this lab. 
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
+  ms.topic: tutorial
   nextTutorialHref: ..\pwa\index.yml
   nextTutorialTitle: Progressive Web Apps lab
   ms.custom: Insider Dev Tour 2018

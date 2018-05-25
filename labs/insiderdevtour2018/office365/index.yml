@@ -5,7 +5,7 @@ metadata:
   description: With Microsoft 365, you can bring your developer skillset into Office – learn how with this Teams focused lab.
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
+  ms.topic: tutorial
   nextTutorialHref: ..\graph\index.yml
   nextTutorialTitle: Microsoft Graph lab
   ms.custom: Insider Dev Tour 2018
