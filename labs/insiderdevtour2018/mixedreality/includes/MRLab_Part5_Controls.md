@@ -21,7 +21,7 @@ To allow the user to move and rotate the speaker.
 7. In the project window find BoundingBoxBasic in Assets -> HoloToolkit -> UX -> Prefabs -> BoundingBoxes and drag it into the Bounding Box Prefab property of the Speaker's Bounding Box Rig script.
 8. Do this again dragging, BoundingBoxBasic into the Bounding Box Prefab property of the Two Hand Manipulateable component.
 9. In the project window find AppBarCustom in Assets/Prefabs. Now this is exactly the same as the MRtoolkit AppBar, but seeing as we won’t be removing the speakers, you can uncheck the Use Remove and Use Hide properties (if they aren't already deselected). Then drag it into the App Bar Prefab Property of the Bounding Box Rig in the hierarchy.
-10. Save the scene.
+10. Save the scene, and run it to test your additions.
 
 	![Speaker movement control components](../media/9.png)
 

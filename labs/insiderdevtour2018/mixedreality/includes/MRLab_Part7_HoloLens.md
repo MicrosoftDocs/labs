@@ -82,8 +82,9 @@ Lastly, we will need to use a different method for moving the speaker and switch
 	![Speaker updated inspector view](../media/21.png)
 
 - Add a script to the Speaker called SpeakerMovement by click Add Component -> New Script and calling it SpeakerMovement.
-- Replace the code in the script with this:
 
+- Replace the code in the script with this:
+	
 			```csharp
 			using System.Collections;
 			using System.Collections.Generic;

@@ -38,7 +38,7 @@ These buttons should work now, but they will be hard to use when positioned with
 3. In the Hierarchy window, right click on the Speaker and click Create Empty to make an empty child object. Rename this to ButtonBillboard.
 4. Drag both buttons into the ButtonBillboard as children objects.
 5. With the ButtonBillboard selected in the Inspector window, click Add Component -> Billboard. This is a MRToolkit script that makes the object always turn to face the camera, and is particularly useful for UI elements.
-6. Save the scene.
+6. Save the scene and run it.
 
 	![Billboard hierarchy and transform config](../media/14.png)
 
@@ -68,7 +68,7 @@ Now we need to configure the audio clip itself:
 5. For this experience a good 3D sound setting is to use a Logrithmic Rolloff for the Volume Rolloff and change the Min Distance to 3.
 6. Click Add Component -> Audio Emitter. This is a MRToolkit class that uses an attached AudioSource and a subset of the Unity Audio Filters to support applying and managing audio influences, for example occlusion.
 7. Now drag the Speaker into the Assets -> Prefabs folder to turn it into a prefab.
-8. Save the scene.
+8. Save the scene and run it.
 
 	![Spatial sound audio emitter config](../media/15.png)
 

@@ -40,13 +40,18 @@ We still need to make a few more changes to ensure that we can build this projec
 
 ![apply UWP Capability Settings](../media/5.png)
 
-Make sure to check Spatial Perception if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on. 
+Make sure to check Spatial Perception if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on.
+
+Next, navigate to your Build Settings using `ctrl + shift + B`, select Universal Windows Platform, and then click Switch Platform. Add your open scene to the build by checking the box next to your scene's name and clicking "Add Open Scenes".
 
 That's it! The project and scene is now configured and primed for making a UWP MR application. For a more detailed overview of these setting changes, see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. When or if you choose to build the project, use the following guides to get it running.
 
 ### To deploy the project to an immersive headset.
 1. Navigate to the Build Window: Mixed Reality Toolkit -> Build Window.
-2. Click on Open in Visual Studio.
+2. Click on Open in Visual Studio.	
+	
+	>**Note:** If Unity says there is no "open project solution" and asks if you still want to build, select "Yes, Build"
+	
 3. Navigate to Build -> Configuration Manager in Visual Studios or use the drop-down at the top of the page and select x64 in your platform options.
 4. In the debug toolbar, select "Local Machine" as the target (or remote device if you are pushing to another machine).
 5. Run the app by hitting play.
@@ -56,6 +61,8 @@ See the [Windows Developer site](https://docs.microsoft.com/en-us/windows/uwp/pu
 ### To deploy the project to a HoloLens.
 1. Navigate to the Build Window: Mixed Reality Toolkit -> Build Window.
 2. Press Open in Visual Studio.
+	
+	>**Note:** If Unity says there is no "open project solution" and asks if you still want to build, select "Yes, Build"
 3. Navigate to Build -> Configuration Manager in Visual Studios or use the drop-down at the top of the page and select x86 in your platform options.
 4. In the debug toolbar, select the emulator or the device that you're using.
 5. Run the app using the debug toolbar.

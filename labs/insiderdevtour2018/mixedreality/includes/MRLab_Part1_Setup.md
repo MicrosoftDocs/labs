@@ -14,20 +14,19 @@ Spatial sound is not like the typical sound that you would hear on the radio - i
 
 ## Hardware Requirements
 
-* An [MR capable machine.](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
+* An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
 * (optional) HMD-Controllers
 * (optional) A HoloLens
+>**Note:** If you do not have access to an MR or HoloLens headset, you can view your app using the HoloLens emulator or the Mixed Reality simulator linked below
 
 ## Software Requirements
 * Visual Studio 2017
-    *  The Universal Windows Platform development workload.
-    *  The Game Development with Unity workload (Tools -> Get Tools and Features when in Visual Studio).
-    *  [Windows 10 Fall Creators Update SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017.
-*  [Unity 2017.4.2](https://unity3d.com/get-unity/download/archive) be sure to include the .Net Scripting Backend when selecting components
+    *  The Universal Windows Platform development workload
+    *  The Game Development with Unity workload
+    *  [Windows 10 Fall Creators Update SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017
+>**Note:** Workloads can be accessed by navigating to Tools -> Get Tools and Features when in Visual Studio
+
+*  [Unity 2017.4.2](https://unity3d.com/get-unity/download/archive) (be sure to include the .Net Scripting Backend when selecting components)
 * Windows 10 Fall Creators Update
-    * Enabled Developer mode - go Settings > Update & security > For developers
-* (optional) [HoloLens Emulator and Holographic Templates](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#installation-checklist-for-HoloLens)
-
-*Should I just be immediately linking to the MS docs or listing this here?*
-
-*Section 1 Exporting a Win MR UWP from Unity*
+    * Enabled Developer mode: go to system Settings -> Update & security -> For developers
+* (optional) [HoloLens Emulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) or [Mixed Reality Simulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-mixed-reality-simulator) setup

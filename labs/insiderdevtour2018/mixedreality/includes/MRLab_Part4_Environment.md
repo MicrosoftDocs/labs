@@ -24,4 +24,4 @@ Next, we need to choice an experience scale. If you have room to move around, yo
 
 	![Tracking space configuration](../media/7.png)
 
-Thanks to the 'Apply Mixed Reality Scene Settings' step, all the movement and camera operations are handled for us and configured with the [Windows MR default controls](https://docs.microsoft.com/en-us/windows/mixed-reality/navigating-the-windows-mixed-reality-home#immersive-headset-input-support). If you click run (play) in the Unity Editor, you will be able to move around using the standard MR controls.
+Thanks to the 'Apply Mixed Reality Scene Settings' step, all the movement and camera operations are handled for us and configured with the [Windows MR default controls](https://docs.microsoft.com/en-us/windows/mixed-reality/navigating-the-windows-mixed-reality-home#immersive-headset-input-support). If you click run (play) in the Unity Editor, you will be able to move around using the standard MR controls or the controls chosen during setup if you are using the MR simulator.
