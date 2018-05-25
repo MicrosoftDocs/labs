@@ -6,14 +6,15 @@
     2: Click on the target to the side of the Audio Clip property and select 'Chill Blue Lagoon'.
     3: Uncheck Play On Awake as we will be controlling the playback using buttons. We'll change the settings to accommodate spatial sound later.
 
-![Speaker audio source config](img/10.png)
+![Speaker audio source config](../media/10.png)
+
 
 To add the play button to the speaker:
 
     1: In the project window find the CircleButton prefab in Assets -> HolotToolkit -> UX -> Prefabs -> Buttons and drag it into the Hierarchy as a child of the Speaker.
     2: Rename this to PlayButton.
 
-![Speaker hierarchy](img/11.png)
+![Speaker hierarchy](../media/11.png)
 
     3: Change the PlayButton Transform Scale property to (90, 90, 90) to make it larger.
     4: With PlayButton selected click Add Component -> Event -> Event Trigger.
@@ -22,13 +23,13 @@ To add the play button to the speaker:
     7: Drag the Speaker from the Hierarchy into the event drop box or click the target beside the drop box and find the Speaker in the scene tab.
     8: For this event click the 'No Function' Dropdown and click AudioSource -> Play().
 
-![Event trigger helper image](img/12.png)
+![Event trigger helper image](../media/12.png)
 
 To add the pause button to the speaker:
     1: Duplicate the PlayButton (using ctrl + D or right-clicking the asset in the hierarchy and selecting Duplicate) and rename it to PauseButton.
     2: Change the Event Trigger function for the PauseButton to AudioSource -> Pause().
 
-![Speaker hierarchy 2](img/13.png)
+![Speaker hierarchy 2](../media/13.png)
 
 These buttons should work now but they will be hard to use when positioned within one another. The other issue is that they will not be facing the user unless the speaker is. To resolve this:
 
@@ -38,7 +39,7 @@ These buttons should work now but they will be hard to use when positioned withi
     4: Drag both buttons into the ButtonBillboard as children objects.
     5: With the ButtonBillboard selected in the Inspector window, click Add Component -> Billboard. This is a MRToolkit script that makes the object always turn to face the camera, and is particularly useful for UI elements.
     6: Save the scene.
-![Billboard hierarchy and transform config](img/14.png)
+![Billboard hierarchy and transform config](../media/14.png)
 
 To make it easier to differentiate between play and pause it would be nice to have some icons other than the default ones. There are a few ways to do this but we'll go with a simple one given the size of our project.
 
@@ -46,13 +47,13 @@ To make it easier to differentiate between play and pause it would be nice to ha
     2: Check Override Icon.
     3: Drag the Start sprite from the Assets -> Textures folder into the Icon Override property.
     4: Do the same steps for the PauseButton with the Pause sprite.
-![Icon config example](img/iconConfig.png)
+![Icon config example](../media/iconConfig.png)
 
 Now we have a speaker that we can move around the virtual living room and turn on and off. However, there is no spatial sound which breaks the presence of the experience. 
 
 Spatial Sound, in Unity, is enabled using an audio spatializer plugin. The plugin files are bundled directly into Unity so enabling spatial sound is as easy as going to Edit -> Project Settings -> Audio and changing the Spatializer Plugin in the Inspector to the MS HRTF Spatializer. Since the Microsoft spatializer only supports 48000Hz currently, you should also set your System Sample Rate to 48000 to prevent an HRTF failure in the rare case that your system output device is not set to 48000 already:
 
-![Spatial sound config](img/audio-250px.png)
+![Spatial sound config](../media/audio-250px.png)
 
 Now we need to configure the audio clip itself:
 
@@ -65,6 +66,6 @@ Now we need to configure the audio clip itself:
     7: Now drag the Speaker into the Assets -> Prefabs folder to turn it into a prefab.
     8: Save the scene.
 
-![Spatial sound audio emitter config](img/15.png)
+![Spatial sound audio emitter config](../media/15.png)
 
 We can now use this prefab to make as many speaker instances in our scene (or a completely different scene) as we want. You can move them in the editor or using the MRToolkit controls during run time and experience the spatial sound!
