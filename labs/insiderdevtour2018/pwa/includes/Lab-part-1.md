@@ -24,20 +24,20 @@ Since at their core PWAs are still websites, they’re already supported on nume
 PWAs aren't very different that a web application, when you access to a PWA you will see the same as a simple web application.
 After complete this lab, your PWA will looks like this:
 
-![](../Media/Picture1.jpg)
+![](../media/Picture1.jpg)
 
 **Some PWA examples:**
 
 + Twitter [website](https://twitter.com)  and [store app](https://www.microsoft.com/en-us/store/p/twitter/9wzdncrfj140).
 
-![Twitter: website on left and application on right](../Media/Picture2.jpg)
+![Twitter: website on left and application on right](../media/Picture2.jpg)
 
 + Trivago [website](https://www.trivago.es/) and [store app](https://www.microsoft.com/en-us/store/p/trivago/9nv9sdq842gq).
 
-![Trivago: website on left and application on right](../Media/Picture3.jpg)
+![Trivago: website on left and application on right](../media/Picture3.jpg)
 
 + DayTrip [website](https://www.godaytrip.com/) and [store app](https://www.microsoft.com/en-us/store/p/daytrip/9nfdsvs69k6m).
 
-![DayTrip: website on left and application on right](../Media/Picture4.jpg)
+![DayTrip: website on left and application on right](../media/Picture4.jpg)
 
 Looking at these examples, can you tell the difference?

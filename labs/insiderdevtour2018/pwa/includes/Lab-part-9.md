@@ -18,15 +18,15 @@ Promote community tools and services that do an awesome job but could not be kno
 
 1. Go to the online version [Sonarwhal online](https://sonarwhal.com/)
 
-<img src="../Media/Picture42.PNG"><br>
+<img src="../media/Picture42.PNG"><br>
 
 2. Introduce the url of the web app to be analyzed, hit the `RUN SCAN` button and wait for the report to be finished.
 
-<img src="../Media/Picture43.PNG"><br>
+<img src="../media/Picture43.PNG"><br>
 
 3. Go to the PWA section and check out that the web app has no errors so that it is PWA compliant.
 
-<img src="../Media/Picture44.PNG"><br>
+<img src="../media/Picture44.PNG"><br>
 
 
 ### Pwa suggestions
@@ -35,7 +35,7 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 1. Hit the documentation button of the warning `The file extension should be 'webmanifest' (not 'json')` and check what might be the cause that triggered the warning and the suggestion to pass the rule.
 
-<img src="../Media/Picture45.PNG"><br>
+<img src="../media/Picture45.PNG"><br>
 
 2. Navigate to the directory `Microsoft.Knowzy.WebApp\wwwroot\` in the source code and rename the manifest extension as `manifest.webmanifest`.
 
@@ -45,17 +45,17 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 5. Scan again the web app using Sonarwhal and check that the webmanifest warning has been solved.
 
-<img src="../Media/Picture46.PNG"><br>
+<img src="../media/Picture46.PNG"><br>
 
 6. Now let's consider that we created a manifest with some required parameters missing such as `name` and `short_name`. Modify the manifest located at `Microsoft.Knowzy.WebApp\wwwroot\` in the source code and remove the name and short_name parameters.
 
-<img src="../Media/Picture47.PNG"><br>
+<img src="../media/Picture47.PNG"><br>
 
 7. Publish the web app again in Azure.
 
 8. Go to Sonarwhal and execute the scan again. Noticed now that there is a warning in the PWA section stating that the name is missing.
 
-<img src="../Media/Picture48.PNG"><br>
+<img src="../media/Picture48.PNG"><br>
 
 9. Include again the `name` and `short_name` in the manifest. Publish in Azure the changes and execute Sonarwhal again. The warning should disappear.
 
@@ -67,13 +67,13 @@ In the security section, the Subresource Integrity `SRI` feature enables you to 
 
 1. On the Security section, go to the SRI section and click the Details button to check the cause of the security issues.
 
-<img src="../Media/Picture49.PNG"><br>
+<img src="../media/Picture49.PNG"><br>
 
 2. As Sonarwhal suggested, in our web app is missing the integrity attribute in scripts and stylesheets. Go to the following link to generate the hash the each script and stylesheet [SRI Hash Generator](https://www.srihash.org/)
 
 3. On the Hash generator site, introduce the URL of the site.min.css stylesheet `https://msftknowzy.azurewebsites.net/css/site.min.css` and copy the integrity hash in the stylesheet link in the _Layout.cshtml file located in the directory `Microsoft.Knowzy.WebApp\Views\Shared\` as shown below:
 
-<img src="../Media/Picture50.PNG"><br>
+<img src="../media/Picture50.PNG"><br>
 
 ```JS
 #Microsoft.Knowzy.WebApp\Views\Shared\_Layout.cshtml

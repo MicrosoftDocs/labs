@@ -6,7 +6,7 @@ There are a number of service workers to choose from on this page, but Knowzy is
 
 1. For this functionality we'll choose the "Cache-first network" service worker.
 
-![Provide a URL](../Media/Picture25.jpg)
+![Provide a URL](../media/Picture25.jpg)
 
 
 2. How to add the manifest and service worker to your site, will be explained in the **Add manifest and service worker (sw)** section.  

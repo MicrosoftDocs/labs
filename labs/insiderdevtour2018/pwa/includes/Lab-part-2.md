@@ -5,24 +5,24 @@
 This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.asp.net/) example project continue with this part.
 
 1. To start, clone or download the repository code and open the folder: `PWA/source code/`
-![](../Media/Picture5.jpg)
+![](../media/Picture5.jpg)
 2. Execute the **Microsoft.Knowzy.sln** solution to open the project in visual studio.
 
-![](../Media/Picture6.jpg)
+![](../media/Picture6.jpg)
 
 3. Now to run your web app in a browser, hit F5 in visual studio or click on the start button:
 
-![run application in local, IIS Express](../Media/Picture7.jpg)
+![run application in local, IIS Express](../media/Picture7.jpg)
 
 
-![](../Media/Picture8.jpg)
+![](../media/Picture8.jpg)
 
 ## Responsive Web Design
 
 Responsive web design makes your web page look good on all devices (desktops, tablets, and phones) because use HTML and CSS to resize, hide, shrink, enlarge, or move the content to make it look good on any screen.
 
 Our website doesn't have a responsive design, let see what happend if I simulate a mobile screen, for example a Galaxy S5 (360 x 640px):
-![](../Media/Picture9.jpg)
+![](../media/Picture9.jpg)
 
 Here we can see that the header is adapted but the list seems need to be fixed. To adapt it to the screen we will add some media queries.
 
@@ -48,7 +48,7 @@ To view good your application in a mobile phone first we have to fix the previou
 
 
 1. To fix it go to the site.css at the following path: `\wwwroot\css\site.css`
-![](../Media/Picture10.jpg)
+![](../media/Picture10.jpg)
 
 2. To adapt it to some screens add some media queries to modify the container width to different screen sizes like 320px, 768px, 992px, and 1200px:
 
@@ -81,10 +81,10 @@ To view good your application in a mobile phone first we have to fix the previou
 
     Be sure to add these rules *below* the "container-main" rule, so the media queries will override the width of the main rule.
 
-![Add media queries to adapt container to screens](../Media/Picture11.jpg)
+![Add media queries to adapt container to screens](../media/Picture11.jpg)
 
 Congratulations! Your app is now ready to be viewed on devices with different screen sizes and orientations.
-    ![local application](../Media/Picture12.jpg)
+    ![local application](../media/Picture12.jpg)
 
 
 ### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
@@ -101,11 +101,11 @@ Using azure services:
 
     **NOTE:** Some configurations of Visual Studio may have the "publish" option as its own menu.
 
-    ![publish screen from vs](../Media/Picture13.jpg)
+    ![publish screen from vs](../media/Picture13.jpg)
 
 2. Choose "Microsoft Azure App Service" from the selection screen
 
-    ![publish screen from vs](../Media/Picture14.jpg)
+    ![publish screen from vs](../media/Picture14.jpg)
 
 3.  Sign into your Azure account to create a new Azure App Service.
 
@@ -113,17 +113,17 @@ Using azure services:
 
     Press "New..." button to create the Resource Group, and the App Service Plan.
 
-    ![publish screen from vs](../Media/Picture15.jpg)
+    ![publish screen from vs](../media/Picture15.jpg)
 
 4. Click "Create" to create the app in azure. When it finishes you should see the Publish next step:
 
-    ![publish screen from vs](../Media/Picture16.jpg)
+    ![publish screen from vs](../media/Picture16.jpg)
 
     Save the generated **Site url**, is the url of your website published.
 
 5. Click on "Publish button" with the application stopped, when it finishes will show automatically the application.
 
-    ![published screen from vs](../Media/Picture1.jpg)
+    ![published screen from vs](../media/Picture1.jpg)
 
 
 ## Deployment Errors
@@ -136,6 +136,6 @@ Using azure services:
 
     4. Press restart on the top menu bar (see 3 in the figure below)
 
-        ![publish screen from vs](../Media/Picture17.jpg)
+        ![publish screen from vs](../media/Picture17.jpg)
 
     5. Once your web app has finished restarting, re-deploying your web app should be successful.

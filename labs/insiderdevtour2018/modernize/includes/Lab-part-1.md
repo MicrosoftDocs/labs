@@ -116,7 +116,7 @@ Build and run the solution to test above code, by clicking in Documentation
 menu, right at top bar. It simply opens the DocumentationView’s window and
 renders the URL specified within DocumentationViewModel.
 
-![](../Media/Picture1.png)
+![](../media/Picture1.png)
 
 As you can appreciate the rendered web site differs from such accessed through
 more modern browsers such like Edge or Chrome.
@@ -136,7 +136,7 @@ on .NET Framework 4.6.2, the project must be re-targeted to this version which
 may require installing the corresponding SDK (just follow Visual Studio
 indications to achieve it).
 
-![](../Media/Picture2.png)
+![](../media/Picture2.png)
 
 Open Views/DocumentationView.xaml and replace WebBrowser tag with WebView, by
 adding the following namespace at root Window:
