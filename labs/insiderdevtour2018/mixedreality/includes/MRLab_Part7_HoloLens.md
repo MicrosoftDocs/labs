@@ -27,29 +27,28 @@ There are a number of ways to select [gameobjects inside of a script](https://do
 - We only need to run this test once when the app starts. We will do this inside the Start() function. So we can delete the Update() function.
 - Replace the code in the GameManager script with this:
 
-			```csharp
-			using System.Collections;
-			using System.Collections.Generic;
-			using UnityEngine;
-			// We need the UnityEngine.XR.WSA namespace to access Holographic Settings which contain 
-			// functions which effect the performance and presentation of Holograms on Windows 
-			// Holographic platforms.
-			using UnityEngine.XR.WSA;
-	
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+// We need the UnityEngine.XR.WSA namespace to access Holographic Settings which contain 
+// functions which effect the performance and presentation of Holograms on Windows 
+// Holographic platforms.
+using UnityEngine.XR.WSA;
 			public class GameManager : MonoBehaviour {
-		    	void Start () {
-		       		// Check if the MR headset display is transparent (not opaque).
-		        	if(!HolographicSettings.IsDisplayOpaque){ 
-		            	// If that is the case, then we need to hide the virtual living room
-		            	GameObject[] HMDUOnlyObjects = GameObject.FindGameObjectsWithTag("HMDUOnly");
-		            	for (int i = 0; i < HMDUOnlyObjects.Length; i++){
-		               		// Set active to false disables the object.
-		                	HMDUOnlyObjects[i].SetActive(false); 
-		            	}
-		        	}
-		    	}
-			}
-			```
+				void Start () {
+			   		// Check if the MR headset display is transparent (not opaque).
+			    	if(!HolographicSettings.IsDisplayOpaque){ 
+			        	// If that is the case, then we need to hide the virtual living room
+			        	GameObject[] HMDUOnlyObjects = GameObject.FindGameObjectsWithTag("HMDUOnly");
+			        	for (int i = 0; i < HMDUOnlyObjects.Length; i++){
+			           		// Set active to false disables the object.
+			            	HMDUOnlyObjects[i].SetActive(false); 
+			        	}
+			    	}
+				}
+}
+```
 
 Lastly, to ensure that the experience runs fine on the HoloLens, we need to check that the camera background is set to black. 
 
