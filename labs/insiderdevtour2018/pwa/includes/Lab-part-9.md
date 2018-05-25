@@ -41,7 +41,7 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 3. Navigate to the file located at `Microsoft.Knowzy.WebApp\Views\Shippings\Index.cshtml` in the source code and replace the manifest link with `<link rel="manifest" href="~/manifest.webmanifest">`
 
-4. Publish your web app again in Azure [Deploy your ASP.net App Changes](Lab-part-2.md)
+4. Publish your web app again in Azure [Deploy your ASP.net App Changes](lab-part-2.md)
 
 5. Scan again the web app using Sonarwhal and check that the webmanifest warning has been solved.
 
@@ -51,7 +51,7 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 <img src="/Media/Picture47.PNG"><br>
 
-7. Publish again the web app in Azure [Deploy your ASP.net App Changes](Lab-part-2.md)
+7. Publish again the web app in Azure [Deploy your ASP.net App Changes](lab-part-2.md)
 
 8. Go to Sonarwhal and execute the scan again. Noticed now that there is a warning in the PWA section stating that the name is missing.
 

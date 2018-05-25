@@ -11,4 +11,4 @@ There are a number of service workers to choose from on this page, but Knowzy is
 
 2. How to add the manifest and service worker to your site, will be explained in the **Add manifest and service worker (sw)** section.  
 
-### Continue to [add code  >> ](Lab-part-5.md)
+### Continue to [add code  >> ](lab-part-5.md)

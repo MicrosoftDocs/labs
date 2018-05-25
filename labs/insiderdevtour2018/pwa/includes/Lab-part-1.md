@@ -43,4 +43,4 @@ After complete this lab, your PWA will looks like this:
 
 Looking this examples, can you tell the difference?
 
-### Continue with [Build a Responsive Web App >> ](Lab-part-2.md)
+### Continue with [Build a Responsive Web App >> ](lab-part-2.md)
