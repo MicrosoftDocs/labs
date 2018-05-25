@@ -5,7 +5,7 @@ metadata:
   description: In this lab your learn what is graph, how use it and the possibilities that offers us. You write C# code and see tthe results in UWP App.
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
+  ms.topic: tutorial
   nextTutorialHref: ..\mixedreality\index.yml
   nextTutorialTitle: Mixed Reality lab
   ms.custom: Insider Dev Tour 2018

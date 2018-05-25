@@ -1,12 +1,11 @@
 ### YamlMime:Tutorial
-labUrl: https://labondemand.com/AuthenticatedLaunch/40563?providerId=1
 title: Get the most out of your web app with a Progressive Web App (PWA)
 metadata:
   title: Get the most out of your web app with a Progressive Web App (PWA)
   description: Learn the fundamentals of a Progressive Web App, how to ensure it works great across multiple platforms, and how it can light up on Windows 10. 
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
+  ms.topic: tutorial
   nextTutorialHref: ..\office365\index.yml
   nextTutorialTitle: Office 365 lab
   ms.custom: Insider Dev Tour 2018

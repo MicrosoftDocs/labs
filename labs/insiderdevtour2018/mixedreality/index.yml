@@ -5,7 +5,7 @@ metadata:
   description: In this hands-on-lab, you'll use Unity and Visual Studio to learn about developing mixed reality apps for Windows.
   audience: Developer
   level: Beginner
-  ms.topic: get-started-article
+  ms.topic: tutorial
   nextTutorialHref: ..\modernize\index.yml
   nextTutorialTitle: Modernize lab
   ms.custom: Insider Dev Tour 2018
