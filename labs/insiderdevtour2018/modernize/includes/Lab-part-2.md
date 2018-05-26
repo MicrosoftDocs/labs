@@ -1,43 +1,26 @@
-Step 2: Adaptive Cards
-======================
+# Adaptive Cards
 
-This step-by-step document will help you support Adaptive Cards into an existing
-WPF application. [Adaptive Cards](https://adaptivecards.io/) are a new way for
-developers to exchange card content in a common and consistent way --you can
-play with samples on-line [here](https://adaptivecards.io/samples/).
+[Adaptive Cards](https://adaptivecards.io/) are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
 
-From the UX perspective, using Adaptive Cards instead of common toast
-notifications keeps our users in the experience provided in our app, instead of
-moving their focus out of it. Also, it gives feedback to our users about
-operations being done in a second plane, such as persisting data, or sending it
-over the wire.
+**Note:** You can start playing with samples quickly online [here](https://adaptivecards.io/samples/).
 
-Adding support for Adaptive Cards to WPF
-----------------------------------------
+You will start by adding Adaptive Cards support to your WPF app.
 
-Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple
-technologies. From the WPF perspective, such is accessible through
+## Adding support for Adaptive Cards to WPF
+
+Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple UI frameworks. For WPF you can access this feature through the  
 [AdaptiveCards.Rendering.Wpf](https://www.nuget.org/packages/AdaptiveCards.Rendering.Wpf/)
-NuGet package --by the date this guide was written the last available version is
-1.0.0.
+NuGet package.
 
-Make right-click into Microsoft.Knowzy.WPF project and choose Manage NuGet
-Packages..., type “AdaptiveCards.Rendering.Wpf”. Select the mentioned package
-and click Install.
+1. **Right-click** your **Microsoft.Knowzy.WPF** project references and choose **Manage NuGet Packages...** -> search for **AdaptiveCards.Rendering.Wpf** and install the package.
 
 ![](../media/Picture3.png)
 
-Creating our card
------------------
+## Creating your card
 
-Since the app talks about list of items which correspond to tasks into a
-production line, we’ll show a card once a new item is created, allowing even
-later adding notes through it, as an option to fulfill information in case we
-missed the chance previously.
+In this scenario you will show a card once a new production line product is manufactured. You will also make this an actionable card so you can easily add updates to the product at a given stage.
 
-From the app perspective, the card will be shown from MainView.xaml, so we’ll
-begin by adding a container to render the card inside. Scroll down to
-MainView.xaml bottom, and add a Grid to main one, placed at right-bottom:
+1. You will be rendering your car inside of the **MainPage.xaml** view. Start by adding a container to render the card inside of this view like so (this is right at the bottom of the file):
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     [...]
@@ -52,29 +35,25 @@ MainView.xaml bottom, and add a Grid to main one, placed at right-bottom:
 </UserControl>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-adaptiveCardContainer is then accessed from code-behind to enlist our card as a
-child.
+You have given your container a name of **adaptiveCardContainer** so you can easily access it from code later.
 
-Microsoft provides a few WYSIWYG options to design our cards: an [on-line
+**Note:** You can utilize tools for visualizing your cards for different UI frameworks - there is an [on-line
 version](http://adaptivecards.io/visualizer/index.html?hostApp=Bot%20Framework%20WebChat)
 and a [WPF-based
-one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer),
-among others. Such rely in JSON to specify the layout; however, we’ll write it
-in C\# to easily reuse it when adding multiple items.
+one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer). Cards utilize a JSON format, but can also be created in C#.
 
 ![](../media/Picture4.png)
 
-Open MainView.xaml.cs and add these namespaces:
+2. Open **MainView.xaml.cs** and add these namespaces:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 using AdaptiveCards;
 using AdaptiveCards.Rendering;
 using AdaptiveCards.Rendering.Wpf;
+using System.IO;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, add the following method, which returns an AdaptiveCard object to later
-render it in above container --please note \_cardTitleTextBlock is declared as
-class field, because we’ll update its text for reusal:
+3. Next add the following method to return an AdaptiveCard object that you will render inside of the container.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private AdaptiveCard CreateCard()
@@ -119,10 +98,7 @@ private AdaptiveCard CreateCard()
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At ctor. level, we’ll the AdaptiveCardRenderer which will return us the WPF’s
-FrameworkElement to add to container’s hierarchy. \_renderer and \_card are
-readonly fields because we’ll reuse the same instances to render the different
-cards:
+4. You now need to add some private member variables for referencing the card instance you will create, and initialize them in your constructure. Add the code below as appropriate:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public partial class MainView
@@ -145,12 +121,7 @@ public partial class MainView
     }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Adaptive Cards can be styled through JSON to make them fit the context in where
-are being displayed, and here we want them to look like native Windows 10 toast
-notifications. Add a new JSON file named WindowsNotificationHostConfig.json to
-the Assets folder, with the following content --remember to mark its Copy to
-Output Directory as Copy if newer within its Properties option at right-button
-click menu:
+5. Here you will be creating a card that represents an in-app toast notification, so you will follow a similar style to the system-wide toast notifications. As Adaptive Cards are represented in JSON, add a new JSON file name **WindowsNotificationHostConfig.json** to your **Assets** folder. Copy in the content below, and then set your file build settings to **Content** and **Copy if newer**.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {
@@ -279,36 +250,13 @@ click menu:
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This file was generated with [WPF
+**Note:** This file was generated with the [WPF
 Visualizer](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer)
-tool, which also bundles different styles to play with, also affecting its
-real-time rendering.
+tool, which also bundles different styles to experiment with. You will now take this item and render it within your app.
 
-The following step will connect the item creation to actually displaying the
-card.
+## Showing your card
 
-Showing our card
-----------------
-
-Our app relies in MVVM for its architecture, so item creating is consistently
-done at ViewModel level. At MainViewModel.cs, look for NewItem() method and add
-a new property:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public void NewItem()
-{
-    var item = new ItemViewModel(_eventAggregator);
-    _eventAggregator.PublishOnUIThread(new EditItemMessage(item));
-
-    if (item.Id == null) return;
-    DevelopmentItems.Add(item);
-
-    // This prop. is just used to fire a visibility change in the UI, it should be improved in a real scenario
-    ShowAdaptiveCard = true;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Define ShowAdaptiveCard then to notify UI when it’s set:
+1. Given this app uses an MVVM architecture, product creation logic (for your shipping items) will sit inside of your view model code. Open **MainViewModel.cs** and add a new **ShowAdaptiveCard** property:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private bool _showAdaptiveCard;
@@ -324,9 +272,22 @@ public bool ShowAdaptiveCard
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Back to MainView.xaml/.xaml.cs, we first need to connect the new ViewModel prop.
-to the View. At XAML level, add the following attribute to
-adaptiveCardContainer:
+2. Now locate the existing **NewItem** method and set your **ShowAdaptiveCard** property to true.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+public void NewItem()
+{
+    var item = new ItemViewModel(_eventAggregator);
+    _eventAggregator.PublishOnUIThread(new EditItemMessage(item));
+
+    if (item.Id == null) return;
+    DevelopmentItems.Add(item);
+
+    ShowAdaptiveCard = true;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Open your **MainView.xaml** view and bind the **Visibility** of your container to the property you just created:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     [...]
@@ -340,10 +301,7 @@ adaptiveCardContainer:
 </UserControl>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now, when the prop. is true the Grid will be visible, and otherwise hidden.
-Apart from this, we need another connection point to update the card with last
-item’s data. Open the code-behind and within MainView_DataContextChanged() add
-the following update:
+4. Next you need to update the card with the appropriate items data. Open the **MainView.xaml.cs** code-behind and within MainView_DataContextChanged() add the following updates:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private void MainView_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
@@ -366,14 +324,9 @@ private void MainView_DataContextChanged(object sender, System.Windows.Dependenc
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once we have MainViewModel set as DataContext, we subscribe to its
-PropertyChanged event, in order to detect when ShowAdaptiveCard is true. When
-it’s, we pick the last item added and update our card which will be immediately
-shown due to the binding we added above.
+**Note:** You are creating logic here to update your adaptive card whenever the underlying data context (i.e. product/item changes or is created).
 
-Add UpdateAdaptiveCard() method to MainView.xaml.cs, which updates
-\_cardTitleTextBlock, clears current container and adds a new rendering to it
-again:
+5. Add a **UpdateAdaptiveCard()** method to **MainView.xaml.cs**, which updates **\_cardTitleTextBlock**, clears the current container and adds a new rendered card to it:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private RenderedAdaptiveCard _renderedCard;
@@ -404,13 +357,13 @@ private void UpdateAdaptiveCard(ItemViewModel item)
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Build and run the project, and add a new item through top menu. As soon as you
-save it, the Adaptive Card will pop up as expected:
+6. Now build and run your project. Add a new item via your menu and save it. You should now see your Adaptive Card render on the screen!
 
 ![](../media/Picture5.png)
 
-Interacting with our card
--------------------------
+## Interacting with your card
+
+1. In order to interact with your card you need to make some further code changes to **MainView.xaml.cs**. You can being by subscribing to an **OnAction** event like so:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private void UpdateAdaptiveCard(ItemViewModel item)
@@ -439,9 +392,7 @@ private void UpdateAdaptiveCard(ItemViewModel item)
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You’ll notice there’s a new subscription done in the middle,
-\_renderedCard.OnAction, which’s our entry-point to detecting when notes are
-added within the card. Add RenderedCard_OnAction() just below:
+2. Next add the **OnAction** event handler:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private void RenderedCard_OnAction(RenderedAdaptiveCard sender, AdaptiveActionEventArgs e)
@@ -466,15 +417,4 @@ private void RenderedCard_OnAction(RenderedAdaptiveCard sender, AdaptiveActionEv
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here we’re detecting when the user clicks on OK button to dismiss the card
---actually hide it; notice how we’re modifying the ViewModels’ prop. because the
-binding will do the rest of the job-- and taking the notes to save them into the
-item.
-
-Summary
--------
-
-After completing every step we’ve been able to show and interact with Adaptive
-Cards from WPF to leverage the app’s value to our customers. We’ve learned how
-to add support for Adaptive Cards in WPF, how to design new cards with WYSIWYG
-tools, how to render such in WPF and later interact with its UI.
+3. Here you are detecting when the user clicks the OK button - this will dismiss / hide the card. You are also giving the user an option to type and save additional notes, which you do by grabbing the text from the **inputs** dictionary, and pushing the text into your view model. Run the app to test this, and you are all done!

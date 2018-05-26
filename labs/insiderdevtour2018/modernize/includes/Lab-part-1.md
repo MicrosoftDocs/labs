@@ -1,25 +1,20 @@
-Step 1: UI modernization
-========================
+# UI modernization
 
-The following guide will take you through the built-in WPF’s WebBrowser control,
-which allows to embed web sites within our apps, to the modern WebView one,
-relying in Edge’s engine to render cutting edge HTML5 and CSS3 standards, plus
-all new features coming along, such like WebRTC, Service Workers, etc.
+In WPF and WinForms apps today, it is common to have islands of web content that are often hosted in the **WebBrowser** control. The **WebBrowser** control that ships as part of the platform uses the Internet Explorer 11 (IE11) rendering engine, which **does not** support the latest web standards. It is common for apps leveraging this control to observe incorrect rendering of more modern websites. In many cases, it is not possible for the web developer to fix these rendering issues as the website is owned either by a third-party, or a team in another part of the organization.
 
-WPF’s built-in WebBrowser control
----------------------------------
+The following steps will explain how you can switch out the **WebBrowser** control with the newly released, and modern **WebView** control for WPF and WinForms. This is made possible through the new XAML islands architecture, which extends UWP controls into multiple UI frameworks. You can now have your web content support features such as WebRTC, service workers and more.
 
-Right click on Views folder, under Microsoft.Knowzy.WPF project, and select Add,
-Window... Name it DocumentationView.xaml. Open such file and add the following
-child control:
+To get started, open the solution file (**Microsoft.Knowzy.WPF**) that you downnloaded and navigate to the **Microsoft.Knowzy.WPF** project. Try running the solution to become familiar with it. This is typical looking business application that is built with the Model-View-ViewModel (MVVM) pattern. **Note:** remember to restore Nuget packages for the project (right-click your Solution -> Restore NuGet Packages).
+
+## WPF WebBrowser control
+
+1. **Right-click** on the **Views** folder in the **Microsoft.Knowzy.WPF** project, and select **Add** -> **Window...**. Name your window **DocumentationView.xaml**. Open the file and add the following child control:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<WebBrowser
-        x:Name="webBrowser" />
+<WebBrowser x:Name="webBrowser" />
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now open its code-behind file, and add the following subscription --remember to
-unsubscribe it under a real scenario:
+2. Now open the code-behind file (**DocumentationView.xaml.cs**), and add the following event handler code.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public DocumentationView()
@@ -38,21 +33,22 @@ private void DocumentationView_DataContextChanged(object sender, DependencyPrope
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As you’ve noticed, we need DocumentationViewModel class: right-click on
-ViewModels folder, Add, Class..., and name it DocumentationViewModel.cs. Such
-will only provide the destiny URL so can bind it later on:
+3. This code is simply listening for when the view's data context (view model) changes, and then navigating the **WebBrowser** control to the new **URL** on the view model.
+
+4. From the code, you can see that there is a **DocumentationViewModel** class is expected. To create this class, **right-click** on the **ViewModels** folder -> **Add** -> **Class**. Name your class **DocumentationViewModel.cs**.
+
+5. For now, you will keep your class simple and just add a single property to store your navigation URL:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public class DocumentationViewModel : Screen
+public class DocumentationViewModel : Caliburn.Micro.Screen
 {
-    private const string _url = "https://www.youtube.com/microsoft";
-
-    public string URL => _url;
+    public string URL => "http://aboutknowzy.azurewebsites.net?view=docs";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At AppBootstrapper.cs add the new ViewModel so can be injected along with the
-View:
+**Note:** that yor class should inherit from **Caliburn.Micro.Screen**. Caliburn is a UI framework that helps implement the MVVM pattern. You will also need to add a namespace reference to your new view model class in **Documentation.xaml.cs**.
+
+6. Next find your **AppBootstrapper.cs** file (in the root of your **Microsoft.Knowzy.WPF** project), and add the new ViewModel so can be injected along with the View:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 protected override void Configure()
@@ -62,19 +58,21 @@ protected override void Configure()
     builder.RegisterType<DocumentationViewModel>().SingleInstance();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, we’ll add a new button at top menu bar, so open MainView.xaml and the
-following MenuItem at the end:
+7. Next you will add a new button to the menu bar in your UI.  Open **Views\MainView.xaml** and locate the **MenuItem** whose **cal:Message.Attach** property is equal to **About()**. It looks something like this:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                <MenuItem Header="{x:Static localization:Resources.Help_Menu}" Template="{DynamicResource MenuItemControlTemplate}"
-                          cal:Message.Attach="About()" />
-                <MenuItem Header="Doc." Template="{DynamicResource MenuItemControlTemplate}"
+<MenuItem Header="{x:Static localization:Resources.Help_Menu}" Template="{DynamicResource MenuItemControlTemplate}"
+                      cal:Message.Attach="About()" />
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8. Directly below this code, add the following:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<MenuItem Header="Doc." Template="{DynamicResource MenuItemControlTemplate}"
                           cal:Message.Attach="Documentation()" />
-            </Menu>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our ViewModel needs to handle such attachment so go back to MainViewModel.cs and
-add the following method:
+9. You have now added a **MenuItem** that when selected will look for your new **Documentation** view. You now need to wire up the other end of this in the view model. Open **MainViewModel.cs** and add the following method:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public void Documentation()
@@ -83,83 +81,66 @@ public void Documentation()
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenDocumentationMessage is a new class which needs to be created, right at
-Messages folder: follow the same steps as before and leave it as it’s, without
-any logic inside.
+10. **OpenDocumentationMessage** is a new **class** that needs to be created in the Messages folder. Create the class (ensuring it is marked **public**) and just leave it with the standard boilerplate code.
 
-Finally, open ShellViewModel.cs and add a new interface to its inheritance,
-followed by a new readonly field which stores the DocumentationViewModel
-instance, and its corresponding Handle() method, which opens the window as a
-dialog:
+11. Finally, open **ShellViewModel.cs**. Here you will need to inherit **ShellViewModel** from a new generic interface called **IHandle<OpenDocumentationMessage>**, followed by a new **readonly field** which stores the DocumentationViewModel
+instance - and its corresponding **Handle() method**. Add the code below to your **ShellViewModel.cs** file.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public class ShellViewModel : [...], IHandle<OpenDocumentationMessage>
+{
+    [...]
+    private readonly DocumentationViewModel _documentationViewModel;
+
+    public ShellViewModel([...], DocumentationViewModel documentationViewModel)
     {
         [...]
-        private readonly DocumentationViewModel _documentationViewModel;
+        _documentationViewModel = documentationViewModel;
+    }
 
-        public ShellViewModel([...], DocumentationViewModel documentationViewModel)
-        {
-            [...]
-            _documentationViewModel = documentationViewModel;
-        }
+    [...]
 
-        [...]
-
-        public void Handle(OpenDocumentationMessage message)
-        {
-            _windowManager.ShowDialog(_documentationViewModel);
-        }
+    public void Handle(OpenDocumentationMessage message)
+    {
+        _windowManager.ShowDialog(_documentationViewModel);
+    }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Build and run the solution to test above code, by clicking in Documentation
-menu, right at top bar. It simply opens the DocumentationView’s window and
-renders the URL specified within DocumentationViewModel.
+12. Build and run the solution to test the code above by selecting the **Documentation** menu option.
 
 ![](../media/Picture1.png)
 
-As you can appreciate the rendered web site differs from such accessed through
-more modern browsers such like Edge or Chrome.
+**NOTE:** You should see that the your new DocumentationView opens in a new window and renders the URL specified within DocumentationViewModel. There is a problem here though - the web page uses CSS3 styles that the **WebBrowser** control does not understand - this is just one simple example. You will now go through steps to resolve this by replacing the **WebBrowser** control with the modern **WebView**.
 
-Replacing WebBrowser with WebView
----------------------------------
+## Replacing WebBrowser with WebView
 
-In order to make WebView available from WPF, the package
+In order to make the WebView available from WPF (or WinForms), the NuGet package
 [Microsoft.Toolkit.Win32.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/)
-needs to be added to Microsoft.Knowzy.WPF project. Right click on this and left
-click again on Manage NuGet Packages...
+needs to be added to **Microsoft.Knowzy.WPF** project. 
 
-Choose Browse tab and type “Microsoft.Toolkit.Win32.UI.Controls“ at Search entry
---this package is in pre-release by the date of writing this guide, so check
-Include prerelease option to assure it’s visible to us. Also, since it depends
-on .NET Framework 4.6.2, the project must be re-targeted to this version which
-may require installing the corresponding SDK (just follow Visual Studio
-indications to achieve it).
+**Note:** You will need to ensure your project is targeting **.NET Framework 4.6.2** before you continue.
+
+1. **Right-click** your **Microsoft.Knowzy.WPF** project -> **Properties** -> set **Target framework** to **.NET Framework 4.6.2**. If you don't see the option for that version of the framework, then open the **Visual Studio Installer** from your start menu, and install it from there.
+
+2. Now **right-click** on your **Microsoft.Knowzy.WPF** project -> **Manage NuGet Packages...** -> **Browse** -> **Microsoft.Toolkit.Win32.UI.Controls** -> select -> **Install**.
 
 ![](../media/Picture2.png)
 
-Open Views/DocumentationView.xaml and replace WebBrowser tag with WebView, by
-adding the following namespace at root Window:
+3. Open **Views/DocumentationView.xaml** and add a new namespace reference for the NuGet package you added:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <Window x:Class="Microsoft.Knowzy.WPF.Views.DocumentationView"
         [...]
-        xmlns:WPF="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
+        xmlns:toolkitControls="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
         mc:Ignorable="d"
         Title="DocumentationView" Height="450" Width="800">
-    <WPF:WebView
-        x:Name="webBrowser" />
-</Window>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are no more changes to do, this’ all. Simply build and run the project and
-you’ll enjoy the latest Edge-powered engine with noticeable changes in how
-things are rendered.
+4. Now all thats left to do is replace your **WebBrowser** control with your **toolkitControls:WebView** control like so:
 
-Summary
--------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        <toolkitControls:WebView x:Name="webBrowser" />
+        <!--<WebBrowser x:Name="webBrowser" />-->
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This guide has introduced WPF’s WebBrowser and showcased how web sites are
-rendered using it. Following it we’ve moved to WebView by simply adding a NuGet
-package and renaming the XAML tag, leveraging the latest state-of-art web
-technologies.
+5. That's it! Re-run your app and test the new web view - you should now see the content renders correctly in the centre of your **DocumentationView**.
