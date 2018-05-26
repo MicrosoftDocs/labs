@@ -1,8 +1,8 @@
 ### YamlMime:Tutorial
-title: Intelligence at the edge - getting started with Machine Learning
+title: Get started with Machine Learning
 metadata:
-  title: Intelligence at the edge - getting started with Machine Learning
-  description: When used in conjunction, the intelligent cloud and edge can enable differentiated experiences for your apps. Learn how to get started in this lab. 
+  title: Get started with Machine Learning
+  description: Learn how to use Machine Learning APIs and services on the intelligent cloud and intelligent edge to enable differentiated experiences for your apps. 
   audience: Developer
   level: Beginner
   ms.topic: tutorial
@@ -25,5 +25,6 @@ items:
   durationInMinutes: 20
   content: |
     [!include[](includes/lab-part-3.md)]
-- content: |
-    You've completed this lab.
+- title: More resources
+  content: |
+    [!include[](includes/lab-part-4.md)]
