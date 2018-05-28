@@ -1,6 +1,6 @@
 # What will this lab cover
 
-In these labs you will be introduced how to build a Progressive web application using a simple web application using ASP.NET Core, using a PWA tool that will generate the necessary files to do your web application a Progressive Web Aplication.
+This lab will explain how to build a simple Progressive Web Application (PWA) using ASP.NET Core, with the PWA tool that will generate the necessary files to do your application a Progressive Web Aplication.
 
 ## Prerequisites
 
