@@ -11,11 +11,11 @@ metadata:
   ms.custom: Insider Dev Tour 2018
 items:
 - title: Objectives
-   durationInMinutes: 1
+   durationInMinutes: 2
    content: |
     [!include[](Includes/0_Objectives.md)]
  - title: Introduction Microsoft Graph
-   durationInMinutes: 15
+   durationInMinutes: 10
    content: |
     [!include[](Includes/1_Introduction_Microsoft_Graph.md)]
 - title: Getting Started with Quick Start
@@ -23,12 +23,20 @@ items:
    content: |
     [!include[](Includes/2_Getting_Started_with_Quick_Start.md)]
 - title: Managing Files With MS Graph
-  durationInMinutes: 20
+  durationInMinutes: 15
   content: |
     [!include[](Includes/3_Managing_Files_With_MS_Graph.md)]-.
 - title: Integrating MS Graph into you app
-  durationInMinutes: 20
+  durationInMinutes: 10
   content: |
     [!include[](Includes/4_Integrating_MS_Graph_into_you_app.md)]    
+ - title: Integrating with office
+  durationInMinutes: 5
+  content: |
+    [!include[](Includes/5_Inegrating_With_Office.md)]    
+ - title: Writing to the Timeline
+  durationInMinutes: 10
+  content: |
+    [!include[](Includes/6_Writing_to_the_timeline.md)]    
 - content: |
     You've completed this lab.
