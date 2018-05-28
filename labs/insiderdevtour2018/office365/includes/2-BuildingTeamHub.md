@@ -67,7 +67,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 4. The app must include an initial configuration page to display during tab setup.
 
 ## Create Azure App Service ##
-1. Login to your Azure subscription from the [Azure portal](https://portal.azure.com)
+1. Login to your Azure subscription at [https://portal.azure.com](https://portal.azure.com)
 
 ![Azure Portal](../media/azure-portal-1.png)
 
