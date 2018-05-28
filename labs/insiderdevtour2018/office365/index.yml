@@ -16,10 +16,18 @@ items:
 - durationInMinutes: 60
   content: |
     This hands-on-lab teaches you about developing for Office 365 services with a focus on Microsoft Teams.  You'll explore the Teams application, the Graph API and build a custom Teams tab. 
-- title: Foundations of Office 365
+- title: Microsoft Teams and more
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/CreateTeam.md)]
+- title: Graph APIs
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/GraphAPI.md)]
+- title: Canvases across Office 365
   durationInMinutes: 15
   content: |
-    [!include[](includes/1-FoundationsOffice365.md)]
+    [!include[](includes/CanvasesOffice365.md)]
 - title: Build tailored team hubs in Microsoft Teams
   durationInMinutes: 40
   content: |
