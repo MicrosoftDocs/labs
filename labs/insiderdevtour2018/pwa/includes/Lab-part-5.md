@@ -25,10 +25,10 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 1. Open the **WEB** downloaded files and go to the PWA folder inside projects (ex: \Downloads\Knowzy-web\projects\PWA).
 ![Provide a URL](../media/Picture27.jpg)
 
-2. Pull the "manifest.json" file and the "images" folder that are inside of the PWA folder that you obtained from the zip file in the previous step.
+2. Copy the "manifest.json" file and the "images" folder that are inside of the PWA folder that you obtained from the zip file in the previous step.
 ![Provide a URL](../media/Picture28.jpg)
 
-3. Add the manifest.json and the "images" folder to the **wwwroot** path of your site (ex: ...\source code\src\1. WebApp\Microsoft.Knowzy.WebApp\wwwroot).
+3. Paste the manifest.json and the "images" folder to the **wwwroot** path of your site (ex: ...\source code\src\1. WebApp\Microsoft.Knowzy.WebApp\wwwroot).
 
     >Remember, if you change the path of your "images" folder, you need to update the json in your manifest file to reflect your changes.
 

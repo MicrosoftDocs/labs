@@ -11,11 +11,11 @@ PWA builder web site offers a collection of libraries for Windows APIs to add to
 
 PWA Builder automatically add the code to allow WinRT access on the generated manifest.
 
-<img src="../media/Picture73.PNG">
+<img src="../media/Picture73.png">
 
 We can see in the `uap:ApplicationContentUriRules` section the access allowed for our site.
 
-<img src="../media/Picture74.PNG">
+<img src="../media/Picture74.png">
 
 To simplify the task, we will test the WinRT apis by using the F12 tools console.
 
@@ -23,7 +23,7 @@ To simplify the task, we will test the WinRT apis by using the F12 tools console
 
 1. Launch your PWA app from your start menu.
 
-<img src="../media/Picture59.PNG"><br>
+<img src="../media/Picture59.png"><br>
 
 2. Once initialized, click F12 button to open the F12 Developer tools and select the `console` tab.
 
@@ -31,15 +31,15 @@ To simplify the task, we will test the WinRT apis by using the F12 tools console
 
 4. Select `Create Dark Theme Check` option and copy the source code in the **code** tab with the *copy* button.
 
-<img src="../media/Picture60.PNG"><br>
+<img src="../media/Picture60.png"><br>
 
 5. Paste the code in the F12 tools console and click Intro.
 
-<img src="../media/Picture72.PNG">
+<img src="../media/Picture72.png">
 
 6. From the same console, call the function you previously entered. You should see whether your computer is set in dark or light theme.
 
-<img src="../media/Picture61.PNG"><br>
+<img src="../media/Picture61.png"><br>
 
 #### Timeline
 
@@ -47,7 +47,7 @@ To do this part your machine must have the last **Windows April Update** to be a
 
 1. Launch your PWA app from your start menu.
 
-<img src="../media/Picture59.PNG"><br>
+<img src="../media/Picture59.png"><br>
 
 2. Once initialized, click F12 tools and select the `console` tab.
 
@@ -55,7 +55,7 @@ To do this part your machine must have the last **Windows April Update** to be a
 
 4. Select `Add Activity to Windows Timeline check` option and copy the source code.
 
-<img src="../media/Picture62.PNG"><br>
+<img src="../media/Picture62.png"><br>
 
 5. Paste the code in the F12 console tools (step 2) and click Intro.
 
@@ -65,7 +65,7 @@ To do this part your machine must have the last **Windows April Update** to be a
 addTimelineActivity("1", "KnowzyApp", "KnowzyApp demo app", "imagePath", "https://msftknowzy.azurewebsites.net");
 ```
 
-<img src="../media/Picture63.PNG"><br>
+<img src="../media/Picture63.png"><br>
 
 7. For the app to be able to add the timeline tile, it's necessary for the app to be put in the foreground.
 
@@ -76,5 +76,5 @@ You can find the timeline icon on the taskbar or call out Win+Tab keyword shortc
 
 9. Verify that the new card we added is shown in Windows Timeline.
 
-<img src="../media/Picture65.PNG"><br>
+<img src="../media/Picture65.png"><br>
 

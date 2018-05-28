@@ -78,7 +78,7 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 5.  Change the display mode to `Standalone` as we want the web application to look and feel like a standalone native application.
 
-![Display Mode](../media/Picture23.PNG)
+![Display Mode](../media/Picture23.png)
 
 ![](../media/Picture24.jpg)
 
