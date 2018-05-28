@@ -43,7 +43,7 @@ Connectors bring content and events from external systems into Team conversation
 
 
  
-## Exercise 3: Simple example with Tabs ##
+## Simple example with Tabs ##
 ###  Adapt an existing web app to work with Microsoft Teams ###
 In this example, we will demonstrate how to transform an existing web app into a Team App.  
 
@@ -67,7 +67,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 4. The app must include an initial configuration page to display during tab setup.
 
 ## Create Azure App Service ##
-1. Login to your Azure subscription from the [Azure portal](https://portal.azure.com)
+1. Login to your Azure subscription at [https://portal.azure.com](https://portal.azure.com)
 
 ![Azure Portal](../media/azure-portal-1.png)
 
