@@ -37,7 +37,7 @@ In the UWP project go to **Helpers/OutlookHelper.cs** GetContacts method and fol
 
 ## Create an event in the Outlook calendar 
 
-In the UWP project go to **Helpers/OutlookHelper.cs** SetAppintment method and follow these steps:
+In the UWP project go to **Helpers/OutlookHelper.cs** SetAppointment method and follow these steps:
 
 - Delete the code
 
