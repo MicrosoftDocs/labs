@@ -13,6 +13,10 @@ Desktop apps can send interactive Toast Notifications just like Universal
 Windows Platform (UWP) ones. However, there are a few special steps for desktop
 apps due to the different activation schemes.
 
+If you want to see other visualizations of Toast Notifications, please visit
+[this
+link](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+
 ### 1. Enable the Windows 10 SDK
 
 First thing that we have to do is enable the Windows 10 SDK for our app. **Right
@@ -217,10 +221,3 @@ Once the notification disappears, we can still see the notification in **Action
 Center**.
 
 ![](../media/Picture15.png)
-
-More Information
-----------------
-
-If you want to see other visualizations of Toast Notifications, please visit
-[this
-link](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
