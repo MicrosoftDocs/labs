@@ -43,7 +43,7 @@ Connectors bring content and events from external systems into Team conversation
 
 
  
-## Simple example with Tabs ##
+## Exercise 3: Simple example with Tabs ##
 ###  Adapt an existing web app to work with Microsoft Teams ###
 In this example, we will demonstrate how to transform an existing web app into a Team App.  
 
