@@ -55,7 +55,7 @@ Now we will download the UWP application. We will use it and configure it with t
 
 #### Download UWP project from Github 
 
-Download project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph) 
+Download project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.GraphBase) 
 
 #### Build and Debug
 
