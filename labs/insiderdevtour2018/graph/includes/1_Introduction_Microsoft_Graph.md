@@ -24,12 +24,12 @@ MS Graph, by allowing us to connect with all our Office 365 data, allows us to i
 
 With MS Graph we do the following:
 
- - Sends alerts if you're spending too much time in meetings.
- - Suggest the best time for the next team meeting according to your calendar.
- - Create a Team in Microsoft Teams for an existing office 365 Group.
- - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows.
- - Continue editing a document where you left off in another device .
- - Create a timeline with all your activity. 
+ - Sends alerts if you're spending too much time in meetings: [MS Graph API Outlook meetings](https://developer.microsoft.com/en-us/graph/docs/concepts/findmeetingtimes_example)
+ - Suggest the best time for the next team meeting according to your calendar: [MS Graph API Outlook Calendar](https://developer.microsoft.com/en-us/graph/docs/concepts/outlook-schedule-recurring-events)
+ - Create a Team in Microsoft Teams for an existing office 365 Group:[MS Graph API Teams](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/group)
+ - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows:[MS Graph API Azure AD](https://docs.microsoft.com/en-US/azure/active-directory/develop/active-directory-graph-api)
+ - Continue editing a document where you left off in another device :[MS Graph API Cross-Device](https://developer.microsoft.com/en-us/graph/docs/concepts/cross-device-app-configuration)
+ - Create a timeline with all your activity:[MS Graph API Activities](https://developer.microsoft.com/en-us/graph/docs/concepts/activity-feed-concept-overview)
    
 These are some examples of what can be done with MS Graph, but you can see there are many scenarios where you can apply.
 
