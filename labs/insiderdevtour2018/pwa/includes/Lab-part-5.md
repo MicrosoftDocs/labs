@@ -55,7 +55,7 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
 2. Open up the landing page of your app (_Layout.cshtml) and add a new script tag in the head after the manifest link.
       ```html
-        <link rel="manifest" href="manifest.json"></link>
+        <link rel="manifest" href="manifest.json">
         <script></script>
       ```
 
