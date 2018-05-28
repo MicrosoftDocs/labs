@@ -79,17 +79,18 @@ using System;
 using System.Runtime.InteropServices;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   actual class:
+-   actual class --Visual Studio’s **Tools**, **Create GUID** dialog will
+    generate one for you:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [ClassInterface(ClassInterfaceType.None)]
 [ComSourceInterfaces(typeof(INotificationActivationCallback))]
-[Guid("replaced-with-your-guid-C173E6ADF0C3"), ComVisible(true)]
+[Guid("REPLACE-WITH-YOUR-GUID"), ComVisible(true)]
 public class MyNotificationActivator : NotificationActivator
 {
-    public override void OnActivated(string invokedArgs, NotificationUserInput userInput, string appUserModelId)
+    public override void OnActivated(string arguments, NotificationUserInput userInput, string appUserModelId)
     {
-        // TODO Handle activation
+        // Intentionally blank
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,9 +117,8 @@ created on the previous lab:
 <Application>
   [...]
   <Extensions>
-    <!-- Specify which CLSID to activate when toast is clicked -->
     <desktop:Extension Category="windows.toastNotificationActivation">
-      <desktop:ToastNotificationActivation ToastActivatorCLSID="replaced-with-your-guid-C173E6ADF0C3" />
+      <desktop:ToastNotificationActivation ToastActivatorCLSID="REPLACE-WITH-YOUR-GUID" />
     </desktop:Extension>
   </Extensions>
 </Application>
