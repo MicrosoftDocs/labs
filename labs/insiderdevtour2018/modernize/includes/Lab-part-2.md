@@ -1,420 +1,146 @@
-# Adaptive Cards
+# UI modernization
 
-[Adaptive Cards](https://adaptivecards.io/) are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
+In WPF and WinForms apps today, it is common to have islands of web content that are often hosted in the **WebBrowser** control. The **WebBrowser** control that ships as part of the platform uses the Internet Explorer 11 (IE11) rendering engine, which **does not** support the latest web standards. It is common for apps leveraging this control to observe incorrect rendering of more modern websites. In many cases, it is not possible for the web developer to fix these rendering issues as the website is owned either by a third-party, or a team in another part of the organization.
 
-**Note:** You can start playing with samples quickly online [here](https://adaptivecards.io/samples/).
+The following steps will explain how you can switch out the **WebBrowser** control with the newly released, and modern **WebView** control for WPF and WinForms. This is made possible through the new XAML islands architecture, which extends UWP controls into multiple UI frameworks. You can now have your web content support features such as WebRTC, service workers and more.
 
-You will start by adding Adaptive Cards support to your WPF app.
+To get started, open the solution file (**Microsoft.Knowzy.WPF**) that you downnloaded and navigate to the **Microsoft.Knowzy.WPF** project. Try running the solution to become familiar with it. This is typical looking business application that is built with the Model-View-ViewModel (MVVM) pattern. **Note:** remember to restore Nuget packages for the project (right-click your Solution -> Restore NuGet Packages).
 
-## Adding support for Adaptive Cards to WPF
+## WPF WebBrowser control
 
-Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple UI frameworks. For WPF you can access this feature through the  
-[AdaptiveCards.Rendering.Wpf](https://www.nuget.org/packages/AdaptiveCards.Rendering.Wpf/)
-NuGet package.
-
-1. **Right-click** your **Microsoft.Knowzy.WPF** project references and choose **Manage NuGet Packages...** -> search for **AdaptiveCards.Rendering.Wpf** and install the package.
-
-![](../media/Picture3.png)
-
-## Creating your card
-
-In this scenario you will show a card once a new production line product is manufactured. You will also make this an actionable card so you can easily add updates to the product at a given stage.
-
-1. You will be rendering your car inside of the **MainPage.xaml** view. Start by adding a container to render the card inside of this view like so (this is right at the bottom of the file):
+1. **Right-click** on the **Views** folder in the **Microsoft.Knowzy.WPF** project, and select **Add** -> **Window...**. Name your window **DocumentationView.xaml**. Open the file and add the following child control:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    [...]
-
-        <Grid
-            x:Name="adaptiveCardContainer"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Margin="10"/>
-
-    </Grid>
-</UserControl>
+<WebBrowser x:Name="webBrowser" />
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You have given your container a name of **adaptiveCardContainer** so you can easily access it from code later.
-
-**Note:** You can utilize tools for visualizing your cards for different UI frameworks - there is an [on-line
-version](http://adaptivecards.io/visualizer/index.html?hostApp=Bot%20Framework%20WebChat)
-and a [WPF-based
-one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer). Cards utilize a JSON format, but can also be created in C#.
-
-![](../media/Picture4.png)
-
-2. Open **MainView.xaml.cs** and add these namespaces:
+2. Now open the code-behind file (**DocumentationView.xaml.cs**), and add the following event handler code.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-using AdaptiveCards;
-using AdaptiveCards.Rendering;
-using AdaptiveCards.Rendering.Wpf;
-using System.IO;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-3. Next add the following method to return an AdaptiveCard object that you will render inside of the container.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private AdaptiveCard CreateCard()
+public DocumentationView()
 {
-    _cardTitleTextBlock = new AdaptiveTextBlock { Wrap = true };
+    InitializeComponent();
 
-    var card = new AdaptiveCard
+    DataContextChanged += DocumentationView_DataContextChanged;
+}
+
+private void DocumentationView_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+{
+    if (e.NewValue != null && e.NewValue is DocumentationViewModel viewModel)
     {
-        Body =
-        {
-            new AdaptiveTextBlock("You added a new product")
-            {
-                Size = AdaptiveTextSize.Medium,
-                Weight = AdaptiveTextWeight.Bolder
-            },
-            _cardTitleTextBlock
-        },
-        Actions =
-        {
-            new AdaptiveSubmitAction { Id = "Ok", Title = "OK" },
-            new AdaptiveShowCardAction
-            {
-                Title = "Add some notes",
-                Card = new AdaptiveCard
-                {
-                    Body =
-                    {
-                        new AdaptiveTextInput
-                        {
-                            Id = "Notes",
-                            IsMultiline = true,
-                            Placeholder = "Type here"
-                        }
-                    },
-                    Actions = { new AdaptiveSubmitAction { Title = "Save" } }
-                }
-            }
-        }
-    };
-
-    return card;
+        webBrowser.Navigate(viewModel.URL);
+    }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4. You now need to add some private member variables for referencing the card instance you will create, and initialize them in your constructure. Add the code below as appropriate:
+3. This code is simply listening for when the view's data context (view model) changes, and then navigating the **WebBrowser** control to the new **URL** on the view model.
+
+4. From the code, you can see that there is a **DocumentationViewModel** class is expected. To create this class, **right-click** on the **ViewModels** folder -> **Add** -> **Class**. Name your class **DocumentationViewModel.cs**.
+
+5. For now, you will keep your class simple and just add a single property to store your navigation URL:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public partial class MainView
+public class DocumentationViewModel : Caliburn.Micro.Screen
 {
-    private readonly AdaptiveCardRenderer _renderer;
-    private readonly AdaptiveCard _card;
+    public string URL => "http://aboutknowzy.azurewebsites.net?view=docs";
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    private AdaptiveTextBlock _cardTitleTextBlock;
+**Note:** that yor class should inherit from **Caliburn.Micro.Screen**. Caliburn is a UI framework that helps implement the MVVM pattern. You will also need to add a namespace reference to your new view model class in **Documentation.xaml.cs**.
 
-    public MainView()
+6. Next find your **AppBootstrapper.cs** file (in the root of your **Microsoft.Knowzy.WPF** project), and add the new ViewModel so can be injected along with the View:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+protected override void Configure()
+{
+    var builder = new ContainerBuilder();
+    [...]
+    builder.RegisterType<DocumentationViewModel>().SingleInstance();
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+7. Next you will add a new button to the menu bar in your UI.  Open **Views\MainView.xaml** and locate the **MenuItem** whose **cal:Message.Attach** property is equal to **About()**. It looks something like this:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<MenuItem Header="{x:Static localization:Resources.Help_Menu}" Template="{DynamicResource MenuItemControlTemplate}"
+                      cal:Message.Attach="About()" />
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8. Directly below this code, add the following:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<MenuItem Header="Doc." Template="{DynamicResource MenuItemControlTemplate}"
+                          cal:Message.Attach="Documentation()" />
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+9. You have now added a **MenuItem** that when selected will look for your new **Documentation** view. You now need to wire up the other end of this in the view model. Open **MainViewModel.cs** and add the following method:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+public void Documentation()
+{
+    _eventAggregator.PublishOnUIThread(new OpenDocumentationMessage());
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+10. **OpenDocumentationMessage** is a new **class** that needs to be created in the Messages folder. Create the class (ensuring it is marked **public**) and just leave it with the standard boilerplate code.
+
+11. Finally, open **ShellViewModel.cs**. Here you will need to inherit **ShellViewModel** from a new generic interface called **IHandle<OpenDocumentationMessage>**, followed by a new **readonly field** which stores the DocumentationViewModel
+instance - and its corresponding **Handle() method**. Add the code below to your **ShellViewModel.cs** file.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+public class ShellViewModel : [...], IHandle<OpenDocumentationMessage>
+{
+    [...]
+    private readonly DocumentationViewModel _documentationViewModel;
+
+    public ShellViewModel([...], DocumentationViewModel documentationViewModel)
     {
         [...]
-
-        InitializeComponent();
-
-        var json = File.ReadAllText("Assets/WindowsNotificationHostConfig.json");
-        var hostConfig = AdaptiveHostConfig.FromJson(json);
-        _renderer = new AdaptiveCardRenderer(hostConfig);
-        _card = CreateCard();
+        _documentationViewModel = documentationViewModel;
     }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5. Here you will be creating a card that represents an in-app toast notification, so you will follow a similar style to the system-wide toast notifications. As Adaptive Cards are represented in JSON, add a new JSON file name **WindowsNotificationHostConfig.json** to your **Assets** folder. Copy in the content below, and then set your file build settings to **Content** and **Copy if newer**.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  "actions": {
-    "actionAlignment": "stretch",
-    "buttonSpacing": 4,
-    "maxActions": 5,
-    "showCard": {
-      "inlineTopMargin": 12
-    }
-  },
-  "adaptiveCard": {},
-  "containerStyles": {
-    "default": {
-      "backgroundColor": "#FF1F1F1F",
-      "foregroundColors": {
-        "default": {
-          "default": "#FFFFFFFF",
-          "subtle": "#99FFFFFF"
-        },
-        "accent": {
-          "default": "#FF419FFE",
-          "subtle": "#99419FFE"
-        },
-        "dark": {
-          "default": "#FF000000",
-          "subtle": "#99000000"
-        },
-        "light": {
-          "default": "#FFFFFFFF",
-          "subtle": "#99FFFFFF"
-        },
-        "good": {
-          "default": "#FF79AB3C",
-          "subtle": "#9979AB3C"
-        },
-        "warning": {
-          "default": "#FFFFF000",
-          "subtle": "#99FFF000"
-        },
-        "attention": {
-          "default": "#FFE81123",
-          "subtle": "#99E81123"
-        }
-      }
-    },
-    "emphasis": {
-      "backgroundColor": "#FF2E2E2E",
-      "foregroundColors": {
-        "default": {
-          "default": "#FFFFFFFF",
-          "subtle": "#99FFFFFF"
-        },
-        "accent": {
-          "default": "#FF419FFE",
-          "subtle": "#99419FFE"
-        },
-        "dark": {
-          "default": "#FF000000",
-          "subtle": "#99000000"
-        },
-        "light": {
-          "default": "#FFFFFFFF",
-          "subtle": "#99FFFFFF"
-        },
-        "good": {
-          "default": "#FF79AB3C",
-          "subtle": "#9979AB3C"
-        },
-        "warning": {
-          "default": "#FFFFF000",
-          "subtle": "#99FFF000"
-        },
-        "attention": {
-          "default": "#FFE81123",
-          "subtle": "#99E81123"
-        }
-      }
-    }
-  },
-  "imageSizes": {
-    "small": 32,
-    "medium": 50,
-    "large": 150
-  },
-  "imageSet": {
-    "imageSize": "medium"
-  },
-  "factSet": {
-    "title": {
-      "weight": "bolder",
-      "wrap": true,
-      "maxWidth": 150
-    },
-    "value": {
-      "wrap": true
-    },
-    "spacing": 10
-  },
-  "fontFamily": "Segoe UI",
-  "fontSizes": {
-    "small": 12,
-    "default": 15,
-    "medium": 20,
-    "large": 24,
-    "extraLarge": 34
-  },
-  "fontWeights": {
-    "lighter": 400,
-    "default": 500,
-    "bolder": 700
-  },
-  "spacing": {
-    "small": 8,
-    "default": 15,
-    "medium": 20,
-    "large": 24,
-    "extraLarge": 34,
-    "padding": 12
-  },
-  "separator": {
-    "lineThickness": 1,
-    "lineColor": "#66FFFFFF"
-  },
-  "supportsInteractivity": true
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Note:** This file was generated with the [WPF
-Visualizer](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer)
-tool, which also bundles different styles to experiment with. You will now take this item and render it within your app.
-
-## Showing your card
-
-1. Given this app uses an MVVM architecture, product creation logic (for your shipping items) will sit inside of your view model code. Open **MainViewModel.cs** and add a new **ShowAdaptiveCard** property:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private bool _showAdaptiveCard;
-
-public bool ShowAdaptiveCard
-{
-    get => _showAdaptiveCard;
-    set
-    {
-        _showAdaptiveCard = value;
-        NotifyOfPropertyChange(() => ShowAdaptiveCard);
-    }
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-2. Now locate the existing **NewItem** method and set your **ShowAdaptiveCard** property to true.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public void NewItem()
-{
-    var item = new ItemViewModel(_eventAggregator);
-    _eventAggregator.PublishOnUIThread(new EditItemMessage(item));
-
-    if (item.Id == null) return;
-    DevelopmentItems.Add(item);
-
-    ShowAdaptiveCard = true;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-3. Open your **MainView.xaml** view and bind the **Visibility** of your container to the property you just created:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     [...]
 
-        <Grid
-            x:Name="adaptiveCardContainer"
-            [...]
-            Visibility="{Binding ShowAdaptiveCard, Converter={StaticResource BoolToVisibilityConverter}}"/>
-
-    </Grid>
-</UserControl>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-4. Next you need to update the card with the appropriate items data. Open the **MainView.xaml.cs** code-behind and within MainView_DataContextChanged() add the following updates:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private void MainView_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
-{
-    [...]
-    viewModel.PropertyChanged += (_, args) =>
+    public void Handle(OpenDocumentationMessage message)
     {
-        if (args.PropertyName == nameof(viewModel.ShowAdaptiveCard) && viewModel.ShowAdaptiveCard)
-        {
-            var lastItem = viewModel.DevelopmentItems.LastOrDefault();
-
-            if (lastItem == null)
-            {
-                return;
-            }
-
-            UpdateAdaptiveCard(lastItem);
-        }
-    };
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Note:** You are creating logic here to update your adaptive card whenever the underlying data context (i.e. product/item changes or is created).
-
-5. Add a **UpdateAdaptiveCard()** method to **MainView.xaml.cs**, which updates **\_cardTitleTextBlock**, clears the current container and adds a new rendered card to it:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private RenderedAdaptiveCard _renderedCard;
-
-[...]
-
-private void UpdateAdaptiveCard(ItemViewModel item)
-{
-    _cardTitleTextBlock.Text = $"{item.Name}, expected to start at " +
-        $"{item.DevelopmentStartDate.ToShortDateString()} and completed at " +
-        $"{item.ExpectedCompletionDate.ToShortDateString()}.";
-
-    if (_renderedCard != null)
-    {
-        adaptiveCardContainer.Children.Clear();
-        _renderedCard = null;
+        _windowManager.ShowDialog(_documentationViewModel);
     }
-
-    try
-    {
-        _renderedCard = _renderer.RenderCard(_card);
-        adaptiveCardContainer.Children.Add(_renderedCard.FrameworkElement);
-    }
-    catch (AdaptiveException exception)
-    {
-        Debug.WriteLine(exception);
-    }
-}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Now build and run your project. Add a new item via your menu and save it. You should now see your Adaptive Card render on the screen!
+12. Build and run the solution to test the code above by selecting the **Documentation** menu option.
 
-![](../media/Picture5.png)
+![](../media/Picture1.png)
 
-## Interacting with your card
+**NOTE:** You should see that the your new DocumentationView opens in a new window and renders the URL specified within DocumentationViewModel. There is a problem here though - the web page uses CSS3 styles that the **WebBrowser** control does not understand - this is just one simple example. You will now go through steps to resolve this by replacing the **WebBrowser** control with the modern **WebView**.
 
-1. In order to interact with your card you need to make some further code changes to **MainView.xaml.cs**. You can being by subscribing to an **OnAction** event like so:
+## Replacing WebBrowser with WebView
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private void UpdateAdaptiveCard(ItemViewModel item)
-{
-    _cardTitleTextBlock.Text = $"{item.Name}, expected to start at " +
-        $"{item.DevelopmentStartDate.ToShortDateString()} and completed at " +
-        $"{item.ExpectedCompletionDate.ToShortDateString()}.";
+In order to make the WebView available from WPF (or WinForms), the NuGet package
+[Microsoft.Toolkit.Win32.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/)
+needs to be added to **Microsoft.Knowzy.WPF** project. 
 
-    if (_renderedCard != null)
-    {
-        adaptiveCardContainer.Children.Clear();
-        _renderedCard.OnAction -= RenderedCard_OnAction;
-        _renderedCard = null;
-    }
+**Note:** You will need to ensure your project is targeting **.NET Framework 4.6.2** before you continue.
 
-    try
-    {
-        _renderedCard = _renderer.RenderCard(_card);
-        _renderedCard.OnAction += RenderedCard_OnAction;
-        adaptiveCardContainer.Children.Add(_renderedCard.FrameworkElement);
-    }
-    catch (AdaptiveException exception)
-    {
-        Debug.WriteLine(exception);
-    }
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. **Right-click** your **Microsoft.Knowzy.WPF** project -> **Properties** -> set **Target framework** to **.NET Framework 4.6.2**. If you don't see the option for that version of the framework, then open the **Visual Studio Installer** from your start menu, and install it from there.
 
-2. Next add the **OnAction** event handler:
+2. Now **right-click** on your **Microsoft.Knowzy.WPF** project -> **Manage NuGet Packages...** -> **Browse** -> **Microsoft.Toolkit.Win32.UI.Controls** -> select -> **Install**.
+
+![](../media/Picture2.png)
+
+3. Open **Views/DocumentationView.xaml** and add a new namespace reference for the NuGet package you added:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-private void RenderedCard_OnAction(RenderedAdaptiveCard sender, AdaptiveActionEventArgs e)
-{
-    if (e.Action is AdaptiveSubmitAction submitAction)
-    {
-        var viewModel = DataContext as MainViewModel;
-
-        if (submitAction.Id == "Ok")
-        {
-            viewModel.ShowAdaptiveCard = false;
-            return;
-        }
-
-        var inputs = sender.UserInputs.AsDictionary();
-        var notes = inputs["Notes"];
-        viewModel.UpdateNotes(notes);
-        viewModel.ShowAdaptiveCard = false;
-
-        sender.OnAction -= RenderedCard_OnAction;
-    }
-}
+<Window x:Class="Microsoft.Knowzy.WPF.Views.DocumentationView"
+        [...]
+        xmlns:toolkitControls="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
+        mc:Ignorable="d"
+        Title="DocumentationView" Height="450" Width="800">
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. Here you are detecting when the user clicks the OK button - this will dismiss / hide the card. You are also giving the user an option to type and save additional notes, which you do by grabbing the text from the **inputs** dictionary, and pushing the text into your view model. Run the app to test this, and you are all done!
+4. Now all thats left to do is replace your **WebBrowser** control with your **toolkitControls:WebView** control like so:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        <toolkitControls:WebView x:Name="webBrowser" />
+        <!--<WebBrowser x:Name="webBrowser" />-->
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5. That's it! Re-run your app and test the new web view - you should now see the content renders correctly in the centre of your **DocumentationView**.
