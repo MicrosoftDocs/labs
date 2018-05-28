@@ -1,4 +1,4 @@
-# Microsoft Graph Lab
+# MS Graph Lab
 
 ----------
 
@@ -6,9 +6,9 @@
 
 The objectives of this lab are:
 
-- Learn what Microsoft Graph is and what it is for.
-- Learn about Microsoft Graph Explorer
-- Introduction to the use of Microsoft Graph API through several examples focusing on authentication, OneDrive and Outlook.
+- Learn what MS Graph is and what it is for.
+- Learn about MS Graph Explorer
+- Introduction to the use of MS Graph API through several examples focusing on authentication, OneDrive and Outlook.
 - Finally, how to prepare our application so that it will appear on Timeline and we can pick up where we left off.
 
 ## Prerequisites

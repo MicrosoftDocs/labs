@@ -1,13 +1,13 @@
 # Writing to the Timeline
 ----------
 
-Timeline is a new feature in Microsoft Graph API that stores the state of your application when a person wants to continue those activities across multiple devices.  
-To do that, Microsoft Graph API creates a UserActivites that links the user back into the applications.
+Timeline is a new feature in MS Graph API that stores the state of your application when a person wants to continue those activities across multiple devices.  
+To do that, MS Graph API creates a UserActivites that links the user back into the applications.
 In this module you will learn how UserActivities work and view the Timeline in Windows.
 
 ## Create and Save an Activity in Graph
 
-In UWP project go to **Helpers/UserExtensionHelper.cs** CreateActivity method and follow the steps:
+In the UWP project go to **Helpers/UserExtensionHelper.cs** CreateActivity method and follow the steps:
 
 - Delete the code
 
@@ -24,8 +24,8 @@ In UWP project go to **Helpers/UserExtensionHelper.cs** CreateActivity method an
 
                 var adaptiveCard = File.ReadAllText($@"{Package.Current.InstalledLocation.Path}\AdaptiveCard.json");
                 adaptiveCard = adaptiveCard.Replace("{{backgroundImage}}", "https://cdn.graph.office.net/prod/GraphDocuments/en-us/concepts/images/microsoft_graph.png");
-                adaptiveCard = adaptiveCard.Replace("{{name}}", "Hands-on Lab Microsoft Graph");
-                userActivity.VisualElements.DisplayText = "HOL Microsoft Graph";
+                adaptiveCard = adaptiveCard.Replace("{{name}}", "Hands-on Lab MS Graph");
+                userActivity.VisualElements.DisplayText = "HOL MS Graph";
                 userActivity.ActivationUri = new Uri($"holmicrosoftgraph://{UserExtensionHelper.option}");
                 userActivity.VisualElements.Content = AdaptiveCardBuilder.CreateAdaptiveCardFromJson(adaptiveCard);
 
@@ -69,7 +69,7 @@ And we can see the applications in Timeline. If we close the app and click on th
 > **Note:** For Timeline we use **Adaptive Cards** to show the app in Timeline. You can learn more about **Adaptive Cards** [here](http://adaptivecards.io/).
 
 
-# Advance app feature
+# Cortana integration
 
 Timeline helps the user to pick up where they left off working. When you create an activity and session, Cortana displays applications to continue working on.
 
@@ -124,4 +124,4 @@ In the UWP project go to **Helpers/UserExtensionHelper.cs** PickupWhereYouLeft m
 
 We can save the state of the application to OneDrive as seen in previous sections.
 
-> **Cross Platform:** Thanks to Microsoft Graph Activities we can open the application in Android or iOS at the same point that left off in our UWP. If you want learn more about how do it visit this [link](https://github.com/Microsoft/project-rome).
+> **Cross Platform:** Thanks to MS Graph Activities we can open the application in Android or iOS at the same point that left off in our UWP. If you want learn more about how do it visit this [link](https://github.com/Microsoft/project-rome).

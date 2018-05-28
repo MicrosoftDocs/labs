@@ -13,7 +13,7 @@ Specifically in this section we are going to simulate how to save settings in On
 
 ## Write app settings to OneDrive
 
-In UWP project go to **Helpers/DataSyncHelper.cs** SaveSettingsInOneDrive method and follow the steps:
+In the UWP project go to **Helpers/DataSyncHelper.cs** SaveSettingsInOneDrive method and follow the steps:
 
 - Delete the code
 
@@ -111,7 +111,7 @@ Now in the UWP project, go to **Helpers/DataSyncHelper.cs** GetSettingsInOneDriv
 
 # Writing data to the MS Graph
 
-Microsoft Graph is not a closed tool that gives us a series of classes and functions and nothing else.
+MS Graph is not a closed tool that gives us a series of classes and functions and nothing else.
 
 One of its strengths is the ability to expand that information with personalized information.
 
@@ -187,7 +187,7 @@ You can see the following code in **UserExtension.xaml.cs**
             }
         }
 
-The code to call Microsoft Graph API to get extension are in **Helpers/UserExtensionHelper.cs** GetOpenExtensionsForMe method:
+The code to call MS Graph API to get extension are in **Helpers/UserExtensionHelper.cs** GetOpenExtensionsForMe method:
 
  		public static async Task<List<ExtensionModel>> GetOpenExtensionsForMe()
         {
