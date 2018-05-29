@@ -24,12 +24,12 @@ The Microsoft Graph, by allowing us to connect with all our Office 365 data, all
 
 With the Graph we do the following:
 
- - Sends alerts if you're spending too much time in meetings: [Microsoft Graph API Outlook meetings](https://developer.microsoft.com/en-us/graph/docs/concepts/findmeetingtimes_example)
- - Suggest the best time for the next team meeting according to your calendar: [Microsoft Graph API Outlook Calendar](https://developer.microsoft.com/en-us/graph/docs/concepts/outlook-schedule-recurring-events)
- - Create a Team in Microsoft Teams for an existing office 365 Group:[Microsoft Graph API Teams](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/group)
- - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows:[Microsoft Graph API Azure AD](https://docs.microsoft.com/en-US/azure/active-directory/develop/active-directory-graph-api)
- - Continue editing a document where you left off in another device :[Microsoft Graph API Cross-Device](https://developer.microsoft.com/en-us/graph/docs/concepts/cross-device-app-configuration)
- - Create a timeline with all your activity:[Microsoft Graph API Activities](https://developer.microsoft.com/en-us/graph/docs/concepts/activity-feed-concept-overview)
+ - Sends alerts if you're spending too much time in meetings ([Outlook meetings](https://developer.microsoft.com/en-us/graph/docs/concepts/findmeetingtimes_example))
+ - Suggest the best time for the next team meeting according to your calendar ([Outlook Calendar](https://developer.microsoft.com/en-us/graph/docs/concepts/outlook-schedule-recurring-events))
+ - Create a Team in Microsoft Teams for an existing office 365 Group ([Teams](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/group))
+ - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows ([Azure AD](https://docs.microsoft.com/en-US/azure/active-directory/develop/active-directory-graph-api))
+ - Continue editing a document where you left off in another device ([Cross-device](https://developer.microsoft.com/en-us/graph/docs/concepts/cross-device-app-configuration))
+ - Create a timeline with all your activity ([Activities](https://developer.microsoft.com/en-us/graph/docs/concepts/activity-feed-concept-overview))
    
 These are some examples of what can be done with the Microsoft Graph, but you can see there are many scenarios where you can apply.
 
