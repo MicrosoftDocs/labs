@@ -24,7 +24,7 @@ items:
 - title: Managing Files With Microsoft Graph
   durationInMinutes: 15
   content: |
-    [!include[](Includes/3_Managing_Files_With_MS_Graph.md)]-.
+    [!include[](Includes/3_Managing_Files_With_MS_Graph.md)]
 - title: Using OneDrive for app data storage
   durationInMinutes: 5
   content: |
