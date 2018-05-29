@@ -33,11 +33,11 @@ items:
   durationInMinutes: 5
   content: |
     [!include[](Includes/5_Writing_data_to_the_MS_Graph.md)]    
- - title: Integrating with office
+- title: Integrating with office
   durationInMinutes: 5
   content: |
     [!include[](Includes/6_Inegrating_With_Office.md)]    
- - title: Writing to the Timeline
+- title: Writing to the Timeline
   durationInMinutes: 10
   content: |
     [!include[](Includes/7_Writing_to_the_timeline.md)]    
