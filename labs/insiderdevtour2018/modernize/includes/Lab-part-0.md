@@ -26,10 +26,7 @@ through input fields.
 
 ### Windows 10 APIs
 
-Sending local Toast Notifications from WPF is now possible by consuming UWP SDK.
-Take advantage of Action Center as a single place to inform our users on useful
-information happening in the apps. You will add such functionality from WPF and
-send a local Toast Notification.
+Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP) apps, but to WPF and WinForms apps too. In this section you will use local toast notifications as an example of a Windows 10 API you can introduce into your desktop app - these same principles apply to many more features such as Contact / People integration, Live Tiles, and more.
 
 Prerequisites
 -------------
