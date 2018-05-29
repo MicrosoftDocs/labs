@@ -1,146 +1,98 @@
-# UI modernization
+Distribution and versioning
+===========================
 
-In WPF and WinForms apps today, it is common to have islands of web content that are often hosted in the **WebBrowser** control. The **WebBrowser** control that ships as part of the platform uses the Internet Explorer 11 (IE11) rendering engine, which **does not** support the latest web standards. It is common for apps leveraging this control to observe incorrect rendering of more modern websites. In many cases, it is not possible for the web developer to fix these rendering issues as the website is owned either by a third-party, or a team in another part of the organization.
+As colophon to this laboratory we’ll learn how our WPF app can be packaged for
+distribution, including through Windows Store. Currently, the [open-sourced MSIX
+platform](https://github.com/Microsoft/msix-packaging) has its tooling in
+process, so we’ll stick with an intermediary option for packaging our app with
+App Installer.
 
-The following steps will explain how you can switch out the **WebBrowser** control with the newly released, and modern **WebView** control for WPF and WinForms. This is made possible through the new XAML islands architecture, which extends UWP controls into multiple UI frameworks. You can now have your web content support features such as WebRTC, service workers and more.
+Packaging our WPF app for side-loading
+--------------------------------------
 
-To get started, open the solution file (**Microsoft.Knowzy.WPF**) that you downnloaded and navigate to the **Microsoft.Knowzy.WPF** project. Try running the solution to become familiar with it. This is typical looking business application that is built with the Model-View-ViewModel (MVVM) pattern. **Note:** remember to restore Nuget packages for the project (right-click your Solution -> Restore NuGet Packages).
+1.  Open **Microsoft.Knowzy.WPF.sln**, make **right-click** at its root within
+    the **Solution Explorer** and click **Add**, **New Project...** Choose
+    **Windows Application Packaging (Visual C\#)** template, located at **Visual
+    C\#**, **Windows Universal**. This new project will generate packages for us
+    which can be both uploaded to the Store or side-loaded.
 
-## WPF WebBrowser control
+![](../media/Picture6.png)
 
-1. **Right-click** on the **Views** folder in the **Microsoft.Knowzy.WPF** project, and select **Add** -> **Window...**. Name your window **DocumentationView.xaml**. Open the file and add the following child control:
+1.  At such project, in the **Solution Explorer**, make **right-click** at
+    **Applications**, **Add Reference...** Check **Microsoft.Knowzy.WPF** and
+    click **OK**
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<WebBrowser x:Name="webBrowser" />
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now our package will automatically contain the WPF app, and it’s all we have to
+do for now. As you can appreciate, generating an installation’s really easy.
 
-2. Now open the code-behind file (**DocumentationView.xaml.cs**), and add the following event handler code.
+You can customize the app name, its icons and a few more options at
+Package.appxmanifest file, but we’ll stick with predefined values for this lab.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public DocumentationView()
-{
-    InitializeComponent();
+Finally, in order to generate the package, make **right-click** at the project
+root and choose **Store**, **Create App Packages...** This will open a new
+wizard which will guide you through the process:
 
-    DataContextChanged += DocumentationView_DataContextChanged;
-}
+1.  Firstly, choose **I want to create packages for sideloading**, **Next
+    **--uncheck **Enable automatic updates** because we’ll dig into this later
 
-private void DocumentationView_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-{
-    if (e.NewValue != null && e.NewValue is DocumentationViewModel viewModel)
-    {
-        webBrowser.Navigate(viewModel.URL);
-    }
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.  We can customize the Output location, Version and architectures, among other
+    things, but will leave them by default; **Create **--versions will
+    auto-increase when creating new packages, so we don’t have to take care of
+    this
 
-3. This code is simply listening for when the view's data context (view model) changes, and then navigating the **WebBrowser** control to the new **URL** on the view model.
+![](../media/Picture7.png)
 
-4. From the code, you can see that there is a **DocumentationViewModel** class is expected. To create this class, **right-click** on the **ViewModels** folder -> **Add** -> **Class**. Name your class **DocumentationViewModel.cs**.
+1.  Once the process ends, a new dialog will link us to the path where the
+    package was left, accompanied by the chance to pass the Windows App
+    Certification Kit, if we’d like to go public through the Store, which’s not
+    our case, so click **Close**.
 
-5. For now, you will keep your class simple and just add a single property to store your navigation URL:
+Right now you simply can **double-click** on the **.appxbundle** file and the
+new set-up process will start, installing your app locally and adding it to the
+Start menu, as if it was done through the Store --you even can uninstall it in
+the same way.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public class DocumentationViewModel : Caliburn.Micro.Screen
-{
-    public string URL => "http://aboutknowzy.azurewebsites.net?view=docs";
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enabling automatic updates
+--------------------------
 
-**Note:** that yor class should inherit from **Caliburn.Micro.Screen**. Caliburn is a UI framework that helps implement the MVVM pattern. You will also need to add a namespace reference to your new view model class in **Documentation.xaml.cs**.
+Before proceeding, we’ll need to target the latest Windows 10 SDK to enable the
+following scenario:
 
-6. Next find your **AppBootstrapper.cs** file (in the root of your **Microsoft.Knowzy.WPF** project), and add the new ViewModel so can be injected along with the View:
+1.  Make **right-click** at the packaging project, **Properties **and **Package
+    **tab. Within **Targeting **area, change **Target **and **Min **versions to
+    “**Windows 10, version 1803 (10.0; Build 17134)**”.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-protected override void Configure()
-{
-    var builder = new ContainerBuilder();
-    [...]
-    builder.RegisterType<DocumentationViewModel>().SingleInstance();
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.  As you remember, we unchecked this option above within the packaging wizard,
+    so reopen again such and check it now. As a difference with previous one,
+    this time a new step’s shown asking where the updates will live, letting us
+    choose between a network resource path or a web URL. For the sake of
+    simplification we’ll choose a network path.
 
-7. Next you will add a new button to the menu bar in your UI.  Open **Views\MainView.xaml** and locate the **MenuItem** whose **cal:Message.Attach** property is equal to **About()**. It looks something like this:
+3.  In order to serve a local path to the local network first create a new empty
+    folder at Desktop. **Right-click** on it, **Properties**, **Sharing **tab,
+    **Advanced Sharing**... Just check **Share this folder** and click **OK**.
+    If you open a new **Windows Explorer** and type **\\\\localhost\\** at the
+    address bar, you’ll notice your shared folder’s now available --right now we
+    just have read access through the share, but can write on it accessing
+    through the local folder.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<MenuItem Header="{x:Static localization:Resources.Help_Menu}" Template="{DynamicResource MenuItemControlTemplate}"
-                      cal:Message.Attach="About()" />
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.  Back to the wizard, paste above folder path into **Installation URL** (i.e.
+    “\\\\localhost\\Packages”) and leave **Check everytime the application
+    runs** selected --this way the app will check for updates at the specified
+    URL upon start, managing the updating process for us.
 
-8. Directly below this code, add the following:
+5.  Finally **click **on **Create **and wait for the process to end.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<MenuItem Header="Doc." Template="{DynamicResource MenuItemControlTemplate}"
-                          cal:Message.Attach="Documentation()" />
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At the summary window which will appear in a few seconds, click on **Output
+**location and copy every file and folder contained into the served folder
+--remember it was placed at Desktop\\.
 
-9. You have now added a **MenuItem** that when selected will look for your new **Documentation** view. You now need to wire up the other end of this in the view model. Open **MainViewModel.cs** and add the following method:
+If you **double-click** at **index.html **you’ll appreciate a similar experience
+to the one Windows Store serves. Clicking on **Get the app **will launch the
+set-up as before, but now the app will look for updates on each start.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public void Documentation()
-{
-    _eventAggregator.PublishOnUIThread(new OpenDocumentationMessage());
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+![](../media/Picture8.png)
 
-10. **OpenDocumentationMessage** is a new **class** that needs to be created in the Messages folder. Create the class (ensuring it is marked **public**) and just leave it with the standard boilerplate code.
-
-11. Finally, open **ShellViewModel.cs**. Here you will need to inherit **ShellViewModel** from a new generic interface called **IHandle<OpenDocumentationMessage>**, followed by a new **readonly field** which stores the DocumentationViewModel
-instance - and its corresponding **Handle() method**. Add the code below to your **ShellViewModel.cs** file.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public class ShellViewModel : [...], IHandle<OpenDocumentationMessage>
-{
-    [...]
-    private readonly DocumentationViewModel _documentationViewModel;
-
-    public ShellViewModel([...], DocumentationViewModel documentationViewModel)
-    {
-        [...]
-        _documentationViewModel = documentationViewModel;
-    }
-
-    [...]
-
-    public void Handle(OpenDocumentationMessage message)
-    {
-        _windowManager.ShowDialog(_documentationViewModel);
-    }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-12. Build and run the solution to test the code above by selecting the **Documentation** menu option.
-
-![](../media/Picture1.png)
-
-**NOTE:** You should see that the your new DocumentationView opens in a new window and renders the URL specified within DocumentationViewModel. There is a problem here though - the web page uses CSS3 styles that the **WebBrowser** control does not understand - this is just one simple example. You will now go through steps to resolve this by replacing the **WebBrowser** control with the modern **WebView**.
-
-## Replacing WebBrowser with WebView
-
-In order to make the WebView available from WPF (or WinForms), the NuGet package
-[Microsoft.Toolkit.Win32.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/)
-needs to be added to **Microsoft.Knowzy.WPF** project. 
-
-**Note:** You will need to ensure your project is targeting **.NET Framework 4.6.2** before you continue.
-
-1. **Right-click** your **Microsoft.Knowzy.WPF** project -> **Properties** -> set **Target framework** to **.NET Framework 4.6.2**. If you don't see the option for that version of the framework, then open the **Visual Studio Installer** from your start menu, and install it from there.
-
-2. Now **right-click** on your **Microsoft.Knowzy.WPF** project -> **Manage NuGet Packages...** -> **Browse** -> **Microsoft.Toolkit.Win32.UI.Controls** -> select -> **Install**.
-
-![](../media/Picture2.png)
-
-3. Open **Views/DocumentationView.xaml** and add a new namespace reference for the NuGet package you added:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Window x:Class="Microsoft.Knowzy.WPF.Views.DocumentationView"
-        [...]
-        xmlns:toolkitControls="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
-        mc:Ignorable="d"
-        Title="DocumentationView" Height="450" Width="800">
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-4. Now all thats left to do is replace your **WebBrowser** control with your **toolkitControls:WebView** control like so:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        <toolkitControls:WebView x:Name="webBrowser" />
-        <!--<WebBrowser x:Name="webBrowser" />-->
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-5. That's it! Re-run your app and test the new web view - you should now see the content renders correctly in the centre of your **DocumentationView**.
+If you make any change to your app, generate its package and copy such back to
+the shared folder, the installed one will know a new update’s available when it
+starts, and will kindly ask you to update it-self.

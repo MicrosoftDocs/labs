@@ -1,98 +1,420 @@
-Step 3: Distribution and versioning
-===================================
+# Adaptive Cards
 
-As colophon to this laboratory we’ll learn how our WPF app can be packaged for
-distribution, including through Windows Store. Currently, the [open-sourced MSIX
-platform](https://github.com/Microsoft/msix-packaging) has its tooling in
-process, so we’ll stick with an intermediary option for packaging our app with
-App Installer.
+[Adaptive Cards](https://adaptivecards.io/) are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
 
-Packaging our WPF app for side-loading
---------------------------------------
+**Note:** You can start playing with samples quickly online [here](https://adaptivecards.io/samples/).
 
-Open Microsoft.Knowzy.WPF.sln, make right-click at its root within the Solution
-Explorer and click Add, New Project... Choose Windows Application Packaging
-(Visual C\#) template, located at Visual C\#, Windows Universal. This new
-project will generate packages for us which can be both uploaded to the Store or
-side-loaded.
+You will start by adding Adaptive Cards support to your WPF app.
 
-![](../media/Picture6.png)
+## Adding support for Adaptive Cards to WPF
 
-At such project, in the Solution Explorer, make right-click at Applications, Add
-Reference... Check Microsoft.Knowzy.WPF and click OK. Now our package will
-automatically contain the WPF app, and it’s all we have to do for now. As you
-can appreciate, generating an installation’s really easy.
+Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple UI frameworks. For WPF you can access this feature through the  
+[AdaptiveCards.Rendering.Wpf](https://www.nuget.org/packages/AdaptiveCards.Rendering.Wpf/)
+NuGet package.
 
-You can customize the app name, its icons and a few more options at
-Package.appxmanifest file, but we’ll stick with predefined values for this lab.
+1. **Right-click** your **Microsoft.Knowzy.WPF** project references and choose **Manage NuGet Packages...** -> search for **AdaptiveCards.Rendering.Wpf** and install the package.
 
-Finally, in order to generate the package, make right-click at the project root
-and choose Store, Create App Packages... This will open a new wizard which will
-guide you through the process:
+![](../media/Picture3.png)
 
-1.  Firstly, choose I want to create packages for sideloading, Next --uncheck
-    Enable automatic updates because we’ll dig into this later
+## Creating your card
 
-2.  We can customize the Output location, Version and architectures, among other
-    things, but will leave them by default; Create --versions will auto-increase
-    when creating new packages, so we don’t have to take care of this
+In this scenario you will show a card once a new production line product is manufactured. You will also make this an actionable card so you can easily add updates to the product at a given stage.
 
-![](../media/Picture7.png)
+1. You will be rendering your car inside of the **MainPage.xaml** view. Start by adding a container to render the card inside of this view like so (this is right at the bottom of the file):
 
-Once the process ends, a new dialog will link us to the path where the package
-was left, accompanied by the chance to pass the Windows App Certification Kit,
-if we’d like to go public through the Store, which’s not our case, so click
-Close.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [...]
 
-Right now you simply can double-click on the .appxbundle file and the new set-up
-process will start, installing your app locally and adding it to the Start menu,
-as if it was done through the Store --you even can uninstall it in the same way.
+        <Grid
+            x:Name="adaptiveCardContainer"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="10"/>
 
-Enabling automatic updates
---------------------------
+    </Grid>
+</UserControl>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before proceeding, we’ll need to target the latest Windows 10 SDK to enable the
-following scenario. Make right-click at the packaging project, Properties and
-Package tab. Within Targeting area, change Target and Min versions to “Windows
-10, version 1803 (10.0; Build 17134)”.
+You have given your container a name of **adaptiveCardContainer** so you can easily access it from code later.
 
-As you remember, we unchecked this option above within the packaging wizard, so
-reopen again such and check it now. As a difference with previous one, this time
-a new step’s shown asking where the updates will live, letting us choose between
-a network resource path or a web URL. For the sake of simplification we’ll
-choose a network path.
+**Note:** You can utilize tools for visualizing your cards for different UI frameworks - there is an [on-line
+version](http://adaptivecards.io/visualizer/index.html?hostApp=Bot%20Framework%20WebChat)
+and a [WPF-based
+one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer). Cards utilize a JSON format, but can also be created in C#.
 
-In order to serve a local path to the local network first create a new empty
-folder at Desktop. Right-click on it, Properties, Sharing tab, Advanced
-Sharing... Just check Share this folder and click OK. If you open a new Windows
-Explorer and type \\\\localhost\\ at the address bar, you’ll notice your shared
-folder’s now available --right now we just have read access through the share,
-but can write on it accessing through the local folder.
+![](../media/Picture4.png)
 
-Back to the wizard, paste above folder path into Installation URL (i.e.
-“\\\\localhost\\Packages”) and leave Check everytime the application runs
-selected --this way the app will check for updates at the specified URL upon
-start, managing the updating process for us. Finally click on Create and wait
-for the process to end.
+2. Open **MainView.xaml.cs** and add these namespaces:
 
-At the summary window which will appear in a few seconds, click on Output
-location and copy every file and folder contained into the served folder
---remember it was placed at Desktop\\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+using AdaptiveCards;
+using AdaptiveCards.Rendering;
+using AdaptiveCards.Rendering.Wpf;
+using System.IO;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you double-click at index.html you’ll appreciate a similar experience to the
-one Windows Store serves. Clicking on Get the app will launch the set-up as
-before, but now the app will look for updates on each start.
+3. Next add the following method to return an AdaptiveCard object that you will render inside of the container.
 
-![](../media/Picture8.png)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private AdaptiveCard CreateCard()
+{
+    _cardTitleTextBlock = new AdaptiveTextBlock { Wrap = true };
 
-If you make any change to your apps, generate its package and copy such back to
-the shared folder, the installed one will know a new update’s available when it
-starts, and will kindly ask you to update it-self.
+    var card = new AdaptiveCard
+    {
+        Body =
+        {
+            new AdaptiveTextBlock("You added a new product")
+            {
+                Size = AdaptiveTextSize.Medium,
+                Weight = AdaptiveTextWeight.Bolder
+            },
+            _cardTitleTextBlock
+        },
+        Actions =
+        {
+            new AdaptiveSubmitAction { Id = "Ok", Title = "OK" },
+            new AdaptiveShowCardAction
+            {
+                Title = "Add some notes",
+                Card = new AdaptiveCard
+                {
+                    Body =
+                    {
+                        new AdaptiveTextInput
+                        {
+                            Id = "Notes",
+                            IsMultiline = true,
+                            Placeholder = "Type here"
+                        }
+                    },
+                    Actions = { new AdaptiveSubmitAction { Title = "Save" } }
+                }
+            }
+        }
+    };
 
-Summary
--------
+    return card;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This guide’s taken us into packaging a common WPF app with the new App Installer
-platform, leveraging automatic updates handling and providing a seamless User
-Experience. Within the following months the new MSIX platform tooling will be
-available, simplifying even further the package creation.
+4. You now need to add some private member variables for referencing the card instance you will create, and initialize them in your constructure. Add the code below as appropriate:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+public partial class MainView
+{
+    private readonly AdaptiveCardRenderer _renderer;
+    private readonly AdaptiveCard _card;
+
+    private AdaptiveTextBlock _cardTitleTextBlock;
+
+    public MainView()
+    {
+        [...]
+
+        InitializeComponent();
+
+        var json = File.ReadAllText("Assets/WindowsNotificationHostConfig.json");
+        var hostConfig = AdaptiveHostConfig.FromJson(json);
+        _renderer = new AdaptiveCardRenderer(hostConfig);
+        _card = CreateCard();
+    }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5. Here you will be creating a card that represents an in-app toast notification, so you will follow a similar style to the system-wide toast notifications. As Adaptive Cards are represented in JSON, add a new JSON file name **WindowsNotificationHostConfig.json** to your **Assets** folder. Copy in the content below, and then set your file build settings to **Content** and **Copy if newer**.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{
+  "actions": {
+    "actionAlignment": "stretch",
+    "buttonSpacing": 4,
+    "maxActions": 5,
+    "showCard": {
+      "inlineTopMargin": 12
+    }
+  },
+  "adaptiveCard": {},
+  "containerStyles": {
+    "default": {
+      "backgroundColor": "#FF1F1F1F",
+      "foregroundColors": {
+        "default": {
+          "default": "#FFFFFFFF",
+          "subtle": "#99FFFFFF"
+        },
+        "accent": {
+          "default": "#FF419FFE",
+          "subtle": "#99419FFE"
+        },
+        "dark": {
+          "default": "#FF000000",
+          "subtle": "#99000000"
+        },
+        "light": {
+          "default": "#FFFFFFFF",
+          "subtle": "#99FFFFFF"
+        },
+        "good": {
+          "default": "#FF79AB3C",
+          "subtle": "#9979AB3C"
+        },
+        "warning": {
+          "default": "#FFFFF000",
+          "subtle": "#99FFF000"
+        },
+        "attention": {
+          "default": "#FFE81123",
+          "subtle": "#99E81123"
+        }
+      }
+    },
+    "emphasis": {
+      "backgroundColor": "#FF2E2E2E",
+      "foregroundColors": {
+        "default": {
+          "default": "#FFFFFFFF",
+          "subtle": "#99FFFFFF"
+        },
+        "accent": {
+          "default": "#FF419FFE",
+          "subtle": "#99419FFE"
+        },
+        "dark": {
+          "default": "#FF000000",
+          "subtle": "#99000000"
+        },
+        "light": {
+          "default": "#FFFFFFFF",
+          "subtle": "#99FFFFFF"
+        },
+        "good": {
+          "default": "#FF79AB3C",
+          "subtle": "#9979AB3C"
+        },
+        "warning": {
+          "default": "#FFFFF000",
+          "subtle": "#99FFF000"
+        },
+        "attention": {
+          "default": "#FFE81123",
+          "subtle": "#99E81123"
+        }
+      }
+    }
+  },
+  "imageSizes": {
+    "small": 32,
+    "medium": 50,
+    "large": 150
+  },
+  "imageSet": {
+    "imageSize": "medium"
+  },
+  "factSet": {
+    "title": {
+      "weight": "bolder",
+      "wrap": true,
+      "maxWidth": 150
+    },
+    "value": {
+      "wrap": true
+    },
+    "spacing": 10
+  },
+  "fontFamily": "Segoe UI",
+  "fontSizes": {
+    "small": 12,
+    "default": 15,
+    "medium": 20,
+    "large": 24,
+    "extraLarge": 34
+  },
+  "fontWeights": {
+    "lighter": 400,
+    "default": 500,
+    "bolder": 700
+  },
+  "spacing": {
+    "small": 8,
+    "default": 15,
+    "medium": 20,
+    "large": 24,
+    "extraLarge": 34,
+    "padding": 12
+  },
+  "separator": {
+    "lineThickness": 1,
+    "lineColor": "#66FFFFFF"
+  },
+  "supportsInteractivity": true
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Note:** This file was generated with the [WPF
+Visualizer](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer)
+tool, which also bundles different styles to experiment with. You will now take this item and render it within your app.
+
+## Showing your card
+
+1. Given this app uses an MVVM architecture, product creation logic (for your shipping items) will sit inside of your view model code. Open **MainViewModel.cs** and add a new **ShowAdaptiveCard** property:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private bool _showAdaptiveCard;
+
+public bool ShowAdaptiveCard
+{
+    get => _showAdaptiveCard;
+    set
+    {
+        _showAdaptiveCard = value;
+        NotifyOfPropertyChange(() => ShowAdaptiveCard);
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2. Now locate the existing **NewItem** method and set your **ShowAdaptiveCard** property to true.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+public void NewItem()
+{
+    var item = new ItemViewModel(_eventAggregator);
+    _eventAggregator.PublishOnUIThread(new EditItemMessage(item));
+
+    if (item.Id == null) return;
+    DevelopmentItems.Add(item);
+
+    ShowAdaptiveCard = true;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Open your **MainView.xaml** view and bind the **Visibility** of your container to the property you just created:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [...]
+
+        <Grid
+            x:Name="adaptiveCardContainer"
+            [...]
+            Visibility="{Binding ShowAdaptiveCard, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+    </Grid>
+</UserControl>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Next you need to update the card with the appropriate items data. Open the **MainView.xaml.cs** code-behind and within MainView_DataContextChanged() add the following updates:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private void MainView_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+{
+    [...]
+    viewModel.PropertyChanged += (_, args) =>
+    {
+        if (args.PropertyName == nameof(viewModel.ShowAdaptiveCard) && viewModel.ShowAdaptiveCard)
+        {
+            var lastItem = viewModel.DevelopmentItems.LastOrDefault();
+
+            if (lastItem == null)
+            {
+                return;
+            }
+
+            UpdateAdaptiveCard(lastItem);
+        }
+    };
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Note:** You are creating logic here to update your adaptive card whenever the underlying data context (i.e. product/item changes or is created).
+
+5. Add a **UpdateAdaptiveCard()** method to **MainView.xaml.cs**, which updates **\_cardTitleTextBlock**, clears the current container and adds a new rendered card to it:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private RenderedAdaptiveCard _renderedCard;
+
+[...]
+
+private void UpdateAdaptiveCard(ItemViewModel item)
+{
+    _cardTitleTextBlock.Text = $"{item.Name}, expected to start at " +
+        $"{item.DevelopmentStartDate.ToShortDateString()} and completed at " +
+        $"{item.ExpectedCompletionDate.ToShortDateString()}.";
+
+    if (_renderedCard != null)
+    {
+        adaptiveCardContainer.Children.Clear();
+        _renderedCard = null;
+    }
+
+    try
+    {
+        _renderedCard = _renderer.RenderCard(_card);
+        adaptiveCardContainer.Children.Add(_renderedCard.FrameworkElement);
+    }
+    catch (AdaptiveException exception)
+    {
+        Debug.WriteLine(exception);
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6. Now build and run your project. Add a new item via your menu and save it. You should now see your Adaptive Card render on the screen!
+
+![](../media/Picture5.png)
+
+## Interacting with your card
+
+1. In order to interact with your card you need to make some further code changes to **MainView.xaml.cs**. You can being by subscribing to an **OnAction** event like so:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private void UpdateAdaptiveCard(ItemViewModel item)
+{
+    _cardTitleTextBlock.Text = $"{item.Name}, expected to start at " +
+        $"{item.DevelopmentStartDate.ToShortDateString()} and completed at " +
+        $"{item.ExpectedCompletionDate.ToShortDateString()}.";
+
+    if (_renderedCard != null)
+    {
+        adaptiveCardContainer.Children.Clear();
+        _renderedCard.OnAction -= RenderedCard_OnAction;
+        _renderedCard = null;
+    }
+
+    try
+    {
+        _renderedCard = _renderer.RenderCard(_card);
+        _renderedCard.OnAction += RenderedCard_OnAction;
+        adaptiveCardContainer.Children.Add(_renderedCard.FrameworkElement);
+    }
+    catch (AdaptiveException exception)
+    {
+        Debug.WriteLine(exception);
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2. Next add the **OnAction** event handler:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+private void RenderedCard_OnAction(RenderedAdaptiveCard sender, AdaptiveActionEventArgs e)
+{
+    if (e.Action is AdaptiveSubmitAction submitAction)
+    {
+        var viewModel = DataContext as MainViewModel;
+
+        if (submitAction.Id == "Ok")
+        {
+            viewModel.ShowAdaptiveCard = false;
+            return;
+        }
+
+        var inputs = sender.UserInputs.AsDictionary();
+        var notes = inputs["Notes"];
+        viewModel.UpdateNotes(notes);
+        viewModel.ShowAdaptiveCard = false;
+
+        sender.OnAction -= RenderedCard_OnAction;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Here you are detecting when the user clicks the OK button - this will dismiss / hide the card. You are also giving the user an option to type and save additional notes, which you do by grabbing the text from the **inputs** dictionary, and pushing the text into your view model. Run the app to test this, and you are all done!

@@ -7,9 +7,9 @@ PWAs are just websites, enhanced using modern design and web technologies (Respo
 ### Manifest, Service Worker, Secure:
 To create a PWA the website will need: a manifest, service workers, and be on Https:
 
-   + Standard manifest file: The site requires a manifest file to define the features and behavior of the PWA. The file follows the W3C standard, and includes any images used, the language specified, and the start page of your web app.
+   + Standard manifest file: The site requires a manifest file to define the features and behavior of the PWA. The file follows the W3C standard. This includes everything from images, to language, or the start page of your web app.
 
-   + Service workers: The Progressive Web App should have a mechanism (e.g. through a service worker) to help control traffic when the network isn’t there or isn’t reliable. The app should be able to work independent of network availabilty or quality.
+   + Service workers: The Progressive Web App should have a mechanism (e.g. through a service worker) to help control traffic when the network isn’t there or isn’t reliable. The app should be able to work independent of network.
 
    + Secure: A secure connection (HTTPS) over your site makes sure all traffic is as safe as a native app. A secure endpoint also allows the service worker to securely take action on the behalf of your app.
 
@@ -21,8 +21,7 @@ PWA apps are still websites, and are therefore supported on most platforms inclu
 
 ### Running PWA in a browser:
 
-At first glance, PWAs are not very different from web applications.
-
+PWAs aren't very different that a web application, when you access to a PWA you will see the same as a simple web application.
 After complete this lab, your PWA will looks like this:
 
 ![](../media/Picture1.jpg)
