@@ -1,7 +1,6 @@
 # Managing Files with the Microsoft Graph
 
-----------
-# Accessing file data
+## Accessing file data
 
 What we are going to do in this module is to retrieve the list of the most recent OneDrive documents, building on the knowledge acquired in the Sample API Calls Module.
 
@@ -33,7 +32,6 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** GetRecentItems method an
             }
 
 After getting graphClient we can access to OneDrive via graphClient.Me.Drive and via the Recent Method get the most recent files.
-
 
 - Build and run the application.
 - Click the Log in button to authenticate.
@@ -82,9 +80,7 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and fo
                 throw;
             }
 
-
 > **Note:** The file will be created in the **Hol/Graph** folder. 
-
 
 ## Select the file & save to OneDrive
 
