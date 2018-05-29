@@ -10,17 +10,16 @@ metadata:
   nextTutorialTitle: Graph Lab
   ms.custom: Insider Dev Tour 2018
 items:
-- title: Objectives
-   durationInMinutes: 2
-   content: |
+- durationInMinutes: 2
+  content: |
     [!include[](Includes/0_Objectives.md)]
- - title: Introduction Microsoft Graph
-   durationInMinutes: 10
-   content: |
+- title: Introduction Microsoft Graph
+  durationInMinutes: 10
+  content: |
     [!include[](Includes/1_Introduction_Microsoft_Graph.md)]
 - title: Getting Started with Quick Start
-   durationInMinutes: 10
-   content: |
+  durationInMinutes: 10
+  content: |
     [!include[](Includes/2_Getting_Started_with_Quick_Start.md)]
 - title: Managing Files With MS Graph
   durationInMinutes: 15

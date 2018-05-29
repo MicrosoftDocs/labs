@@ -14,17 +14,19 @@ items:
   content: |
     [!include[](includes/lab-part-1.md)]
 - title: Distribution and versioning
-- durationInMinutes: 5
+  durationInMinutes: 5
   content: |
     [!include[](includes/lab-part-2.md)]
 - title: UI modernization
-- durationInMinutes: 15
+  durationInMinutes: 15
   content: |
     [!include[](includes/lab-part-3.md)]
 - title: Adaptive Cards  
-- durationInMinutes: 20
+  durationInMinutes: 20
   content: |
     [!include[](includes/lab-part-3.md)]
 - title: Windows 10 APIs
+  content: |
+    [!include[](includes/lab-part-4.md)]
 - content: |
     You've completed this lab.
