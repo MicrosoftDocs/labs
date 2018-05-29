@@ -1,5 +1,3 @@
-# Emotion detection with Face API (cloud)
-
 In this section, you'll create an alarm clock application that uses machine learning for emotion detection. The application will ask users to show an emotion for at least 3 seconds to turn off the alarm.
 
 Emotion detection will be implemented in two different ways:

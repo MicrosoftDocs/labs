@@ -13,16 +13,20 @@ items:
 - durationInMinutes: 5
   content: |
     [!include[](includes/lab-part-0.md)]
-- durationInMinutes: 10
+- title: Overview
+  durationInMinutes: 10
   content: |
     [!include[](includes/lab-part-1.md)]
-- durationInMinutes: 15
+- title: Emotion detection with Face API (cloud)
+  durationInMinutes: 15
   content: |
     [!include[](includes/lab-part-2.md)]
-- durationInMinutes: 15
+- title: Emotion detection with Windows ML (edge)
+  durationInMinutes: 15
   content: |
     [!include[](includes/lab-part-2b.md)]
-- durationInMinutes: 20
+- title: Product detection with Custom Vision and Windows ML
+  durationInMinutes: 20
   content: |
     [!include[](includes/lab-part-3.md)]
 - content: |

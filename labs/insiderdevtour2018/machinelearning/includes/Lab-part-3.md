@@ -1,5 +1,3 @@
-# Product detection with Custom Vision
-
 In this section, we'll create an application that detects which product appears in an image or video feed, and displays help information for the detected product.
 
 ## 1. Download the example

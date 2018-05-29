@@ -1,5 +1,3 @@
-# Overview
-
 In this section, we present context for the lab, providing an overview of the intelligent edge and machine learning.
 
 ## Intelligent edge

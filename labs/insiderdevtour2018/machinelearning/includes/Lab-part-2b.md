@@ -1,5 +1,3 @@
-# Emotion detection with Windows ML (edge)
-
 Now, instead of using Cognitive Services' REST API, we'll add a previously trained model to the project for local evaluation with Windows ML.
 
 ## 1. Detect emotions with a local model and Windows ML
