@@ -71,7 +71,9 @@ The builder site also checks whether the manifest has defined the expected icon 
   It is difficult to see the download banner, the result might be like the next image but for now let's continue to the next step.
 
 <p align="center">
-  <img src="../pwa/media/Picture22.jpeg" />
+
+![](../media/Picture22.jpg)
+
 </p>
 
 5.  Change the display mode to `Standalone` as we want the web application to look and feel like a standalone native application.
