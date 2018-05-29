@@ -1,4 +1,4 @@
-# Getting Started with Quick Start
+# Getting started - creating an App ID
 
 In order for our applications to use the Microsoft Graph API, we must have an application ID.
 
@@ -6,7 +6,7 @@ We must register the application in the Microsoft Application Registry.
 
 > Note: You will need either a [school or work](https://developer.microsoft.com/en-us/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&mkt=EN-US&lc=1033&lic=1)
 
-## Setting up app id
+## Setting up App ID
 ### Register the app in App Registration Portal
 First, go to [Microsoft App Registration Portal](https://apps.dev.microsoft.com/)
 

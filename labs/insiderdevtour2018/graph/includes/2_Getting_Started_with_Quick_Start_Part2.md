@@ -1,4 +1,4 @@
-# Microsoft Graph Explorer
+# Getting started - Graph Explorer
 
 Microsoft Graph Explorer is a tool that allows us to explore and test the Microsoft Graph API.
 

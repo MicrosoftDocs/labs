@@ -1,4 +1,4 @@
-# Sample API calls
+# Getting started - console test harness
 
 At this point we are ready to interact with Microsoft Graph.
 
