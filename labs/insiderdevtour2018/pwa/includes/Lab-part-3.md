@@ -72,7 +72,7 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 <p align="center">
 
-![](../media/Picture22.jpeg)
+![](../media/Picture22b.jpg)
 
 </p>
 
