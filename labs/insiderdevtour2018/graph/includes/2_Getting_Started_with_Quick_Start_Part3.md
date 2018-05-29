@@ -1,4 +1,4 @@
-# Getting started - console test harness
+# Getting started - Console test harness
 
 At this point we are ready to interact with Microsoft Graph.
 
