@@ -6,7 +6,7 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: tutorial
-  nextTutorialHref: ..\graph\index.yml
+  nextTutorialHref: ..\mixedreality\index.yml
   nextTutorialTitle: Graph Lab
   ms.custom: Insider Dev Tour 2018
 items:
