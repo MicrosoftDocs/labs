@@ -42,8 +42,8 @@ items:
   content: |
     [!include[](includes/lab-part-7.md)]
 - title: App quality review
-    durationInMinutes: 10
-    content: |
-      [!include[](includes/lab-part-9.md)]
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-9.md)]
 - content: |
     You've completed this lab.
