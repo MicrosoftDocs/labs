@@ -5,7 +5,7 @@ In this section you will create a Machine Learning powered Alarm Clock. Your app
 Emotion detection will be implemented using the Azure Cognitive Services Face API
 
 
-# 1. Create the Clock application
+## 1. Create the Clock application
 Let´s start creating a simple application displaying a clock.
 
 Open your Visual Studio and create a new UWP application. Name it AlarmClock.
@@ -74,7 +74,7 @@ Note the first two Microsoft.ProjectOxford.Face and Microsoft.ProjectOxford.Face
     using Windows.UI.Xaml.Media;
     using Windows.UI.Xaml.Navigation;
 
-# 2. Ask for an emotion
+## 2. Ask for an emotion
 The Face API can detect 8 different emotions ("Neutral", "Happiness", "Surprise", "Sadness", "Anger", "Disgust", "Fear" and "Contempt").
 
 Add some global variables:
@@ -101,7 +101,7 @@ Override the OnNavigatedTo method:
         };
     }
 
-# 3. Capture frames
+## 3. Capture frames
 Now, let's capture images from the webcam, to later use them for the emotion detection part.
 
 The CameraPreview FrameArrived event will trigger when a new frame is available. So you can use that to capture it.
@@ -132,7 +132,7 @@ And now add the code to pick the frames. For now, we'll simply store the last fr
         }
     }
 
-# 4. Detect emotion using Cognitive Services
+## 4. Detect emotion using Cognitive Services
 
 The Face API receives an image and returns the result of the face detection, including the emotion. You can provide the image as a URL or as a Stream. In this section we will do the later.
 
