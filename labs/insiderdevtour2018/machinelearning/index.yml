@@ -2,7 +2,7 @@
 title: Intelligence at the edge - getting started with Machine Learning
 metadata:
   title: Intelligence at the edge - getting started with Machine Learning
-  description: When used in conjunction, the intelligent cloud and edge can enable differentiated experiences for your apps. Learn how to get started in this lab.
+  description: When used in conjunction, the intelligent cloud and edge can enable differentiated experiences for your apps. Learn how to get started in this lab. 
   audience: Developer
   level: Beginner
   ms.topic: tutorial
@@ -17,14 +17,14 @@ items:
   durationInMinutes: 10
   content: |
     [!include[](includes/lab-part-1.md)]
-- title: Emotion detection with Face API
+- title: Emotion detection with Face API (Cloud)
   durationInMinutes: 15
   content: |
     [!include[](includes/lab-part-2.md)]
-- title: Emotion detection with Windows ML
-      durationInMinutes: 15
-      content: |
-        [!include[](includes/lab-part-2b.md)]
+- title: Emotion detection with Windows ML (edge)
+  durationInMinutes: 15
+  content: |
+    [!include[](includes/lab-part-2b.md)]
 - title: Product detection with Custom Vision
   durationInMinutes: 20
   content: |
