@@ -10,6 +10,9 @@ metadata:
   nextTutorialTitle: Microsoft Graph lab
   ms.custom: Insider Dev Tour 2018
 items:
+- durationInMinutes: 5
+  content: |
+    [!include[](includes/Overview.md)]
 - title: Microsoft Teams and more
   durationInMinutes: 10
   content: |
