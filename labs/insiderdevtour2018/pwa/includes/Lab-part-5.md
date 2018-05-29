@@ -5,14 +5,14 @@
 
 ## Prerequisites
 
-This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Service Worker** to download the necessary code to transform your web application into PWA.
+This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Service Worker** to download the necessary code to transform your web application into a PWA.
 
 ## Publish PWA
- Once you have done the previous step 1 and step 2 of PWABuilder tool, go to the next step 3 to download the generated code for your web app.
+ Once you have done the previous step 1 and step 2 of PWABuilder tool, go to step 3 to download the generated code for your web app.
 
- The destination path of this files will be the scope of your project that you have define in the manifest before, in this case is the **wwwroot** because in our manifest we have specified the **./** root path.
+ The destination path of these files will be the scope of your project that you have defined previously in the manifest, in this case it's the **wwwroot** because in our manifest we have specified the **./** root path.
 
-> Remember: The scope member is a string that represents the navigation scope of this web application's application context.
+> Remember: The scope member is a string that represents the navigation scope of this web application's context.
 
 
 + Download the Web and Windows 10 code (you will use the Windows 10 downloaded files later).
@@ -32,10 +32,10 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
     >Remember, if you change the path of your "images" folder, you need to update the json in your manifest file to reflect your changes.
 
-    Using our Knowzy [ASP.NET](https://www.asp.net/) project the easiest way to add new content to a project is to drag and drop the contents from the file explorer into the solutions explorer of your project.
+    Using our Knowzy [ASP.NET](https://www.asp.net/) project the easiest way to add new content to a project is to drag and drop the content from the file explorer into the solution explorer of your project.
 ![Provide a URL](../media/Picture29.jpg)
 
-4. 4. Reference the manifest in your **/Views/Shared/_Layout.cshtml** page with a link tag:
+4. Reference the manifest in your **/Views/Shared/_Layout.cshtml** page with a link tag:
 
     ````html
     <link rel="manifest" href="manifest.json">
@@ -48,7 +48,7 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
   Return to your downloaded PWA folder and go to projects (Downloads\Knowzy-web\projects\)
 
-1. Copy **only** the pwabuilder-sw.js file from the "ServiceWorker1" folder to the wwwroot of your site.
+1. Copy **only** the pwabuilder-sw.js file from the "ServiceWorker4" folder to the wwwroot of your site.
 ![Provide a URL](../media/Picture31.jpg)
 
 ![Provide a URL](../media/Picture32.jpg)
@@ -82,7 +82,7 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
 
 ### Test locally
-To test that your service worker is successfully installed launch the app in local make sure you are in the Miscrosoft.Knowzy.WebApp project and click on *IIS Express* button.
+To test that your service worker is successfully installed, launch the app locally. Make sure you are in the Microsoft.Knowzy.WebApp project and click on *IIS Express* button.
 ![](../media/Picture7.jpg)
 
 ![](../media/Picture34.jpg)
@@ -91,7 +91,7 @@ To test that your service worker is successfully installed launch the app in loc
 
 Now that you have these powerful new features running locally, you can publish them to your website to be consumed as a PWA.
 
-1. In Visual studio choose Project > Publish... or right click on Microsoft.Knowzy.WebApp and publish
+1. In Visual studio choose Project > Publish... or right click on Microsoft.Knowzy.WebApp and publish.
 
     ![publish screen from vs](../media/Picture13.jpg)
 
@@ -101,12 +101,12 @@ Now that you have these powerful new features running locally, you can publish t
 
     ![publish screen from vs](../media/Picture14.jpg)
 
-3. Click on "Publish button", when it finishes will show automatically the application result.
+3. Click on "Publish button", it will show automatically the application result when finished.
 
     ![publish screen from vs](../media/Picture1.jpg)
 
-  ```Important!``` to show the download banner from other device, the website **must be acceded at least of two times.**
+  ```Important!``` to show the download banner from other devices, the website **must be accessed at least twice.**
    *[Learn more about app install banners](https://developers.google.com/web/fundamentals/app-install-banners/).*
-   In case of having problems you can do it manually by chrome settings, `add to home screen`:
+   In case you have any issues you can do it manually through the chrome settings, `add to home screen`:
 
   ![publish screen from vs](../media/Picture35.jpg)
