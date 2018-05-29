@@ -166,13 +166,13 @@ To do this we will create a console application to which we add the necessary co
 
 ## Create a console app
 
-Download the base project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph)
+Download the base project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase)
 
 ## Authenticate user
 
 Now let's add the authentication.
 
-- In App.config add
+- In App.config add the following underneath the root `<configuration>` tag:
 
     	<appSettings>
     		<add key="ida:ClientID" value="YOURCLIENTID"/>
@@ -211,6 +211,8 @@ Now let's add the authentication.
 
             return graphClient;
 
+> **Note:** if you see errors underlined in the file, they should disappear when the application is built.
+
 You can see that we use the Microsoft Graph Service Client to authenticate, obtain the token, and later access all of Microsoft Graph resources through the class found in the Microsoft.Graph NuGet package.
 
 The method **GetTokenForUserAsync** obtain the access token after the user are authenticated to send in Authentication header when call the API.
@@ -219,6 +221,8 @@ Now you can build and run the process and the application will ask for user cred
 When you are authenticated, please answer **N** to the answer **Would you like to see your OneDrive items?[Y] Yes or [N] No**
 
 ![alt text](../media/AuthConsola.png)
+
+> **Note:** if you receive an error when signing in about no reply address being registered, then you forgot to save your native application addition in step 6 of the **Setting up app id** section.
 
 ## Get call to Get all items in OneDrive
 Now we are ready to make calls to the API, we will call OneDrive API to show the name of the documents we have.

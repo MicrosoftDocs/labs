@@ -2,7 +2,7 @@
 title: Get the most out of your web app with a Progressive Web App (PWA)
 metadata:
   title: Get the most out of your web app with a Progressive Web App (PWA)
-  description: Learn the fundamentals of a Progressive Web App, how to ensure it works great across multiple platforms, and how it can light up on Windows 10. 
+  description: Learn the fundamentals of a Progressive Web App, how to ensure it works great across multiple platforms, and how it can light up on Windows 10.
   audience: Developer
   level: Beginner
   ms.topic: tutorial
@@ -41,5 +41,9 @@ items:
   durationInMinutes: 10
   content: |
     [!include[](includes/lab-part-7.md)]
+- title: App quality review
+    durationInMinutes: 10
+    content: |
+      [!include[](includes/lab-part-9.md)]
 - content: |
     You've completed this lab.
