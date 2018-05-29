@@ -10,17 +10,25 @@ metadata:
   nextTutorialTitle: Graph Lab
   ms.custom: Insider Dev Tour 2018
 items:
-- durationInMinutes: 2
+- durationInMinutes: 5
   content: |
     [!include[](Includes/0_Objectives.md)]
 - title: Introducing Microsoft Graph
   durationInMinutes: 10
   content: |
     [!include[](Includes/1_Introduction_Microsoft_Graph.md)]
-- title: Getting Started with Quick Start
-  durationInMinutes: 10
+- title: Getting Started - Create App ID
+  durationInMinutes: 5
   content: |
     [!include[](Includes/2_Getting_Started_with_Quick_Start.md)]
+- title: Getting Started - Graph Explorer
+  durationInMinutes: 5
+  content: |
+    [!include[](Includes/2_Getting_Started_with_Quick_Start_Part2.md)]
+- title: Getting Started - Console test harness
+  durationInMinutes: 5
+  content: |
+    [!include[](Includes/2_Getting_Started_with_Quick_Start_Part3.md)]
 - title: Managing Files With Microsoft Graph
   durationInMinutes: 15
   content: |
