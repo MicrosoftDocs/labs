@@ -1,8 +1,8 @@
-# Writing data to the MS Graph
+# Writing data to the Microsoft Graph
 
 ----------
 
-MS Graph is not a closed tool that gives us a series of classes and functions and nothing else.
+The Microsoft Graph is not a closed tool that gives us a series of classes and functions and nothing else.
 
 One of its strengths is the ability to expand that information with personalized information.
 
@@ -78,7 +78,7 @@ You can see the following code in **UserExtension.xaml.cs**
             }
         }
 
-The code to call MS Graph API to get extension are in **Helpers/UserExtensionHelper.cs** GetOpenExtensionsForMe method:
+The code to call the Microsoft Graph API to get extension are in **Helpers/UserExtensionHelper.cs** GetOpenExtensionsForMe method:
 
  		public static async Task<List<ExtensionModel>> GetOpenExtensionsForMe()
         {
