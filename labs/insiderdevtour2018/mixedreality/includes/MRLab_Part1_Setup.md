@@ -17,7 +17,7 @@ After you complete this lab you will:
 ## Hardware Requirements
 
 * An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
-* [Optional] An Windows Mixedd Reality immersive headset with motion controllers
+* [Optional] An Windows Mixed Reality immersive headset with Motion Controllers
 * [Optional] A HoloLens device
 >**Note:** If you do not have access to an immersive headset or a HoloLens , you can view your app using the Mixed Reality simulator or the HoloLens emulator. See links below. 
 
