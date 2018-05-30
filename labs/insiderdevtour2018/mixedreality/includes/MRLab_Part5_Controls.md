@@ -35,7 +35,7 @@ Next, we will add a Bounding Box behaviour from the Mixed Reality toolkit:
 1. In the *Project* panel, navigate to the *Holotoolkit->UX->Scripts->BoundingBoxes* folder, select the `BoundingBoxRig.cs` script, and drag it into the *Inspector* panel, so it is added to the *Speaker* components. 
 2. As we don't need to scale the speakers, you can change the *Scale Rate* to 0.
 
- ![Speaker transform details](../media/BoundingBox.png)
+ <!-- ![Speaker transform details](../media/BoundingBox.png) -->
 
 The BoundingBoxRig component attaches a gizmo to the game object -in this case to our speaker-. This gizmo allows the user to rotate, delete, move and scale the object with either motion controllers or the HoloLens (tap and manipulation) gestures.
 
@@ -53,11 +53,11 @@ This BoundingBoxBasic prefab contains the visuals that are rendered during the m
 
 7. In the *Project* panel find the `AppBarCustom` prefab in the *Assets->Prefabs* folder, drag it into the *App Bar Prefab* property of the *Bounding Box Rig* component for the speaker. 
 
-![Appbar prefab](../media/AppbarCustomPrefab.png)
+<!-- ![Appbar prefab](../media/AppbarCustomPrefab.png) -->
 
 That was a lot of changes, so let's confirm that your *Inspector* view for the *Speaker* game object looks like this right now:
 
-![Speaker Components](../media/SpeakerComponents.png)
+![Speaker Components](../media/9.png)
 
 
 ## 4. Running the app and re-positioning speaker 
