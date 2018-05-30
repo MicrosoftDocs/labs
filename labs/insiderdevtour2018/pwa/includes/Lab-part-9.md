@@ -1,11 +1,11 @@
 # App quality review
 
-To be able to test the quality of our web app and get different metrics we will use a tool called `Sonarwhal`.
+To test the quality of our web app and check your code for best practices and common errors, we will use a tool called `Sonarwhal`.
 
 **What is sonarwhal?**
-sonarwhal is a linting tool for the web, with a strong focus on the developer experience: easy to configure, develop, and well documented.
+Sonarwhal is a linting tool for the web, with a strong focus on the developer experience: easy to configure, develop, and well documented.
 
-sonarwhal doesn’t want to reinvent the wheel. For that reason it tries to integrate other tools and services that do a great job, and contribute back where appropriate. For example, we are using aXe for accessibility, SSL Server Test for checking the certificate configuration, etc.
+Sonarwhal doesn’t want to reinvent the wheel. For that reason it tries to integrate other tools and services that do a great job, and contribute back where appropriate. For example, we are using aXe for accessibility, SSL Server Test for checking the certificate configuration, etc.
 
 **What is sonarwhal’s goal?**
 We have a few:
@@ -18,24 +18,24 @@ Promote community tools and services that do an awesome job but could not be kno
 
 1. Go to the online version [Sonarwhal online](https://sonarwhal.com/)
 
-<img src="../media/Picture42.png"><br>
+<img src="../pwa/media/Picture42.png"><br>
 
 2. Introduce the url of the web app to be analyzed, hit the `RUN SCAN` button and wait for the report to be finished.
 
-<img src="../media/Picture43.png"><br>
+<img src="../pwa/media/Picture43.png"><br>
 
 3. Go to the PWA section and check out that the web app has no errors so that it is PWA compliant.
 
-<img src="../media/Picture44.png"><br>
+<img src="../pwa/media/Picture44.png"><br>
 
 
 ### Pwa suggestions
 
 On the PWA section, there is the possibility to see the details of the error/warning as well as a link to a page that shows the documentation about that error/warning and suggestions on how to solve it.
 
-1. Hit the documentation button of the warning `The file extension should be 'webmanifest' (not 'json')` and check what might be the cause that triggered the warning and the suggestion to pass the rule.
+1. Hit the documentation button of the warning `The file extension should be 'webmanifest' (not 'json')`, check what might be the cause that triggered the warning and see the suggestions to pass the rule.
 
-<img src="../media/Picture45.png"><br>
+<img src="../pwa/media/Picture45.png"><br>
 
 2. Navigate to the directory `Microsoft.Knowzy.WebApp\wwwroot\` in the source code and rename the manifest extension as `manifest.webmanifest`.
 
@@ -45,17 +45,17 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 5. Scan again the web app using Sonarwhal and check that the webmanifest warning has been solved.
 
-<img src="../media/Picture46.png"><br>
+<img src="../pwa/media/Picture46.png"><br>
 
 6. Now let's consider that we created a manifest with some required parameters missing such as `name` and `short_name`. Modify the manifest located at `Microsoft.Knowzy.WebApp\wwwroot\` in the source code and remove the name and short_name parameters.
 
-<img src="../media/Picture47.png"><br>
+<img src="../pwa/media/Picture47.png"><br>
 
 7. Publish the web app again in Azure.
 
-8. Go to Sonarwhal and execute the scan again. Noticed now that there is a warning in the PWA section stating that the name is missing.
+8. Go to Sonarwhal and execute the scan again. Notice now that there is a warning in the PWA section stating that the name is missing.
 
-<img src="../media/Picture48.png"><br>
+<img src="../pwa/media/Picture48.png"><br>
 
 9. Include again the `name` and `short_name` in the manifest. Publish in Azure the changes and execute Sonarwhal again. The warning should disappear.
 
@@ -67,13 +67,13 @@ In the security section, the Subresource Integrity `SRI` feature enables you to 
 
 1. On the Security section, go to the SRI section and click the Details button to check the cause of the security issues.
 
-<img src="../media/Picture49.png"><br>
+<img src="../pwa/media/Picture49.png"><br>
 
-2. As Sonarwhal suggested, in our web app is missing the integrity attribute in scripts and stylesheets. Go to the following link to generate the hash the each script and stylesheet [SRI Hash Generator](https://www.srihash.org/)
+2. As Sonarwhal suggested, our web app is missing the integrity attribute in scripts and stylesheets. Go to the following link to generate the hash for each script and stylesheet [SRI Hash Generator](https://www.srihash.org/)
 
 3. On the Hash generator site, introduce the URL of the site.min.css stylesheet `https://msftknowzy.azurewebsites.net/css/site.min.css` and copy the integrity hash in the stylesheet link in the _Layout.cshtml file located in the directory `Microsoft.Knowzy.WebApp\Views\Shared\` as shown below:
 
-<img src="../media/Picture50.png"><br>
+<img src="../pwa/media/Picture50.png"><br>
 
 ```JS
 #Microsoft.Knowzy.WebApp\Views\Shared\_Layout.cshtml
@@ -90,11 +90,11 @@ In the security section, the Subresource Integrity `SRI` feature enables you to 
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 ```
-6. Launch again Sonarwhal scan and check that all the SRI security issues have been solved.
+6. Go to Sonarwhal, execute the scan again and check that all the SRI security issues have been solved.
 
 **Other app quality review tools:**
 
 + [Page speed insight](https://developers.google.com/speed/pagespeed/insights/): PageSpeed Insights analyzes the content of a web page, then generates suggestions to make that page faster.
 + [Accessibility analyzer](https://wave.webaim.org): WAVE can help you evaluate the accessibility of your web content.
-+ [Webaim - contrast checker:](https://webaim.org/resources/contrastchecker/) checks the contrast ratio of a color.
++ [Webaim - contrast checker:](https://webaim.org/resources/contrastchecker/) checks the contrast ratio of the colors.
 + [W3C developers tools](https://w3c.github.io/developers/tools/): W3C offers a variety of open source tools to use with your website.
