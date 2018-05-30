@@ -35,7 +35,7 @@ The *MixedRealityCameraParent* game object that we added in the prior section ha
 2. In the *Hierarchy* panel, expand *MixedRealityCameraParent* and select (or click on) the *Boundary* object. This should select it in the *Hierarchy* panel and show the properties for the *Boundary* in the *Inspector* panel.
 3. With the *Boundary* object still selected (being careful not to click on anything else in the hierarchy window), scroll down the hierarchy window, find the `Floor` object and drag it into the *Floor Quad* property of the *Boundary Manager* in the *Inspector* panel.
 
-![Set boundary floor](../media/BoundaryFloorAssociation.png)
+<!-- ![Set boundary floor](../media/BoundaryFloorAssociation.png) -->
 
 > Note: If you don't want to drag and drop (e.g. don't have a mouse to select with precision) you can set the properties using the target button to the right of the 'Floor Quad' property in the inspector, just make sure when selecting the target to chooses the objects that are in the Scene tab, not in the Assets tab.  
 
