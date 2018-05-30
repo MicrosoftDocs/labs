@@ -45,7 +45,7 @@ Since we are going for a "standing-scale" configuration, let's change the space 
 	
 ![Tracking space configuration](../media/7.png)
 
-[To learn more about the different configurations in Mixed Reality Experiences, check [this documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/coordinate-systems). 
+[To learn more about the different configurations in Mixed Reality Experiences, check [this documentation](https://docs.microsoft.com/windows/mixed-reality/coordinate-systems). 
 	
 5. One more tweak - select the *MixedRealityCameraParent* in the *Hierarchy* panel and change the *Transform->Position->Y* to 0.8. This will move the camera to a natural eye level.
 
@@ -59,7 +59,7 @@ If you have a headset, here is a few tips on what to look for when you explore t
 - The headset should be tracking your head movement and you will see different parts of the room, as you move your head; it should track your head as if you were in the room. 
 - Walk around the room (take a step sideways) and notice how the headset tracks your position. 
 
-If you are using the simulator, follow the instructions from [these documents](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-mixed-reality-simulator) on how to setup the simulator and how to control it using keyboard, mouse or Xbox controller.  
+If you are using the simulator, follow the instructions from [these documents](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-mixed-reality-simulator) on how to setup the simulator and how to control it using keyboard, mouse or Xbox controller.  
 
 Don't wait any longer, Click the play icon in the Unity Editor, put on your headset, and explore the virtual room. 
 
@@ -70,7 +70,7 @@ Don't wait any longer, Click the play icon in the Unity Editor, put on your head
 If you are wondering how is it that we wrote no code and there is so much functionality in the scene, it goes back to the 'Apply Mixed Reality Scene Settings' step we did earlier. That setup our camera (MixedRealityCameraParent->MainCamera)  and the platform tracks the     
 
 
-Thanks to the 'Apply Mixed Reality Scene Settings' step, all the movement and camera operations are handled for us and configured with the [Windows MR default controls](https://docs.microsoft.com/en-us/windows/mixed-reality/navigating-the-windows-mixed-reality-home#immersive-headset-input-support). 
+Thanks to the 'Apply Mixed Reality Scene Settings' step, all the movement and camera operations are handled for us and configured with the [Windows MR default controls](https://docs.microsoft.com/windows/mixed-reality/navigating-the-windows-mixed-reality-home#immersive-headset-input-support). 
 
 Click run (the play icon) in the Unity Editor and put on your headset so you can explore the virtual room. 
 

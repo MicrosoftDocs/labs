@@ -59,7 +59,7 @@ Lastly, to ensure that the experience runs fine on the HoloLens, we need to chec
 ![Background color config](../media/18.png)
 
 ## 2. Add spatial mapping
-We're almost done! Now we want to enable [Spatial Mapping](https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-mapping). Spatial mapping provides a detailed representation of real-world surfaces in the HoloLens environment, allowing developers to create a convincing mixed reality experience. In this case, it allows users to place the speakers naturally without them being obscured inside real-world surfaces.
+We're almost done! Now we want to enable [Spatial Mapping](https://docs.microsoft.com/windows/mixed-reality/spatial-mapping). Spatial mapping provides a detailed representation of real-world surfaces in the HoloLens environment, allowing developers to create a convincing mixed reality experience. In this case, it allows users to place the speakers naturally without them being obscured inside real-world surfaces.
 
 First let's make sure the Bounding Box controls for rotate and move won't be obscured.
 

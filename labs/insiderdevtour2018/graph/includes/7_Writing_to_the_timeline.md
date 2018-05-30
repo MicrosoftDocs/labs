@@ -28,7 +28,7 @@ In the UWP project go to **Helpers/UserExtensionHelper.cs** CreateActivity metho
                 UserActivity userActivity = await channel.GetOrCreateUserActivityAsync("HOLMicroGraph");
 
                 var adaptiveCard = File.ReadAllText($@"{Package.Current.InstalledLocation.Path}\AdaptiveCard.json");
-                adaptiveCard = adaptiveCard.Replace("{{backgroundImage}}", "https://cdn.graph.office.net/prod/GraphDocuments/en-us/concepts/images/microsoft_graph.png");
+                adaptiveCard = adaptiveCard.Replace("{{backgroundImage}}", "https://cdn.graph.office.net/prod/GraphDocuments/concepts/images/microsoft_graph.png");
                 adaptiveCard = adaptiveCard.Replace("{{name}}", "Hands-on Lab Microsoft Graph");
                 userActivity.VisualElements.DisplayText = "HOL Microsoft Graph";
                 userActivity.ActivationUri = new Uri($"holmicrosoftgraph://{UserExtensionHelper.option}");

@@ -8,7 +8,7 @@ In this lab you will find the prerequisites and steps to help you set up your co
 
 - [Visual Studio 2017](https://developer.microsoft.com/windows/downloads) installed on your computer to continue doing other labs.
 
-- Windows 10 April 2018 update: The machine must have the last Windows April Update to be able to use Windows Timeline.Download the update from [software download](https://www.microsoft.com/en-us/software-download/windows10) page.
+- Windows 10 April 2018 update: The machine must have the last Windows April Update to be able to use Windows Timeline.Download the update from [software download](https://www.microsoft.com/software-download/windows10) page.
 
--  Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/en-us/free/).
-Or you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/en-us/articles/create-microsoft-azure-account/)
+-  Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/free/).
+Or you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/articles/create-microsoft-azure-account/)

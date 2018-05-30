@@ -54,8 +54,8 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 #### Build and deploy the existing web app ###
 
 ##### Prerequisites ####
-1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-tenant)
-2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/en-us/free/) or [purchase an Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/).
+1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant)
+2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/free/) or [purchase an Azure subscription](https://azure.microsoft.com/pricing/purchase-options/).
 3. [Node LTS and npm](https://nodejs.org/en/)
 4. [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -516,7 +516,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 | Terms of use	      | https://www.contoso.com/apps/lunchmenu/termsofuse | The HTTPS URL of your app's terms of use |
 | Full color 96x96	      | ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) | The large app icon in PNG format (96 pixels by 96 pixels) |
 | Transparent outline 20x20	      | ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png) | The black app icon outline wih a transparent background in PNG format (20 pixels by 20 pixels) |
-| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the [Teams color swatches](https://docs.microsoft.com/en-us/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf) and Microsoft maintains a list of [curated colors](https://www.microsoft.com/en-us/design/color) for Microsoft products. |
+| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the [Teams color swatches](https://docs.microsoft.com/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf) and Microsoft maintains a list of [curated colors](https://www.microsoft.com/design/color) for Microsoft products. |
 
 ![Teams app studio 5](../media/teams-appstudio-5.png)
 
@@ -577,6 +577,6 @@ To maintain the Teams and Office 365 look and feel, you can include the Teams CS
 
 Further details are in the **Control Library** in the Teams App Studio.
 
-Color styling information is available here: [Teams - Design guidelines - color](https://docs.microsoft.com/en-us/microsoftteams/platform/resources/design/components/color)
+Color styling information is available here: [Teams - Design guidelines - color](https://docs.microsoft.com/microsoftteams/platform/resources/design/components/color)
 
 

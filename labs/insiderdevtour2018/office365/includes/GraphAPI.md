@@ -23,7 +23,7 @@ Microsoft Graph is a central API in Office 365 that provides unified access to u
 | POST new row to my Excel file	      | https://graph.microsoft.com/v1.0/me/drive/root:/demo.xlsx:/workbook/tables/Table1/rows/add |
 
 ### Graph Explorer
-1.	In a web browser, navigate to https://developer.microsoft.com/en-us/graph/graph-explorer
+1.	In a web browser, navigate to https://developer.microsoft.com/graph/graph-explorer
 2.	Click on the “Run Query” button
 
 ![Graph 1](../media/graph-1.png)

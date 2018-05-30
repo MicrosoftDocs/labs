@@ -181,4 +181,4 @@ Once the notification disappears, we can still see the notification in **Action 
 
 ### More Information
 
-If you want to see other visualizations for toast notifications, please visit this <a href="https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts">link</a>
+If you want to see other visualizations for toast notifications, please visit this <a href="https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts">link</a>

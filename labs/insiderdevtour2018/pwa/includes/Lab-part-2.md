@@ -90,8 +90,8 @@ Congratulations! Your app is now ready to be viewed on devices with different sc
 
 Now if you want to publish the application on Azure follow these steps or continue locally using IIS and skip to the next step.
 
-**Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/en-us/free/).
-For more information you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/en-us/articles/create-microsoft-azure-account/)
+**Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/free/).
+For more information you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/articles/create-microsoft-azure-account/)
 
 Using azure services:
 
