@@ -1,28 +1,33 @@
-## 7. HoloLens (optional)
+<!-- ## 7. HoloLens (optional) --> 
 
-Although this only works properly on an immersive headset, there is little we need to change in order to make this a full MR experience. 
+So far, our experience only works with an immersive headset. However, with just a few changes, we can extend it to cover the whole Mixed Reality continuum (using HoloLens).  
 
-Because we used the MRToolkit for the camera, interactions and buttons, all we need to do is turn off the environment so it doesn't obstruct the HoloLens user's view of their real environment. 
+Since we used the Mixed Reality Toolkit for the camera, interactions and buttons, all we need to do is turn off the environment so it doesn't obstruct the HoloLens user's view of their real environment. 
 
+
+## 1. Hiding the virtual room.
 We need to write a script that detects whether the app is being run with an immersive headset or a HoloLens, and then hide the virtual living room if required.
 
 First, we'll add a Tag to the RoomPrefab so we can access it inside our script. 
 
-- Select the RoomPrefab in the hierachy.
-- Click on the Tag dropdown in the inspector window and select Add Tag...
 
-	![alt text](../media/16.png)
 
-- Press the '+' icon to create a new Tag and call it HMDUOnly.
+1. Select the RoomPrefab in the hierachy.
+2. Click on the Tag dropdown in the inspector window and select Add Tag...
 
-	![alt text](../media/17.png)
+	![Add Tag to room prefab](../media/AddTagToRoomPrefab.png)
 
-- Now click on the RoomPrefab in the Hierarchy again and select HMDUOnly from the dropdown.
+3. Press the '+' icon to create a new Tag and call it HMDUOnly.
 
-There are a number of ways to select [gameobjects inside of a script](https://docs.unity3d.com/Manual/ControllingGameObjectsComponents.html). With this method, we can easily add the tag to any object we want to hide (if we have more than one) and then iterate through and hide them all. For this lab, however, we just need to hide the room.
+	![alt text](../media/HMDUOnlyTag.png)
 
-- Using the menu click GameObject -> Create Empty and in the Hierarchy rename this to GameManager.
-- Click Add Component -> New Script and name it GameManager with C sharp as the selected language.
+4.  Now click on the RoomPrefab in the Hierarchy again and select HMDUOnly from the dropdown.
+
+There are many ways to select [gameobjects inside of a script](https://docs.unity3d.com/Manual/ControllingGameObjectsComponents.html). By using a tag, we can easily add it to any object we want to hide (if we have more than one) and then iterate through and hide them all. Using FindGameObjectsWithTag is not the most performant way, but it will be fine for our lab. 
+
+- In Unity's top menu, click 'GameObject->Create Empty'.   
+- In the Hierarchy, rename this added 'GameObject' to 'GameManager'.
+- In the inspector, click 'Add Component->New Script' and name it GameManager with C sharp as the selected language. Click 'Create and Add' to create it. 
 - Double click the GameManager script in the Inspector or Assets window to open it.
 - We only need to run this test once when the app starts. We will do this inside the Start() function. So we can delete the Update() function.
 - Replace the code in the GameManager script with this:

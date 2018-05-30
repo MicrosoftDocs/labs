@@ -1,6 +1,4 @@
-# Spatial Sound
-
-## 1: Windows Mixed Reality Pre-Reqs and Setup
+# Intro to Mixed Reality and this lab
 
 [Spatial sound](https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-sound) breathes life into holograms and gives them presence in our world. Holograms are composed of both light and sound, and if you happen to lose sight of your holograms, spatial sound can help you find them. 
 

@@ -1,70 +1,144 @@
-## 2. Exporting a Windows Mixed Reality UWP App from Unity
+<!-- ## Exporting a Windows Mixed Reality UWP App from Unity --> 
 
-Let's start by creating a new Unity project. Open the Unity Editor and click 'New'. Name the project whatever you want, make sure the template is set to 3D, and click 'Create project'. For this lab, there are some necessary assets we need to import. These should be included in the lab files.
+## 1. Creating Unity Project and Importing Assets
 
-* [Holotoolkit.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/Holotoolkit.unitypackage)
+For this lab, there are some necessary assets we need to import. 
+Download these two unity packages and save them locally in your computer.  
 
-    This is the [Microsoft Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/), a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
+* [Holotoolkit.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/Holotoolkit.unitypackage)  
+This is a snapshot of the [Microsoft Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/), a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
     
-* [SpatialSoundLab.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/SpatialSoundLab.unitypackage)
-    
-    The second contains the assets (models, materials and audio clips) we will be using to create this spatial sound experience.
+* [SpatialSoundLab.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/SpatialSoundLab.unitypackage)   
+Is a custom package prepared for this lab. It contains the assets (models, materials and audio clips) that we will be using to create this spatial sound experience.
 
-To import these, click on Assets -> Import Package -> Custom Package and navigate to the files above. It may take Unity a few minutes to import everything.
+Once you have your assets files available, we can create the Unity project.  
 
-![import packages](../media/0.png)
+Open the Unity Editor and click 'New'. Name the project whatever you want (e.g. SpeakerPlacement).     
+Make sure the template is set to 3D, turn off analytics and click 'Create project'.    
 
-To start building Mixed Reality applications, there are some settings we need to change in Unity. The Mixed Reality Toolkit will be helpful for this task. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
+To import the unity packages, click on 'Assets->Import Package->Custom Package' menu item and navigate to the Holotoolkit.unitypackage.  
+
+![import packages](../media/ImportCustomPackage.png)
+
+Do not unselect any items, so we can import all files. Click 'Import'.   
+
+![import packages](../media/ImportPackage_HoloToolkit.png)
+
+Importing might take a few minutes and go through several import phases.  
+You will know that your package imported correctly if when done there is a folder called 'Holotoolkit' under the Assets folder in the Project Window. 
+ 
+![import packages](../media/Assets_Holotoolkit_Imported.png)
+
+
+Repeat the same import steps above and import the SpatialSoundLab.UnityPackage file.
+ 
+Ensure that your Assets folder now has both packages. 
+
+![import packages](../media/Assets_All_Imported.png)
+
+
+## 2. Applying Project Settings. 
+
+Next, we need to configure our Unity project to target Windows Mixed Reality app. 
+The Mixed Reality Toolkit will be helpful for this task. Select the "Apply Mixed Reality Project Settings" option in the Unity Editor:
 
 `Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings`
 
-![apply mixed reality project settings](../media/1.png)
+![apply mixed reality project settings](../media/ApplyProjectSettingsMenuItem.png)
 
-Check the box labeled "Use Toolkit-specific InputManager Axes" (if it has not been checked already) and hit "**Apply**".
+Check the box labeled "Use Toolkit-specific InputManager Axes" (if it has not been checked already) and hit 'Apply'.
 
-![mixed reality project settings](../media/2.png)
+![mixed reality project settings](../media/ApplyProjectSettingsDialog.png)
 
-If we were only building for immersive headsets, we would check Target Occluded Devices. As we may port this to HoloLens we can use the above settings. 
 
-Next, we need to include a few scene objects that will handle camera movement and controller input. Select the "Apply Mixed Reality Scene Settings" option in the Unity Editor:
+Just for reference, here is what each option is doing:
 
-`Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Scene Settings`
+- 'Target Windows Universal UWP' is telling Unity what our target will be. You can see the different many different options for target platform from File->Build Settings menu item.
+- 'Target Windows Universal UWP' is telling Unity what our target will be. You can see the different many different options for target platform from File->Build Settings menu item.  
+- Build for Direct3D is setting of the 'Build Type' (in Build Settings) to 'D3D'. For Mixed Reality apps that target occluded headsets, XAML is not supported. 
+- Checking the 'Enable XR' option is equivalent checking the 'Virtual Reality Supported' option in Player Settings->XR Settings. 
+- 'Enable .NET scripting' is the equivalent of selecting Player Settings->Other Settings->Scripting Backend to '.NET'. 
+IL2CPP would have worked too, but for consistency across the lab, we recommend .NET.  
+- 'Use Toolkit-specific InputManager axis' modifies the Edit->Project Settings->Input Manager axis to support all Axis that the toolkit uses.  In short, it adds support for Xbox controller and Mixed Reality Controllers. 
+- If you are only building for immersive headsets, you can check Target Occluded Devices. As we may port this to HoloLens, let's leave it unchecked. 
 
-![apply mixed reality scene settings](../media/3.png)
-
-![mixed reality scene settings](../media/4.png)
-
-Use the default setting.
-
-We still need to make a few more changes to ensure that we can build this project out to Visual Studios as a UWP app. Select the "Apply UWP Capability Settings" option in the Unity Editor.
+That takes care of adding Mixed Reality support, but there are a few more settings needed that are specific to the Universal Windows Platform. Select the 'Apply UWP Capability Settings' option in the Unity Editor.
 
 `Mixed Reality Toolkit -> Configure -> Apply UWP Capability Settings`
 
-![apply UWP Capability Settings](../media/5.png)
+![apply UWP Capability Settings](../media/ApplyUWPCapabilitySettingsMenuItem.png)
 
-Make sure to check Spatial Perception if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on.
+Check the 'Spatial Perception' box if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on.  Click 'Apply' to save this choice. 
 
-Next, navigate to your Build Settings using `ctrl + shift + B`, select Universal Windows Platform, and then click Switch Platform. Add your open scene to the build by checking the box next to your scene's name and clicking "Add Open Scenes".
+Next, navigate to your 'File->Build Settings' dialog using `ctrl + shift + B`, select Universal Windows Platform, and then click Switch Platform. Add your open scene to the build by checking the box next to your scene's name and clicking 'Add Open Scenes'. If you are prompted to save your scene, go ahead and save it with any name you want. We called our scene 'main'. 
 
-That's it! The project and scene is now configured and primed for making a UWP MR application. For a more detailed overview of these setting changes, see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. When or if you choose to build the project, use the following guides to get it running.
+
+## 3. Applying Scene settings and adding Mixed Reality objects 
+Next, we need to configure our Scene. Let's add the objects that will handle camera movement and controller input.  
+Select the "Apply Mixed Reality Scene Settings" option in the Unity Editor:
+
+`Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Scene Settings`
+
+![apply mixed reality scene settings](../media/ApplyMixedRealitySettingsMenuItem.png)
+
+Leave all the default settings checked and click 'Apply'. 
+![mixed reality scene settings](../media/ApplyMixedRealitySettingsDialog.png)
+
+Just for reference, here is what all these options do: 
+- A 'MixedRealityCameraParent' prefab is added to the scene. This prefab adds a default (main) camera at the origin (0,0,0) and it also adds support for motion controllers and boundary. 
+- An 'InputManager'prefab is added to the scene. This prefab adds support for input (via gaze, touch, gestures, and Xbox controller) to our scene. 
+- A 'DefaultCursor' has been added to the scene.   
+
+You should be able to see all the objects that were added in the Hierarchy Window in Unity. 
+
+With that, the project and scene are now configured and primed for making a UWP MR application. 
+
+Go ahead and save your scene and project. We recommend you do that at the end of each step in our lab.  
+Click File->Save Scenes. If prompted for a name for your scene, call it *SpatialSoundLab* (or whatever you please).
+Click File->Save Project.  
+
+
+Note: For a more detailed overview of all the setting we applied, see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. 
+
+
+## 4. Deploying to headsets
+You do not have to do this now, but when or if you choose to build the project, use the following guides to get it running.
 
 ### To deploy the project to an immersive headset.
-1. Navigate to the Build Window: Mixed Reality Toolkit -> Build Window.
-2. Click on Open in Visual Studio.	
-	
-	>**Note:** If Unity says there is no "open project solution" and asks if you still want to build, select "Yes, Build"
-	
-3. Navigate to Build -> Configuration Manager in Visual Studios or use the drop-down at the top of the page and select x64 in your platform options.
-4. In the debug toolbar, select "Local Machine" as the target (or remote device if you are pushing to another machine).
+1. Navigate to the Mixed Reality Toolkit -> Build Window.   
+`Mixed Reality Toolkit -> Build Window`
+
+2. Click 'Open in Visual Studio'. This step will take a few minutes, as it is compiling all the assets and creating or updating a visual studio solution. 
+	>Note: If Unity says there is no "open project solution" and asks if you still want to build, select 'Yes, Build'  
+
+3. After your build (in Unity) completes, it should launch Visual Studio.  
+In Visual studio's Standard toolbar, change the Active solution platform from ARM to 'x64' and ensure that 'Local Machine' is selected as deployment target.   
+![switch active solution from arm to x64](../media/DeploymentX64Immersive.png)
+
+If you are not debugging, we also recommend you also change from Debug to Release because Unity debug builds often run a little slow.  
 5. Run the app by hitting play.
 
-See the [Windows Developer site](https://docs.microsoft.com/en-us/windows/uwp/publish/) for publishing to the Microsoft Store.
 
 ### To deploy the project to a HoloLens.
-1. Navigate to the Build Window: Mixed Reality Toolkit -> Build Window.
-2. Press Open in Visual Studio.
-	
-	>**Note:** If Unity says there is no "open project solution" and asks if you still want to build, select "Yes, Build"
-3. Navigate to Build -> Configuration Manager in Visual Studios or use the drop-down at the top of the page and select x86 in your platform options.
-4. In the debug toolbar, select the emulator or the device that you're using.
-5. Run the app using the debug toolbar.
+
+For deploying to HoloLens, the steps are very similar to immersive headset steps above, we just choose a different target device and the platform is x86. 
+
+1. Navigate to the Mixed Reality Toolkit -> Build Window.   
+`Mixed Reality Toolkit -> Build Window`
+
+2. Click 'Open in Visual Studio'. This step will take a few minutes, as it is compiling all the assets and creating or updating a visual studio solution. 
+	>Note: If Unity says there is no "open project solution" and asks if you still want to build, select 'Yes, Build'  
+
+3. After your build (in Unity) completes, it should launch Visual Studio.  
+In Visual studio's Standard toolbar, change the Active solution platform from ARM to 'x86' and choose the right target pending how you are deploying:    
+- If you are deploying using USB, select "Device". 
+- If you are deploying over Wi-Fi, use Remote machine and configure the remote machine settings.  
+
+![switch active solution from arm to x64](../media/DeploymentX86Hololens.png)
+
+If you are not debugging, we also recommend you also change from Debug to Release because Unity debug builds often run a little slow.  
+5. Run the app by hitting play.
+
+
+
+See the [Windows Developer site](https://docs.microsoft.com/en-us/windows/uwp/publish/) for details on publishing to the Microsoft Store.
