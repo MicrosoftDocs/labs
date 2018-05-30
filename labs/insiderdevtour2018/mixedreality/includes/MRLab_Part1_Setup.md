@@ -1,30 +1,34 @@
-# Intro to Mixed Reality and this lab
+# Intro to Windows Mixed Reality and this lab
 
-[Spatial sound](https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-sound) breathes life into holograms and gives them presence in our world. Holograms are composed of both light and sound, and if you happen to lose sight of your holograms, spatial sound can help you find them. 
+Mixed reality blends real-world and virtual content into hybrid environments where physical and digital objects coexist and interact.  
 
-Spatial sound is not like the typical sound that you would hear on the radio - it is sound that is positioned in 3D space. With spatial sound, you can make holograms sound like they're behind you, next to you, or even on your head! In this lab, you will:
+In this lab, you will build an experience for both Windows Mixed Reality immersive headsets (VR) and Microsoft HoloLens (AR). You will use Unity to create a virtual room where the users will interact with a speaker playing Spatial Sound. The users will get to experience the sound as they teleport themselves across the room, or as they move the speaker throughout the room. 
 
--  Configure your development environment to use Microsoft Spatial Sound.
--  Go through the build process for exporting Windows MR Apps on the UWP platform.
--  Create an environment and configure controls for an MR experience.
--  Add spatial sound and place-able speakers.
--  (optional) See how easy it is to adapt the experience to HoloLens.
+The experience will be built with the [Mixed Reality Toolkit](https://github.com/microsoft/mixedrealitytoolkit-unity), therefore maximizing your reuse with for HoloLens; towards the end of the lab, you will make a few tweaks to re-target the experience the VR experience and optimize it for a HoloLens device.    
+
+After you complete this lab you will:
+       
+* Gain familiarity and a solid understanding on how to use Unity to create a VR experience    
+* Know how to configure Unity to target UWP Mixed Reality applications   
+* Understand basic Mixed Reality building blocks like setting up your cameras, handling input (via gaze, motion controllers, and gestures), and using spatial sound in an MR experience.  
+* Understand how to create a Mixed Reality experience that is adaptive to both occluded headsets and HoloLens. 
+
 
 ## Hardware Requirements
 
 * An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
-* (optional) Motion Controllers
-* (optional) A HoloLens
->**Note:** If you do not have access to an MR or HoloLens headset, you can view your app using the HoloLens emulator or the Mixed Reality simulator linked below
+* [Optional] An Windows Mixedd Reality immersive headset with motion controllers
+* [Optional] A HoloLens device
+>**Note:** If you do not have access to an immersive headset or a HoloLens , you can view your app using the Mixed Reality simulator or the HoloLens emulator. See links below. 
 
 ## Software Requirements
-* Visual Studio 2017
-    *  The Universal Windows Platform development workload
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/), any SKU, including the free community edition SKU. Ensure you select these workloads and features during setup: 
+    *  The Universal Windows Platform development 
     *  The Game Development with Unity workload
-    *  [Windows 10 Fall Creators Update SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017
->**Note:** Workloads can be accessed by navigating to Tools -> Get Tools and Features when in Visual Studio
+    *  [Windows 10 Fall Creators Update SDK or later](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017
+	>**Note:** Workloads can be accessed by navigating to Tools -> Get Tools and Features when in Visual Studio
 
-*  [Unity 2017.4.2](https://unity3d.com/get-unity/download/archive) (be sure to include the .Net Scripting Backend when selecting components)
-* Windows 10 Fall Creators Update
-    * Enabled Developer mode: go to system Settings -> Update & security -> For developers
-* (optional) [HoloLens Emulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) or [Mixed Reality Simulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-mixed-reality-simulator) setup
+*  [Unity 2017.4.3](https://unity3d.com/get-unity/download/archive) (be sure to include the .Net Scripting Backend when selecting components at setup)
+* Windows 10 Fall Creators Update OS (or later) 
+    * To enable Developer mode: go to system Settings -> Update & security -> For developers
+* [Optional] [HoloLens Emulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) or [Mixed Reality Simulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-mixed-reality-simulator). 
