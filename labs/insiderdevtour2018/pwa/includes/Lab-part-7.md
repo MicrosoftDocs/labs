@@ -42,7 +42,7 @@ To simplify the task, we will test the WinRT APIs by using the F12 tools console
 
 ##### Timeline
 
-To do this part, your machine must have the last **Windows April Update** to be able to use Windows Timeline. Download the update from [software download](https://www.microsoft.com/en-us/software-download/windows10) page.
+To do this part, your machine must have the last **Windows April Update** to be able to use Windows Timeline. Download the update from [software download](https://www.microsoft.com/software-download/windows10) page.
 
 1. Launch your PWA app from your start menu.
 

@@ -16,7 +16,7 @@ After you complete this lab you will:
 
 ### Hardware Requirements
 
-* An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
+* An [MR capable machine](https://docs.microsoft.com/windows/mixed-reality/install-the-tools#system-requirements)
 * [Optional] An Windows Mixed Reality immersive headset with Motion Controllers
 * [Optional] A HoloLens device
 >**Note:** If you do not have access to an immersive headset or a HoloLens , you can view your app using the Mixed Reality simulator or the HoloLens emulator. See links below. 
@@ -25,10 +25,10 @@ After you complete this lab you will:
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/), any SKU, including the free community edition SKU. Ensure you select these workloads and features during setup: 
     *  The Universal Windows Platform development 
     *  The Game Development with Unity workload
-    *  [Windows 10 Fall Creators Update SDK or later](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017
+    *  [Windows 10 Fall Creators Update SDK or later](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017
 	>**Note:** Workloads can be accessed by navigating to Tools -> Get Tools and Features when in Visual Studio
 
 *  [Unity 2017.4.3](https://unity3d.com/get-unity/download/archive) (be sure to include the .Net Scripting Backend when selecting components at setup)
 * Windows 10 Fall Creators Update OS (or later) 
     * To enable Developer mode: go to system Settings -> Update & security -> For developers
-* [Optional] [HoloLens Emulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) or [Mixed Reality Simulator](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-windows-mixed-reality-simulator). 
+* [Optional] [HoloLens Emulator](https://docs.microsoft.com/windows/mixed-reality/using-the-hololens-emulator) or [Mixed Reality Simulator](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-mixed-reality-simulator). 

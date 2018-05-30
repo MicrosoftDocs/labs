@@ -91,7 +91,7 @@ Go ahead and save your scene and project. We recommend you do that at the end of
 3. Click *File->Save Scenes*. If prompted for a name for your scene, call it `Main` (or whatever you please).
 4. Click *File->Save Project*.  
 
-Note: For a more detailed overview of all the setting we applied, see [this guide](https://docs.microsoft.com/en-us/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. 
+Note: For a more detailed overview of all the setting we applied, see [this guide](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. 
 
 
 ## 4. Deploying to headsets
@@ -132,4 +132,4 @@ If you are not debugging, we also recommend you also change from Debug to Releas
 
 5. Run the app by hitting play.
 
-See the [Windows Developer site](https://docs.microsoft.com/en-us/windows/uwp/publish/) for details on publishing to the Microsoft Store.
+See the [Windows Developer site](https://docs.microsoft.com/windows/uwp/publish/) for details on publishing to the Microsoft Store.

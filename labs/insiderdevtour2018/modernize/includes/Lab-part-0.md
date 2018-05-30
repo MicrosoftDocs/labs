@@ -22,7 +22,7 @@ Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP
 
 In order to complete this lab you will need:
 
--   **Windows 10 April 2018 Update:** The computer needs to run [Windows 10](https://www.microsoft.com/software-download/windows10), and it is mandatory to [install the latest April 2018 Update](https://community.windows.com/en-us/videos/how-to-get-the-windows-10-april-2018-update/Bgl6b7WX_).
+-   **Windows 10 April 2018 Update:** The computer needs to run [Windows 10](https://www.microsoft.com/software-download/windows10), and it is mandatory to [install the latest April 2018 Update](https://community.windows.com/videos/how-to-get-the-windows-10-april-2018-update/Bgl6b7WX_).
 
 -   **Visual Studio Community 2017 15.7.2 (or higher):** You can downloaded from [here](https://www.visualstudio.com/downloads/) - ensure the latest Windows 10 SDK (1803; Build 17134) is enabled
 

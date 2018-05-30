@@ -6,11 +6,11 @@ We are going to take a tour of this tool.
 
 ### Sign in to Microsoft Graph Explorer
 
-Go to **[Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)** and click on the Sign in With Microsoft button. 
+Go to **[Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)** and click on the Sign in With Microsoft button. 
 
  ![alt text](../media/LoginGraphApi.png) 
 
-> Note: You will need login with a [school or work](https://developer.microsoft.com/en-us/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&mkt=EN-US&lc=1033&lic=1)
+> Note: You will need login with a [school or work](https://developer.microsoft.com/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&lc=1033&lic=1)
 
 After the login you can see that on the left side we have several options:
 

@@ -98,7 +98,7 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and fo
 
 - Open your OneDrive folder and you can see the file in the Hol/Graph/ folder
 
-> **Note:** If you want to upload large files, visit this [link](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_createuploadsession).
+> **Note:** If you want to upload large files, visit this [link](https://docs.microsoft.com/onedrive/developer/rest-api/api/driveitem_createuploadsession).
 
 ![alt text](../media/UploadFileOD.png) 
 
@@ -171,7 +171,7 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** ConvertContetPDF method 
 
 
 
-> **NOTE:** First validate that the file extension can be converted. Not all extensions can be converted and in our example we convert the document to pdf. To see all the conversions, visit this [link](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_get_content_format).
+> **NOTE:** First validate that the file extension can be converted. Not all extensions can be converted and in our example we convert the document to pdf. To see all the conversions, visit this [link](https://docs.microsoft.com/onedrive/developer/rest-api/api/driveitem_get_content_format).
 
 - Build and run the application.
 
