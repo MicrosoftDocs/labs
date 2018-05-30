@@ -1,34 +1,24 @@
-Windows 10 APIs
-===============
+## Windows 10 APIs
 
 Prerequisites:
 
--   This lab has a dependency on task **Distribution and versioning** as some
-    Windows 10 APIs require a package identity.
+-   This lab has a dependency on task **Distribution and versioning** as some Windows 10 APIs require a package identity.
 
-Send a local Toast Notification from WPF app
---------------------------------------------
+### Send a local Toast Notification from WPF app
 
-Desktop apps can send interactive Toast Notifications just like Universal
-Windows Platform (UWP) apps. However, there are a few special steps for desktop
-apps due to the different activation schemes.
+Desktop apps can send interactive Toast Notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes.
 
+#### 1. Enable the Windows 10 SDK
 
-### 1. Enable the Windows 10 SDK
-
-First, we have to enable the Windows 10 SDK for our app. **Right
-click** on the project **Microsoft.Knowzy.WPF** and select **Unload Project**.
+First, we have to enable the Windows 10 SDK for our app. **Right click** on the project **Microsoft.Knowzy.WPF** and select **Unload Project**.
 
 ![](../media/Picture9.png)
 
-Then **right click** our project again, and select **Edit
-Microsoft.Knowzy.WPF.csproj**.
+Then **right click** our project again, and select **Edit Microsoft.Knowzy.WPF.csproj**.
 
 ![](../media/Picture10.png)
 
-Below the existing `<TargetFrameworkVersion>` node, we have to add a new
-`<TargetPlatformVersion>` node specifying our min version of Windows 10 that we want to
-support:
+Below the existing `<TargetFrameworkVersion>` node, we have to add a new `<TargetPlatformVersion>` node specifying our min version of Windows 10 that we want to support:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ xml
 <AssemblyName>Microsoft.Knowzy.WPF</AssemblyName>
@@ -39,11 +29,9 @@ support:
 
 Finally **right click** the project again, and select **Reload Project**.
 
-### 2. Reference the APIs
+#### 2. Reference the APIs
 
-Open the Reference Manager (**right click** project, select **Add**,
-**Reference...**), and select **Windows**, **Core** and include the following
-references:
+Open the Reference Manager (**right click** project, select **Add**, **Reference...**), and select **Windows**, **Core** and include the following references:
 
 -   **Windows.Data**
 
@@ -51,24 +39,19 @@ references:
 
 ![](../media/Picture11.png)
 
-### 3. Copy compat library code
+#### 3. Copy compat library code
 
-The compat library abstracts much of the complexity of desktop notifications.
-Copy the
+The compat library abstracts much of the complexity of desktop notifications. Copy the
 [DesktopNotificationManagerCompat.cs](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs)
 file from GitHub into our project, placing it on the root.
 
 **The following instructions require the compat library.**
 
-### 4. Implement the Activator
+#### 4. Implement the Activator
 
-We must implement a handler for toast activation, so that when the user clicks
-on your toast, our app can do something. This is required for our toast to
-persist in Action Center (since the toast could be clicked days later when our
-app is closed).
+We must implement a handler for toast activation, so that when the user clicks on your toast, our app can do something. This is required for our toast to persist in Action Center (since the toast could be clicked days later when our app is closed).
 
 We need to extend the **NotificationActivator** class and then add the three attributes listed below, and create a GUID for our app (this class can be placed anywhere in our project):
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ csharp
 using DesktopNotifications;
@@ -89,11 +72,9 @@ public class MyNotificationActivator : NotificationActivator
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#### 5. Register with notification platform
 
-### 5. Register with notification platform
-
-We must register with the notification platform. In the **Package.appxmanifest**
-created on the previous lab:
+We must register with the notification platform. In the **Package.appxmanifest** created on the previous lab:
 
 -   Add declaration for **xmlns:desktop**
 
@@ -103,8 +84,7 @@ created on the previous lab:
 <Package [...] xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" IgnorableNamespaces="[...] desktop">
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   Add **desktop:Extension** for **windows.toastNotificationActivation** to
-    declare your toast Activator
+-   Add **desktop:Extension** for **windows.toastNotificationActivation** to declare your toast Activator
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ xml
 <Application>
@@ -117,15 +97,12 @@ created on the previous lab:
 </Application>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### 6. Register COM Activator
+#### 6. Register COM Activator
 
-We must register our notification Activator type, so that we can handle toast
-activations.
+We must register our notification Activator type, so that we can handle toast activations.
 
-In our app's startup code --see **App.xaml.cs**--, call the following
-**RegisterActivator()** method, passing in our implementation of the
-**NotificationActivator** class we created in step \#4. This must be called in
-order for us to receive any toast activations:
+In our app's startup code --see **App.xaml.cs**--, call the following **RegisterActivator()** method, passing in our implementation of the
+**NotificationActivator** class we created in step \#4. This must be called in order for us to receive any toast activations:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ csharp
 public partial class App : Application
@@ -139,18 +116,15 @@ public partial class App : Application
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### 7. Send a notification
+#### 7. Send a notification
 
-Sending a notification is identical to UWP apps, except that we will use the
-**DesktopNotificationManagerCompat** class to create a **ToastNotifier**.
+Sending a notification is identical to UWP apps, except that we will use the **DesktopNotificationManagerCompat** class to create a **ToastNotifier**.
 
-If we want to construct notifications using C\# instead of raw XML, we need to
-install the package **Microsoft.Toolkit.Uwp.Notifications**.
+If we want to construct notifications using C\# instead of raw XML, we need to install the package **Microsoft.Toolkit.Uwp.Notifications**.
 
 ![](../media/Picture12.png)
 
-For this exercise we are going to send a Toast Notification when an user creates
-or updates an item. On **EditItemViewModel.cs** file:
+For this exercise we are going to send a Toast Notification when an user creates or updates an item. On **EditItemViewModel.cs** file:
 
 -   Add the references we will need:
 
@@ -191,27 +165,20 @@ private void SendToastNotification()
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   Let's call our new function at the end of the function
-    **SaveAndCloseEditWindow()**
+-   Let's call our new function at the end of the function **SaveAndCloseEditWindow()**
 
-### 8. Deploying and debugging
+#### 8. Deploying and debugging
 
-As mentioned at the beginning of this lab, some of the Windows 10 APIs require a
-package identity so, in order for us to debug the Toast Notifications, we should
-do it over the **PackagingProject** (double-check PackagingProject is set as
-startup one, and press on the green play button at Visual Studio’s toolbar).
+As mentioned at the beginning of this lab, some of the Windows 10 APIs require a package identity so, in order for us to debug the Toast Notifications, we should do it over the **PackagingProject** (double-check PackagingProject is set as startup one, and press on the green play button at Visual Studio’s toolbar).
 
-Once the app is running, when we create or edit an item, a toast notification
-will appear.
+Once the app is running, when we create or edit an item, a toast notification will appear.
 
 ![](../media/Picture14.png)
 
-Once the notification disappears, we can still see the notification in **Action
-Center**.
+Once the notification disappears, we can still see the notification in **Action Center**.
 
 ![](../media/Picture15.png)
 
-
-## More Information
+### More Information
 
 If you want to see other visualizations for toast notifications, please visit this <a href="https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts">link</a>

@@ -1,14 +1,14 @@
-# Getting started - Console test harness
+## Getting started - Console test harness
 
 At this point we are ready to interact with Microsoft Graph.
 
 To do this we will create a console application to which we add the necessary code to perform authentication using Microsoft Graph and then we will list all the documents that we have in OneDrive.
 
-## Create a console app
+### Create a console app
 
 Download the base project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase)
 
-## Authenticate user
+### Authenticate user
 
 Now let's add the authentication.
 
@@ -62,13 +62,13 @@ When you are authenticated, please answer **N** to the answer **Would you like t
 
 ![alt text](../media/AuthConsola.png)
 
-> **Note:** if you receive an error when signing in about no reply address being registered, then you forgot to save your native application addition in step 6 of the **Setting up app id** section.
+> **Note:** If you receive an error when signing in about no reply address being registered, then you forgot to save your native application addition in step 6 of the **Setting up app id** section.
 
-## Get call to Get all items in OneDrive
+### Call to Get all items in OneDrive
 Now we are ready to make calls to the API, we will call OneDrive API to show the name of the documents we have.
 
 
-> **Advice:** the application ask for a number of documents to show. If you don't want to wait a lot, please enter a small number.
+> **Note:** The application ask for a number of documents to show. If you don't want to wait a long time, enter a small number.
 
 For the call to **OneDrive** follow these steps:
 
@@ -105,12 +105,12 @@ There are few interesting points in the code before:
 
 ![alt text](../media/OneDriveConsole.png)
 
-# Adding API calls to your project
+### Adding API calls to your project
 
-Now we have an overview about how to work with Microsoft Graph. Now we will go back to our UWP and add user authentication.
+Now we have an overview about how to work with Microsoft Graph. Next we will go back to our UWP app and add user authentication.
 
-## Add user authentication with Microsoft Graph
-Open UWP code in Visual Studio and follow these steps.
+#### Add user authentication with Microsoft Graph
+Open your UWP project in Visual Studio and follow these steps.
 
 - Go to Helpers/AuthenticationHelper.cs
 - In GetAuthenticatedClient() Method

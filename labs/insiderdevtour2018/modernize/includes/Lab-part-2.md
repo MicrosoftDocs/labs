@@ -1,4 +1,4 @@
-# UI modernization
+## UI modernization
 
 In WPF and WinForms apps today, it is common to have islands of web content that are often hosted in the **WebBrowser** control. The **WebBrowser** control that ships as part of the platform uses the Internet Explorer 11 (IE11) rendering engine, which **does not** support the latest web standards. It is common for apps leveraging this control to observe incorrect rendering of more modern websites. In many cases, it is not possible for the web developer to fix these rendering issues as the website is owned either by a third-party, or a team in another part of the organization.
 
@@ -6,7 +6,7 @@ The following steps will explain how you can switch out the **WebBrowser** contr
 
 To get started, open the solution file (**Microsoft.Knowzy.WPF**) that you downnloaded and navigate to the **Microsoft.Knowzy.WPF** project. Try running the solution to become familiar with it. This is typical looking business application that is built with the Model-View-ViewModel (MVVM) pattern. **Note:** remember to restore Nuget packages for the project (right-click your Solution -> Restore NuGet Packages).
 
-## WPF WebBrowser control
+### WPF WebBrowser control
 
 1. **Right-click** on the **Views** folder in the **Microsoft.Knowzy.WPF** project, and select **Add** -> **Window...**. Name your window **DocumentationView.xaml**. Open the file and add the following child control:
 

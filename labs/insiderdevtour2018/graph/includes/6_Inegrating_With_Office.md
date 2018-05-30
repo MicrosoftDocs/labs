@@ -1,9 +1,8 @@
-# Integrating with Office
-----------
+## Integrating with Office
 
 But not only can we integrate with OneDrive, we can also integrate with the entire Office package through the Microsoft Graph API, in this section we will see how we can interact with Outlook to get contacts and to schedule events in the calendar.
 
-## Get personal contacts from Outlook
+### Get personal contacts from Outlook
 
 In the UWP project go to **Helpers/OutlookHelper.cs** GetContacts method and follow these steps:
 
@@ -35,7 +34,7 @@ In the UWP project go to **Helpers/OutlookHelper.cs** GetContacts method and fol
 
 ![alt text](../media/OutlookContacts.png) 
 
-## Create an event in the Outlook calendar 
+### Create an event in the Outlook calendar 
 
 In the UWP project go to **Helpers/OutlookHelper.cs** SetAppointment method and follow these steps:
 

@@ -1,10 +1,10 @@
-# PWA foundations
+## PWA foundations
 
-### What is a PWA?
+#### What is a PWA?
 
 PWAs are just websites, enhanced using modern design and web technologies (Responsive Design, Touch Friendly, Service Workers, Fetch networking, Cache API, Push notifications, Web App Manifest) to provide a more native app-like experience.
 
-### Manifest, Service Worker, Secure:
+#### Manifest, Service Worker, Secure:
 To create a PWA the website will need: a manifest, service workers, and be on Https:
 
    + Standard manifest file: The site requires a manifest file to define the features and behavior of the PWA. The file follows the W3C standard. This includes everything from images, to language, or the start page of your web app.
@@ -13,13 +13,13 @@ To create a PWA the website will need: a manifest, service workers, and be on Ht
 
    + Secure: A secure connection (HTTPS) over your site makes sure all traffic is as safe as a native app. A secure endpoint also allows the service worker to securely take action on the behalf of your app.
 
-## Running across platforms
+### Running across platforms
 
-### Supported Platforms:
+#### Supported Platforms:
 
 PWA apps are still websites, and are therefore supported on most platforms including Windows, Android, iOS and Mac. They can enhanced to function more like native apps, and even use native APIs on support platforms. A PWA can combine the best features of a web site and a native application.
 
-### Running PWA in a browser:
+#### Running PWA in a browser:
 
 PWAs aren't very different that a web application, when you access to a PWA you will see the same as a simple web application.
 After complete this lab, your PWA will looks like this:

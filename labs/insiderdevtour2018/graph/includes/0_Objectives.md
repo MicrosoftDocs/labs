@@ -1,8 +1,6 @@
-# Microsoft Graph Lab
+## Microsoft Graph Lab
 
-----------
-
-## Objectives of the lab
+### Objectives of the lab
 
 The objectives of this lab are:
 
@@ -11,7 +9,7 @@ The objectives of this lab are:
 - Introduction to the use of the Microsoft Graph API through several examples focusing on authentication, OneDrive and Outlook.
 - Finally, how to prepare our application so that it will appear on Timeline and we can pick up where we left off.
 
-## Prerequisites
+### Prerequisites
 
 Here are the prerequisites and steps required to set up your computer. After completing this section you will have a working environment, ready for the other steps.
 

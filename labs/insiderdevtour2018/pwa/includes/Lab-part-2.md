@@ -1,6 +1,6 @@
-# Build a Responsive Web App
+## Build a Responsive Web App
 
-## Prerequisites
+### Prerequisites
 
 This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.asp.net/) example project continue with this part.
 
@@ -17,7 +17,7 @@ This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.a
 
 ![](../media/Picture8.jpg)
 
-## Responsive Web Design
+### Responsive Web Design
 
 Responsive web design makes your web page look good on all devices (desktops, tablets, and phones) because use HTML and CSS to resize, hide, shrink, enlarge, or move the content to make it look good on any screen.
 
@@ -30,9 +30,7 @@ Here we can see that the header is adapted but the list seems need to be fixed. 
 
 Media queries are a feature of CSS that enable webpage content to adapt to different screen sizes and resolutions.
 
-
-
-### Make your website responsive.
+#### Make your website responsive.
 
 To view good your application in a mobile phone first we have to fix the previous list. The problem is in a CSS class named `container-main` because it has a fixed width:
 
@@ -87,7 +85,7 @@ Congratulations! Your app is now ready to be viewed on devices with different sc
     ![local application](../media/Picture12.jpg)
 
 
-### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
+#### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
 
 
 Now if you want to publish the application on Azure follow these steps or continue locally using IIS and skip to the next step.
@@ -126,7 +124,7 @@ Using azure services:
     ![published screen from vs](../media/Picture1.jpg)
 
 
-## Deployment Errors
+### Deployment Errors
 * When attempting to deploy, you may run into an issue where Azure complains that a certain .dll is locked. If this is the case, you'll have to perform the following steps:
     1. Sign into [https://portal.azure.com](https://portal.azure.com) with the same credentials you used to deploy your web app
 

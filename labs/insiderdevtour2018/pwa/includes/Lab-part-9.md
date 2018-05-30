@@ -1,4 +1,4 @@
-# App quality review
+## App quality review
 
 To test the quality of our web app and check your code for best practices and common errors, we will use a tool called `Sonarwhal`.
 
@@ -28,8 +28,7 @@ Promote community tools and services that do an awesome job but could not be kno
 
 <img src="../pwa/media/Picture44.png"><br>
 
-
-### Pwa suggestions
+### PWA suggestions
 
 On the PWA section, there is the possibility to see the details of the error/warning as well as a link to a page that shows the documentation about that error/warning and suggestions on how to solve it.
 
@@ -59,7 +58,7 @@ On the PWA section, there is the possibility to see the details of the error/war
 
 9. Include again the `name` and `short_name` in the manifest. Publish in Azure the changes and execute Sonarwhal again. The warning should disappear.
 
-### SRI suggestions
+#### SRI suggestions
 
 Apart from PWA suggestions, Sonarwhal offers other suggestions for performance, security, accessibility and interoperability.
 

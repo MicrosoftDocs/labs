@@ -1,7 +1,4 @@
-# Using OneDrive for app data storage
-
-----------
-
+## Using OneDrive for app data storage
 
 Now that we have learned how to interact with OneDrive, one of the options we have is to save the information of our application in OneDrive: settings, images, documents, backups ..., 
 
@@ -9,7 +6,7 @@ So, if we install the application in another device we can recover all the infor
 
 Specifically in this section we are going to simulate how to save settings in OneDrive and how to recover them after a clean installation.
 
-## Write app settings to OneDrive
+### Write app settings to OneDrive
 
 In the UWP project go to **Helpers/DataSyncHelper.cs** SaveSettingsInOneDrive method and follow the steps:
 
@@ -55,7 +52,7 @@ In the UWP project go to **Helpers/DataSyncHelper.cs** SaveSettingsInOneDrive me
 
 - Now go to your OneDrive and you can see the file settings.txt was created in HOL/Graph/Settings. This file contains the app settings.
 
-## Restore settings when installing the app
+### Restore settings when installing the app
 
 Now we need to uninstall our UWP app. Search for Microsoft.Graph.HOL App, right click and uninstall.
 

@@ -1,13 +1,10 @@
+## Publish your PWA
 
-
-# Publish your PWA
-
-
-## Prerequisites
+### Prerequisites
 
 This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Service Worker** to download the necessary code to transform your web application into a PWA.
 
-## Publish PWA
+### Publish PWA
  Once you have done the previous step 1 and step 2 of PWABuilder tool, go to step 3 to download the generated code for your web app.
 
  The destination path of these files will be the scope of your project that you have defined previously in the manifest, in this case it's the **wwwroot** because in our manifest we have specified the **./** root path.
@@ -19,8 +16,7 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
 ![Provide a URL](../media/Picture26.jpg)
 
-### Add manifest to your site
-
+#### Add manifest to your site
 
 1. Open the **WEB** downloaded files and go to the PWA folder inside projects (ex: \Downloads\Knowzy-web\projects\PWA).
 ![Provide a URL](../media/Picture27.jpg)
@@ -44,9 +40,9 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 ![Provide a URL](../media/Picture30.jpg)
 
 
-  ### Add Service Worker code to your site
+#### Add Service Worker code to your site
 
-  Return to your downloaded PWA folder and go to projects (Downloads\Knowzy-web\projects\)
+Return to your downloaded PWA folder and go to projects (Downloads\Knowzy-web\projects\)
 
 1. Copy **only** the pwabuilder-sw.js file from the "ServiceWorker4" folder to the wwwroot of your site.
 ![Provide a URL](../media/Picture31.jpg)
@@ -80,14 +76,13 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
 ![Provide a URL](../media/Picture33.jpg)
 
-
-### Test locally
+#### Test locally
 To test that your service worker is successfully installed, launch the app locally. Make sure you are in the Microsoft.Knowzy.WebApp project and click on *IIS Express* button.
 ![](../media/Picture7.jpg)
 
 ![](../media/Picture34.jpg)
 
-### Re-Publish Changes (optional)
+#### Re-Publish Changes (optional)
 
 Now that you have these powerful new features running locally, you can publish them to your website to be consumed as a PWA.
 

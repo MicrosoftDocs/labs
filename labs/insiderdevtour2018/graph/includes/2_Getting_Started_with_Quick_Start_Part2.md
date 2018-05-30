@@ -1,10 +1,10 @@
-# Getting started - Graph Explorer
+## Getting started - Graph Explorer
 
 Microsoft Graph Explorer is a tool that allows us to explore and test the Microsoft Graph API.
 
 We are going to take a tour of this tool.
 
-## Sign in to Microsoft Graph Explorer
+### Sign in to Microsoft Graph Explorer
 
 Go to **[Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)** and click on the Sign in With Microsoft button. 
 
@@ -23,7 +23,7 @@ On the right side we have the view with everything we need to launch the calls a
 
 Now we will see how to test the Microsoft Graph API in Microsoft Graph Explorer by getting all files in One Drive and how we can manage our permissions.
 
-## Modify user permissions
+### Modify user permissions
 
 In order to use and access the different services, we can modify the permissions of our user to give him the necessary privileges to be able to use the desired operations.
 
@@ -37,7 +37,7 @@ In order to use and access the different services, we can modify the permissions
 ![alt text](../media/GESelectPermissions.png) 
 
 
-## Activate OneDrive in Sample Categories
+### Activate OneDrive in Sample Categories
 
 Now we are going to add the OneDrive APIs to Microsoft Graph Explorer to be able to call these services
 
@@ -56,7 +56,7 @@ Now we are going to add the OneDrive APIs to Microsoft Graph Explorer to be able
 ![alt text](../media/GEShowOneDriveSamples.png) 
 
 
-# Get all items in my drive
+### Get all items in my drive
 
 We are ready to get all items from OneDrive
 

@@ -1,7 +1,6 @@
-# Introducing Microsoft Graph
-----------
+## Introducing Microsoft Graph
 
-## Brief explanation of what is the Microsoft Graph
+### Brief explanation of what is the Microsoft Graph
 
 The Microsoft Graph is an API built in Office 365 that allows developers to develop more intelligent and productive applications.
 
@@ -18,7 +17,7 @@ Two primary entities of the Microsoft Graph are users and groups:
 In summary, the Microsoft Graph forms a network of Microsoft 365 services and features that manage, protect, and extract data to support a wide range of scenarios. The Microsoft Graph lets you access this wealth of user data while always respecting proper authorization.
 
 
-## Why is it useful?
+### Why is it useful?
 
 The Microsoft Graph, by allowing us to connect with all our Office 365 data, allows us to integrate this data into our applications easily, quickly and safely.
 
@@ -35,7 +34,7 @@ These are some examples of what can be done with the Microsoft Graph, but you ca
 
 Nowadays one of the biggest uses of the Graph API is to share information between different devices, allowing us to save the information of our applications, their status, their configuration and to be able to follow exactly the same point in another device with an application developed in a different technology.
 
-## Interesting links
+### Interesting links
 
 There is a wealth of information about the Microsoft Graph and this is a list of interesting links we recommend:
 
