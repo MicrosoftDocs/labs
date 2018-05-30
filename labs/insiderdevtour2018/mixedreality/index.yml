@@ -1,0 +1,45 @@
+### YamlMime:Tutorial
+title: Build Mixed Reality Apps
+metadata:
+  title: Build Mixed Reality Apps
+  description: In this hands-on-lab, you'll use Unity and Visual Studio to learn about developing mixed reality apps for Windows.
+  audience: Developer
+  level: Beginner
+  ms.topic: tutorial
+  nextTutorialHref: ..\modernize\index.yml
+  nextTutorialTitle: Modernize lab
+  ms.custom: Insider Dev Tour 2018
+items:
+- durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part1_Setup.md)]
+- title: Exporting a Windows Mixed Reality UWP App from Unity
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/MRLab_Part2_Exporting.md)]
+- title: Speaker Placement App
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part3_SpeakerPlacement.md)]
+- title: Environment Setup (VR)
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part4_Environment.md)]
+- title: Controls
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part5_Controls.md)]
+- title: Spatial Sound
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part6_SpatialSound.md)]
+- title: HoloLens (optional)
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/MRLab_Part7_HoloLens.md)]
+- title: Graphics (optional)
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/MRLab_Part8_Graphics.md)]
+- content: |
+    You've completed this lab.
