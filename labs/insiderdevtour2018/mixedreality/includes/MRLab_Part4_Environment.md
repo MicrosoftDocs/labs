@@ -1,6 +1,6 @@
 <!-- ## 4. Environment Setup (VR) --> 
 
-To run the speaker placement app in a virtual reality (aka occluded) headset, we need to create the virtual room and configure the environment so we can teleport around it.  
+To run the speaker placement app in a virtual reality (aka occluded or immersive) headset, we need to create the virtual room and configure the environment so we can teleport around it.  
 
 ## 1. Switching to default layout [optional]
 If you are new to Unity, we recommend that you use Unity's default window layout for the following steps. 
@@ -8,7 +8,7 @@ The descriptions we are providing are based on that point of reference.
 
 To switch to default layout, select *Window->Layouts->Default* in Unity.
  
-This shall give you a layout similar to the one below. Please note the different names of the tabs (which we will call panels) in Unity, as we will reference these by name on our instructions. 
+This shall give you a layout similar to the one below. Please note the different names of the panels (which we will call panels) in Unity, as we will reference these by name on our instructions. 
  
 ![Unity default layout](../media/UnityDefaultLayout.png) 
 
@@ -16,7 +16,7 @@ This shall give you a layout similar to the one below. Please note the different
 ## 2. Creating a virtual room
 Let's start by adding the room that we have prepared ahead of time to our scene.
 
-1. In Unity's *Project* panel, find the `RoomPrefab.prefab` in the *Assets->Prefabs* folder and drag it into the *Hierarchy* panel. Ensure that you are dragging it into an empty part of the hierarchy so the room does get added as a child to any other object.  
+1. In Unity's *Project* panel, find the `RoomPrefab.prefab` in the *Assets->Prefabs* folder and drag it into the *Hierarchy* panel. Ensure that you are dragging it into an empty part of the hierarchy, so the room does not get added as a child to any other object.  
 
 Since adding it to the hierarchy adds it to the scene, you should now see the room in the *Scene* panel.   
 Feel free to 'explore' the room using the key & mouse combinations below, just make sure that you are not moving the objects around. If you accidentally move or reposition the objects in the scene, just delete the `RoomPrefab` from the hierarchy and add it again. 
@@ -37,7 +37,7 @@ The *MixedRealityCameraParent* game object that we added in the prior section ha
 
 <!-- ![Set boundary floor](../media/BoundaryFloorAssociation.png) -->
 
-> Note: If you don't want to drag and drop (e.g. don't have a mouse to select with precision) you can set the properties using the target button to the right of the 'Floor Quad' property in the inspector, just make sure when selecting the target to chooses the objects that are in the Scene tab, not in the Assets tab.  
+> Note: If you don't want to drag and drop (e.g. don't have a mouse to select with precision) you can set the properties using the target button to the right of the 'Floor Quad' property in the inspector, just make sure when selecting the target to choose the objects that are in the Scene tab, not in the Assets tab.  
 
 Since we are going for a "standing-scale" configuration, let's change the space type to stationary.   
 

@@ -17,12 +17,12 @@ After you complete this lab you will:
 ### Hardware Requirements
 
 * An [MR capable machine](https://docs.microsoft.com/windows/mixed-reality/install-the-tools#system-requirements)
-* [Optional] An Windows Mixed Reality immersive headset with Motion Controllers
+* [Optional] A Windows Mixed Reality immersive headset with Motion Controllers
 * [Optional] A HoloLens device
 >**Note:** If you do not have access to an immersive headset or a HoloLens , you can view your app using the Mixed Reality simulator or the HoloLens emulator. See links below. 
 
 ### Software Requirements
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/), any SKU, including the free community edition SKU. Ensure you select these workloads and features during setup: 
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/). Any SKU will work, including the free community edition SKU. Ensure you select these workloads and features during setup: 
     *  The Universal Windows Platform development 
     *  The Game Development with Unity workload
     *  [Windows 10 Fall Creators Update SDK or later](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (this is included in the latest version of Visual Studio) 2017

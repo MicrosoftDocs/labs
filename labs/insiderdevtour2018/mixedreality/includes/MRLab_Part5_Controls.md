@@ -4,7 +4,7 @@ In this step, we will be creating a speaker prefab and adding it to the virtual 
 
 ## 1. Adding the speaker to our room
 1. Navigate to the *Models* folder in the *Project* panel and drag the `Speaker3` model into the *Hierarchy* panel, making sure it is a root object and not a child to any objects in the scene.   
-2. Rename the speaker by right clicking and selecting *Rename*. Just rename it to `Speaker`.
+2. Rename the speaker by right clicking and selecting *Rename*. Please rename it to `Speaker`.
 3. Select the *Speaker* in the scene and then in the *Inspector* panel change the following transform properties:    
    - Set Scale to (0.02, 0.02, 0.02)    
    - Set Position (2.68, 0.14, 2) 
@@ -14,7 +14,7 @@ In this step, we will be creating a speaker prefab and adding it to the virtual 
 
 ## 2. Adding Controller support
 In an earlier step, when we applied the Mixed Reality Settings to the scene, we added motion controller support to our scene.  
-Let's now recap how those checkboxes translate into motion controllers just working in our scene: 
+Let's recap how those checkboxes translate into motion controllers just working in our scene: 
 
 - The *MixedRealityCameraParent* element we added has a child object called *MotionControllers*, and this has a script called *MotionControllerVisualizer*.  This script will track and render our controller model (position, rotation, as well as input events). 
 

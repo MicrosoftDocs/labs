@@ -76,7 +76,7 @@ Next let's add the spatial mapping components to our scene.
 	![Hierarchy updated view](../media/20.png)
 
 ## 3. HoloLens gestures
-Our interactions up until now were for motion controllers. We will now need to use a different method for moving the speaker and switch to it programatically if the app is being run on a HoloLens (or emulator). We can reuse our BoundingBox approach with HoloLens, but we want to optimize the interactions with a few tweaks.
+Our interactions up until now were for motion controllers. We will now need to use a different method for moving the speaker and switch to it programmatically if the app is being run on a HoloLens (or emulator). We can reuse our BoundingBox approach with HoloLens, but we want to optimize the interactions with a few tweaks.
 
 1. Select the *Speaker* prefab in the *Project* panel.
 2. Click *Add Component->Tap To Place*. This is a MR Toolkit HoloLens script that allows us to easily tap on objects/holograms and move them around.

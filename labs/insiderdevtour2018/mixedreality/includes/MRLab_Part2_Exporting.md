@@ -64,7 +64,7 @@ That takes care of adding Mixed Reality support, but there are a few more settin
 
 4. Check the *Spatial Perception* box if you intend to port this app to HoloLens. This will allow us to map the environment and find surfaces to place the speakers on.  
 5. Click `Apply` to save this choice. 
-6. Next, navigate to your *File->Build Settings* dialog using 'ctrl + shift + B', select *Universal Windows Platform*, and then click *Switch Platform*. Add your open scene to the build by checking the box next to your scene's name and clicking *Add Open Scenes*. If you are prompted to save your scene, go ahead and save it with any name you want. We called our scene `Main`. 
+6. Next, navigate to your *File->Build Settings* dialog using 'ctrl + shift + B', select *Universal Windows Platform*, and then click *Switch Platform*. Add your open scene to the build by checking the box next to your scene's name and clicking *Add Open Scenes*. If you are prompted to save your scene, go ahead and save it with any name you want. We called our scene *Main*. 
 
 ## 3. Applying scene settings and adding Mixed Reality objects 
 Next, we need to configure our Scene. Let's add the objects that will handle camera movement and controller input. 
@@ -88,7 +88,7 @@ With that, the project and scene are now configured and primed for making a UWP 
 
 Go ahead and save your scene and project. We recommend you do that at the end of each step in our lab.  
 
-3. Click *File->Save Scenes*. If prompted for a name for your scene, call it `Main` (or whatever you please).
+3. Click *File->Save Scenes*. If prompted for a name for your scene, call it *Main* (or whatever you please).
 4. Click *File->Save Project*.  
 
 Note: For a more detailed overview of all the setting we applied, see [this guide](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. 

@@ -3,7 +3,7 @@
 Now that we have our speaker, we need to play (and pause) spatial sound.
 In this section, we will add the playback controls, and our audio source. 
 
-Since some of the tasks we will accomplish here are similar to earlier tasks, we will take a mostly list-based approach to the instructions so you can go a little faster.  
+Since some of the tasks we will accomplish here are similar to earlier tasks, we will take a mostly list-based approach to the instructions, so you can go a little faster.  
 
 Please verify your work with the screen shots we include at the end of each major step, and for extra references, just follow the links within the instructions.   
  
