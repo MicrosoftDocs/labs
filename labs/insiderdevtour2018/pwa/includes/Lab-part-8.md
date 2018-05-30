@@ -1,9 +1,8 @@
-# Run in VS
+## Run in VS
 
 Prerequisites:
 - Visual studio 2017 Professional, Enterprise, Community or Preview editions.
 - From the Visual Studio Installer, choose the workload `Universal Windows Platform development`
-
 
 1. Create a new PWA project in visual studio using a predefined template
 

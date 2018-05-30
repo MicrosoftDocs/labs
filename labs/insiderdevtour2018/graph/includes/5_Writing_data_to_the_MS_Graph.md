@@ -1,6 +1,4 @@
-# Writing data to the Microsoft Graph
-
-----------
+## Writing data to the Microsoft Graph
 
 The Microsoft Graph is not a closed tool that gives us a series of classes and functions and nothing else.
 
@@ -8,7 +6,7 @@ One of its strengths is the ability to expand that information with personalized
 
 In this section we will see how we can do it.
 
-## Add custom data to resource	
+### Add custom data to resource	
 
 In the UWP project go to **Helpers/UserExtensionHelper.cs** SetExtension method and follow these steps:
 

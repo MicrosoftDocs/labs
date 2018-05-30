@@ -1,11 +1,10 @@
+## Build a PWA with PWA Builder
 
-# Build a PWA with PWA Builder
-
-## Prerequisites
+### Prerequisites
 
 This task has a dependency on **Build a Responsive Web App** section and the prerequisites found there.
 
-## Manifest
+### Manifest
 
 The Manifest for Web Apps is a JSON-based manifest file that provides a centralized place to put metadata associated with a web application (like app name, icons, presentation, etc.), thus solving the problem of having to maintain an heterogeneous set of meta tags and link tags to support each platform. PWAs use this manifest to control the appearance and behavior of the app when it is installed and launched from the user device.
 
@@ -24,7 +23,7 @@ The icons member is an array of ImageResources that can be use as an icon for th
 
 Learn more about the content in [ webAppManifest dictionary](https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary) from W3C.
 
-### Provide a URL
+#### Provide a URL
 
 The first step is to build the Manifest for your application using the **pwabuilder.com** web site. This tool will look in the home page for information about the app in specific HTML meta tags.
 
@@ -35,12 +34,12 @@ The first step is to build the Manifest for your application using the **pwabuil
 
 ![Provide a URL](../media/Picture18.jpg)
 
-### Generate manifest
+#### Generate manifest
 The builder will search in the home page of your site looking for an existing manifest. If a manifest is not found, it will gather information about the app in specific meta tags or propose default values for the manifest properties. It will also show any warnings or suggestions to address potential issues in the collected metadata. Be sure you address any warnings before you move on.
 
 ![Provide a URL](../media/Picture19.jpg)
 
-### Add Images
+#### Add Images
 
 The builder site also checks whether the manifest has defined the expected icon sizes for the different platforms (Windows, Android, iOS) and helps to generate the missing sizes.
 
@@ -82,6 +81,6 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 ![](../media/Picture24.jpg)
 
-### References
+#### References
 
 - [PWA Builder](https://preview.pwabuilder.com/)

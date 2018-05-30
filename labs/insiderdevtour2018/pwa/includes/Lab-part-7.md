@@ -1,11 +1,10 @@
-
-## PWA on Windows
+### PWA on Windows
 
 Prerequisites:
 
 - This task has a dependency on **Sideload a PWA** section.
 
-###	Add some WinRT APIs (pwa builder)
+####	Add some WinRT APIs (pwa builder)
 
 PWA builder web site offers a collection of libraries for Windows APIs to add to your PWA application.
 
@@ -19,7 +18,7 @@ We can see in the `uap:ApplicationContentUriRules` section the access allowed fo
 
 To simplify the task, we will test the WinRT APIs by using the F12 tools console.
 
-#### Dark mode
+##### Dark mode
 
 1. Launch your PWA app from your start menu.
 
@@ -41,7 +40,7 @@ To simplify the task, we will test the WinRT APIs by using the F12 tools console
 
 <img src="../pwa/media/Picture61.png"><br>
 
-#### Timeline
+##### Timeline
 
 To do this part, your machine must have the last **Windows April Update** to be able to use Windows Timeline. Download the update from [software download](https://www.microsoft.com/en-us/software-download/windows10) page.
 

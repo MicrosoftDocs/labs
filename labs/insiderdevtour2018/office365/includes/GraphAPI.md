@@ -1,12 +1,12 @@
-# Graph APIs #
-## Microsoft Graph API use and purpose ##
+## Graph APIs
+### Microsoft Graph API use and purpose
 Microsoft Graph is a central API in Office 365 that provides unified access to user resource, relationships and intelligence via a single REST endpoint.
 
-## Security and permissions ##
+### Security and permissions
 - All results are scoped to the context of the current user.
 - All applications using Graph API must be granted access by the user or tenant administrator.
 
-## Tour of Graph API calls ##
+### Tour of Graph API calls
 | Operation        | URL           |
 | ------------------------ |:-------------:| 
 | GET my profile	      | https://graph.microsoft.com/v1.0/me |
@@ -22,7 +22,7 @@ Microsoft Graph is a central API in Office 365 that provides unified access to u
 | GET data from my Excel file	      | https://graph.microsoft.com/v1.0/me/drive/items/{id}/workbook/ |
 | POST new row to my Excel file	      | https://graph.microsoft.com/v1.0/me/drive/root:/demo.xlsx:/workbook/tables/Table1/rows/add |
 
-## Graph Explorer ##
+### Graph Explorer
 1.	In a web browser, navigate to https://developer.microsoft.com/en-us/graph/graph-explorer
 2.	Click on the “Run Query” button
 

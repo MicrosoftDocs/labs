@@ -1,15 +1,14 @@
-
-# Testing your PWA
+## Testing your PWA
 
 This section is intended to test the PWA app in multiple platforms.
 
-## Prerequisites:
+### Prerequisites:
 
 - This task has a dependency on **Build a PWA with PWA Builder** section
 
-##	How to test on Windows 10
+###	How to test on Windows 10
 
-### Sideload a PWA
+#### Sideload a PWA
 
 In case you do not want to distribute your app through the Microsoft Store, you can side-load the app package directly to a device.
 
@@ -26,7 +25,7 @@ In case you do not want to distribute your app through the Microsoft Store, you 
 <img src="../pwa/media/Picture38.png"><br>
 </P>
 
-### F12 tools for PWA
+#### F12 tools for PWA
 
 Prerequisites:
 - Install the Microsoft Edge DevTools [download here.](https://www.microsoft.com/store/productId/9MZBFRMZ0MNJ)
@@ -69,7 +68,7 @@ The Microsoft Edge DevTools provide web developers with tools for attaching to o
 
 <img src="../pwa/media/Picture54.png"><br>
 
-###	How to test on iOS
+#### How to test on iOS
 
 1. Open up the Web app using Safari browser [Web App](https://msftknowzy.azurewebsites.net/).
 

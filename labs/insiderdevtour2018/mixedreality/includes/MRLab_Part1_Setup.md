@@ -1,4 +1,4 @@
-# Intro to Windows Mixed Reality and this lab
+## Intro to Windows Mixed Reality and this lab
 
 Mixed reality blends real-world and virtual content into hybrid environments where physical and digital objects coexist and interact.  
 
@@ -14,14 +14,14 @@ After you complete this lab you will:
 * Understand how to create a Mixed Reality experience that is adaptive to both occluded headsets and HoloLens. 
 
 
-## Hardware Requirements
+### Hardware Requirements
 
 * An [MR capable machine](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools#system-requirements)
 * [Optional] An Windows Mixed Reality immersive headset with Motion Controllers
 * [Optional] A HoloLens device
 >**Note:** If you do not have access to an immersive headset or a HoloLens , you can view your app using the Mixed Reality simulator or the HoloLens emulator. See links below. 
 
-## Software Requirements
+### Software Requirements
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/), any SKU, including the free community edition SKU. Ensure you select these workloads and features during setup: 
     *  The Universal Windows Platform development 
     *  The Game Development with Unity workload

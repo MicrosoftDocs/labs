@@ -1,10 +1,10 @@
-# Managing Files with the Microsoft Graph
+## Managing Files with the Microsoft Graph
 
-## Accessing file data
+### Accessing file data
 
 What we are going to do in this module is to retrieve the list of the most recent OneDrive documents, building on the knowledge acquired in the Sample API Calls Module.
 
-## Get my recent files from OneDrive from the Microsoft Graph API
+### Get my recent files from OneDrive from the Microsoft Graph API
 
 In the UWP project go to **Helpers/OneDriverHelper.cs** GetRecentItems method and follow these steps:
 
@@ -40,14 +40,14 @@ After getting graphClient we can access to OneDrive via graphClient.Me.Drive and
 
 ![alt text](../media/RecentFiles.png) 
 
-# Writing data to OneDrive
+### Writing data to OneDrive
 Until now, we have seen how to obtain data through the Microsoft Graph, specifically OneDrive.
 
 Now we will see how we can also use the Microsoft Graph to save data. In this case we will select a file and upload it to OneDrive through the Microsoft Graph API.
 
 Let's go for it!
 
-## Set file location in OneDrive from the Microsoft Graph API.
+### Set file location in OneDrive from the Microsoft Graph API.
 
 In the UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and follow the steps:
 
@@ -82,7 +82,7 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and fo
 
 > **Note:** The file will be created in the **Hol/Graph** folder. 
 
-## Select the file & save to OneDrive
+### Select the file & save to OneDrive
 
 - Build and run the application.
 
@@ -102,11 +102,11 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** UploadItem method and fo
 
 ![alt text](../media/UploadFileOD.png) 
 
-# Accessing file contents
+## Accessing file contents
 
-In this module we will see how to download OneDrive documents with the Microsoft Graph API and how to download OneDrive documents in a **different format** from the original.
+In this section we will see how to download OneDrive documents with the Microsoft Graph API and how to download OneDrive documents in a **different format** from the original.
 
-## Download file from OneDrive
+### Download file from OneDrive
 
 In the UWP project go to **Helpers/OneDriverHelper.cs** DownloadFile method and follow the steps:
 
@@ -139,7 +139,7 @@ In the UWP project go to **Helpers/OneDriverHelper.cs** DownloadFile method and 
 
 ![alt text](../media/DownloadFile.png) 
 
-## Convert content from OneDrive file
+### Convert content from OneDrive file
 
 In the UWP project go to **Helpers/OneDriverHelper.cs** ConvertContetPDF method and follow the steps:
 

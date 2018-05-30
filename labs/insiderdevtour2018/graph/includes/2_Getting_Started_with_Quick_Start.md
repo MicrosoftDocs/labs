@@ -1,4 +1,4 @@
-# Getting started - Creating an App ID
+## Getting started - Creating an App ID
 
 In order for our applications to use the Microsoft Graph API, we must have an application ID.
 
@@ -6,8 +6,8 @@ We must register the application in the Microsoft Application Registry.
 
 > Note: You will need either a [school or work](https://developer.microsoft.com/en-us/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&mkt=EN-US&lc=1033&lic=1)
 
-## Setting up App ID
-### Register the app in App Registration Portal
+### Setting up App ID
+#### Register the app in App Registration Portal
 First, go to [Microsoft App Registration Portal](https://apps.dev.microsoft.com/)
 
 > **Note:** Login with your  [school or work](https://developer.microsoft.com/en-us/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&mkt=EN-US&lc=1033&lic=1)
@@ -46,7 +46,7 @@ After login we follow these steps:
  
  6. Finally, we click on Save. 
 
-## Choosing the project template
+### Choosing the project template
 
 Now we will download the UWP application. We will use it and configure it with the Application Id and the Redirect Uri that we saved before.
 

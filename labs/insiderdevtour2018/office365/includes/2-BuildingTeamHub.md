@@ -1,6 +1,6 @@
-# Build tailored team hubs in Microsoft Teams #
+## Build tailored team hubs in Microsoft Teams #
 
-## Fundamentals of Teams Development ##
+### Fundamentals of Teams Development ##
 As mentioned earlier in this lab, each Team created has a General channel and optional additional channels.
 Each channel can be configured with different components to better fit its purpose:
 - Tabs
@@ -8,13 +8,13 @@ Each channel can be configured with different components to better fit its purpo
 - Connectors
 - Message extensions
 
-### Tabs ###
+#### Tabs ###
 Tabs allow external web pages to be embedded in the Teams user interface, allowing complete control over the user interaction experience.  Tabs are isolated from each other in IFrames and Teams provides user context to the external web page.
   
 ![Tabs 1 ](../media/tabs-example-1.png)
 
 
-### Bots ###
+#### Bots ###
 Bots allow conversational or command style interaction via a chat interface between the user and your Bot application.  Any bot using the Microsoft Bot Framework is compatible with Teams and can be enhanced for Teams using cards, channel metadata for activities and understanding messaging extensions.
 
 Users can interact in two manners: direct 1:1 chats or mention a bot with a hashtag in a Team channel.
@@ -22,20 +22,20 @@ Users can interact in two manners: direct 1:1 chats or mention a bot with a hash
 ![Bots 1](../media/bots-example-1.png)
 
 
-### Cards ### 
+#### Cards ### 
 Cards are a condensed graphic representation of objects throughout Office 365, including Teams.  Each card can have properties, attachments and action buttons.  In Teams, cards can be shown in chats with bots, messaging extensions and connectors.
 There are several types of cards to employ depending on the object type and user interaction required.
   
 ![Cards 1](../media/cards-example-1.png)
 
 
-### Messaging Extensions ### 
+#### Messaging Extensions ### 
 Messaging extensions enable users to search external services for objects and select an object for embedding in a channel conversation.  This mechanism combines the Microsoft Bot Framework with Cards to add rich content to chats.
   
 ![Messaging Extensions 1](../media/messaging-extensions-example-1.png)
 
 
-### Office 365 Connectors ###
+#### Office 365 Connectors ###
 Connectors bring content and events from external systems into Team conversations using Cards and incoming webhooks.  The cards generated can be static or actionable, allowing complete interaction from within Teams.
   
 ![Office 365 Connectors 1](../media/office365-connector-example-1.png)
@@ -43,17 +43,17 @@ Connectors bring content and events from external systems into Team conversation
 
 
  
-## Simple example with Tabs ##
-###  Adapt an existing web app to work with Microsoft Teams ###
+### Simple example with Tabs ##
+####  Adapt an existing web app to work with Microsoft Teams ###
 In this example, we will demonstrate how to transform an existing web app into a Team App.  
 
 Our existing app shows the daily lunch menu, complete with images and nutritional information using a simple React app.
 
 ![Lunch menu  1](../media/lunchmenu-1.png)
 
-### Build and deploy the existing web app ###
+#### Build and deploy the existing web app ###
 
-#### Prerequisites ####
+##### Prerequisites ####
 1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-tenant)
 2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/en-us/free/) or [purchase an Azure subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/).
 3. [Node LTS and npm](https://nodejs.org/en/)
@@ -84,7 +84,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 ![Azure Portal 5](../media/azure-portal-5.png)
 
-## Create simple React web app ##
+### Create simple React web app ##
 1. Run **Visual Studio Code** and open an **Integrated Terminal**
 
 ![Visual Studio Code](../media/vscode-terminal-1.png)
@@ -310,7 +310,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 ![React lunchmenu 1](../media/react-lunchmenu-1.png)
 
 
-## Convert React app to Team tab ##
+### Convert React app to Team tab ##
 
 
 1. In the terminal window in Visual Studio Code run these commands to install the packages for the Teams JS API and React SPA client-side routing:
@@ -481,7 +481,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 
  
-## Create an app manifest using Teams App Studio ##
+### Create an app manifest using Teams App Studio ##
 1. Browse to https://teams.microsoft.com
 2. Click on the **Store** icon and choose the **App Studio" app and click **Install**
 
@@ -538,7 +538,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 
 ![Teams app studio 10](../media/teams-appstudio-10.png)
 
-## Sideload an app to a Team
+### Sideload an app to a Team
 > **Note**: For these steps, the Office 365 tenant must be configured to allow Teams app sideloading (uploading an app file instead of choosing from the Teams app store) 
 
 1. Choose the Teams section and click on the ellipsis next to the **Lunch** team.
@@ -554,7 +554,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 ![Teams tab 3](../media/teams-tab-3.png)
 
 
-## Add the custom app to a Team channel
+### Add the custom app to a Team channel
 
 1. Choose the **General** channel in the **Lunch** team and click on the **+** to add the new Lunch Menu app to the channel.
 
@@ -572,7 +572,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 ![Teams tab 7](../media/teams-tab-7.png)
 
 
-## Add Team UI components ##
+### Add Team UI components ##
 To maintain the Teams and Office 365 look and feel, you can include the Teams CSS or React components to your project.  
 
 Further details are in the **Control Library** in the Teams App Studio.
