@@ -1,5 +1,3 @@
-## Distribution and versioning
-
 In this section we’ll learn how our WPF app can be packaged for distribution as Universal Windows Platform (UWP) apps. Currently, [ MSIX
 Packaging SDK](https://github.com/Microsoft/msix-packaging) is available on GitHub for developers to mess around with and  It is expected to be in a Windows Insider preview in the June timeframe, but in this case we’ll use App Installer to package our app.
 

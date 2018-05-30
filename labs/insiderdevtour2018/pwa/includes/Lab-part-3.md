@@ -1,5 +1,3 @@
-## Build a PWA with PWA Builder
-
 ### Prerequisites
 
 This task has a dependency on **Build a Responsive Web App** section and the prerequisites found there.

@@ -1,5 +1,3 @@
-## What will this lab cover
-
 In this lab you will learn how to start modernizing your desktop apps for Windows 10. You will start by working with a Windows Presentation Foundation (WPF) app, but the same principles apply to a Windows Forms (WinForms) app.
 
 ### Distribution and versioning

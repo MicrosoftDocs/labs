@@ -1,5 +1,3 @@
-## Windows 10 APIs
-
 Prerequisites:
 
 -   This lab has a dependency on task **Distribution and versioning** as some Windows 10 APIs require a package identity.

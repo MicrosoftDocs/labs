@@ -1,5 +1,3 @@
-## Testing your PWA
-
 This section is intended to test the PWA app in multiple platforms.
 
 ### Prerequisites:

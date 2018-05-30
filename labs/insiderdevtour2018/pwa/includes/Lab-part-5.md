@@ -1,7 +1,3 @@
-## Publish your PWA
-
-### Prerequisites
-
 This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Service Worker** to download the necessary code to transform your web application into a PWA.
 
 ### Publish PWA

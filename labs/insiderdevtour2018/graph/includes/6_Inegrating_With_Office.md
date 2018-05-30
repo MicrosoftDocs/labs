@@ -1,5 +1,3 @@
-## Integrating with Office
-
 But not only can we integrate with OneDrive, we can also integrate with the entire Office package through the Microsoft Graph API, in this section we will see how we can interact with Outlook to get contacts and to schedule events in the calendar.
 
 ### Get personal contacts from Outlook

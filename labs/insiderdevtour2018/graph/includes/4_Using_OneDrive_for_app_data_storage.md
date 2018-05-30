@@ -1,5 +1,3 @@
-## Using OneDrive for app data storage
-
 Now that we have learned how to interact with OneDrive, one of the options we have is to save the information of our application in OneDrive: settings, images, documents, backups ..., 
 
 So, if we install the application in another device we can recover all the information and settings we had.

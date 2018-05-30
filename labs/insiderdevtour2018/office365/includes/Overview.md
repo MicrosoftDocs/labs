@@ -1,4 +1,3 @@
-## Foundations of Office 365
 ### Prerequisites (for Windows, MacOS and Linux)
 1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab)
 2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/free/) or [purchase an Azure subscription](https://azure.microsoft.com/pricing/purchase-options/).

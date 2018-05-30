@@ -1,5 +1,3 @@
-## Introducing Microsoft Graph
-
 ### Brief explanation of what is the Microsoft Graph
 
 The Microsoft Graph is an API built in Office 365 that allows developers to develop more intelligent and productive applications.

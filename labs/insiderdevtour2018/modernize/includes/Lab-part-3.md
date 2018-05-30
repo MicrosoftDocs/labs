@@ -1,5 +1,3 @@
-## Adaptive Cards
-
 [Adaptive Cards](https://adaptivecards.io/) are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
 
 **Note:** You can start playing with samples quickly online [here](https://adaptivecards.io/samples/).

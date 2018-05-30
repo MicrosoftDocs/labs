@@ -1,5 +1,3 @@
-## Getting started - Console test harness
-
 At this point we are ready to interact with Microsoft Graph.
 
 To do this we will create a console application to which we add the necessary code to perform authentication using Microsoft Graph and then we will list all the documents that we have in OneDrive.

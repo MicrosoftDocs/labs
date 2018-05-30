@@ -1,7 +1,3 @@
-## Microsoft Graph Lab
-
-### Objectives of the lab
-
 The objectives of this lab are:
 
 - Learn what the Microsoft Graph is and what it is for.

@@ -1,5 +1,3 @@
-## Build tailored team hubs in Microsoft Teams #
-
 ### Fundamentals of Teams Development ##
 As mentioned earlier in this lab, each Team created has a General channel and optional additional channels.
 Each channel can be configured with different components to better fit its purpose:

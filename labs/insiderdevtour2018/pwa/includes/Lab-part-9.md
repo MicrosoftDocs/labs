@@ -1,5 +1,3 @@
-## App quality review
-
 To test the quality of our web app and check your code for best practices and common errors, we will use a tool called `Sonarwhal`.
 
 **What is sonarwhal?**

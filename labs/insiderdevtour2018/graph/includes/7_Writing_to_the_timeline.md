@@ -1,6 +1,3 @@
-## Writing to the Timeline
-----------
-
 ### Timeline
 
 The Microsoft Graph has a new feature: **UserActivity**.  

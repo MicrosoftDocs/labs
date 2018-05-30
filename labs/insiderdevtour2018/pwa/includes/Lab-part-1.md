@@ -1,5 +1,3 @@
-## PWA foundations
-
 #### What is a PWA?
 
 PWAs are just websites, enhanced using modern design and web technologies (Responsive Design, Touch Friendly, Service Workers, Fetch networking, Cache API, Push notifications, Web App Manifest) to provide a more native app-like experience.

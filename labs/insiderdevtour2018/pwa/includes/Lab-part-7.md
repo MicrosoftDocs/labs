@@ -1,5 +1,3 @@
-### PWA on Windows
-
 Prerequisites:
 
 - This task has a dependency on **Sideload a PWA** section.

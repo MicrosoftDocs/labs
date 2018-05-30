@@ -1,5 +1,3 @@
-## UI modernization
-
 In WPF and WinForms apps today, it is common to have islands of web content that are often hosted in the **WebBrowser** control. The **WebBrowser** control that ships as part of the platform uses the Internet Explorer 11 (IE11) rendering engine, which **does not** support the latest web standards. It is common for apps leveraging this control to observe incorrect rendering of more modern websites. In many cases, it is not possible for the web developer to fix these rendering issues as the website is owned either by a third-party, or a team in another part of the organization.
 
 The following steps will explain how you can switch out the **WebBrowser** control with the newly released, and modern **WebView** control for WPF and WinForms. This is made possible through the new XAML islands architecture, which extends UWP controls into multiple UI frameworks. You can now have your web content support features such as WebRTC, service workers and more.

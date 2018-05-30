@@ -1,5 +1,3 @@
-## Managing Files with the Microsoft Graph
-
 ### Accessing file data
 
 What we are going to do in this module is to retrieve the list of the most recent OneDrive documents, building on the knowledge acquired in the Sample API Calls Module.

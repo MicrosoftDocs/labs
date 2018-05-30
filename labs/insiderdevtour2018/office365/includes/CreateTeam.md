@@ -1,5 +1,3 @@
-## Create a Team #
-
 ### Prerequisites ##
 1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab)
 

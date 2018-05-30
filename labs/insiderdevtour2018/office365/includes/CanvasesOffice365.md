@@ -1,5 +1,3 @@
-## Canvases across Office 365
-
 ### Marketplace
 Office 365 and Azure offer thousands of apps and turn-key solutions built by Microsoft and software developers in the AppSource marketplace.  Developer can monetize their own apps once the product has been reviewed and approved by Microsoft.
 

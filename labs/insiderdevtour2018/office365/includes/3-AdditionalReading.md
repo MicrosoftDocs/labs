@@ -1,4 +1,3 @@
-## Additional Reading topics #
 ### Bots ###
 - [Create a bot with the Bot Builder SDK for .NET](https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-quickstart?view=azure-bot-service-3.0)
 - [Create a bot with the Bot Builder SDK for Node.js](https://docs.microsoft.com/azure/bot-service/nodejs/bot-builder-nodejs-quickstart?view=azure-bot-service-3.0)

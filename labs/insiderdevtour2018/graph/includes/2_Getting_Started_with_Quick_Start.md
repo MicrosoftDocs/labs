@@ -1,5 +1,3 @@
-## Getting started - Creating an App ID
-
 In order for our applications to use the Microsoft Graph API, we must have an application ID.
 
 We must register the application in the Microsoft Application Registry. 

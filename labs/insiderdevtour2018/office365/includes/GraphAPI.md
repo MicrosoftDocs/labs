@@ -1,4 +1,3 @@
-## Graph APIs
 ### Microsoft Graph API use and purpose
 Microsoft Graph is a central API in Office 365 that provides unified access to user resource, relationships and intelligence via a single REST endpoint.
 
