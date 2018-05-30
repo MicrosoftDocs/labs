@@ -2,7 +2,7 @@
 
 So far, our experience only works with an immersive headset. However, with just a few changes, we can extend it to cover the whole Mixed Reality continuum (using HoloLens).  
 
-Since we used the Mixed Reality Toolkit for the camera, interactions and buttons, all we need to do is turn off the environment so it doesn't obstruct the user's view of their real environment in HoloLens. 
+Since we used the Mixed Reality Toolkit for the camera, interactions and buttons, we only need to make a few adjustments to our project.
 
 ## 1. Hiding the virtual room
 We need to write a script that detects whether the app is being run with an immersive headset or a HoloLens. If it is running with a HoloLens we want to hide the virtual room to allow the user to interact with their real environment. To do this we will first add a *Tag* to the *RoomPrefab* so we can access that tag inside our script. 
