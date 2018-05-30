@@ -28,9 +28,8 @@ You will know that your package imported correctly if when done there is a folde
  
 ![import packages](../media/Assets_Holotoolkit_Imported.png)
 
-Repeat the same import steps above and import the SpatialSoundLab.UnityPackage file.
- 
-Ensure that your Assets folder now has both packages. 
+6. Repeat the same import steps above and import the SpatialSoundLab.UnityPackage file.
+7. Ensure that your Assets folder now has both packages. 
 
 ![import packages](../media/Assets_All_Imported.png)
 
@@ -59,7 +58,7 @@ IL2CPP would have worked too, but for consistency across the lab, we recommend .
 
 That takes care of adding Mixed Reality support, but there are a few more settings needed that are specific to the Universal Windows Platform. 
 
-3. 1. In the top menu navigate to *Mixed Reality Toolkit->Configure* and select *Apply UWP Capability Settings*.
+3. In the top menu navigate to *Mixed Reality Toolkit->Configure* and select *Apply UWP Capability Settings*.
 
 ![apply UWP Capability Settings](../media/ApplyUWPCapabilitySettingsMenuItem.png)
 
@@ -110,6 +109,7 @@ You do not have to do this now, but when or if you choose to build the project, 
 ![switch active solution from arm to x64](../media/DeploymentX64Immersive.png)
 
 If you are not debugging, we also recommend you also change from *Debug* to *Release* because Unity debug builds often run a little slow.  
+
 5. Run the app by hitting play.
 
 
@@ -128,7 +128,8 @@ For deploying to HoloLens, the steps are very similar to immersive headset steps
 
 ![switch active solution from arm to x64](../media/DeploymentX86Hololens.png)
 
-If you are not debugging, we also recommend you also change from Debug to Release because Unity debug builds often run a little slow.  
+If you are not debugging, we also recommend you also change from Debug to Release because Unity debug builds often run a little slow.
+
 5. Run the app by hitting play.
 
 See the [Windows Developer site](https://docs.microsoft.com/en-us/windows/uwp/publish/) for details on publishing to the Microsoft Store.
