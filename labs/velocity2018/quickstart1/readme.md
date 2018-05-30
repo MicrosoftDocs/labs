@@ -34,41 +34,8 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 
    The **Azure DevOps project** automatically configures a CI build and release trigger. You're now ready to collaborate with a team on a Java app with a CI/CD process that automatically deploys your latest work to your web site.
 
-## Exercise 2: Examine the VSTS CI/CD pipelines configured by Azure DevOps Project
 
-  The Azure DevOps project automatically configured a full VSTS CI/CD pipeline in your VSTS account. Explore and customize the pipeline as needed. Follow the steps below to familiarize yourself with the VSTS build and release definitions.
-
-1. Select **Build Pipelines** from the top of the Azure DevOps project dashboard. This link opens a browser tab and opens the VSTS build definition for your new project.
-
-    ![buildpipelines](images/buildpipelines.png)
-
-2. Select the **ellipsis** that appears. This action opens a menu where you can perform several activities such as queue a new build, pause a build, and edit the build definition. Select **Edit**.
-      
-    ![editbuild](images/editbuild.png)
-
-3. From this view, **examine the various tasks** for your build definition. The build performs various tasks such as fetching sources from the Git repository, restoring dependencies, and publishing outputs used for deployments.
-
-     ![builddefinition](images/builddefinition.png)
-
-1. Select **Build and Release**, then choose **Releases**. The Azure DevOps project created a VSTS release definition to manage deployments to Azure.
-     
-      ![releases](images/releases.png)
-
-2. Select the **ellipsis** next to your release definition, then choose **Edit**.
-
-     ![editrelease](images/editrelease.png)
-
-3. The release definition contains a **pipeline**, which defines the release process. 
-
-    ![releasedefinition](images/releasedefinition.png)
-
-1. On the right-hand side of the browser, select **View releases**. This view shows a history of releases.
-
-    ![viewreleases](images/viewreleases.png)
-
-    ![releasehistory](images/releasehistory.png)
-
-## Exercise 3: Commit the code changes and execute CI/CD
+## Exercise 2: Commit the code changes and execute CI/CD
 
 The Azure DevOps project created a **Git** repository in your VSTS account. Follow the steps below to view the repository and make code changes to your application.
 
@@ -76,9 +43,7 @@ The Azure DevOps project created a **Git** repository in your VSTS account. Foll
 
      ![codetab](images/codetab.png)
 
-1. You can clone your Git repository in your favorite IDE. In this lab, you can use the web browser to make and commit code changes directly to the master branch.
-
-     ![cloneurl](images/cloneurl.png)
+1. You can clone your Git repository in your favorite IDE but for the purpose of this lab, you will edit in the browser itself and commit the changes directly to the master branch.
 
 1. On the left-hand side of the browser, navigate to the **src/main/resources/static/index.html** file. Select **Edit**, and make a change. For example, change line number #21 to 
          
@@ -87,12 +52,9 @@ The Azure DevOps project created a **Git** repository in your VSTS account. Foll
     ```
 1. Choose **Commit**, to save and check-in your changes.
 
-      ![commit](images/commit.png)
 
-1. In your browser, navigate to the **Builds**. You should now see a build is in progress. The changes you just made are automatically built and deployed via a VSTS CI/CD pipeline.
+1. In your browser, navigate to the **Builds**. You should now see a build is in progress. The changes you just made are automatically built and deployed via a VSTS CI/CD pipeline. Once the build is complete, navigate to **Releases** and and you will notice the deployment has started. 
 
-    ![buildqueue](images/buildqueue.png)
-
-1. In your browser, navigate to the **Azure DevOps project dashboard**. On the right side of the dashboard, select **Browse** to view your updated running application. You will the updated decription line in the web app.
+1. Wait for the release to finish and then return to the Azure DevOps project on the Azure portal. On the right side of the dashboard, select **Browse** to view your updated running application. You will the updated description line in the web app.
 
    ![updatedsite](images/updatedsite.png)
