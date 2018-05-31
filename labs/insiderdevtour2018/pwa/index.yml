@@ -1,0 +1,49 @@
+### YamlMime:Tutorial
+title: Get the most out of your web app with a Progressive Web App (PWA)
+metadata:
+  title: Get the most out of your web app with a Progressive Web App (PWA)
+  description: Learn the fundamentals of a Progressive Web App, how to ensure it works great across multiple platforms, and how it can light up on Windows 10.
+  audience: Developer
+  level: Beginner
+  ms.topic: tutorial
+  nextTutorialHref: ..\office365\index.yml
+  nextTutorialTitle: Office 365 lab
+  ms.custom: Insider Dev Tour 2018
+items:
+- durationInMinutes: 5
+  content: |
+    [!include[](includes/lab-part-0.md)]
+- title: PWA foundations
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/lab-part-1.md)]
+- title: Build a responsive web app
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-2.md)]
+- title: Build a PWA with PWA Builder
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-3.md)]
+- title: Build a service worker
+  durationInMinutes: 5
+  content: |
+    [!include[](includes/lab-part-4.md)]
+- title: Publish your PWA
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-5.md)]
+- title: Testing your PWA
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-6.md)]
+- title: PWA on windows
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-7.md)]
+- title: App quality review
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-9.md)]
+- content: |
+    You've completed this lab.
