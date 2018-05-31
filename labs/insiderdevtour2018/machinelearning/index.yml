@@ -1,0 +1,33 @@
+### YamlMime:Tutorial
+title: Get started with Machine Learning
+metadata:
+  title: Get started with Machine Learning
+  description: Learn how to use Machine Learning APIs and services on the intelligent cloud and intelligent edge to enable differentiated experiences for your apps. 
+  audience: Developer
+  level: Beginner
+  ms.topic: tutorial
+  nextTutorialHref: ..\pwa\index.yml
+  nextTutorialTitle: Progressive Web Apps lab
+  ms.custom: Insider Dev Tour 2018
+items:
+- durationInMinutes: 5
+  content: |
+    [!include[](includes/lab-part-0.md)]
+- title: Overview
+  durationInMinutes: 10
+  content: |
+    [!include[](includes/lab-part-1.md)]
+- title: Emotion detection with Face API (cloud)
+  durationInMinutes: 15
+  content: |
+    [!include[](includes/lab-part-2.md)]
+- title: Emotion detection with Windows ML (edge)
+  durationInMinutes: 15
+  content: |
+    [!include[](includes/lab-part-2b.md)]
+- title: Product detection with Custom Vision and Windows ML
+  durationInMinutes: 20
+  content: |
+    [!include[](includes/lab-part-3.md)]
+- content: |
+    [!include[](includes/lab-part-4.md)]
