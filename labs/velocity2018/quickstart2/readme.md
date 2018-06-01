@@ -1,8 +1,8 @@
 You are tasked with managing 3 different Kubernetes clusters running different web apps in Azure. Things have been going fine for a while now but today morning your users started complaining about performance and the issue seems to keep deteriorating. You have to meet your 5 minutes SLA to find and fix the issue. You are in PANIC mode – with so many containers how you can figure out what’s wrong so quickly. Don’t worry, we will lead you there - but it’s going to be up to you to find the root cause.
 
 1. Login to the [Microsoft Azure portal](https://portal.azure.com)
-2. Your Kubernetes cluster is part of the Azure Kubernetes Service (AKS). To get to AKS, search for it in the top search bar
-
+2. Your Kubernetes cluster is part of the Azure Kubernetes Service (AKS). To get to AKS, search for "Kubernetes" in the top search bar and select "Kubernetes (preview)"
+![searchkubernetes](images/kubernetes.png)
 3. Your clusters are part of the Contoso IT – demo subscription.
 4. **Task 1:** Click through the clusters, go through the CPU and memory usage and see if you can find any issue
 5. So, you have isolated the problem to a specific container. Now you need to find out the root cause. To take a look at the logs, click on the Containers tab at the top and click on View Logs
