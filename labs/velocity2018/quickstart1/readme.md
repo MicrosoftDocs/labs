@@ -1,14 +1,16 @@
-# Quick Start 1: Azure DevOps Project
+# Quick Start 1: Azure getting started made easy!
 
 The Azure DevOps Project simplifies the initial configuration of a continuous integration (CI) and continuous delivery (CD) pipeline to deploy your app on Azure in a few quick step. It sets you up with everything you need for developing, deploying, and monitoring your app.
 
 1. Sign into the [Microsoft Azure portal](https://portal.azure.com). Use the following user name and password to log in:
-    > Username: ++@lab.CloudPortalCredential(1).Username++
+    > Username: ++@lab.CloudPortalCredential(1).Username++     
     > Password: ++@lab.CloudPortalCredential(1).Password++
 
 1. Select **Cancel** if you are prompted to start a tour 
 
-1. You will notice a tile on your dashboard with a title **Azure getting started made easy!**. Select **Create DevOps Project**
+1. You will notice a tile on your dashboard with a title **Azure getting started made easy!**
+
+1. Select **Create DevOps Project**
     ![Search DevOps project](images/azuredevopsprojecttile.png)
 
 1. Azure works for any language, any platform. You can choose the language you use to develop your application. Let us choose **Java**. Select **Next**.
@@ -20,8 +22,6 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 1. You can choose where you want to deploy the application. For simplicity, let's choose **Web App**
 
 1. Finally, you will specify which Team Services and Azure account you want to use. Select **Create new** for Team Services and provide a name for your *account* and  *project* and choose **Done**.
-
-    ![vstsproject](images/vstsproject.png)
 
 1. In a few minutes, the **project dashboard** loads in the Azure portal. A sample java application is set up in a repository in your VSTS account, a build executes, and your application is deployed to Azure. 
 
