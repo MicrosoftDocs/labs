@@ -1,6 +1,6 @@
 This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.asp.net/) example project continue with this part.
 
-1. To start, clone or download the repository code and open the folder: `PWA/source code/`
+1. To start, clone or download the [repository code](https://github.com/Microsoft/InsiderDevTour18-Labs) and open the folder: `PWA/source code/`
 ![](../media/Picture5.jpg)
 2. Execute the **Microsoft.Knowzy.sln** solution to open the project in visual studio.
 
