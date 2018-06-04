@@ -16,7 +16,7 @@ You are tasked with managing 3 different Kubernetes clusters running different w
 `#Use a query similar to this - INSERT QUERY`
 
 9. Congratulations! You have found the root cause within the SLA and saved the day. While you are it, you have a bonus task.
-10. Run a query to find all the VM’s that are missing security patches. 
+10. **Bonus Task** Did you know that Log Analytics is a common store for metrics and log data for number of monitoring and management tools? As a customer, you can use Log Analytics not just for containers but other Azure services including Virtual Machines and Azure Security Center.  For this task, you need to run a query to find all the VM’s that are missing security patches. You can find examples here - https://docs.loganalytics.io/docs/Examples/Log-Analytics-Examples
 
 `#Use a query similar to this - INSERT QUERY`
 
