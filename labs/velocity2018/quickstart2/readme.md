@@ -9,7 +9,7 @@ You are tasked with managing 3 different Kubernetes clusters running different w
 ![health](images/Health.png)
 5. You can see the memory and CPU usage at a Node, Controller and Container level.
 ![health](images/Node.png)
-6. **Task 1:** Click through the clusters, go through the CPU usage and see if you can find any issue
+6. **Task 1:** Click through the clusters, go through the CPU usage, container restarts etc. and see if you can find any issue
 7. So, you have isolated the problem to a specific container. Now you need to find out the root causes. To take a look at the logs, click on the Containers tab at the top and click on **View Logs**
 8. **Task 2** Find the process responsible for the performance issue
 
