@@ -16,7 +16,7 @@ Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple 
 
 In this scenario you will show a card once a new production line product is manufactured. You will also make this an actionable card so you can easily add updates to the product at a given stage.
 
-1. You will be rendering your car inside of the **MainPage.xaml** view. Start by adding a container to render the card inside of this view like so (this is right at the bottom of the file):
+1. You will be rendering your car inside of the **MainView.xaml** view. Start by adding a container to render the card inside of this view like so (this is right at the bottom of the file):
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     [...]
@@ -25,6 +25,7 @@ In this scenario you will show a card once a new production line product is manu
             x:Name="adaptiveCardContainer"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
+            Grid.Row="1"
             Margin="10"/>
 
     </Grid>
@@ -45,6 +46,7 @@ using AdaptiveCards;
 using AdaptiveCards.Rendering;
 using AdaptiveCards.Rendering.Wpf;
 using System.IO;
+using Microsoft.Knowzy.WPF.Helpers;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 3. Next add the following method to return an AdaptiveCard object that you will render inside of the container.
@@ -108,7 +110,8 @@ public partial class MainView
 
         InitializeComponent();
 
-        var json = File.ReadAllText("Assets/WindowsNotificationHostConfig.json");
+        var fileHelper = new FileHelper();
+        var json = fileHelper.ReadTextFile("Assets/WindowsNotificationHostConfig.json");
         var hostConfig = AdaptiveHostConfig.FromJson(json);
         _renderer = new AdaptiveCardRenderer(hostConfig);
         _card = CreateCard();
@@ -402,7 +405,7 @@ private void RenderedCard_OnAction(RenderedAdaptiveCard sender, AdaptiveActionEv
 
         var inputs = sender.UserInputs.AsDictionary();
         var notes = inputs["Notes"];
-        viewModel.UpdateNotes(notes);
+        viewModel.DevelopmentItems.LastOrDefault().Notes = notes;
         viewModel.ShowAdaptiveCard = false;
 
         sender.OnAction -= RenderedCard_OnAction;

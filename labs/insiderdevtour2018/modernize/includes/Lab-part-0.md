@@ -14,7 +14,7 @@ Adaptive Cards are a new way for developers to exchange card content in a common
 
 ### Windows 10 APIs
 
-Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP) apps, but to WPF and WinForms apps too. In this section you will use local toast notifications as an example of a Windows 10 API you can introduce into your desktop app - these same principles apply to many more features such as Contact / People integration, Live Tiles, and more.
+Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP) apps, but to WPF and WinForms apps too. In this section you will use local toast notifications as an example of a Windows 10 API you can introduce into your desktop app - these same principles apply to many features such as Contact / People integration, Live Tiles, and more.
 
 ## Prerequisites
 
