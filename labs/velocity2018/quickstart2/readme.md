@@ -1,3 +1,5 @@
+# Quick start 2: Monitoring applications with Azure Monitor
+
 You are tasked with managing 3 different Kubernetes clusters running different web apps in Azure. Things have been going fine for a while now but today morning your users started complaining about performance of applications in the **contosoretail2** kubernetes cluster. and the issue seems to keep deteriorating. You have to meet your 5 minutes SLA to find and fix the issue. You are in PANIC mode – with so many containers how you can figure out what’s wrong so quickly. Don’t worry, we will lead you there - but it’s going to be up to you to find the root causes.
 
 1. Login to the [Microsoft Azure portal](https://portal.azure.com)
