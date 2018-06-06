@@ -11,6 +11,7 @@ The Azure DevOps Project simplifies the initial configuration of a continuous in
 1. You will notice a tile on your dashboard with a title **Azure getting started made easy!**
 
 1. Select **Create DevOps Project**
+
     ![Search DevOps project](images/azuredevopsprojecttile.png)
 
 1. Azure works for any language, any platform. You can choose the language you use to develop your application. Let us choose **Java**. Select **Next**.
