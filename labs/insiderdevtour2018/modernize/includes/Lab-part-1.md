@@ -2,8 +2,8 @@ In this section we’ll learn how our WPF app can be packaged using a modern pac
 
 Universal Windows Platform (UWP) apps have had this modern packaging ability since inception, and it is now easier than ever to use these same capabilities for your desktop apps. 
 
-The ultimate aim is to converge around a new open-source packaging system called MSIX, which you can start experimenting via GitHub: [MSIX
-Packaging SDK](https://github.com/Microsoft/msix-packaging). 
+The ultimate aim is to converge around a new open-source packaging system called MSIX, which you can start experimenting via GitHub: <a href="https://github.com/Microsoft/msix-packaging" target="_blank">MSIX
+Packaging SDK</a>
 
 To start on this journey in production today, you can use the Visual Studio Application Packaging project template, which is what you will now go ahead and configure.
 

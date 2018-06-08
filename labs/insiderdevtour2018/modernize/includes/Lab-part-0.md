@@ -24,5 +24,5 @@ In order to complete this lab you will need:
 
 -   **Visual Studio Community 2017 15.7.2 (or higher):** You can downloaded from <a href="https://www.visualstudio.com/downloads/" target="_blank">here</a> - ensure the latest Windows 10 SDK (1803; Build 17134) is enabled
 
--   **Lab starter project:** You can find the initial source code here: [Source Code - Initial
-    Solution](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/modernize/SourceCodeInitial/SourceCodeInitial.zip).
+-   **Lab starter project:** You can find the initial source code here: <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/modernize/SourceCodeInitial/SourceCodeInitial.zip" target="_blank">Source Code - Initial Solution</a>
+
