@@ -19,13 +19,13 @@ The scope member is a string that represents the navigation scope of the web app
 + The `icons`
 The icons member is an array of ImageResources that can be use as an icon for the web application in various contexts. For example, they can be used to represent the web application amongst a list of other applications, or to integrate the web application with an OS's task switcher and/or system preferences.
 
-Learn more about the content in [ webAppManifest dictionary](https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary) from W3C.
+Learn more about the content in <a href="https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary" target="_blank"> webAppManifest dictionary</a> from W3C.
 
 #### Provide a URL
 
 The first step is to build the Manifest for your application using the **pwabuilder.com** web site. This tool will look in the home page for information about the app in specific HTML meta tags.
 
-1. Open a browser and navigate to [https://preview.pwabuilder.com/](https://preview.pwabuilder.com/).
+1. Open a browser and navigate to <a href="https://preview.pwabuilder.com/" target="_blank">https://preview.pwabuilder.com/</a>.
 2. In the URL textbox, enter the https URL of your web app and click on **Get Started**.
 
     > **Note** Your website URL will likely default to the http version in the browser but all azure websites also have a valid https certificate so https can be used on any azure website.
@@ -81,4 +81,4 @@ The builder site also checks whether the manifest has defined the expected icon 
 
 #### References
 
-- [PWA Builder](https://preview.pwabuilder.com/)
+- <a href="https://preview.pwabuilder.com/" target="_blank">PWA Builder</a>

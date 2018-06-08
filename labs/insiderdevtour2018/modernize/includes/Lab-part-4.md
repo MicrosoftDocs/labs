@@ -40,7 +40,7 @@ Open the Reference Manager (**right click** project, select **Add**, **Reference
 #### 3. Copy compat library code
 
 The compat library abstracts much of the complexity of desktop notifications. Copy the
-[DesktopNotificationManagerCompat.cs](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs)
+<a href="https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs" target="_blank">DesktopNotificationManagerCompat.cs</a>
 file from GitHub into our project, placing it on the root.
 
 **The following instructions require the compat library.**

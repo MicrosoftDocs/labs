@@ -1,8 +1,8 @@
 ### Prerequisites (for Windows, MacOS and Linux)
-1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab)
-2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/free/) or [purchase an Azure subscription](https://azure.microsoft.com/pricing/purchase-options/).
-3. [Node LTS and npm](https://nodejs.org/en/)
-4. [Visual Studio Code](https://code.visualstudio.com/)
+1. <a href="https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab" target="_blank">Microsoft Office 365 Tenant configured for Teams</a>
+2. Azure subscription with owner permissions. You can create a <a href="https://azure.microsoft.com/free/" target="_blank">free one-month trial</a> or <a href="https://azure.microsoft.com/pricing/purchase-options/" target="_blank">purchase an Azure subscription</a>.
+3. <a href="https://nodejs.org/en/" target="_blank">Node LTS and npm</a>
+4. <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
 5. Chrome, Firefox, Edge, or IE11 browser.  Teams does not support Safari at this time but the desktop client is available for MacOS.
 
 ### Microsoft Teams and more

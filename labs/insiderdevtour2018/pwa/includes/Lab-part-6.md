@@ -26,7 +26,7 @@ In case you do not want to distribute your app through the Microsoft Store, you 
 #### F12 tools for PWA
 
 Prerequisites:
-- Install the Microsoft Edge DevTools [download here.](https://www.microsoft.com/store/productId/9MZBFRMZ0MNJ)
+- Install the Microsoft Edge DevTools <a href="https://www.microsoft.com/store/productId/9MZBFRMZ0MNJ" target="_blank">download here.</a>
 
 The Microsoft Edge DevTools provide web developers with tools for attaching to open local and remote page targets and debug web content in web sites and apps on Windows.
 
@@ -46,7 +46,7 @@ The Microsoft Edge DevTools provide web developers with tools for attaching to o
 
 ###	How to test on Chrome
 
-1. Open up our app using Chrome browser [PWA App](https://msftknowzy.azurewebsites.net/).
+1. Open up our app using Chrome browser <a href="https://msftknowzy.azurewebsites.net/" target="_blank">PWA App</a>.
 
 2. Open up the F12 tooling in the browser and select the `Application` tab.
 
@@ -68,7 +68,7 @@ The Microsoft Edge DevTools provide web developers with tools for attaching to o
 
 #### How to test on iOS
 
-1. Open up the Web app using Safari browser [Web App](https://msftknowzy.azurewebsites.net/).
+1. Open up the Web app using Safari browser <a href="https://msftknowzy.azurewebsites.net/" target="_blank">Web App</a>.
 
 2. Select `Add to Home Screen` button in order to install the app on the device.
 

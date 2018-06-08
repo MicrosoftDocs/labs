@@ -4,7 +4,7 @@ To do this we will create a console application to which we add the necessary co
 
 ### Create a console app
 
-Download the base project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase)
+Download the base project from <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase" target="_blank">here</a>
 
 ### Authenticate user
 
@@ -61,6 +61,8 @@ When you are authenticated, please answer **N** to the answer **Would you like t
 ![alt text](../media/AuthConsola.png)
 
 > **Note:** If you receive an error when signing in about no reply address being registered, then you forgot to save your native application addition in step 6 of the **Setting up app id** section.
+
+> **Note:** If you see an error such as _No reply address is registered for the application._ ensure that you hit **Save** when you registered your app in the App Registration Portal.
 
 ### Call to Get all items in OneDrive
 Now we are ready to make calls to the API, we will call OneDrive API to show the name of the documents we have.

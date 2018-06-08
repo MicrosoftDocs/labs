@@ -21,12 +21,12 @@ The Microsoft Graph, by allowing us to connect with all our Office 365 data, all
 
 With the Graph we do the following:
 
- - Sends alerts if you're spending too much time in meetings ([Outlook meetings](https://developer.microsoft.com/graph/docs/concepts/findmeetingtimes_example))
- - Suggest the best time for the next team meeting according to your calendar ([Outlook Calendar](https://developer.microsoft.com/graph/docs/concepts/outlook-schedule-recurring-events))
- - Create a Team in Microsoft Teams for an existing office 365 Group ([Teams](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/group))
- - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows ([Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api))
- - Continue editing a document where you left off in another device ([Cross-device](https://developer.microsoft.com/graph/docs/concepts/cross-device-app-configuration))
- - Create a timeline with all your activity ([Activities](https://developer.microsoft.com/graph/docs/concepts/activity-feed-concept-overview))
+ - Sends alerts if you're spending too much time in meetings (<a href="https://developer.microsoft.com/graph/docs/concepts/findmeetingtimes_example" target="_blank">Outlook meetings</a>)
+ - Suggest the best time for the next team meeting according to your calendar (<a href="https://developer.microsoft.com/graph/docs/concepts/outlook-schedule-recurring-events" target="_blank">Outlook Calendar</a>)
+ - Create a Team in Microsoft Teams for an existing office 365 Group (<a href="https://developer.microsoft.com/graph/docs/api-reference/beta/resources/group" target="_blank">Teams</a>)
+ - Send a notification when people are added to Active Directory and automatically kick off employee on-boarding workflows (<a href="https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api" target="_blank">Azure AD</a>)
+ - Continue editing a document where you left off in another device (<a href="https://developer.microsoft.com/graph/docs/concepts/cross-device-app-configuration" target="_blank">Cross-device</a>)
+ - Create a timeline with all your activity (<a href="https://developer.microsoft.com/graph/docs/concepts/activity-feed-concept-overview" target="_blank">Activities</a>)
    
 These are some examples of what can be done with the Microsoft Graph, but you can see there are many scenarios where you can apply.
 
@@ -36,10 +36,10 @@ Nowadays one of the biggest uses of the Graph API is to share information betwee
 
 There is a wealth of information about the Microsoft Graph and this is a list of interesting links we recommend:
 
-- [https://developer.microsoft.com/graph/docs/concepts/overview](https://developer.microsoft.com/graph/docs/concepts/overview). Official website of the Microsoft Graph where you can find all the updated documentation.
+- <a href="https://developer.microsoft.com/graph/docs/concepts/overview" target="_blank">https://developer.microsoft.com/graph/docs/concepts/overview</a>. Official website of the Microsoft Graph where you can find all the updated documentation.
 
-- [https://github.com/microsoftgraph](https://github.com/microsoftgraph). Microsoft Graph API Repository on GitHub. 
+- <a href="https://github.com/microsoftgraph" target="_blank">https://github.com/microsoftgraph</a>. Microsoft Graph API Repository on GitHub. 
 
-- [https://github.com/Microsoft/project-rome](https://github.com/Microsoft/project-rome). Project Rome's GitHub Repository, where you can find information and examples.
+- <a href="https://github.com/Microsoft/project-rome" target="_blank">https://github.com/Microsoft/project-rome</a>. Project Rome's GitHub Repository, where you can find information and examples.
 
-- [https://channel9.msdn.com/events/Build/2017/B8025](https://channel9.msdn.com/events/Build/2017/B8025). Microsoft Build 2017 video showing how to work with Project Rome and Microsoft Graph
+- <a href="https://channel9.msdn.com/events/Build/2017/B8025" target="_blank">https://channel9.msdn.com/events/Build/2017/B8025</a>. Microsoft Build 2017 video showing how to work with Project Rome and Microsoft Graph

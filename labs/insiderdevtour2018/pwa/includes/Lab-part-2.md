@@ -1,6 +1,6 @@
-This part is **optional**, if you want to use our Knowzy [ASP.NET](https://www.asp.net/) example project continue with this part.
+This part is **optional**, if you want to use our Knowzy <a href="https://www.asp.net/" target="_blank">ASP.NET</a> example project continue with this part.
 
-1. To start, clone or download the repository code and open the folder: `PWA/source code/`
+1. To start, clone or download the <a href="https://github.com/Microsoft/InsiderDevTour18-Labs" target="_blank">repository code</a> and open the folder: `PWA/source code/`
 ![](../media/Picture5.jpg)
 2. Execute the **Microsoft.Knowzy.sln** solution to open the project in visual studio.
 
@@ -81,13 +81,13 @@ Congratulations! Your app is now ready to be viewed on devices with different sc
     ![local application](../media/Picture12.jpg)
 
 
-#### Deploy your [ASP.net](https://www.asp.net/) App Changes (optional)
+#### Deploy your <a href="https://www.asp.net/" target="_blank">ASP.net</a> App Changes (optional)
 
 
 Now if you want to publish the application on Azure follow these steps or continue locally using IIS and skip to the next step.
 
-**Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in [Azure](https://azure.microsoft.com/free/).
-For more information you can follow this small tutorial: [How to create up a new Microsoft Azure account.](https://www.acronis.com/articles/create-microsoft-azure-account/)
+**Important!** you will need an Azure account to use Azure services, if don't have any you can create for free in <a href="https://azure.microsoft.com/free/" target="_blank">Azure</a>.
+For more information you can follow this small tutorial: <a href="https://www.acronis.com/articles/create-microsoft-azure-account/" target="_blank">How to create up a new Microsoft Azure account.</a>
 
 Using azure services:
 
@@ -122,7 +122,7 @@ Using azure services:
 
 ### Deployment Errors
 * When attempting to deploy, you may run into an issue where Azure complains that a certain .dll is locked. If this is the case, you'll have to perform the following steps:
-    1. Sign into [https://portal.azure.com](https://portal.azure.com) with the same credentials you used to deploy your web app
+    1. Sign into <a href="https://portal.azure.com" target="_blank">https://portal.azure.com</a> with the same credentials you used to deploy your web app
 
     2. Select "App Services" from the left-most menu (see 1 in the figure below)
 

@@ -1,5 +1,5 @@
 ### Prerequisites ##
-1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab)
+1. <a href="https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant?ocid=idt_o365_lab" target="_blank">Microsoft Office 365 Tenant configured for Teams</a>
 
 > **IMPORTANT:** Be sure to enable external apps for Teams and sideloading as indicated in the guide for later exercises.
 
@@ -32,7 +32,7 @@
 
 ![Teams intro 5](../media/teams-intro-5.png)
 
-8. Download this [PDF menu](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/cafe_menu.pdf) to your **Downloads** folder. 
+8. Download this <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/cafe_menu.pdf" target="_blank">PDF menu</a> to your **Downloads** folder. 
 
 9. In the Cafeteria channel, click on Files and upload the PDF menu file from the **Downloads** folder.
 

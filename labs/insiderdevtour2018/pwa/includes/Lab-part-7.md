@@ -24,7 +24,7 @@ To simplify the task, we will test the WinRT APIs by using the F12 tools console
 
 2. Once initialized, click F12 button to open the F12 Developer tools and select the `console` tab.
 
-3. [Go to the Windows API section of the PWA Builder Preview site](https://preview.pwabuilder.com/windows).
+3. <a href="https://preview.pwabuilder.com/windows" target="_blank">Go to the Windows API section of the PWA Builder Preview site</a>.
 
 4. Select `Create Dark Theme Check` option and copy the source code in the **code** tab with the *copy* button.
 
@@ -40,7 +40,7 @@ To simplify the task, we will test the WinRT APIs by using the F12 tools console
 
 ##### Timeline
 
-To do this part, your machine must have the last **Windows April Update** to be able to use Windows Timeline. Download the update from [software download](https://www.microsoft.com/software-download/windows10) page.
+To do this part, your machine must have the last **Windows April Update** to be able to use Windows Timeline. Download the update from <a href="https://www.microsoft.com/software-download/windows10" target="_blank">software download</a> page.
 
 1. Launch your PWA app from your start menu.
 
@@ -48,7 +48,7 @@ To do this part, your machine must have the last **Windows April Update** to be 
 
 2. Once initialized, click F12 tools and select the `console` tab.
 
-3. Go to the preview PWA builder page and navigate to [Windows API](https://preview.pwabuilder.com/windows) section.
+3. Go to the preview PWA builder page and navigate to <a href="https://preview.pwabuilder.com/windows" target="_blank">Windows API</a> section.
 
 4. Select `Add Activity to Windows Timeline check` option and copy the source code.
 
