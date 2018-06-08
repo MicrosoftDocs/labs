@@ -14,15 +14,15 @@ Adaptive Cards are a new way for developers to exchange card content in a common
 
 ### Windows 10 APIs
 
-Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP) apps, but to WPF and WinForms apps too. In this section you will use local toast notifications as an example of a Windows 10 API you can introduce into your desktop app - these same principles apply to many more features such as Contact / People integration, Live Tiles, and more.
+Modern Windows 10 APIs are available not only to Universal Windows Platform (UWP) apps, but to WPF and WinForms apps too. In this section you will use local toast notifications as an example of a Windows 10 API you can introduce into your desktop app - these same principles apply to many features such as Contact / People integration, Live Tiles, and more.
 
 ## Prerequisites
 
 In order to complete this lab you will need:
 
--   **Windows 10 April 2018 Update:** The computer needs to run [Windows 10](https://www.microsoft.com/software-download/windows10), and it is mandatory to [install the latest April 2018 Update](https://community.windows.com/videos/how-to-get-the-windows-10-april-2018-update/Bgl6b7WX_).
+-   **Windows 10 April 2018 Update:** The computer needs to run <a href="https://www.microsoft.com/software-download/windows10" target="_blank">Windows 10</a>, and it is mandatory to <a href="https://community.windows.com/videos/how-to-get-the-windows-10-april-2018-update/Bgl6b7WX_" target="_blank">install the latest April 2018 Update</a>.
 
--   **Visual Studio Community 2017 15.7.2 (or higher):** You can downloaded from [here](https://www.visualstudio.com/downloads/) - ensure the latest Windows 10 SDK (1803; Build 17134) is enabled
+-   **Visual Studio Community 2017 15.7.2 (or higher):** You can downloaded from <a href="https://www.visualstudio.com/downloads/" target="_blank">here</a> - ensure the latest Windows 10 SDK (1803; Build 17134) is enabled
 
--   **Lab starter project:** You can find the initial source code here: [Source Code - Initial
-    Solution](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/modernize/SourceCodeInitial/SourceCodeInitial.zip).
+-   **Lab starter project:** You can find the initial source code here: <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/modernize/SourceCodeInitial/SourceCodeInitial.zip" target="_blank">Source Code - Initial Solution</a>
+

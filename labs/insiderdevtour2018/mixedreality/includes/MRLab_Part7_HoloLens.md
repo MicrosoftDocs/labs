@@ -18,7 +18,7 @@ We need to write a script that detects whether the app is being run with an imme
 
 4.  Now click on the *RoomPrefab* in the *Hierarchy* panel again and select *HMDUOnly* tag from the *Tag* dropdown menu in the *Inspector* panel.
 
-There are many ways to select [gameobjects inside of a script](https://docs.unity3d.com/Manual/ControllingGameObjectsComponents.html). By using a tag, we can easily add it to any object we want to hide (if we have more than one) and then iterate through and hide them all. Using the method `FindGameObjectsWithTag` is not the most performant way, but it will be fine for our lab. 
+There are many ways to select <a href="https://docs.unity3d.com/Manual/ControllingGameObjectsComponents.html" target="_blank">gameobjects inside of a script</a>. By using a tag, we can easily add it to any object we want to hide (if we have more than one) and then iterate through and hide them all. Using the method `FindGameObjectsWithTag` is not the most performant way, but it will be fine for our lab. 
 
 5. In Unity's top menu, click *GameObject->Create Empty*.   
 6. In the *Hierarchy* panel, rename this added empty *GameObject* to `GameManager`.
@@ -59,7 +59,7 @@ Lastly, to ensure that the experience runs fine on the HoloLens, we need to chec
 ![Background color config](../media/18.png)
 
 ## 2. Add spatial mapping
-We're almost done! Now we want to enable [Spatial Mapping](https://docs.microsoft.com/windows/mixed-reality/spatial-mapping). Spatial mapping provides a detailed representation of real-world surfaces in the HoloLens environment, allowing developers to create a convincing mixed reality experience. In this case, it allows users to place the speakers naturally without them being obscured inside real-world surfaces.
+We're almost done! Now we want to enable <a href="https://docs.microsoft.com/windows/mixed-reality/spatial-mapping" target="_blank">Spatial Mapping</a>. Spatial mapping provides a detailed representation of real-world surfaces in the HoloLens environment, allowing developers to create a convincing mixed reality experience. In this case, it allows users to place the speakers naturally without them being obscured inside real-world surfaces.
 
 First let's make sure the Bounding Box controls for rotate and move won't be obscured.
 

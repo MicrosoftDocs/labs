@@ -1,4 +1,4 @@
 For more information about Microsoft's Machine Learning services and products, please see:
 
-- [Windows Machine Learning](https://aka.ms/winml)
-- [Azure Machine Learning](https://azure.microsoft.com/overview/machine-learning/)
+- <a href="https://aka.ms/winml" target="_blank">Windows Machine Learning</a>
+- <a href="https://azure.microsoft.com/overview/machine-learning/" target="_blank">Azure Machine Learning</a>

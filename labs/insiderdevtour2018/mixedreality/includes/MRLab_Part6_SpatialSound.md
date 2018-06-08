@@ -10,7 +10,7 @@ Please verify your work with the screen shots we include at the end of each majo
 
 ## 1. Adding an audio source 
 
-To be able to play sound from the speaker, we need to add a Unity [AudioSource](https://docs.unity3d.com/ScriptReference/AudioSource.html) component to it.   
+To be able to play sound from the speaker, we need to add a Unity <a href="https://docs.unity3d.com/ScriptReference/AudioSource.html" target="_blank">AudioSource</a> component to it.   
 
 1. Select the *Speaker* in our scene and click *Add Component->Audio->Audio Source*.
 1. Click on the small target icon on the right side of the *Audio Clip* property in the *Audio Source* component and select `Chill Blue Lagoon`.

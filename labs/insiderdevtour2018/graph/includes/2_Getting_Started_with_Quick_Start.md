@@ -2,13 +2,13 @@ In order for our applications to use the Microsoft Graph API, we must have an ap
 
 We must register the application in the Microsoft Application Registry. 
 
-> Note: You will need either a [school or work](https://developer.microsoft.com/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&lc=1033&lic=1)
+> Note: You will need either a <a href="https://developer.microsoft.com/office/dev-program" target="_blank">school or work</a> or <a href="https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&lc=1033&lic=1" target="_blank">Microsoft account</a>
 
 ### Setting up App ID
 #### Register the app in App Registration Portal
-First, go to [Microsoft App Registration Portal](https://apps.dev.microsoft.com/)
+First, go to <a href="https://apps.dev.microsoft.com/" target="_blank">Microsoft App Registration Portal</a>
 
-> **Note:** Login with your  [school or work](https://developer.microsoft.com/office/dev-program) or [Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&lc=1033&lic=1)
+> **Note:** Login with your  <a href="https://developer.microsoft.com/office/dev-program" target="_blank">school or work</a> or <a href="https://signup.live.com/signup?wa=wsignin1.0&ct=1473983465&rver=6.6.6556.0&wp=MBI_SSL&wreply=https://outlook.live.com/owa/&id=292841&CBCXT=out&cobrandid=90015&bk=1473983466&uiflavor=web&uaid=3b7bae8746264c1bacf1db2b315745cc&lc=1033&lic=1" target="_blank">Microsoft account</a>
 
 After login we follow these steps:
 
@@ -51,7 +51,7 @@ Now we will download the UWP application. We will use it and configure it with t
 
 #### Download UWP project from Github 
 
-Download project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.GraphBase) 
+Download project from <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.GraphBase" target="_blank">here</a> 
 
 #### Build and Debug
 

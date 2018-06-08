@@ -11,4 +11,4 @@ Let's explore adding a few extra tweaks to the visual aspects of the lab - a lit
 2. Click *Add Component->Post Processing Behaviour*.
 3. Find `CustomProfile.asset` in the *Assets->PostProcessing* folder and drag it into the *Profile* property of the *Post Processing Behaviour* script. 
     
-Play with the Post Processing profile as much as you please, but keep in mind the [overhead that accompanies them.](https://docs.unity3d.com/Manual/PostProcessing-Stack.html)
+Play with the Post Processing profile as much as you please, but keep in mind the <a href="https://docs.unity3d.com/Manual/PostProcessing-Stack.html" target="_blank">overhead that accompanies them.</a>

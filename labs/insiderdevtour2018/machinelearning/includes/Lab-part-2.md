@@ -73,6 +73,7 @@ Let's start by creating a simple application that displays a clock.
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media;
     using Windows.UI.Xaml.Navigation;
+    using Microsoft.Toolkit.Uwp.Helpers;
     ```
 
 ## 2. Declare the recognized emotions
@@ -193,36 +194,13 @@ In this project, we'll use a Stream. We'll also scale down the image to 200 pixe
     ```
     
     You need to provide a valid Subscription Key and API endpoint, but we'll see how to get them on the next section.
-
-2. At the top of the class, add a new global variable:
-
-    ```csharp
-    private string detectedEmotion = string.Empty;
-    ```
-
-3. At the end of AnalyzeFrame method, add the following code:
-
-    ```csharp
-    // Analyze the frame
-    string detectedEmotion;
-    try
-    {
-        detectedEmotion = await DetectEmotion(bitmap);
-    }
-    catch
-    {
-        return;
-    }
-    ```
-    
-    This will run the previously created DetectEmotion method with the last captured frame. You can see that for simplicity, we are ignoring any error.
-    
-4. The last step is to make this evaluation happen regularly. In order to avoid issues with the service, we'll limit the API calls to one every 5 seconds.
+  
+2. The last step is to make this evaluation happen regularly. In order to avoid issues with the service, we'll limit the API calls to one every 5 seconds.
 
     At the top of the class, add a new global variable:
     
     ```csharp
-    private Timer stopwatch = new Timer(5000);
+    private Timer timer = new Timer(5000);
     ```
     
     At the end of the OnNavigatedTo method, add the following code:
