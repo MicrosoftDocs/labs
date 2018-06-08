@@ -2,11 +2,9 @@
 
 The Azure DevOps Project simplifies the initial configuration of a continuous integration (CI) and continuous delivery (CD) pipeline to deploy your app on Azure in a few quick step. It sets you up with everything you need for developing, deploying, and monitoring your app.
 
-1. Sign into the [Microsoft Azure portal](https://portal.azure.com). Use the following user name and password to log in:
-    > Username: ++@lab.CloudPortalCredential(1).Username++     
-    > Password: ++@lab.CloudPortalCredential(1).Password++
+1. Sign into the **Microsoft Azure portal** using the credentials provided in the **Resources** tab
 
-1. Select **Cancel** if you are prompted to start a tour 
+1. Select **Maybe later** if you are prompted to start a tour 
 
 1. You will notice a tile on your dashboard with a title **Azure getting started made easy!**
 
