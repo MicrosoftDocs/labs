@@ -24,7 +24,7 @@ This task has a dependency on **Step 1 Generate Manifest** and **Step 2 Build Se
 
     >Remember, if you change the path of your "images" folder, you need to update the json in your manifest file to reflect your changes.
 
-    Using our Knowzy [ASP.NET](https://www.asp.net/) project the easiest way to add new content to a project is to drag and drop the content from the file explorer into the solution explorer of your project.
+    Using our Knowzy <a href="https://www.asp.net/" target="_blank">ASP.NET</a> project the easiest way to add new content to a project is to drag and drop the content from the file explorer into the solution explorer of your project.
 ![Provide a URL](../media/Picture29.jpg)
 
 4. Reference the manifest in your **/Views/Shared/_Layout.cshtml** page with a link tag:
@@ -97,7 +97,7 @@ Now that you have these powerful new features running locally, you can publish t
     ![publish screen from vs](../media/Picture1.jpg)
 
   ```Important!``` to show the download banner from other devices, the website **must be accessed at least twice.**
-   *[Learn more about app install banners](https://developers.google.com/web/fundamentals/app-install-banners/).*
+   *<a href="https://developers.google.com/web/fundamentals/app-install-banners/" target="_blank">Learn more about app install banners</a>.*
    In case you have any issues you can do it manually through the chrome settings, `add to home screen`:
 
   ![publish screen from vs](../media/Picture35.jpg)

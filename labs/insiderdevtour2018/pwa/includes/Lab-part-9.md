@@ -14,7 +14,7 @@ Clean up the web of bad practices.
 Promote community tools and services that do an awesome job but could not be known by everybody.
 
 
-1. Go to the online version [Sonarwhal online](https://sonarwhal.com/)
+1. Go to the online version <a href="https://sonarwhal.com/" target="_blank">Sonarwhal online</a>
 
 <img src="../pwa/media/Picture42.png"><br>
 
@@ -66,7 +66,7 @@ In the security section, the Subresource Integrity `SRI` feature enables you to 
 
 <img src="../pwa/media/Picture49.png"><br>
 
-2. As Sonarwhal suggested, our web app is missing the integrity attribute in scripts and stylesheets. Go to the following link to generate the hash for each script and stylesheet [SRI Hash Generator](https://www.srihash.org/)
+2. As Sonarwhal suggested, our web app is missing the integrity attribute in scripts and stylesheets. Go to the following link to generate the hash for each script and stylesheet <a href="https://www.srihash.org/" target="_blank">SRI Hash Generator</a>
 
 3. On the Hash generator site, introduce the URL of the site.min.css stylesheet `https://msftknowzy.azurewebsites.net/css/site.min.css` and copy the integrity hash in the stylesheet link in the _Layout.cshtml file located in the directory `Microsoft.Knowzy.WebApp\Views\Shared\` as shown below:
 
@@ -91,7 +91,7 @@ In the security section, the Subresource Integrity `SRI` feature enables you to 
 
 **Other app quality review tools:**
 
-+ [Page speed insight](https://developers.google.com/speed/pagespeed/insights/): PageSpeed Insights analyzes the content of a web page, then generates suggestions to make that page faster.
-+ [Accessibility analyzer](https://wave.webaim.org): WAVE can help you evaluate the accessibility of your web content.
-+ [Webaim - contrast checker:](https://webaim.org/resources/contrastchecker/) checks the contrast ratio of the colors.
-+ [W3C developers tools](https://w3c.github.io/developers/tools/): W3C offers a variety of open source tools to use with your website.
++ <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Page speed insight</a>: PageSpeed Insights analyzes the content of a web page, then generates suggestions to make that page faster.
++ <a href="https://wave.webaim.org" target="_blank">Accessibility analyzer</a>: WAVE can help you evaluate the accessibility of your web content.
++ <a href="https://webaim.org/resources/contrastchecker/" target="_blank">Webaim - contrast checker:</a> checks the contrast ratio of the colors.
++ <a href="https://w3c.github.io/developers/tools/" target="_blank">W3C developers tools</a>: W3C offers a variety of open source tools to use with your website.

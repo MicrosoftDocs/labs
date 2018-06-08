@@ -26,15 +26,15 @@ After complete this lab, your PWA will looks like this:
 
 **Some PWA examples:**
 
-+ Twitter [website](https://twitter.com)  and [store app](https://www.microsoft.com/store/p/twitter/9wzdncrfj140).
++ Twitter <a href="https://twitter.com" target="_blank">website</a>  and <a href="https://www.microsoft.com/store/p/twitter/9wzdncrfj140" target="_blank">store app</a>.
 
 ![Twitter: website on left and application on right](../media/Picture2.jpg)
 
-+ Trivago [website](https://www.trivago.es/) and [store app](https://www.microsoft.com/store/p/trivago/9nv9sdq842gq).
++ Trivago <a href="https://www.trivago.es/" target="_blank">website</a> and <a href="https://www.microsoft.com/store/p/trivago/9nv9sdq842gq" target="_blank">store app</a>.
 
 ![Trivago: website on left and application on right](../media/Picture3.jpg)
 
-+ DayTrip [website](https://www.godaytrip.com/) and [store app](https://www.microsoft.com/store/p/daytrip/9nfdsvs69k6m).
++ DayTrip <a href="https://www.godaytrip.com/" target="_blank">website</a> and <a href="https://www.microsoft.com/store/p/daytrip/9nfdsvs69k6m" target="_blank">store app</a>.
 
 ![DayTrip: website on left and application on right](../media/Picture4.jpg)
 

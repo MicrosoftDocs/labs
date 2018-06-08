@@ -1,12 +1,12 @@
-[Adaptive Cards](https://adaptivecards.io/) are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
+<a href="https://adaptivecards.io/" target="_blank">Adaptive Cards</a> are a new way for developers to exchange card content in a common and consistent way. For example, maybe you work for a shipping company and you want the user to be notified when a product moves from the order stage to the shipping stage - you can build a single Adaptive Card that represents that information and it renders as appropriate on the target experience (UWP, WPF, iOS, Android, Web, etc.).
 
-**Note:** You can start playing with samples quickly online [here](https://adaptivecards.io/samples/).
+**Note:** You can start playing with samples quickly online <a href="https://adaptivecards.io/samples/" target="_blank">here</a>.
 
 You will start by adding Adaptive Cards support to your WPF app.
 
 ### Adding support for Adaptive Cards to WPF
 
-Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple UI frameworks. For WPF you can access this feature through the [AdaptiveCards.Rendering.Wpf](https://www.nuget.org/packages/AdaptiveCards.Rendering.Wpf/) NuGet package.
+Microsoft provides multiple SDKs to extend Adaptive Cards support into multiple UI frameworks. For WPF you can access this feature through the <a href="https://www.nuget.org/packages/AdaptiveCards.Rendering.Wpf/" target="_blank">AdaptiveCards.Rendering.Wpf</a> NuGet package.
 
 1. **Right-click** your **Microsoft.Knowzy.WPF** project references and choose **Manage NuGet Packages...** -> search for **AdaptiveCards.Rendering.Wpf** and install the package.
 
@@ -34,8 +34,8 @@ In this scenario you will show a card once a new production line product is manu
 
 You have given your container a name of **adaptiveCardContainer** so you can easily access it from code later.
 
-**Note:** You can utilize tools for visualizing your cards for different UI frameworks - there is an [on-line version](http://adaptivecards.io/visualizer/index.html?hostApp=Bot%20Framework%20WebChat)
-and a [WPF-based one](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer). Cards utilize a JSON format, but can also be created in C#.
+**Note:** You can utilize tools for visualizing your cards for different UI frameworks - there is an <a href="http://adaptivecards.io/visualizer/index.html?hostApp=Bot%20Framework%20WebChat" target="_blank">on-line version</a>
+and a <a href="https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer" target="_blank">WPF-based one</a>. Cards utilize a JSON format, but can also be created in C#.
 
 ![](../media/Picture4.png)
 
@@ -247,7 +247,7 @@ public partial class MainView
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Note:** This file was generated with the [WPF Visualizer](https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer)
+**Note:** This file was generated with the <a href="https://github.com/Microsoft/AdaptiveCards/tree/master/source/dotnet/Samples/WPFVisualizer" target="_blank">WPF Visualizer</a>
 tool, which also bundles different styles to experiment with. You will now take this item and render it within your app.
 
 ### Showing your card

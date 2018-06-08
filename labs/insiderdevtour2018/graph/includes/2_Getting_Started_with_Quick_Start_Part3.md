@@ -4,7 +4,7 @@ To do this we will create a console application to which we add the necessary co
 
 ### Create a console app
 
-Download the base project from [here](https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase)
+Download the base project from <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/tree/master/graph/Microsoft.Graph.HOL.ConsoleBase" target="_blank">here</a>
 
 ### Authenticate user
 

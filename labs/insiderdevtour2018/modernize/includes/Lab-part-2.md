@@ -113,7 +113,7 @@ public class ShellViewModel : [...], IHandle<OpenDocumentationMessage>
 ## Replacing WebBrowser with WebView
 
 In order to make the WebView available from WPF (or WinForms), the NuGet package
-[Microsoft.Toolkit.Win32.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/)
+<a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/" target="_blank">Microsoft.Toolkit.Win32.UI.Controls</a>
 needs to be added to **Microsoft.Knowzy.WPF** project. 
 
 **Note:** You will need to ensure your project is targeting **.NET Framework 4.6.2** before you continue.

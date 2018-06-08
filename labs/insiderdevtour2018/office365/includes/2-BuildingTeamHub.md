@@ -52,10 +52,10 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 #### Build and deploy the existing web app ###
 
 ##### Prerequisites ####
-1. [Microsoft Office 365 Tenant configured for Teams](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant)
-2. Azure subscription with owner permissions. You can create a [free one-month trial](https://azure.microsoft.com/free/) or [purchase an Azure subscription](https://azure.microsoft.com/pricing/purchase-options/).
-3. [Node LTS and npm](https://nodejs.org/en/)
-4. [Visual Studio Code](https://code.visualstudio.com/)
+1. <a href="https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-tenant" target="_blank">Microsoft Office 365 Tenant configured for Teams</a>
+2. Azure subscription with owner permissions. You can create a <a href="https://azure.microsoft.com/free/" target="_blank">free one-month trial</a> or <a href="https://azure.microsoft.com/pricing/purchase-options/" target="_blank">purchase an Azure subscription</a>.
+3. <a href="https://nodejs.org/en/" target="_blank">Node LTS and npm</a>
+4. <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
 
 
 **Requirements for converting your web app into a Teams tab:**
@@ -65,7 +65,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 4. The app must include an initial configuration page to display during tab setup.
 
 ## Create Azure App Service ##
-1. Login to your Azure subscription at [https://portal.azure.com](https://portal.azure.com)
+1. Login to your Azure subscription at <a href="https://portal.azure.com" target="_blank">https://portal.azure.com</a>
 
 ![Azure Portal](../media/azure-portal-1.png)
 
@@ -106,7 +106,7 @@ Our existing app shows the daily lunch menu, complete with images and nutritiona
 
 ![Visual Studio Code 2](../media/vscode-folder-1.png)
 
-6. Download this [assets.zip](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/assets.zip) file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
+6. Download this <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/office365/assets.zip" target="_blank">assets.zip</a> file and unpack the images and JSON to the **lunchmenu\src\assets** folder.
 7. Create these new files in Visual Studio Code:
 - **src\MenuContainer.js** - A React parent container component
 - **src\MenuItem.js** - A React component for rendering each item on the lunch menu
@@ -514,7 +514,7 @@ Compress-Archive -Path * -DestinationPath lunchmenu-build.zip
 | Terms of use	      | https://www.contoso.com/apps/lunchmenu/termsofuse | The HTTPS URL of your app's terms of use |
 | Full color 96x96	      | ![Lunch menu app icon 96x96](../media/lunchmenu_icon_96_96.png) | The large app icon in PNG format (96 pixels by 96 pixels) |
 | Transparent outline 20x20	      | ![Lunch menu app icon 20x20](../media/lunchmenu_icon_20_20.png) | The black app icon outline wih a transparent background in PNG format (20 pixels by 20 pixels) |
-| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the [Teams color swatches](https://docs.microsoft.com/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf) and Microsoft maintains a list of [curated colors](https://www.microsoft.com/design/color) for Microsoft products. |
+| Accent color	      | #FCD116 | The app accent color can be chosen or input in Hexidecimal format. These are the <a href="https://docs.microsoft.com/microsoftteams/platform/assets/downloads/MicrosoftTeams-ColorSwatches.pdf" target="_blank">Teams color swatches</a> and Microsoft maintains a list of <a href="https://www.microsoft.com/design/color" target="_blank">curated colors</a> for Microsoft products. |
 
 ![Teams app studio 5](../media/teams-appstudio-5.png)
 
@@ -575,6 +575,6 @@ To maintain the Teams and Office 365 look and feel, you can include the Teams CS
 
 Further details are in the **Control Library** in the Teams App Studio.
 
-Color styling information is available here: [Teams - Design guidelines - color](https://docs.microsoft.com/microsoftteams/platform/resources/design/components/color)
+Color styling information is available here: <a href="https://docs.microsoft.com/microsoftteams/platform/resources/design/components/color" target="_blank">Teams - Design guidelines - color</a>
 
 

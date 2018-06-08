@@ -4,10 +4,10 @@
 
 For this lab, there are some necessary assets we need to import. Download these two unity packages and save them locally in your computer.  
 
-* [Holotoolkit.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/Holotoolkit.unitypackage)  
-This is a snapshot of the [Microsoft Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/), a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
+* <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/Holotoolkit.unitypackage" target="_blank">Holotoolkit.Unitypackage</a>  
+This is a snapshot of the <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/" target="_blank">Microsoft Mixed Reality Toolkit</a>, a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.  
     
-* [SpatialSoundLab.Unitypackage](https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/SpatialSoundLab.unitypackage)   
+* <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/master/MR/SpatialSoundLab.unitypackage" target="_blank">SpatialSoundLab.Unitypackage</a>   
 Is a custom package prepared for this lab. It contains the assets (models, materials and audio clips) that we will be using to create this spatial sound experience.
 
 Once you have your assets files available, we can create the Unity project.  
@@ -91,7 +91,7 @@ Go ahead and save your scene and project. We recommend you do that at the end of
 3. Click *File->Save Scenes*. If prompted for a name for your scene, call it *Main* (or whatever you please).
 4. Click *File->Save Project*.  
 
-Note: For a more detailed overview of all the setting we applied, see [this guide](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality) to configuring Mixed Reality projects. 
+Note: For a more detailed overview of all the setting we applied, see <a href="https://docs.microsoft.com/windows/mixed-reality/unity-development-overview#configuring-a-new-unity-project-for-windows-mixed-reality" target="_blank">this guide</a> to configuring Mixed Reality projects. 
 
 
 ## 4. Deploying to headsets
@@ -132,4 +132,4 @@ If you are not debugging, we also recommend you also change from Debug to Releas
 
 5. Run the app by hitting play.
 
-See the [Windows Developer site](https://docs.microsoft.com/windows/uwp/publish/) for details on publishing to the Microsoft Store.
+See the <a href="https://docs.microsoft.com/windows/uwp/publish/" target="_blank">Windows Developer site</a> for details on publishing to the Microsoft Store.
