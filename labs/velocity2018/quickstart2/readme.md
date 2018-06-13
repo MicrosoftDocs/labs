@@ -13,7 +13,7 @@ You are tasked with managing 3 different Kubernetes clusters running different w
 6. So, you have isolated the problem to a specific container. Now you need to find out the root causes. To take a look at the logs, click on the Containers tab at the top and click on **View Logs**
 7. **Task 2** Find the reason for the nginx CPU issue. 
 
-*Hint: Check what the CPU and Memory limits set for Nginx. You can use a query similar to* 
+*Hint: Check the CPU and memory limits for Nginx to see if that is a problem. You can use a query similar to* 
 ```sql
 search "nginx*"
 | where ( Type == "Perf" )
