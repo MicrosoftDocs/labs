@@ -12,6 +12,7 @@ You are tasked with managing 3 different Kubernetes clusters running different w
 5. **Task 1:** Click through the clusters, go through the CPU usage, container restarts etc. and see if you can find any issue
 6. So, you have isolated the problem to a specific container. Now you need to find out the root causes. To take a look at the logs, click on the Containers tab at the top and click on **View Logs**
 7. **Task 2** Find the reason for the nginx CPU issue. 
+
 *Hint: Check what the CPU and Memory limits set for Nginx. You can use a query similar to* 
 ```sql
 search "nginx*"
@@ -20,7 +21,7 @@ search "nginx*"
 | where ( CounterName == "cpuLimitNanoCores" or CounterName == "memoryLimitBytes" ) 
 ```
 8. Congratulations! You have found the root cause within the SLA and saved the day. While you are it, you have a bonus task.
-9. **Bonus Task** Did you know that Log Analytics is a common store for metrics and log data for number of monitoring and management tools? As a customer, you can use Log Analytics not just for containers but other Azure services including Virtual Machines and Azure Security Center.  For this task, you need to run a query to find all the VM’s that are missing security patches. You can find examples here - https://docs.loganalytics.io/docs/Examples/Log-Analytics-Examples
+9. **Bonus Task** Did you know that Log Analytics is a common store for metrics and log data for number of monitoring and management tools? As a customer, you can use Log Analytics not just for containers but other Azure services including Virtual Machines and Azure Security Center.  For this task, you need to run a query to find all the VM’s that are missing updates. You can find examples here - https://docs.loganalytics.io/docs/Examples/Log-Analytics-Examples
 
 
 
