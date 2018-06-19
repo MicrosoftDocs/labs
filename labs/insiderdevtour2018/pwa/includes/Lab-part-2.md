@@ -1,5 +1,7 @@
 This part is **optional**, if you want to use our Knowzy <a href="https://www.asp.net/" target="_blank">ASP.NET</a> example project continue with this part.
 
+> Note: Ensure you have the _.NET Core 1.0 - 1.1 development tools for Web_ component installed inside of the **Visual Studio Installer**
+
 1. To start, clone or download the <a href="https://github.com/Microsoft/InsiderDevTour18-Labs" target="_blank">repository code</a> and open the folder: `PWA/source code/`
 ![](../media/Picture5.jpg)
 2. Execute the **Microsoft.Knowzy.sln** solution to open the project in visual studio.
