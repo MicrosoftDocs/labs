@@ -35,6 +35,8 @@ The first step is to build the Manifest for your application using the **pwabuil
 #### Generate manifest
 The builder will search in the home page of your site looking for an existing manifest. If a manifest is not found, it will gather information about the app in specific meta tags or propose default values for the manifest properties. It will also show any warnings or suggestions to address potential issues in the collected metadata. Be sure you address any warnings before you move on.
 
+> **Note:** Try adding a description to your manifest.
+
 ![Provide a URL](../media/Picture19.jpg)
 
 #### Add Images
