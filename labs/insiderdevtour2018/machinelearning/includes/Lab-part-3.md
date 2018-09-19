@@ -19,6 +19,7 @@ First, we'll create the Custom Vision model we'll use in the ContosoIT applicati
 2. Create a new project with the following settings:
     - Name: ContosoIT
     - Project Types: Classification
+    - Classification Types: Multiclass
     - Domains: General (compact)
     
     >[!NOTE]
@@ -32,11 +33,11 @@ Now, we'll use some images of each product to train the model. The downloaded la
 
 1. Click on "Add images" on the menu at the top of the page, and then in "Browse local files".
     
-    ![screenshot](../media/Picture4.png)
-    
     Go to your ContosoIT application folder, and select all images in \resources\training\surface-pro.
     
     Add a "surface-pro" tag, and upload the files.
+
+    ![screenshot](../media/Picture4.png)
 
 2. Repeat the process with the images in \resources\training\surface-studio folder, but set the tag as "surface-studio".
 
@@ -72,7 +73,7 @@ You'll notice Visual Studio automatically generates a new `ContosoIT.cs` file wi
 
 4. Right-click the `ContosoIT.onnx` file in Solution Explorer, and select Properties. Set Build Action to "Content" and Copy to Output Directory to "Copy if newer"
 
-5. Review the `ContosoIT.cs` code and replace the generated GUIDs with "ContosoIT". Your file should now contain the ContosoITModelInput, ContosoITModelOutput, and ContosoITModel classes
+5. Review the `ContosoIT.cs` code and replace the generated GUIDs with "ContosoIT". Your file should now contain the ContosoITInput, ContosoITOutput, and ContosoITModel classes.
 
 ## 7. Run the model from your application
 
@@ -97,7 +98,7 @@ Finally, we'll edit the Devices page to use the Custom Vision model.
     {
         string modelPath = @"ms-appx:///Assets/ContosoIT.onnx";
         StorageFile modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri(modelPath));
-        model = await ContosoIT.ContosoITModel.CreateContosoITModel(modelFile);
+        model = await ContosoIT.ContosoITModel.CreateFromStreamAsync(modelFile);
     }
     ```
 
@@ -144,10 +145,10 @@ Finally, we'll edit the Devices page to use the Custom Vision model.
     With these ones:
 
     ```csharp
-    ContosoITModelInput modelInput =
-        new ContosoITModelInput() { data = await ImageToVideoframe(detectionDataParameters.SelectedFile) };
-    ContosoITModelOutput modelResult = await model.EvaluateAsync(modelInput);
-    var classLabel = modelResult.classLabel.FirstOrDefault();
+    var videoFrame = await ImageToVideoframe(detectionDataParameters.SelectedFile);
+    ContosoITInput modelInput = new ContosoITInput() { data = ImageFeatureValue.CreateFromVideoFrame(videoFrame)};
+    ContosoITOutput modelResult = await model.EvaluateAsync(modelInput);
+    var classLabel = modelResult.classLabel.GetAsVectorView().FirstOrDefault();
     ```
 
     Now, the detected product is no longer fixed to "surface-pro." Instead, it shows the result of the evaluation of the trained Custom Vision classification model.
