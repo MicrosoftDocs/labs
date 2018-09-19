@@ -69,10 +69,11 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
     private FaceDetector faceDetector;
     ```
     
-2. Then, add the following code at the beginning of the DetectEmotionWithML method.
+2. Then, add the following code at the beginning of the DetectEmotionWithML method, and move the pre-existing code to the specified locations.
 
     ```csharp
     var videoFrame = lastFrame;
+    string label = String.Empty;
     
     if (faceDetector == null)
     {
@@ -83,8 +84,10 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
     
     if (detectedFaces != null && detectedFaces.Any())
     {
-        //relocate pre-existing code snippet (from step 7) here
+        //relocate pre-existing code block (from step 7) here
     }
+
+    //move the return statement (from step 7) down here
     ```
     
     Now try the application again, and the results should improve!
