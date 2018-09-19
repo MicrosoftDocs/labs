@@ -2,7 +2,7 @@ In this section, we'll create an application that detects which product appears 
 
 ## 1. Download the example
 
-1. Download the <a href="https://aka.ms/winmllab">ContosoIT</a> UWP application, and uncompress it in a folder of your choice.
+1. Download the <a href="https://github.com/Microsoft/InsiderDevTour18-Labs/blob/RS5_WinML_updates/machinelearning/ContosoIT/GetStarted.zip">ContosoIT</a> UWP application, and uncompress it in a folder of your choice.
 
     This application allows the user to pick an image of the product from the disk or from the webcam. It includes support for two different products, Surface Pro and Surface Studio.
 
