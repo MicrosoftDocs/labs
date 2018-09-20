@@ -105,7 +105,8 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
             var croppedImage = await decoder.GetSoftwareBitmapAsync(softwareBitmap.BitmapPixelFormat, softwareBitmap.BitmapAlphaMode);
 
             videoFrame = VideoFrame.CreateWithSoftwareBitmap(croppedImage);
-        }    
+        }
+    }    
     ```
     
     Now try the application again, and the results should improve!
