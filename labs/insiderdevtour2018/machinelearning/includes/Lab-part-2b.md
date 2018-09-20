@@ -40,11 +40,12 @@ Now, instead of using Cognitive Services' REST API, we'll add a previously train
     ```csharp
     private async Task<string> DetectEmotionWithWinML()
     {
+        var videoFrame  = lastFrame;
         var input = ImageFeatureValue.CreateFromVideoFrame(videoFrame);
         var emotion = await model.EvaluateAsync(new FER_Emotion_RecognitionInput() { Input3 = input });
         var list = new List<float>(emotion.Plus692_Output_0.GetAsVectorView());
         var index = list.IndexOf(list.Max());
-        label = labels[index];
+        var label = labels[index];
     
         return label;
     }
@@ -69,11 +70,10 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
     private FaceDetector faceDetector;
     ```
     
-2. Then, add the following code at the beginning of the DetectEmotionWithML method, and move the pre-existing code to the specified locations.
+2. Then, add the following code at the beginning of the DetectEmotionWithML method.
 
     ```csharp
     var videoFrame = lastFrame;
-    string label = String.Empty;
     
     if (faceDetector == null)
     {
@@ -84,10 +84,28 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
     
     if (detectedFaces != null && detectedFaces.Any())
     {
-        //relocate pre-existing code block (from step 7) here
-    }
+        var face = detectedFaces.OrderByDescending(s => s.FaceBox.Height * s.FaceBox.Width).First();
+        using (var randomAccessStream = new InMemoryRandomAccessStream())
+        {
+            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, randomAccessStream);
+            var softwareBitmap = SoftwareBitmap.Convert(videoFrame.SoftwareBitmap, BitmapPixelFormat.Rgba16);
+            Debug.WriteLine(softwareBitmap.BitmapPixelFormat);
+            encoder.SetSoftwareBitmap(softwareBitmap);
+            encoder.BitmapTransform.Bounds = new BitmapBounds
+            {
+                X = face.FaceBox.X,
+                Y = face.FaceBox.Y,
+                Width = face.FaceBox.Width,
+                Height = face.FaceBox.Height
+            };
 
-    //move the return statement (from step 7) down here
+            await encoder.FlushAsync();
+
+            var decoder = await BitmapDecoder.CreateAsync(randomAccessStream);
+            var croppedImage = await decoder.GetSoftwareBitmapAsync(softwareBitmap.BitmapPixelFormat, softwareBitmap.BitmapAlphaMode);
+
+            videoFrame = VideoFrame.CreateWithSoftwareBitmap(croppedImage);
+        }    
     ```
     
     Now try the application again, and the results should improve!
