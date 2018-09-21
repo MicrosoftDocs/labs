@@ -18,7 +18,7 @@ Let's start by creating a simple application that displays a clock.
 4. In the Solution Explorer, open the `Package.appxmanifest` file, go to Capabilities section, and check the WebCam option.
 
 5. In the Solution Explorer, right click on your **Alarm Clock (Universal Windows)** project, and select **Manage Nuget Packages...**. In the Browse tab, search for and install the following nuget packages:
-    - Microsoft.Toolkit.Uwp.UI.Controls (v3.0.0)
+    - Microsoft.Toolkit.Uwp.UI.Controls (v4.0.0)
     - Microsoft.ProjectOxford.Face (v1.4.0)
 
 6. In Solution Explorer, open `MainPage.xaml`. Add the following namespace to the Page:
