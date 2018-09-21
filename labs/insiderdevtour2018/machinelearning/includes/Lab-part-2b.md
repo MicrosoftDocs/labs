@@ -2,7 +2,7 @@ Now, instead of using Cognitive Services' REST API, we'll add a previously train
 
 ## 1. Detect emotions with a local model and Windows ML
 
-1. Download the model from the <a href="https://github.com/onnx/models/tree/master/emotion_ferplus">ONNX Model Zoo</a> and save it as `FER_Emotion_Recognition.cs`.
+1. Download the ONNX **v1.2** model from the <a href="https://github.com/onnx/models/tree/master/emotion_ferplus">ONNX Model Zoo</a> and save it as `FER_Emotion_Recognition.onnx`.
 
 2. In Visual Studio, drag and drop the downloaded `FER_Emotion_Recognition.onnx` file to the Assets folder in your Solution Explorer. Visual Studio will generate a new `FER_Emotion_Recognition.cs` file with the necessary code to create and execute the model.
 
