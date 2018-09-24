@@ -11,7 +11,7 @@ Let's start by creating a simple application that displays a clock.
 
 1. Open **Visual Studio**, and go to **File** > **New** > **Project**. Under Visual C#, select Windows Universal Blank App, and name the project AlarmClock.
 
-2. Set the target and minimum versions to Windows 10, version 1803 (10.0; Build 17134).
+2. Set the target and minimum versions to Windows 10, version 1809 (10.0; Build 17763).
 
 3. In the Debug menu, set the platform to x64, since some of the packages you'll be using do not run under x86.
 
