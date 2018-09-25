@@ -2,16 +2,16 @@ Now, instead of using Cognitive Services' REST API, we'll add a previously train
 
 ## 1. Detect emotions with a local model and Windows ML
 
-1. Download the model from the <a href="https://gallery.azure.ai/Model/Emotion-recognition-in-faces-FER">Azure AI Gallery</a>.
+1. Download the ONNX **v1.2** model from the <a href="https://github.com/onnx/models/tree/master/emotion_ferplus">ONNX Model Zoo</a> and save it as `FER_Emotion_Recognition.onnx`.
 
-2. In Visual Studio, drag and drop the downloaded `FER-Emotion-Recognition.onnx` file to the Assets folder in your Solution Explorer. Visual Studio will generate a new `FER-Emotion-Recognition.cs` file with the necessary code to create and execute the model.
+2. In Visual Studio, drag and drop the downloaded `FER_Emotion_Recognition.onnx` file to the Assets folder in your Solution Explorer. Visual Studio will generate a new `FER_Emotion_Recognition.cs` file with the necessary code to create and execute the model.
 
-3. Right-click on the `FER-Emotion-Recognition.onnx` file, select Properties, set Build Action to "Content" and Copy to Output Directory to "Copy if newer".
+3. Right-click on the `FER_Emotion_Recognition.onnx` file, select Properties, set Build Action to "Content" and Copy to Output Directory to "Copy if newer".
 
 4. In `MainPage.xaml.cs`, add the last global variable for the model.
 
     ```csharp
-    private CNTKGraphModel model;
+    private FER_Emotion_RecognitionModel model = new FER_Emotion_RecognitionModel();
     ```
 
 5. Add the method below to initialize the model.
@@ -19,9 +19,9 @@ Now, instead of using Cognitive Services' REST API, we'll add a previously train
     ```csharp
     private async void InitializeModel()
     {
-        string modelPath = @"ms-appx:///Assets/FER-Emotion-Recognition.onnx";
+        string modelPath = @"ms-appx:///Assets/FER_Emotion_Recognition.onnx";
         StorageFile modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri(modelPath));
-        model = await CNTKGraphModel.CreateCNTKGraphModel(modelFile);
+        model = await FER_Emotion_RecognitionModel.CreateFromStreamAsync(modelFile);
     }
     ```
 
@@ -40,10 +40,12 @@ Now, instead of using Cognitive Services' REST API, we'll add a previously train
     ```csharp
     private async Task<string> DetectEmotionWithWinML()
     {
-        var videoFrame = lastFrame;
-        var emotion = await model.EvaluateAsync(new CNTKGraphModelInput() { Input338 = videoFrame });
-        var index = emotion.Plus692_Output_0.IndexOf(emotion.Plus692_Output_0.Max());
-        string label = labels[index];
+        var videoFrame  = lastFrame;
+        var input = ImageFeatureValue.CreateFromVideoFrame(videoFrame);
+        var emotion = await model.EvaluateAsync(new FER_Emotion_RecognitionInput() { Input3 = input });
+        var list = new List<float>(emotion.Plus692_Output_0.GetAsVectorView());
+        var index = list.IndexOf(list.Max());
+        var label = labels[index];
     
         return label;
     }
@@ -83,11 +85,28 @@ In order to improve the detection of the emotion, the Cognitive Services Face AP
     if (detectedFaces != null && detectedFaces.Any())
     {
         var face = detectedFaces.OrderByDescending(s => s.FaceBox.Height * s.FaceBox.Width).First();
-        var randomAccessStream = new InMemoryRandomAccessStream();
-        var decoder = await BitmapDecoder.CreateAsync(randomAccessStream);
-        var croppedImage = await decoder.GetSoftwareBitmapAsync(decoder.BitmapPixelFormat, BitmapAlphaMode.Ignore, new BitmapTransform() { Bounds = new BitmapBounds() { X = face.FaceBox.X, Y = face.FaceBox.Y, Width = face.FaceBox.Width, Height = face.FaceBox.Height } }, ExifOrientationMode.IgnoreExifOrientation, ColorManagementMode.DoNotColorManage);
-        videoFrame = VideoFrame.CreateWithSoftwareBitmap(croppedImage);
-    }
+        using (var randomAccessStream = new InMemoryRandomAccessStream())
+        {
+            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, randomAccessStream);
+            var softwareBitmap = SoftwareBitmap.Convert(videoFrame.SoftwareBitmap, BitmapPixelFormat.Rgba16);
+            Debug.WriteLine(softwareBitmap.BitmapPixelFormat);
+            encoder.SetSoftwareBitmap(softwareBitmap);
+            encoder.BitmapTransform.Bounds = new BitmapBounds
+            {
+                X = face.FaceBox.X,
+                Y = face.FaceBox.Y,
+                Width = face.FaceBox.Width,
+                Height = face.FaceBox.Height
+            };
+
+            await encoder.FlushAsync();
+
+            var decoder = await BitmapDecoder.CreateAsync(randomAccessStream);
+            var croppedImage = await decoder.GetSoftwareBitmapAsync(softwareBitmap.BitmapPixelFormat, softwareBitmap.BitmapAlphaMode);
+
+            videoFrame = VideoFrame.CreateWithSoftwareBitmap(croppedImage);
+        }
+    }    
     ```
     
     Now try the application again, and the results should improve!
