@@ -13,6 +13,6 @@ Windows ML provides APIs for intelligence on the edge. The platform provides har
 In this lab, you'll learn how to use Windows ML APIs to evaluate various machine learning models trained in Azure's MLaaS.
 
 ## Prerequisites
-- Windows 10 April 2018 update
-- <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">Windows 10 SDK</a> (Build 17134 or higher)
+- Windows 10 October 2018 update
+- <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">Windows 10 SDK</a> (Build 17763 or higher)
 - <a href="https://developer.microsoft.com/windows/downloads">Visual Studio 15.7+</a>

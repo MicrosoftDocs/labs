@@ -11,14 +11,14 @@ Let's start by creating a simple application that displays a clock.
 
 1. Open **Visual Studio**, and go to **File** > **New** > **Project**. Under Visual C#, select Windows Universal Blank App, and name the project AlarmClock.
 
-2. Set the target and minimum versions to Windows 10, version 1803 (10.0; Build 17134).
+2. Set the target and minimum versions to Windows 10, version 1809 (10.0; Build 17763).
 
 3. In the Debug menu, set the platform to x64, since some of the packages you'll be using do not run under x86.
 
 4. In the Solution Explorer, open the `Package.appxmanifest` file, go to Capabilities section, and check the WebCam option.
 
 5. In the Solution Explorer, right click on your **Alarm Clock (Universal Windows)** project, and select **Manage Nuget Packages...**. In the Browse tab, search for and install the following nuget packages:
-    - Microsoft.Toolkit.Uwp.UI.Controls (v3.0.0)
+    - Microsoft.Toolkit.Uwp.UI.Controls (v4.0.0)
     - Microsoft.ProjectOxford.Face (v1.4.0)
 
 6. In Solution Explorer, open `MainPage.xaml`. Add the following namespace to the Page:
