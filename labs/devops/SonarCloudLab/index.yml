@@ -26,5 +26,5 @@ items:
   content: |
     [!include[](includes/SetupPRintegration.md)]
 - content: |
-    With  the **SonarCloud** extension for **Visual Studio Team Services**, you can embed automated testing in your CI/CD pipleine to automate the measurement of your technical debt including code semantics, testing coverage, vulnerabilities. etc. You can also integrate the analysis into the VSTS pull request process so that issues are discovered before they are merged.
+    With  the **SonarCloud** extension for **Visual Studio Team Services**, you can embed automated testing in your CI/CD pipeline to automate the measurement of your technical debt including code semantics, testing coverage, vulnerabilities. etc. You can also integrate the analysis into the VSTS pull request process so that issues are discovered before they are merged.
     You've completed this lab.
