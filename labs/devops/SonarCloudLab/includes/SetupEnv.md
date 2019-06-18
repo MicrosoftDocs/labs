@@ -1,4 +1,4 @@
-1. Install the SonarCloud VSTS extension to your VSTS account
+1. Install the SonarCloud Azure DevOps extension to your Azure DevOps account
 
     - Navigate to the  [SonarCloud extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud) in the Visual Studio Marketplace and click **Get it free** to install it.
 
@@ -8,14 +8,14 @@
 
    The SonarCloud extension contains build tasks, build templates and a custom dashboard widget.
 
-1. Create a new VSTS project for the lab
+1. Create a new Azure DevOps project for the lab
     
-    - Create a new project in your VSTS account called **SonarExamples**
+    - Create a new project in your Azure DevOps account called **SonarExamples**
 
     - Import the **Sonar Scanning Examples repository** from GitHub at https://github.com/SonarSource/sonar-scanning-examples.git
 
     ![sc_marketplace](../images/ex1/setup_import.png)
 
-    See [here](https://docs.microsoft.com/en-us/vsts/git/import-git-repository?view=vsts)for detailed instructions on importing a repository.
+    See [here](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops)for detailed instructions on importing a repository.
 
     The scanning examples repository contains sample projects for a number of build systems and languages including C# with MSBuild, and Maven and Gradle with Java.
